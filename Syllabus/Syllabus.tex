@@ -1,0 +1,111 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{natbib}
+
+\usepackage{setspace,mdwlist,comment}
+\setlength{\marginparwidth}{.5in}
+\setlength{\parindent}{0in}
+
+% mini table of contents
+\usepackage{minitoc}
+\dosecttoc % make section toc
+\setcounter{secttocdepth}{2} % subsection depth
+\renewcommand{\stctitle}{} % no title
+\nostcpagenumbers
+
+\usepackage{natbib}
+
+% Two lines to create in-text full citations for a syllabus
+% And comment out my other standard bibtex commands
+\usepackage{bibentry}
+\newcommand{\reading}[2][]{\noindent -- {#1}\bibentry{#2}.\vspace{.25em}\\}
+\newcommand{\textbook}[2][]{\noindent -- {#1}#2.\vspace{.25em}\\}
+\newcommand{\thomas}{\vspace{1em}\noindent Instructor: Thomas\\}
+\newcommand{\david}{\vspace{1em}\noindent Instructor: David\\}
+\newcommand{\seealso}{\noindent \emph{See Also:}}
+\newcommand{\topic}[1]{\noindent \textbf{#1}\\}
+
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Syllabus: Research Design in Political Science},    % title
+    pdfauthor={Thomas J. Leeper},     % author
+    pdfsubject={Government} {Political Science},   % subject of the document
+    pdfnewwindow=true,      % links in new window
+    pdfborder={0 0 0}
+}
+
+\title{Syllabus for \textit{Research Design in Political Science}\\Department of Government\\LSE\\2015-2016}
+\author{Thomas J. Leeper\thanks{Office TBA, \url{mailto:thosjleeper@gmail.com}}}
+
+\begin{document}
+\nobibliography*
+
+\maketitle
+
+\faketableofcontents
+
+%\section{Introduction}
+
+
+
+\clearpage
+\section{Objectives}
+The learning objectives for the course are as follows. By the end of the course, students should be able to:
+
+\begin{enumerate*}
+\item 
+\end{enumerate*}
+
+\section{Exam and Weekly Assignments}
+
+\subsection{Exam (Only for Master/KA)}
+
+
+\clearpage
+\section{Reading Material}
+
+\section{Software}
+
+\section{Course Website}
+
+
+
+
+\clearpage
+\section{Schedule}
+The general schedule for the course is as follows. Details on topics covered and the readings for each week are provided on the following pages.
+
+\secttoc
+
+\clearpage
+
+\subsection{Introduction}
+\emph{}
+
+\thomas
+
+\subsection*{Lecture}
+
+\begin{itemize*}
+\item 
+\end{itemize*}
+
+\subsubsection*{Readings}
+
+\seealso
+
+
+
+
+% load bibtext, but don't generate a bibliography
+\bibliographystyle{plain}
+\nobibliography{Syllabus}
+
+
+\end{document}

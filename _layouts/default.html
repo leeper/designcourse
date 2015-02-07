@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Thomas J. Leeper</title>
+	<link rel="stylesheet" type="text/css" href="http://thomasleeper.com/assets/css/style.css" />
+	<script>
+		function printDate() {
+			var d = new Date();
+			var x = document.getElementById("years");
+			x.innerHTML = "2009-" + d.getFullYear();
+		}
+	</script>
+</head>
+<body onload="printDate()">
+  <nav>
+    <a href="http://www.thomasleeper.com">Home</a>
+    <a href="http://leeper.github.io/cv/cv.pdf">CV</a>
+    <a href="http://leeper.github.io/research.html">Research</a>
+    <a href="http://leeper.github.io/software.html">Software</a>
+    <a href="http://leeper.github.io/teaching.html">Teaching</a>
+    <a href="http://dvn.iq.harvard.edu/dvn/dv/leeper">Data</a>
+    <a href="http://leeper.github.io/contact.html">Connect</a>
+  </nav>
+  <div style="margin-top: 0.08in; margin-bottom: 0.08in; color:#4c4c4c; ">
+    <div class="wrapper">
+      <div class="entry-content">
+      	<h3><a href="http://leeper.github.io/teaching.html">Teaching</a> > <a href='http://leeper.github.io/regcourse'>Research Design Course</a> > {{ page.title }}</h3>
+        {{ content }}
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <hr />
+    <p class="small">Copyright <span id="years">2009-2013</span> Thomas J. Leeper
+    <br /><a href="mailto:thosjleeper@gmail.com">thosjleeper (a) gmail.com</a></p>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-10964766-1', 'thomasleeper.com');
+  ga('send', 'pageview');
+  </script>
+</body>
+</html>
+

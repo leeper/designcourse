@@ -1,0 +1,36 @@
+\documentclass[12pt]{beamer} %Makes presentation
+%\documentclass[handout]{beamer} %Makes Handouts
+\usetheme{Singapore} %Gray with fade at top
+\useoutertheme[subsection=false]{miniframes} %Supppress subsection in header
+\useinnertheme{rectangles} %Itemize/Enumerate boxes
+\usecolortheme{seagull} %Color theme
+\usecolortheme{rose} %Inner color theme
+
+\definecolor{light-gray}{gray}{0.75}
+\definecolor{dark-gray}{gray}{0.55}
+\setbeamercolor{item}{fg=light-gray}
+\setbeamercolor{enumerate item}{fg=dark-gray}
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{mini frames}[default]
+\setbeamercovered{dynamics}
+\setbeamerfont*{title}{size=\Large,series=\bfseries}
+
+%\setbeameroption{notes on second screen} %Dual-Screen Notes
+%\setbeameroption{show only notes} %Notes Output
+
+\setbeamertemplate{frametitle}{\vspace{.5em}\bfseries\insertframetitle}
+\newcommand{\heading}[1]{\noindent \textbf{#1}\\ \vspace{1em}}
+
+\usepackage{bbding,color,multirow,times,ccaption,tabularx,graphicx,verbatim,booktabs,fixltx2e}
+\usepackage{colortbl} %Table overlays
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%\author[]{Thomas J. Leeper}
+\institute[]{
+  \inst{}%
+  Department of Political Science and Government\\Aarhus University
+}

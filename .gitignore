@@ -1,0 +1,13 @@
+Misc/
+Assignments/Assignment*
+Syllabus/*.*
+!Syllabus/Syllabus.tex
+!Syllabus/Syllabus.pdf
+!Syllabus/Syllabus.bib
+
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+*.dta
