@@ -17,12 +17,12 @@
 \usepackage{bibentry}
 \newcommand{\lecture}[3][\DefaultOpt]{%
   \def\DefaultOpt{#2}%
-  \subsection[#1]{#2}#3\vspace{0.5em}\\
+  \subsection[#1]{#2}#3\\
 }
 \newcommand{\reading}[2][]{\noindent -- {#1}\bibentry{#2}.\vspace{.25em}\\}
 \newcommand{\textbook}[2][]{\noindent -- {#1} from #2.\vspace{.25em}\\}
 \newcommand{\thomas}{\vspace{1em}\noindent Instructor: Thomas\\}
-\newcommand{\seealso}{\noindent \emph{See also these recommended readings:}}
+\newcommand{\seealso}{\noindent \emph{See also these recommended readings:}\\}
 \newcommand{\topic}[1]{\noindent \textbf{#1}\\}
 
 \usepackage{booktabs}
@@ -99,18 +99,19 @@ As formative work in preparation for both exam forms, students will complete sho
 
 The topic of each problem set and the due date for each are as follows:
 
+\begin{center}
 \begin{tabular}{ll} \toprule
 Assignment & Due Date \\ \midrule
-Concepts and measurement & Monday Oct. 26 \\
-Theory and hypothesis generation & Monday Nov. 9 \\
-Case selection & Monday Nov. 23\\
-Text analysis & Monday Dec. 14 \\
-Interviewing & Monday Jan. 25\\
-Basic Statistics & Monday Feb. 22\\
-Regression analysis & Monday Mar. 7\\
-Experimentation & Monday Mar. 21\\ \bottomrule
+Concepts and measurement & Tuesday Oct. 27 \\
+Theory and hypothesis generation & Tuesday Nov. 10 \\
+Case selection & Tuesday Nov. 24\\
+Text analysis & Tuesday Dec. 15 \\
+Interviewing & Tuesday Jan. 26\\
+Basic Statistics & Tuesday Feb. 23\\
+Regression analysis & Tuesday Mar. 8\\
+Experimentation & Tuesday Mar. 22\\ \bottomrule
 \end{tabular}
-
+\end{center}
 
 
 \section{Reading Material}
@@ -118,32 +119,17 @@ Experimentation & Monday Mar. 21\\ \bottomrule
 The following texts are \textbf{required} for the course:
 
 \begin{enumerate}
-\item \reading{Gerring2012}
+\item \reading{Gerring2012a}
 \item \reading{KellstedtWhitten2013}
 \end{enumerate}
 
-We will use the entire Kellstedt and Whitten text and most of the Gerring text as core readings for the course. Additional readings for each week are listed on the course schedule. Journal articles should be available online and selections from books are available as eBooks or via a library ePack. All readings should be completed \textit{before} the scheduled course meeting.
-
-
-% An ePack, available from the Library, contains the following readings:
-% Babbie, Earl. 2015. 'The Logic of Multivariate Analysis.' in Babbie, The Practice of Social Research, 15th edition, pp. 432-449 (Ch. 15).
-% Brady, Henry. 2008. 'Causation and Explanation in the Social Sciences.' In Box-Steffensmeier, J. M.; Brady, H. E. & Collier, D., The Oxford Handbook of Political Methodology Oxford University Press, Ch. 10 through p.249.
-% Brady, Henry E. 2004. 'Data-Set Observations versus Causal-Process Observations: The 2000 U.S. Presidential Election.' In Henry Brady and David Collier, Rethinking Social Inquiry: Diverse Tools, Shared Standards. Lanham: Rowman and Littlefield, 1st Edition, pp. 267-271.
-% Dahl, Robert A. 1972. Polyarchy. Yale University Press, pp. 1-16 (Ch. 1).
-% Dreze, Jean, and Amartya Sen. 1989 'China and India.' In Dreze and Sen, Hunger and Public Action. New York: Oxford University Press.
-% Finnegan, Ruth. 1996. 'Using Documents.' In Roger Sapsford and Victor Jupp, Data Collection and Analysis. Thousand Oaks, CA: Sage, pp. 138-152.
-% Groves, Robert M., Fowler, Floyd J., Jr. Couper, Mick P., Lepkowski, James M., Singer, Eleanor, and Tourangeau, Roger. 2009. Survey Methodology. 2nd Edition, pp. 217-257 (Ch. 7 especially section 7.3 to end).
-% King, Gary, Keohane, Robert, & Verba, Sidney. 1994. 'Increasing the Number of Observations.' In King, Keohane, and Verba, Designing Social Inquiry: Scientific Inference in Qualitative Research, pp. 208-230.
-% Morgan, Stephen L., and Christopher Winship. 2015. 'Mechanisms and Causal Explanation.' In Morgan and Winship, Counterfactual and Causal Inference. 2nd Edition, pp.325-353 (Ch. 10).
-% Pitkin, Hannah. 1967. 'Appendix on Etymology.' In Pitkin, The Concept of Representations, pp. 241-252.
-% Shadish, Cook, and Campbell. 2002. 'External Validity' In Shadish, Cook, and Campbell, Experimental and Quasi-Experimental Designs for Generalized Causal Inference, pp. 83-95.
-% Tufte, Edward. 2001. 'Chartjunk.' In Tufte, The Visual Display of Quantitative Information. 2nd Edition. Graphics Press. (Ch.5)
+We will use the entire Kellstedt and Whitten text and most of the Gerring text as core readings for the course. Additional readings for each week are listed on the course schedule. Journal articles should be available online and selections from books are available as eBooks or via the library (links noted below). All readings should be completed \textit{before} the scheduled course meeting.
 
 \textit{Recommended readings} for each course topic, which are not required to be read, are listed on the course schedule under the heading \textit{See Also}. Students may also be interested in the following general texts on research design in the social sciences:
 
 \reading{KingKeohaneVerba1994}
 \reading{ShadishCookCampbell2001}
-\reading{MorganWinship2007}
+\reading{MorganWinship2015}
 \reading{AngristPischke2008}
 \reading{Rosenbaum2009}
 \reading{GerberGreen2012}
@@ -170,29 +156,22 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 % MICHAELMAS TERM
 
 % 1
-\lecture{Introduction (Sep. 28)}{An overview of the course and a discussion of political science research questions.}
+\lecture{Introduction (Sep. 28)}{An overview of the course and an introduction to political science research.}
 
-\textbook[Ch. 1--2]{Gerring}
-
-\seealso
+\textbook[Ch. 2]{Gerring}
 
 
 
 % 2
 \lecture{Causality: Explanation versus Prediction (Oct. 6)}{Political science is generally concerned with questions of causality. To do that we need to learn to think counterfactually. How do we know that something causes something else? How do we separate ``correlation'' from ``causation''?}
 
-\textbook[Ch. 4]{Kellstedt and Whitten}
-\textbook[Ch. 8]{Gerring}
+\textbook[Ch. 3]{Kellstedt and Whitten}
+\reading{Holland1986}
 
 \seealso
+\textbook[Ch. 8]{Gerring}
+\reading[Brady, Henry. ``Causation and Explanation in the Social Sciences'' (Ch. 8; pp.217--270) from ]{BoxSteffensmeieretal2008} % http://dx.doi.org/10.1093/oxfordhb/9780199286546.001.0001
 
-%% \reading{Holland1986}
-%% Brady Ch.10 in Oxford Handbook of Political Methodology (pp.217-270)
-
-%% 1. Shmueli, Galit. 2010. “To Explain or to Predict?” Statistical Science 25(3): 289-310.
-%% 2. Stevens, Jacqueline. 2012. “Political Scientists are Lousy Forecasters.” New York Times, Sunday June 26th, 2012. http://goo.gl/Iiq03L.
-%% 3. Dickinson, Matthew. 2012. “No, Political Scientists are NOT Lousy Forecasters – In fact, they are Pretty Good.” Presidential Power: A Nonpartisan Analysis of Presidential Politics, June 26th, 2012. URL: http://goo.gl/8O8j3N.
-%%  4. Henry Farrell. June 24, 2012. “Why the Stevens Op-Ed is Wrong.” The Monkey Cage. URL: http://themonkeycage.org/blog/2012/06/24/why-the-stevens-op-ed-is-wrong/. 
 
 
 
@@ -201,38 +180,45 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 
 \textbook[Ch. 5--6]{Gerring}
 \reading{Mansbridge2003} % Rethinking Representation
+\reading[pp.1--16 (Ch. 1) from ]{Dahl1971} % Polyarchy
 
 \seealso
 \reading{Goertz2005}
-\reading{Appendix on Etymology (pp.241--252)}{Pitkin, H.F. ``The Concept of Representations.''}
-%% Sartori, Giovanni. 1970. “Concept Misformation in Comparative Politics.” American Political Science Review 64:4 (December) 1033-46.
+\reading[Appendix on Etymology (pp.241--252) from ]{Pitkin1967} % Pitkin, Hannah. 1967. 'Appendix on Etymology.' In Pitkin, The Concept of Representations, pp. 241-252.
+\reading{Sartori1970}
 
 
 % 4
 \lecture{Measurement: Concepts in Practice (Oct. 20)}{To study something, we need to be able to observe and measure it. How do we \textit{operationalize} concepts so that we can study political phenomena? What are challenges of measuring concepts? How do we assign quantitative values to observations?}
-%% Adcock, R. & Collier, D. 2001. “Measurement Validity: A Shared Standard for Qualitative and Quantitative Research.” American Political Science Review 95: 529-546.
-%% Paxton, Pamela, “Women’s Suffrage in the Measurement of Democracy: Problems of Operationalization,” Studies in Comparative International Development 35:3 (September 2000): 92-111.
-%% Munck, Gerardo L., and Jay Verkuilen, “Measuring Democracy: Evaluating Alternative Indices,” Comparative Political Studies 35:1 (February 2002): 5-34.
-%% Athaus, Scott L., and Devon M. Largio, “When Osama Became Saddam: Origins and Consequences of the Change in America’s Public Enemy #1,” 
 
-\textbook[Ch. 5]{Kellstedt and Whitten}
-\textbook[Ch. 7 (up to p.175 only)]{Gerring}
+\textbook[Ch. 5 (through p.109)]{Kellstedt and Whitten}
+\textbook[Ch. 7]{Gerring}
+
+\seealso
+\reading{AdcockCollier2001} %% Adcock, R. & Collier, D. 2001. “.” American Political Science Review 95: 529-546.
+\reading{Paxton2000}
+\reading{MunckVerkuilen2002}
 
 
 % 5
 \lecture{Building Theories from Observations and Principles (Oct. 27)}{How do we create social science theories based on past evidence and novel observation? What roles do induction and deduction play in contemporary political science?}
 
-\textbook[pp. 37--57]{Gerring}
+\textbook[Ch. 1--2]{Kellstedt and Whitten}
+\textbook[Ch. 3]{Gerring}
+
+
+
 
 % 6
 \lecture{Deriving Hypotheses from Theory (Nov. 3)}{Hypotheses are the observable implications of theories. How do we derive hypotheses from theories? How do we overcome ``observational equivalence'' wherein multiple theories yield similar expectations about the world? What does it mean to test a hypothesis?} % something on research synthesis and lit reviewing?
 
-\textbook[Ch. 3]{Gerring}
-\textbook[Ch. 1--2]{Kellstedt and Whitten}
+\reading{Fearon1991}
+\reading{Tannenwald1999} % Nuclear Taboo
 
-%% Morris P. Fiorina, “Formal Models of Political Science.” American Journal of Political Science 19 (February 1975): 133-159. 
+
+\seealso
+\reading{Fiorina1975}
 %% Albert O. Hirschman, “The Search for Paradigms as a Hindrance to Understanding.” World Politics 22 (April 1970): 329-343.
-%% Fearon, James D. 1991. “Counterfactuals and Hypothesis Testing in Political Science.” World Politics. 43:169-95.
 %% Bueno de Mesquita, Bruce (1985) – “Toward a scientific understanding of international conflict: A personal view,” International Studies Quarterly, 29(2), 121-136.
 
 
@@ -240,22 +226,25 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 \lecture{Case Studies (Nov. 10)}{Case studies are in-depth examinations of a single manifestation of a political phenomenon and are one of the most common methods of inquiry in political science. What can we do with case studies? How do they help us to understand politics?}
 
 \reading{Gerring2004} % What Is A Case Study and What Is It Good For?
+\textbook[Ch. 12 (only up to p.342)]{Gerring}
 
-% Case studies
-%% James Mahoney and Gary Goertz. 2004. “The Possibility Principle: Choosing Negative Cases in Comparative Research.” American Political Science Review. 98, pp. 653-669.
-%% David J. Harding, Cybelle Fox, and Jal D. Mehta. 2002. “Studying Rare Events through Qualitative Case Studies: Lessons From a Study of Rampage School Shootings.” Sociological Methods & Research. 31(2): 174-217.
+\seealso
+\reading{MahoneyGoertz2004}
+\reading{HardingFoxMehta2002}
 
 
 % 8
 \lecture{Case Comparisons over Time and Place (Nov. 17)}{How do comparisons between cases help us to make inferences about causality? How do we select cases so that comparisons between them are informative about theories and hypotheses?}
-%% Posner, Daniel. 2004. “The Political Salience of Cultural Difference: Why Chewas and Tumbukas are Allies in Zambia and Adversaries in Malawi.” American Political Science Review 98:4 (November) 529-46.
-%% Mahoney, James “Strategies of Causal Inference in Small-N Analysis,” Sociological Methods and Research 28: 4 (May 2000), pp. 387-424.
-%% Lijphart, Arend, “Comparative Politics and the Comparative Method,” American Political Science Review 65: 3 (Sept. 1971): 682-93.
-%% James Mahoney, “Nominal, Ordinal, and Narrative Appraisal in Macrocausal Analysis,” American Journal of Sociology 104:4 (January 1999), pp. 1154-1169. 
-%% Doner, Richard F., Bryan K. Ritchie, and Dan Slater, “Systemic Vulnerability and the Origins of Developmental States: Northeast and Southeast Asia in Comparative Perspective,” International Organization 59 (Spring 2005), pp. 327-361.
-%% Geddes, Barbara. 1990. “How the Cases You Choose Affect the Answers the Answers You Get: Selection Bias in Comparative Politics.” Political Analysis 2: 131-150.
-\textbook[Ch. 12]{Gerring}
-\reading{DrezeSen1989} % China and India
+
+\reading{DrezeSen1989} %  https://shibboleth2sp.sams.oup.com/Shibboleth.sso/Login?entityID=https://lse.ac.uk/idp&target=https://shibboleth2sp.sams.oup.com/shib?dest=http://www.oxfordscholarship.com/SHIBBOLETH?dest=http://dx.doi.org/10.1093/0198283652.001.0001
+\reading{DonerRitchieSlater2005}
+
+\seealso
+\reading{Mahoney2000b}
+\reading{Lijphart1971}
+\reading{Mahoney1999} 
+\reading{Geddes1991}
+%\reading{Posner2004} %% Posner, Daniel. 2004. “The Political Salience of Cultural Difference: Why Chewas and Tumbukas are Allies in Zambia and Adversaries in Malawi.” American Political Science Review 98:4 (November) 529-46.
 
 
 
@@ -263,17 +252,23 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 \lecture{Causal Mechanisms and Process-Tracing (Nov. 24)}{Aside from knowing that one thing (X) caused another thing (Y), we often want to know how that causal process worked. This is the study of ``causal mechanisms''. How do we study causal mechanisms to gain a deeper understanding of causal relationships in politics? How do we study the process by which a causal effect plays out?}
 
 
-\reading[Ch. 10 (pp.325--353) from ]{MorganWinship2015} %% Morgan, Stephen L., and Christopher Winship. 2015. 'Mechanisms and Causal Explanation.' In Morgan and Winship, Counterfactual and Causal Inference. 2nd Edition, pp.325-353 (Ch. 10).
-\reading{Brady2004} %% Brady, Henry E., “Data-Set Observations versus Causal-Process Observations: The 2000 U.S. Presidential Election,” pp. 267-71 in Henry Brady and David Collier, eds., Rethinking Social Inquiry: Diverse Tools, Shared Standards (Lanham: Rowman and Littlefield, 2004).
-%% Rueschemeyer, Dietrich, and John D. Stephens, “Comparing Historical Sequences – A Powerful Tool for Causal Analysis,” Comparative Social Research 17: 55-72.
+\reading[Ch. 10 (pp.325--353) from ]{MorganWinship2015} % EBOOK AVAILABLE
+\reading{Brady2004} %(\url{https://www.dawsonera.com/guard/protected/dawson.jsp?name=https://lse.ac.uk/idp&dest=http://www.dawsonera.com/depp/reader/protected/external/AbstractView/S9781442203457})
+
+\seealso
+\reading{RueschemeyerStephens1997}
 
 % 10
 \lecture{Translating Texts into Interpretations and Numbers (Dec. 1)}{Primary and secondary source documents provide a written record of politically relevant events and processes. Texts can be used in a number of ways in political science research. How do we draw meaning from texts in qualitative and quantitative ways? How does textual information become useful data for making political inferences?}
 
 
-\reading[pp.138--152]{Finnegan1996} %% Finnegan, Ruth. 1996. 'Using Documents.' In Roger Sapsford and Victor Jupp, Data Collection and Analysis. SAGE, Thousand Oaks, CA: Sage, pp. 138-152.
-%% Lustick, Ian. 1996. “History, Historiography, and Political Science: Multiple Historical Records and the Problem of Selection Bias.” American Political Science Review (September) 605-18.
-%% something quantitative
+\reading{Finnegan1996}
+\reading{Lustick1996}
+\reading{YoungSoroka2012}
+% quantitative content analysis
+
+\seealso
+\reading{GrimmerStewart2013}
 
 
 
@@ -285,42 +280,53 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 % 11
 \lecture{Interviewing, Structured and Unstructured (Jan. 12)}{Interviewing is an integral part of political science research. Whether it is interviewing elite political actors as part of a case study or survey interviewing as part of an election poll, interviews are often how concepts are operationalized and insights obtained. How do we conduct interviews? What roles do different kinds of interviews play in political science research?}
 
-%% Beth Leech. 2002. “Symposium on Interview Methods in Political Science.” PS: Political Science & Politics. 23, 3: 663-688.
 \reading{SchaefferPresser2003}
-\reading{Peabodyetal1990} %% Peabody, Robert L. et al. 1990. “Interviewing Political Elites.” PS: Political Science and Politics 23, 451-55.
+\reading{Peabodyetal1990} 
 
 \seealso
-%% Herbert J. Rubin and Irene S. Rubin. 2005. Qualitative Interviewing: The Art of Hearing Data. Thousand Oaks, CA: Sage Publications.
+\reading[pp. 217-257 (Ch. 7 especially section 7.3 to end) from ]{Grovesetal2009} %  https://www.dawsonera.com/guard/protected/dawson.jsp?name=https://lse.ac.uk/idp&dest=http://www.dawsonera.com/depp/reader/protected/external/AbstractView/S9781118627327
+\reading{RubinRubin2005}
+\reading{Leech2002}
 
 
 % 12
-\lecture{Actually Talking to People: Focus Groups and Participant Observation (Jan. 19)}{Collecting political science data often requires actually talking to human beings about their knowledge, thoughts, feelings, opinions, and actions. Some of this is done one-on-one (as we talked about in the previous week), but much of these conversations also take place in group settings. How do we talk to people in groups in a way that helps us draw inferences about politics?}
-
+\lecture{Actually Talking to People: Participant Observation (Jan. 19)}{Collecting political science data often requires actually talking to human beings about their knowledge, thoughts, feelings, opinions, and actions. Some of this is done one-on-one (as we talked about in the previous week), but much of these conversations also take place in group settings. How do we talk to people in groups in a way that helps us draw inferences about politics?}
 
 \reading{Fenno1977} %% U.S. House Members in Their Constituencies: An Exploration.
-%% Conover, Pamela Johnston, Ivor M. Crewe, and Donald Searing. 1991. “The Nature of Citizenship in the United States and Great Britain: Empirical Comments on Theoretical Themes.” Journal of Politics 53:3 (August) 800-32.
-%% Wedeen, Lisa. 2010. “Ethnographic Work in Political Science.” Annual Review of Political Science (May).
+
+\seealso
+\reading{Chong1993}
+\reading{Wedeen2010}
+\reading{ConoverCreweSearing1991}
+
 
 % 13
 \lecture{Tabulation and Visualization (Jan. 26)}{How do we summarize our observations using tables and graphs? How do we communicate our research to technical and non-technical audiences in clear and meaningful ways?}
 
+\textbook[Ch. 5 (pp.109 to end)]{Kellstedt and Whitten}
 \reading{KastellecLeoni2007}
-%% Tufte
-%% Babbie, “The Elaboration Model” and “Social Statistics” in The Practice of Social Research, pp. 410-459.
+
+\seealso
+\reading[Especially Ch. 5 (``Chartjunk'') from ]{Tufte1983} % Tufte, Edward. 2001. 'Chartjunk.' In Tufte, The Visual Display of Quantitative Information. 2nd Edition. Graphics Press. (Ch.5)
+%\reading{Babbie} % Babbie, Earl. 2015. 'The Logic of Multivariate Analysis.' in Babbie, The Practice of Social Research, 15th edition, pp. 432-449 (Ch. 15).
+
+
 
 % 14
 \lecture{Sampling and Representativeness (Feb. 2)}{In quantitative political science research, sampling is the basis of both claims about ``representativeness'' (i.e., the extent to which findings from a study apply to some well-defined population) and statistical inference (i.e., claims about whether some observation is ``statistically significant''). What is sampling? How do we sample from populations? How does sampling allow us to make inferences about populations?}
 
-\reading[``External Validity,'' pp.83--95]{ShadishCookCampbell2002}
+\reading[``External Validity,'' pp.83--95 from ]{ShadishCookCampbell2001}
+\textbook[Ch. 6]{Kellstedt and Whitten} % probability
 
-%% Increasing the Number of Observations (1994), Gary King, Robert Keohane & Sidney Verba, Designing Social Inquiry: Scientific Inference in Qualitative Research, pp. 208-230
+\seealso 
+\reading[``Increasing the number of observations'' (pp. 208--230) from ]{KingKeohaneVerba1994} % https://www.dawsonera.com/guard/protected/dawson.jsp?name=https://lse.ac.uk/idp&dest=http://www.dawsonera.com/depp/reader/protected/external/AbstractView/S9781400821211
 
 
 % 15
 \lecture{Statistical Inference (Feb. 9)}{Random sampling allows us to quantitatively test hypotheses about empirical regularities. This allows us to make claims about ``statistical significance'' (such as whether two groups differ from one another or whether a feature of a group differs from an expectation dictated by theory). How do we use statistical significance testing in political science? How do we interpret statistical significance tests?}
 
 
-\textbook[Ch.6--7]{Kellstedt and Whitten} % sampling distributions, t-test, prop-test
+\textbook[Ch. 7]{Kellstedt and Whitten} % sampling distributions, t-test, prop-test
 
 \seealso
 \reading{Robinson1950} %% unit of measurement
@@ -334,7 +340,7 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 \lecture{Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23)}{By far the most commonly used method of quantitative analysis in political science is ``regression.'' What is regression? How do we use it? How do we interpret the results of regression analyses?} 
 
 \textbook[Ch.8]{Kellstedt and Whitten}
-
+-- ``Babel or babble? The evolution of language.'' \textit{The Economist}, April 14, 2011. %\url{http://www.economist.com/node/18557572}
 
 
 % 17
@@ -347,31 +353,40 @@ Note that there will be no lecture or class during Lent Term reading week (Feb. 
 % 18
 \lecture{Experimental Design and the Search for Quasi-Experiments (Mar. 8)}{The clearest path to causal inference is through experimentation. How does experimentation differ from observational research? Why does experimentation provide a uniquely powerful design for making causal inferences? In lieu of experimentation, how can design research around real-world variation that has quasi-experimental properties?}
 
-%% Gerber, A. S. & Green, D. P. 2008. “Field Experiments and Natural Experiments.” In Box-Steffensmeier, J. M.; Brady, H. E. & Collier, D. (Eds.), Oxford Handbook of Political Methodology, Oxford University Press.
-%% \reading{Bhavnani2009}
-
-%% Quasi-Experiments, or the Search for Easy Answers % ITS/DID/RDD
+\reading{GerberGreen2008}
+\reading{Bhavnani2009}
 \reading{CampbellRoss1968} % Connecticut Crackdown on Speeding
 
 %\seealso 
-%\textbook{Ch. 5}{Kellstedt and Whitten}
+%
 
 
 % 19
 \lecture{Ethics and Research Integrity (Mar. 15)}{The practice of political science research evokes numerous ethical considerations. By observing the world, political scientists potentially obtain data that is confidential or private. By intervening in the world, political scientists potentially affect real-world politics in expected and unexpected ways. How do we think about and address these and other ethical challenges of conducting research?}
-%% Zimbardo (only in lecture)
-%% ethical scenario activity
-%% ethics in field experiments (consent, etc.); privacy; IRB-stuff
-%% \reading{GerberGreenLarimer2008}
-%% Singer 1978 on comprehension of informed consent
+
+\reading{BelmontReport} % Belmont Report. http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.html
+\reading{Simitis1994}
+
+%% Nuremberg Code (http://www.hhs.gov/ohrp/archive/nurcode.html)
+%% Belmont Report
+%% Examples: Zimbardo, Tuskegee, privacy, informed consent, deception, IRB, field studies
+
+% LSE Documents:
+% http://www.lse.ac.uk/intranet/researchAndDevelopment/researchDivision/policyAndEthics/QuickGuide-Research-Ethics-web.pdf
+% http://www.lse.ac.uk/intranet/LSEServices/policies/pdfs/school/resEthPolPro.pdf
+% http://www.lse.ac.uk/intranet/LSEServices/policies/pdfs/school/ethCod.pdf
+
 
 % 20
 \lecture{Conclusion and Synthesis (Mar. 22)}{Where have we been? What have we learned? Where do we go from here?}
+
+-- No required reading
+
+%\seealso
 %% Robert Dahl, "The Behavioral Approach in Political Science: Epitaph for a Monument to a Successful Protest." APSR (1961) 55:763- 72.
 %% Charles Merriam, "The Present State of the Study of Politics," APSR (1921) 15:173-85.
 %% Mahoney, J. & Goertz, G. 2006. "A Tale of Two Cultures: Contrasting Quantitative and Qualitative Research." Political Analysis 14: 227-249.
 %% Lowi, Theodore J. 1992. “The State in Political Science: How We Become What We Study.” American Political Science Review 86, 1-7.
-
 
 
 % load bibtext, but don't generate a bibliography
