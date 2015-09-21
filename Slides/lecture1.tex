@@ -1,4 +1,6 @@
 \input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 
 \title{Welcome and First Lecture}
 
@@ -9,6 +11,434 @@
 \frame{\titlepage}
 
 \frame{\tableofcontents}
+
+% An overview of the course and an introduction to political science research. How do we identify research topics to study empirically? What makes for a good political science research questions?
+
+\section{Substantive Material}
+
+% specific example of claim
+
+
+% claims; information and misinformation
+
+
+\frame{
+
+\frametitle{Definitions}
+
+\begin{itemize}\itemsep2em
+
+\item Inference: ``a belief based on evidence \emph{and} rules for processing that evidence''
+
+\item Methodology: ``tools for gathering and analyzing data to try to make valid inferences''
+
+\end{itemize}
+
+}
+
+\begin{frame}[fragile]
+
+\frametitle{Drawing Inferences}
+
+\begin{center}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20!white, text width=5em, text centered, rounded corners, minimum height=4em, node distance=7em]
+\begin{tikzpicture}[scale=0.5]
+\node<3-> [block] (0,0) (evidence) {Evidence};
+\node<4-> [block, right of=evidence] (filter) {Processing Filter};
+\node<2-> [block, right of=filter] (beliefs) {Belief(s)};
+\node<1-> [block, above of=beliefs] (claims) {Claim(s)};
+
+\draw<5-> [->, very thick] (evidence) -- (filter);
+\draw<5-> [->, very thick] (filter) -- (beliefs);
+\draw<2-> [->, dashed, very thick] (beliefs) -- (claims);
+
+\draw<6-> [red, very thick] (3.25,0) ellipse (7cm and 3.5cm);
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+
+
+% example of an inference
+
+
+
+\frame{
+
+\frametitle{Two Categories of Inference}
+
+\begin{enumerate}\itemsep2em
+
+\item Descriptive Inference
+
+\begin{itemize}
+\item What are the facts?
+\end{itemize}
+
+\item Causal Inference
+
+\begin{itemize}
+\item Why does something occur?
+\end{itemize}
+
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{Descriptive Inference}
+
+\begin{itemize}\itemsep1em
+
+\item Sometimes seen as the lesser type of inference
+
+\item Still often very interesting
+
+\vspace{1em}
+
+\item Examples
+
+\begin{itemize}
+\item Is the climate changing? 
+\item Is the United States politically polarized? 
+\item Is global terrorism increasing or decreasing?
+\item Is Azerbaijan a democracy?
+\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Causal Inference I}
+
+\begin{itemize}\itemsep1em
+
+\item Typically what we are interested in
+
+\item Questions about ``why?''
+
+\vspace{1em}
+
+\item Examples
+
+\begin{itemize}
+\item \emph{Why} is the climate changing? 
+\item \emph{Why} is the United States politically polarized? 
+\item \emph{Why} is global terrorism increasing or decreasing?
+\item \emph{Why} is (or is not) Azerbaijan a democracy?
+\end{itemize}
+
+\end{itemize}
+
+}
+\frame{
+
+\frametitle{Causal Inference II}
+
+Typically start with either:
+
+\begin{enumerate}\itemsep2em
+
+\item an outcome (dependent variable)\\
+\vspace{1em}
+or
+
+\item a cause (independent variable)
+
+\end{enumerate}
+
+}
+
+
+\begin{frame}
+\frametitle{Two Types of Causal Inference}
+
+\begin{columns}[T] % align columns
+\begin{column}{.4\textwidth}
+\begin{block}{Reverse}
+\small If what, then Y? What causes Y?\\
+\vspace{1em}
+Associated with a search for causes\\
+\vspace{1em}
+ex. What causes climate change?\\
+\end{block}
+\end{column}
+
+\begin{column}{.4\textwidth}
+\begin{block}{Forward}
+\small If X, then what? What happens if we do X?\\
+\vspace{1em}
+Associated with ``Experimentation''\\
+\vspace{1em}
+ex. What happens if we release greenhouse gases into the atmosphere?
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{1em}
+(Gelman 2011)
+\end{frame}
+
+
+
+
+% test of distinction between descriptive and causal inference
+\frame{
+\frametitle{Which of these is a causal research question?}
+
+\begin{enumerate}\itemsep0.5em
+\item Will Labour win the next UK general election?
+\item \textcolor<2->{red}{What had to have happened for Labour to win the last UK general election?}
+\item How has Labour's electoral performance changed over the last three decades?
+\item What was the result of the last UK general election?
+\item \textcolor<3->{red}{What role did the economy have on the last UK general election?}
+\end{enumerate}
+}
+
+
+
+
+\frame{
+\frametitle{Good research questions}
+
+\begin{itemize}\itemsep2em
+\item Start from political problem or puzzle
+\item Based on an existing research literature
+\item Novel
+\item Non-obvious (evolving standard)
+\end{itemize}
+}
+
+% two example questions; talk with partner
+
+
+% research topics
+% what is ``political''?
+
+\frame{
+\frametitle{Other ways to generate research questions}
+
+\begin{enumerate}\itemsep2em
+\item Puzzle-driven
+\item Theory-driven
+\item Data-driven
+\item Method-driven
+\end{enumerate}
+}
+
+
+
+% purpose of this class is to give you skills to answer research questions/puzzles
+
+
+\frame{
+\frametitle{Scientific method}
+
+\begin{enumerate}\itemsep0.75em
+\item Research question(s)
+\item Clarify the core concepts % that we're talking about and how we will observe and measure
+\item Develop theory
+\item Derive specific, testable hypotheses
+\item Plan data collection % (different kinds of data for different questions of research questions)
+\item Gather data/evidence
+\item Analyze data
+\item Draw inferences
+\end{enumerate}
+
+}
+
+
+
+\frame{\Huge\vskip20pt\textbf{Questions?}}
+
+
+
+
+
+\section{Introductions}
+
+\frame{
+\frametitle{Who am I?}
+
+\begin{itemize}\itemsep1em
+
+\item Assistant Professor in Political Behaviour
+
+\item Worked in Denmark for past 2.5 years
+
+\item Originally from Minnesota (USA)
+
+\item Interested in public opinion and political psychology
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Who is your GTA?}
+
+\begin{itemize}\itemsep1em
+
+\item Bernardo Rangoni
+
+\item 
+
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Who are you?}
+
+\begin{itemize}\itemsep1em
+
+\item Introduce yourself to a neighbour
+
+\item Where are you from?
+
+\item What interests you about government or politics?
+
+\item What do you hope to learn from the course?
+
+\end{itemize}
+
+}
+
+
+
+\section{Administrative Stuff}
+
+\frame{
+
+\frametitle{Course Resources}
+
+\begin{itemize}\itemsep2em
+\item Moodle:\\
+\url{https://moodle.lse.ac.uk/course/view.php?id=4889}
+
+\item Reading list:\\
+\url{http://readinglists.lse.ac.uk/lists/B821602E-0B75-9923-D8C5-457373E1789E.html}
+
+	\begin{itemize}
+	\item Gerring
+	\item Kellstedt and Whitten
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{Schedule: Michaelmas Term}
+
+\small
+
+1 Introduction (Sep. 28) \\
+2 Causality: Explanation versus Prediction (Oct. 6) \\
+3 Concepts: ``I'll know it when I see it'' (Oct. 13) \\
+4 Measurement: Concepts in Practice (Oct. 20) \\
+5 Building and Testing Political Science Theories (Oct. 27) \\
+6 Deriving Hypotheses from Theory (Nov. 3) \\
+7 Case Studies (Nov. 10) \\
+8 Case Comparisons (Nov. 17) \\
+9 Causal Mechanisms and Process-Tracing (Nov. 24) \\
+10 Texts into Interpretations and Analysis (Dec. 1) \\
+
+}
+
+\frame{
+
+\frametitle{Schedule: Lent Term}
+
+\small
+
+11 Interviewing, Structured and Unstructured (Jan. 12) \\
+12 Participant Observation (Jan. 19) \\
+13 Tabulation and Visualization (Jan. 26) \\
+14 Sampling and Representativeness (Feb. 2) \\
+15 Statistical Inference (Feb. 9) \\
+16 Regression Analysis (Feb. 23) \\
+17 Matching and Regression
+(Mar. 1) \\
+18 Experimental Design and Quasi-Experiments
+(Mar. 8) \\
+19 Ethics and Research Integrity (Mar. 15) \\
+20 Conclusion and Synthesis (Mar. 22) \\
+
+}
+
+
+\frame{
+
+\frametitle{Learning Outcomes}
+
+\begin{enumerate}\itemsep1em
+\item Identify interesting political science research questions and formulate theories and
+hypotheses that answer them
+\item Describe and operationalize concepts from political science theories
+\item Evaluate the strengths and weaknesses of different approaches to empirical research
+\item Apply political science theories to the design of original research
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{Summative Assessment}
+
+\begin{enumerate}\itemsep2em
+\item Breadth: 2-hour written exam
+
+\item Depth: 3000-word research design proposal
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{Research Design Proposal}
+
+\begin{itemize}\itemsep1em
+
+\item Research question
+\item Theoretical contribution
+\item Testable hypotheses
+\item Description of the proposed data collection and analysis
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Problem Sets}
+
+\begin{tabular}{ll}
+Assignment & Due Date \\ \hline
+Concepts and measurement & Tuesday Oct. 27 \\
+Theory and hypothesis generation & Tuesday Nov. 10 \\
+Case selection & Tuesday Nov. 24 \\
+Text analysis & Tuesday Dec. 15 \\
+Interviewing & Tuesday Jan. 26 \\
+Basic Statistics & Tuesday Feb. 23 \\
+Regression analysis & Tuesday Mar. 8 \\
+Experimentation & Tuesday Mar. 22 \\
+\end{tabular}
+
+
+}
 
 
 
