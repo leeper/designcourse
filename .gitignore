@@ -1,4 +1,6 @@
 Misc/
+Slides/*.pdf
+Slides/images/
 Assignments/Assignment*
 Syllabus/*.*
 !Syllabus/Syllabus.tex
@@ -9,5 +11,11 @@ Syllabus/*.*
 *.log
 *.out
 *.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.toc
+*.vrb
 
 *.dta
