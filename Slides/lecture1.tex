@@ -20,7 +20,7 @@
 
 \frametitle{Claims}
 
-\begin{itemize}\itemsep2em
+\begin{itemize}\itemsep1em
 
 \item Politics is full of claims
 
@@ -40,11 +40,11 @@
 
 \frame{
 
-\frametitle{An Example:\\ Minimum Wages and Unemployment}
+\frametitle{An Example}
 
 \includegraphics[width=\textwidth]{images/telegraph}
 
-Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-will-lead-to-sharp-job-losses-in-North-East.html}{Peter Spence, \textit{The Telegraph}, Sep. 18, 2015}
+\footnotesize Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-will-lead-to-sharp-job-losses-in-North-East.html}{Peter Spence, \textit{The Telegraph}, Sep. 18, 2015}
 }
 
 % is this true or false? ultimately, it doesn't really matter what we think a priori. we have to collect evidence
@@ -70,19 +70,22 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 
 \frametitle{Drawing Inferences}
 
+\vspace{-2em}
+
 \begin{center}
 \tikzstyle{block} = [rectangle, draw, fill=blue!20!white, text width=5em, text centered, rounded corners, minimum height=4em, node distance=7em]
 \begin{tikzpicture}[scale=0.5]
-\node<3-> [block] (0,0) (evidence) {Evidence};
-\node<4-> [block, right of=evidence] (filter) {Processing Filter};
-\node<2-> [block, right of=filter] (beliefs) {Belief(s)};
-\node<1-> [block, above of=beliefs] (claims) {Claim(s)};
+\node<1-> [block] (claims) {Claim(s)};
+\node<2-> [block, below of=claims] (beliefs) {Belief(s)};
+\node<3-> [block, left of=beliefs] (filter) {Processing Filter};
+\node<3-> [block, left of=filter] (evidence) {Evidence};
 
-\draw<5-> [->, very thick] (evidence) -- (filter);
-\draw<5-> [->, very thick] (filter) -- (beliefs);
+\draw<3-> [->, very thick] (evidence) -- (filter);
+\draw<3-> [->, very thick] (filter) -- (beliefs);
 \draw<2-> [->, dashed, very thick] (beliefs) -- (claims);
 
-\draw<6-> [red, very thick] (3.25,0) ellipse (7cm and 3.5cm);
+\draw<4-> [red, very thick] (-12,-8) ellipse (8cm and 4cm);
+\draw<4-> (-12,-1) node (topic) {\Large\textcolor{red}{Focus of this class}};
 \end{tikzpicture}
 \end{center}
 
@@ -92,10 +95,12 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 
 \frame{
 
+\frametitle{Question for you}
+
+\Large How might be draw an inference about the effect of a minimum wage change on the level of unemployment?
 
 }
 
-% specific example of claim
 % minimum wage; unemployment?
 % example
 % time-series or historical analysis
@@ -106,9 +111,6 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 % qualitative interviewing
 
 % claims
-
-% \textsterling 6.50/hour (about \$10.10); U.S. minimum wage is \$7.25/hour; both have unemployment of about 5.5\%
-
 
 
 
@@ -138,20 +140,18 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 
 \frametitle{Descriptive Inference}
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep0.5em
 
 \item Sometimes seen as the lesser type of inference
 
 \item Still often very interesting
-
-\vspace{1em}
 
 \item Examples
 
 \begin{itemize}
 \item Is the climate changing? 
 \item Is the United States politically polarized? 
-\item Is global terrorism increasing or decreasing?
+\item Is global terrorism increasing?
 \item Is Azerbaijan a democracy?
 \end{itemize}
 
@@ -163,20 +163,18 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 
 \frametitle{Causal Inference I}
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep0.5em
 
 \item Typically what we are interested in
 
 \item Questions about ``why?''
-
-\vspace{1em}
 
 \item Examples
 
 \begin{itemize}
 \item \emph{Why} is the climate changing? 
 \item \emph{Why} is the United States politically polarized? 
-\item \emph{Why} is global terrorism increasing or decreasing?
+\item \emph{Why} is (or is not) global terrorism increasing?
 \item \emph{Why} is (or is not) Azerbaijan a democracy?
 \end{itemize}
 
@@ -189,7 +187,7 @@ Source: \href{http://www.telegraph.co.uk/finance/economics/11872262/Living-wage-
 
 Typically start with either:
 
-\begin{enumerate}\itemsep2em
+\begin{enumerate}\itemsep1em
 
 \item an outcome (dependent variable)\\
 \vspace{1em}
@@ -203,7 +201,7 @@ or
 
 
 \begin{frame}
-\frametitle{Two Types of Causal Inference}
+\frametitle{Causal Inference: 2 Types}
 
 \begin{columns}[T] % align columns
 \begin{column}{.4\textwidth}
@@ -218,11 +216,11 @@ ex. What causes climate change?\\
 
 \begin{column}{.4\textwidth}
 \begin{block}{Forward}
-\small If X, then what? What happens if we do X?\\
+\small If X, then what? What happens if X?\\
 \vspace{1em}
 Associated with ``Experimentation''\\
 \vspace{1em}
-ex. What happens if we release greenhouse gases into the atmosphere?
+ex. What happens if we release greenhouse gases into the air?
 \end{block}
 \end{column}
 \end{columns}
@@ -239,7 +237,9 @@ ex. What happens if we release greenhouse gases into the atmosphere?
 \frame{
 \frametitle{Which of these is a causal research question?}
 
-\begin{enumerate}\itemsep0.5em
+\small
+
+\begin{enumerate}\itemsep0.25em
 \item Will Labour win the next UK general election?
 \item \textcolor<2->{red}{What had to have happened for Labour to win the last UK general election?}
 \item How has Labour's electoral performance changed over the last three decades?
@@ -269,6 +269,8 @@ ex. What happens if we release greenhouse gases into the atmosphere?
 \begin{frame}
 \frametitle{Which is a better RQ?} % non-obvious
 
+\small
+
 \begin{columns}[T] % align columns
 \begin{column}{.4\textwidth}
 \begin{block}{}
@@ -288,6 +290,8 @@ Why was ``degressive proportionality'' chosen as the method of allocating seats 
 
 \begin{frame}
 \frametitle{Which is a better RQ?} % builds on literature
+
+\small
 
 \begin{columns}[T] % align columns
 \begin{column}{.4\textwidth}
@@ -309,6 +313,8 @@ Given my conversations with taxi drivers during my weekend holiday in Tashkent, 
 
 \begin{frame}
 \frametitle{Which is a better RQ?} % starts from a political problem
+
+\small
 
 \begin{columns}[T] % align columns
 \begin{column}{.4\textwidth}
@@ -335,7 +341,7 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 \frame{
 \frametitle{Other ways to generate research questions}
 
-\begin{enumerate}\itemsep2em
+\begin{enumerate}\itemsep1em
 \item Puzzle-driven
 \item Theory-driven
 \item Data-driven
@@ -351,7 +357,7 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 \frame{
 \frametitle{Scientific method}
 
-\begin{enumerate}\itemsep0.75em
+\begin{enumerate}
 \item Research question(s)
 \item Clarify the core concepts % that we're talking about and how we will observe and measure
 \item Develop theory
@@ -366,18 +372,21 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 
 
 
-\frame{\Huge\vskip20pt\textbf{Questions?}}
+\frame{\huge\vskip20pt\textbf{Questions?}}
 
 
 
 
 
 \section{Introductions}
+\frame{\tableofcontents[currentsection]}
 
 \frame{
 \frametitle{Who am I?}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{itemize}\itemsep0.5em
 
 \item Assistant Professor in Political Behaviour
 
@@ -386,6 +395,11 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 \item Originally from Minnesota (USA)
 
 \item Interested in public opinion and political psychology
+
+\item Office hours:\\
+Tuesday 9--11 CON 3.21\\
+Sign-up on LSE for You\\
+Otherwise, email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
 
 \end{itemize}
 
@@ -426,16 +440,18 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 
 
 \section{Administrative Stuff}
+\frame{\tableofcontents[currentsection]}
 
 \frame{
 
 \frametitle{Course Resources}
 
-\begin{itemize}\itemsep2em
-\item Moodle:\\
-\url{https://moodle.lse.ac.uk/course/view.php?id=4889}
+\small
 
-\item Reading list:\\
+\begin{itemize}\itemsep2em
+\item Moodle
+
+\item Reading list:
 \url{http://readinglists.lse.ac.uk/lists/B821602E-0B75-9923-D8C5-457373E1789E.html}
 
 	\begin{itemize}
@@ -454,7 +470,7 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 
 \frametitle{Schedule: Michaelmas Term}
 
-\small
+\footnotesize
 
 1 Introduction (Sep. 28) \\
 2 Causality: Explanation versus Prediction (Oct. 6) \\
@@ -473,7 +489,7 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 
 \frametitle{Schedule: Lent Term}
 
-\small
+\footnotesize
 
 11 Interviewing, Structured and Unstructured (Jan. 12) \\
 12 Participant Observation (Jan. 19) \\
@@ -495,7 +511,9 @@ How did social media use shape the development of ``Arab Spring'' protests in Eg
 
 \frametitle{Learning Outcomes}
 
-\begin{enumerate}\itemsep1em
+\small
+
+\begin{enumerate}\itemsep0.75em
 \item Identify interesting political science research questions and formulate theories and
 hypotheses that answer them
 \item Describe and operationalize concepts from political science theories
@@ -510,7 +528,7 @@ hypotheses that answer them
 \frametitle{Summative Assessment}
 
 \begin{enumerate}\itemsep2em
-\item Breadth: 2-hour written exam
+\item Breadth: 2-hour written exam (Summer Term)
 
 \item Depth: 3000-word research design proposal
 \end{enumerate}
@@ -528,6 +546,9 @@ hypotheses that answer them
 \item Testable hypotheses
 \item Description of the proposed data collection and analysis
 
+\vspace{0.5em}
+
+\item Due Date: 
 \end{itemize}
 
 }
@@ -537,6 +558,8 @@ hypotheses that answer them
 \frame{
 
 \frametitle{Problem Sets}
+
+\small
 
 \begin{tabular}{ll}
 Assignment & Due Date \\ \hline
@@ -552,6 +575,8 @@ Experimentation & Tuesday Mar. 22 \\
 
 }
 
+
+\frame{\huge\vskip20pt\textbf{Questions?}}
 
 
 \appendix
