@@ -1,0 +1,269 @@
+\input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\title{Causality: Explanation versus Prediction}
+
+% Political science is generally concerned with questions of causality. To do that we need to learn to think counterfactually. How do we know that something causes something else? How do we separate ``correlation'' from ``causation''?
+
+\date[]{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+
+\section{Introductions}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{Who am I?}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+
+\item Thomas Leeper
+
+\item Assistant Professor in Political Behaviour
+
+\item Originally from Minnesota (USA); worked in Denmark for past 2.5 years
+
+\item Interested in public opinion and political psychology
+
+\item Office hours:\\
+Tuesday 9--11 CON 3.21\\
+Sign-up on LSE for You\\
+Otherwise, email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Who are you?}
+
+\begin{itemize}\itemsep1em
+
+\item Introduce yourself to a neighbour
+
+\item Where are you from?
+
+\item What interests you about government or politics?
+
+\item What do you hope to learn from the course?
+
+\end{itemize}
+
+}
+
+
+
+\section{Administrative Stuff}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Schedule: Michaelmas Term}
+
+\footnotesize
+
+1 Introduction (Sep. 28) \\
+2 Causality: Explanation versus Prediction (Oct. 6) \\
+3 Concepts: ``I'll know it when I see it'' (Oct. 13) \\
+4 Measurement: Concepts in Practice (Oct. 20) \\
+5 Building and Testing Political Science Theories (Oct. 27) \\
+6 Deriving Hypotheses from Theory (Nov. 3) \\
+7 Case Studies (Nov. 10) \\
+8 Case Comparisons (Nov. 17) \\
+9 Causal Mechanisms and Process-Tracing (Nov. 24) \\
+10 Texts into Interpretations and Analysis (Dec. 1) \\
+
+}
+
+\frame{
+
+\frametitle{Schedule: Lent Term}
+
+\footnotesize
+
+11 Interviewing, Structured and Unstructured (Jan. 12) \\
+12 Participant Observation (Jan. 19) \\
+13 Tabulation and Visualization (Jan. 26) \\
+14 Sampling and Representativeness (Feb. 2) \\
+15 Statistical Inference (Feb. 9) \\
+16 Regression Analysis (Feb. 23) \\
+17 Matching and Regression
+(Mar. 1) \\
+18 Experimental Design and Quasi-Experiments
+(Mar. 8) \\
+19 Ethics and Research Integrity (Mar. 15) \\
+20 Conclusion and Synthesis (Mar. 22) \\
+
+}
+
+
+
+\frame{\huge\vskip20pt\textbf{Questions?}}
+
+
+\section{Brief Review of Last Week}
+\frame{\tableofcontents[currentsection]}
+
+research questions
+
+causation versus description
+
+
+
+\section{Causality}
+\frame{\tableofcontents[currentsection]}
+
+ - Correlation
+ 
+ - Physical causality
+
+ - Philosophical perspectives
+
+
+\frame{
+\frametitle{Correlation}
+}
+
+
+\frame{
+\frametitle{Physical causality}
+}
+
+
+\frame<1>[label=mill]{
+
+\frametitle{Mill's methods}
+
+\begin{itemize}
+\item Agreement
+\item \textbf<2>{Difference}
+\item Agreement and Difference
+\item Residue
+\item Concomitant variations
+\end{itemize}
+}
+
+\frame{
+\frametitle{Agreement}
+
+If two or more instances of the phenomenon under investigation have only one circumstance in common, the circumstance in which alone all the instances agree, is the cause (or effect) of the given phenomenon.
+}
+
+\frame{
+\frametitle{Difference}
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+}
+
+\frame{
+\frametitle{Agreement and Difference}
+
+If two or more instances in which the phenomenon occurs have only one circumstance in common, while two or more instances in which it does not occur have nothing in common save the absence of that circumstance; the circumstance in which alone the two sets of instances differ, is the effect, or cause, or a necessary part of the cause, of the phenomenon.
+}
+
+\frame{
+\frametitle{Residue}
+
+Subduct from any phenomenon such part as is known by previous inductions to be the effect of certain antecedents, and the residue of the phenomenon is the effect of the remaining antecedents.
+}
+
+\frame{
+\frametitle{Concomitant variations}
+
+Whatever phenomenon varies in any manner whenever another phenomenon varies in some particular manner, is either a cause or an effect of that phenomenon, or is connected with it through some fact of causation.
+}
+
+
+\againframe<1-2>{mill}
+
+
+\frame{
+
+\frametitle{Four (or five) principles of causality}
+
+\begin{itemize}
+\item Relationship/covariation
+\item Nonconfounding
+\item Mechanism
+\item Direction (temporality)
+\item (Appropriate level of analysis)
+\end{itemize}
+}
+
+
+% potential outcomes
+% which of Mill's methods does this sound like? (Difference)
+
+
+% counterfactuals
+
+Causal inference is about estimating **what would have happened** in a counterfactual reality
+
+Has anyone read or seen *A Christmas Carol*?
+
+\frame{
+\frametitle{``A Christmas Carol''}
+
+\begin{itemize}
+\item 1843 novel by Charles Dickens
+\item Ebenezer Scrooge is shown his own future by the ``Ghost of Christmas Yet to Come''
+\item Has the choice to either:
+	\begin{itemize}
+	\item stay on current path (one counterfactual), or 
+	\item change his ways (take a different counterfactual)
+	\end{itemize}
+\item The \textit{causal effect} of his lifestyle are seen in the differences between the counterfactuals
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+\frametitle{Fundamental problem of causal inference}
+
+\Huge We can only observe any given unit in one reality!
+
+}
+
+# Scientific solution #
+
+ - Used in physical sciences (e.g., agriculture)
+
+ - Two strategies: 
+   - Take the same unit and it expose it to both treatments at different points in time
+   - Take two similar units and expose to the two treatments at the same
+
+ - Requires constant effect assumption:
+   - The past does not matter
+
+ - Also requires homogeneity of units assumption
+   - Units are identical (or differences are irrelevant)
+
+# Statistical solution #
+
+ - Random assignment
+
+ - Observation of average causal effects
+ 
+
+
+
+
+
+\appendix
+\frame{}
+
+\end{document}
