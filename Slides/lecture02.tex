@@ -15,9 +15,6 @@
 \frame{\tableofcontents}
 
 
-\section{Introductions}
-\frame{\tableofcontents[currentsection]}
-
 \frame{
 \frametitle{Who am I?}
 
@@ -31,7 +28,7 @@
 
 \item Originally from Minnesota (USA); worked in Denmark for past 2.5 years
 
-\item Interested in public opinion and political psychology
+\item Interested in public opinion and psychology
 
 \item Office hours:\\
 Tuesday 9--11 CON 3.21\\
@@ -50,8 +47,6 @@ Otherwise, email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
 
 \begin{itemize}\itemsep1em
 
-\item Introduce yourself to a neighbour
-
 \item Where are you from?
 
 \item What interests you about government or politics?
@@ -64,62 +59,29 @@ Otherwise, email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
 
 
 
-\section{Administrative Stuff}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-
-\frametitle{Schedule: Michaelmas Term}
-
-\footnotesize
-
-1 Introduction (Sep. 28) \\
-2 Causality: Explanation versus Prediction (Oct. 6) \\
-3 Concepts: ``I'll know it when I see it'' (Oct. 13) \\
-4 Measurement: Concepts in Practice (Oct. 20) \\
-5 Building and Testing Political Science Theories (Oct. 27) \\
-6 Deriving Hypotheses from Theory (Nov. 3) \\
-7 Case Studies (Nov. 10) \\
-8 Case Comparisons (Nov. 17) \\
-9 Causal Mechanisms and Process-Tracing (Nov. 24) \\
-10 Texts into Interpretations and Analysis (Dec. 1) \\
-
-}
-
-\frame{
-
-\frametitle{Schedule: Lent Term}
-
-\footnotesize
-
-11 Interviewing, Structured and Unstructured (Jan. 12) \\
-12 Participant Observation (Jan. 19) \\
-13 Tabulation and Visualization (Jan. 26) \\
-14 Sampling and Representativeness (Feb. 2) \\
-15 Statistical Inference (Feb. 9) \\
-16 Regression Analysis (Feb. 23) \\
-17 Matching and Regression
-(Mar. 1) \\
-18 Experimental Design and Quasi-Experiments
-(Mar. 8) \\
-19 Ethics and Research Integrity (Mar. 15) \\
-20 Conclusion and Synthesis (Mar. 22) \\
-
-}
-
-
-
-\frame{\huge\vskip20pt\textbf{Questions?}}
-
-
 \section{Brief Review of Last Week}
 \frame{\tableofcontents[currentsection]}
 
-research questions
+\frame{\huge\vskip20pt\textbf{What did we learn about last week?}}
 
-causation versus description
+% research questions
+% what makes questions interesting
+% causal versus descriptive questions
+% reverse versus forward causal inference
 
-reverse versus forward approaches to causal inference
+
+\frame{
+\frametitle{Continuing that theme\dots}
+
+By the end of today you should be able to:
+
+\begin{itemize}\itemsep1em
+\item Identify what makes for a causal relationship
+\item Distinguish causation from correlation/association
+\item Begin to analyze research problems using counterfactual thinking
+\end{itemize}
+
+}
 
 % Today: focusing on what it means for something to be a ``cause''
 
@@ -134,26 +96,72 @@ reverse versus forward approaches to causal inference
 \section{Causality}
 \frame{\tableofcontents[currentsection]}
 
- - Correlation
- 
- - Physical causality
-
- - Philosophical perspectives
-
-
 \frame{
-\frametitle{Correlation}
+\frametitle{Write for 1 minute}
+
+\huge\centering\vskip10pt\textbf{What makes something a \textit{cause}?}
 }
 
 
 \frame{
 \frametitle{Physical causality}
+
+\begin{itemize}\itemsep1em
+\item Action and reaction
+\item Features: Observable and deterministic
+\item Example:
+	\begin{itemize}
+	\item Picture a ball resting on top of a hill
+	\item What happens if I push the ball?
+	\end{itemize}
+\item Physical causality is easy to see
+\end{itemize}
+}
+
+\frame{
+\frametitle{Correlation I}
+\begin{itemize}\itemsep1em
+\item Correlation is the non-independence of two variables for a set of observations
+\end{itemize}
+}
+
+\frame{
+\frametitle{Correlation II}
+\begin{itemize}
+\item \textit{Observation}: A case or unit (e.g., person, country)
+\item \textit{Variable}: A dimension that describes an obseration (e.g., income)
+\item \textit{Independence}: Variables are unrelated to one another
+	\begin{itemize}
+	\item Independent: Height and value on a fair dice roll
+	\item Non-independent: Height and weight
+	\end{itemize}
+\end{itemize}
 }
 
 
+\frame{
+\frametitle{Correlation III}
+
+\begin{itemize}\itemsep1em
+\item Synonyms: correlation, covariation, relationship, association
+	\begin{itemize}
+	\item ``Effect'' is frequently used to mean correlation
+	\item We'll reserve that term for a \textit{causal effect}
+	\end{itemize}
+\item Any correlation is a potential cause
+	\begin{itemize}
+	\item X might cause Y
+	\item Y might cause X
+	\item X and Y might be caused by Z
+	\item X and Y might cause Z
+	\item There may be no causal relationship
+	\end{itemize}
+\end{itemize}
+}
+
 \frame<1>[label=mill]{
 
-\frametitle{Mill's methods}
+\frametitle{Mill's methods\footnote{Discussed in Holland}}
 
 \begin{itemize}
 \item Agreement
@@ -163,6 +171,144 @@ reverse versus forward approaches to causal inference
 \item Concomitant variations
 \end{itemize}
 }
+
+\frame{
+\frametitle{Difference}
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+}
+
+\frame{
+
+\frametitle{Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}
+
+\begin{enumerate}
+\item Correlation
+\item Nonconfounding
+\item Direction (``temporal precedence'')
+\item Mechanism
+\item (Appropriate level of analysis)
+\end{enumerate}
+}
+
+
+\frame{\huge\vskip20pt\textbf{Questions?}}
+
+
+
+\frame[label=counterfactuals]{
+\frametitle{Counterfactual Thinking}
+
+\begin{itemize}\itemsep1em
+\item \textit{Counterfactual}: relating to what has not happened or is not the case
+\vspace{0.5em}
+\item Causal inference involves inferring \textit{what would have happened} in a counterfactual reality \textit{where the potential cause took on a different value}
+\end{itemize}
+
+}
+
+% Has anyone read or seen *A Christmas Carol*?
+
+\frame{
+\frametitle{``A Christmas Carol''}
+
+\small 
+\begin{itemize}
+\item 1843 novel by Charles Dickens
+\item Ebenezer Scrooge is shown his own future by the ``Ghost of Christmas Yet to Come''
+\item Has the choice to either:
+	\begin{itemize}
+	\item stay on current path (one counterfactual), or 
+	\item change his ways (take a different counterfactual)
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Causation}
+
+\begin{itemize}\itemsep1em
+\item \textit{Causal effect}: The difference between two ``potential outcomes''
+	\begin{itemize}
+	\item The outcome that occurs if $X = x_1$
+	\item The outcome that occurs if $X = x_2$
+	\end{itemize}
+\item The causal effect of Scrooge's lifestyle is seen in the differences between two potential futures
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental problem of causal inference}
+
+\Large We can only observe any given unit in one reality!
+
+}
+
+\frame{
+\frametitle{Two solutions!\footnote{From Holland}}
+
+\begin{enumerate}\itemsep1em
+\item Scientific Solution
+	\begin{itemize}
+	\item All units are identical
+	\item Each can provide a perfect counterfactual
+	\item Common in, e.g., agriculture, biology
+	\end{itemize}
+\item<2-> Statistical Solution
+	\begin{itemize}
+	\item Units are not identical
+	\item Random exposure to a potential cause
+	\item Effects measured on average across units
+	\item Known as the ``Experimental ideal''
+	\end{itemize}
+\end{enumerate}
+
+}
+
+\frame{
+\frametitle{In Political Science}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Causal inference is about searching for appropriate counterfactuals
+	\begin{itemize}
+	\item<2-> \textit{Causal effect}: Difference in an outcome variable between two counterfactuals
+	\item<3-> \textit{Causal inference}: A belief that an event or variable exerts a causal effect on an outcome
+	\end{itemize}
+\item<4-> Where can we look for counterfactuals?
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{An Example}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item For example, if we think smoking might cause lung cancer, how would we know?
+\vspace{0.5em}
+\item How would we know if smoking caused lung cancer for an individual who smoked?
+	\begin{itemize}
+	\item What's the relevant counterfactual?
+	\end{itemize}
+\item How would we know if smoking causes lung cancer on average across many individuals?
+	\begin{itemize}
+	\item What's the relevant counterfactual?
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\appendix
+\frame{}
+
+\frame{\frametitle{Mill's Methods}}
 
 \frame{
 \frametitle{Agreement}
@@ -194,86 +340,5 @@ Subduct from any phenomenon such part as is known by previous inductions to be t
 Whatever phenomenon varies in any manner whenever another phenomenon varies in some particular manner, is either a cause or an effect of that phenomenon, or is connected with it through some fact of causation.
 }
 
-
-\againframe<1-2>{mill}
-
-
-\frame{
-
-\frametitle{Four (or five) principles of causality}
-
-\begin{itemize}
-\item Relationship/covariation
-\item Nonconfounding
-\item Mechanism
-\item Direction (temporality)
-\item (Appropriate level of analysis)
-\end{itemize}
-}
-
-
-% potential outcomes
-% which of Mill's methods does this sound like? (Difference)
-
-
-% counterfactuals
-
-Causal inference is about estimating **what would have happened** in a counterfactual reality
-
-Has anyone read or seen *A Christmas Carol*?
-
-\frame{
-\frametitle{``A Christmas Carol''}
-
-\begin{itemize}
-\item 1843 novel by Charles Dickens
-\item Ebenezer Scrooge is shown his own future by the ``Ghost of Christmas Yet to Come''
-\item Has the choice to either:
-	\begin{itemize}
-	\item stay on current path (one counterfactual), or 
-	\item change his ways (take a different counterfactual)
-	\end{itemize}
-\item The \textit{causal effect} of his lifestyle are seen in the differences between the counterfactuals
-\end{itemize}
-
-}
-
-
-
-
-\frame{
-\frametitle{Fundamental problem of causal inference}
-
-\Huge We can only observe any given unit in one reality!
-
-}
-
-# Scientific solution #
-
- - Used in physical sciences (e.g., agriculture)
-
- - Two strategies: 
-   - Take the same unit and it expose it to both treatments at different points in time
-   - Take two similar units and expose to the two treatments at the same
-
- - Requires constant effect assumption:
-   - The past does not matter
-
- - Also requires homogeneity of units assumption
-   - Units are identical (or differences are irrelevant)
-
-# Statistical solution #
-
- - Random assignment
-
- - Observation of average causal effects
- 
-
-
-
-
-
-\appendix
-\frame{}
 
 \end{document}
