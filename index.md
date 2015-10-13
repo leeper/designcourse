@@ -16,8 +16,8 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 ## Slides ##
 
  1. [Welcome and First Lecture (Sep. 28)](Slides/lecture01.pdf)
- 2. Causality: Explanation versus Prediction (Oct. 6)
- 3. Concepts: "I'll know it when I see it" (Oct. 13)
+ 2. [Causality: Explanation versus Prediction (Oct. 6)](Slides/lecture02.pdf)
+ 3. [Concepts: "I'll know it when I see it" (Oct. 13)](Slides/lecture03.pdf)
  4. Measurement: Concepts in Practice (Oct. 20)
  5. Building and Testing Political Science Theories (Oct. 27)
  6. Deriving Hypotheses from Theory (Nov. 3)
@@ -46,7 +46,7 @@ Notes:
 
 | Assignment | Due Date |
 | ---------- | -------- |
-| Concepts and measurement | Tuesday Oct. 27 |
+| [Concepts and measurement](Assignments/ProblemSet1.pdf) | Tuesday Oct. 27 |
 | Theory and hypothesis generation | Tuesday Nov. 10 |
 | Case selection | Tuesday Nov. 24 |
 | Text analysis | Tuesday Dec. 15 |
