@@ -17,5 +17,6 @@ Syllabus/*.*
 *.snm
 *.toc
 *.vrb
+*.dvi
 
 *.dta
