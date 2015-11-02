@@ -20,7 +20,7 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  3. [Concepts: "I'll know it when I see it" (Oct. 13)](Slides/lecture03.pdf)
  4. [Measurement: Concepts in Practice (Oct. 20)](Slides/lecture04.pdf)
  5. [Building and Testing Political Science Theories (Oct. 27)](Slides/lecture05.pdf)
- 6. Deriving Hypotheses from Theory (Nov. 3)
+ 6. [Deriving Hypotheses from Theory (Nov. 3)](Slides/lecture06.pdf)
  7. Case Studies (Nov. 10)
  8. Case Comparisons (Nov. 17)
  9. Causal Mechanisms and Process-Tracing (Nov. 24)
@@ -46,8 +46,8 @@ Notes:
 
 | Assignment | Due Date |
 | ---------- | -------- |
-| [Concepts and measurement](Assignments/ProblemSet1.pdf) | Tuesday Oct. 27 |
-| [Theory and hypothesis generation](Assignments/ProblemSet2.pdf) | Tuesday Nov. 10 |
+| [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
+| [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
 | Case selection | Tuesday Nov. 24 |
 | Text analysis | Tuesday Dec. 15 |
 | Interviewing | Tuesday Jan. 26 |
