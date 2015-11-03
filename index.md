@@ -39,10 +39,12 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 Notes:
 
  - Sessions 1-10 meet during Michaelmas Term and Sessions 11-20 meet during Lent Term.
- - There will be no lecture or class during Lent Term reading week (Feb. 15–19).
+ - There will be no lecture or class during Lent Term reading week (Feb. 15–19), but there will be an assignment (see below).
 
  
 ## Problem Sets ##
+
+There are eight problem sets for the course (four in each term).
 
 | *Assignment* | *Due Date* |
 | ---------- | -------- |
@@ -54,6 +56,10 @@ Notes:
 | Basic Statistics | Tuesday Feb. 23 |
 | Regression analysis | Tuesday Mar. 8 |
 | Experimentation | Tuesday Mar. 15 |
+
+## LT Reading Week Study Guide Assignment ##
+
+We will use LT reading week to prepare for the exam. As part of this, students will draft a "study guide" for the course and provide peer and self-assessments that evaluate and reflect on learning thus far. [Details of the assignment are available here](Assignments/StudyGuideAssignment.html).
 
 ## Assessment ##
 
