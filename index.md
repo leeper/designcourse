@@ -44,7 +44,7 @@ Notes:
  
 ## Problem Sets ##
 
-| Assignment | Due Date |
+| *Assignment* | *Due Date* |
 | ---------- | -------- |
 | [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
 | [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
