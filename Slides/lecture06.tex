@@ -40,7 +40,7 @@
 
 \frametitle{Last Week}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item What are theories?
 	\begin{itemize}
 	\item A tentative conjecture about the causes of some phenomenon of interest
@@ -82,7 +82,7 @@ Are these principles defensible?\\ Are they any good?
 
 \frametitle{Hypotheses}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item<2-> Definition: a theory-based statement about a relationship that we expect to observe.\footnote{Kellstedt and Whitten (p.4)}
 
 \item<3-> Features
@@ -90,7 +90,6 @@ Are these principles defensible?\\ Are they any good?
 	\item Derived from theory
 	\item Specific
 	\item Empirical/observable
-	\item About variables, not concepts
 	\end{itemize}
 \end{itemize}
 
@@ -107,7 +106,7 @@ Are these principles defensible?\\ Are they any good?
 
 \frametitle{How do we generate hypotheses?}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Think about \textit{observable implications}
 \item What would evidence consistent with this theory be?
 \item What would evidence inconsistent with this theory be?
@@ -134,15 +133,15 @@ Are these principles defensible?\\ Are they any good?
 \begin{itemize}\itemsep0.5em
 \item 1854 outbreak of cholera in London
 	\begin{itemize}
-	\item around Broad Street (Soho)
+	\item Around Broad Street (Soho)
 	\item 616 eventual deaths
 	\end{itemize}
 \item<2-> What causes transmission of cholera?
 \item<3-> Dominant theory at time: ``miasma''
 \item<4-> Hypotheses:
 	\begin{itemize}
-	\item Clean up garbage $\rightarrow \downarrow$ cholera
-	\item Open windows $\rightarrow \downarrow$ cholera
+	\item Clean up garbage $\rightarrow\hspace{1em} \downarrow$ cholera
+	\item Open windows $\rightarrow \hspace{1em} \downarrow$ cholera
 	\end{itemize}
 \end{itemize}
 
@@ -153,11 +152,11 @@ Are these principles defensible?\\ Are they any good?
 
 \frame{
 
-\frametitle{John Snow's Map}
+\begin{center}
+\includegraphics[height=.98\textheight]{images/broadstreet}
+\end{center}
 
-\includegraphics[width=\textwidth]{images/broadstreet}
-
-{\footnotesize Image source: Public Domain from \href{https://en.wikipedia.org/wiki/File:Snow-cholera-map-1.jpg}{Wikipedia}
+{\footnotesize Image source: Public Domain from \href{https://en.wikipedia.org/wiki/File:Snow-cholera-map-1.jpg}{Wikipedia}}
 
 }
 
@@ -172,7 +171,7 @@ Are these principles defensible?\\ Are they any good?
 
 \frametitle{Observational Equivalence}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item Definition: All hypotheses for two (or more) theories are identical
 \item What to do?
 	\begin{itemize}
@@ -185,8 +184,78 @@ Are these principles defensible?\\ Are they any good?
 }
 
 
+\begin{frame}
 
-% activity where two theories predict same result
+\frametitle{Median Voter Theory of Legislatures}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[<->, thick] (-5,2) -- (5,2);
+\node<2->[draw,shape=circle,fill=black,scale=0.5] (m) at (3,2) {};
+\node<2->[below] at (3,2) {$m$};
+\node<3->[draw,shape=circle,fill=black,scale=0.5] (q) at (0,2) {};
+\node<3->[below] at (0,2) {$q$};
+\draw<4->[->, thick, bend left=75] (q.north) to (m.north);
+\draw<5->[ultra thick] (-5,2) to (m);
+
+\end{tikzpicture}
+\end{center}
+
+\onslide<5->{If this is true, why do we sometimes see policies left of $m$ in the U.S. House?}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{{\large Three Competing Theories}}
+
+\vspace{-2em}
+
+\begin{center}
+\begin{tikzpicture}
+% Committee power
+\node[anchor=west] at (-6,2.5) {{\footnotesize Committee Gatekeeping}};
+\draw[<->, thick] (-5,2) -- (5,2);
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,2) {};
+\node<1->[below] at (3,2) {$m$};
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,2) {};
+\node<1->[below] at (0,2) {$q$};
+\node<2->[draw,shape=circle,fill=black,scale=0.5] at (-2,2) {};
+\node<2->[below] at (-2,2) {$c$};
+
+% Majority party power
+\node[anchor=west] at (-6,0.5) {{\footnotesize Party Cartels}};
+\draw[<->, thick] (-5,0) -- (5,0);
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,0) {};
+\node<1->[below] at (3,0) {$m$};
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,0) {};
+\node<1-2>[below] at (0,0) {$q$};
+\node<3->[below] at (0,0) {$q=r$};
+\node<3->[draw,shape=circle,fill=black,scale=0.5] at (-2,0) {};
+\node<3->[below] at (-2,0) {$c$};
+
+% Pivotal Politics
+\node[anchor=west] at (-6,-1.5) {{\footnotesize Pivotal Politics}};
+\draw[<->, thick] (-5,-2) -- (5,-2);
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,-2) {};
+\node<1->[below] at (3,-2) {$m$};
+\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,-2) {};
+\node<1->[below] at (0,-2) {$q$};
+\node<4->[draw,shape=circle,fill=black,scale=0.5] at (-2,-2) {};
+\node<4->[below] at (-2,-2) {$p$};
+\node<4->[draw,shape=circle,fill=black,scale=0.5] at (4,-2) {};
+\node<4->[below] at (4,-2) {$s$};
+
+
+\end{tikzpicture}
+\end{center}
+
+{\tiny Adapted From: Krehbiel, Keith. 1999. ``Paradoxes of Parties in Congress.'' \textit{Legislative Studies Quarterly} 24(1): 31--64.\par}
+
+\end{frame}
+
+% how would we resolve these different theories?
+
 
 \section{Hypothesis Testing}
 \frame{\tableofcontents[currentsection]}
@@ -196,13 +265,13 @@ Are these principles defensible?\\ Are they any good?
 
 \frametitle{Hypothesis Testing}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item Multiple schools of thought
 \item History is conflictual and murky
 \item Two strands of literature
 	\begin{itemize}
-	\item Philosophy of science
-	\item Statistics
+	\item Philosophy of science  % not going to talk about this
+	\item Statistics % focus on this perspective, which we'll elaborate mathematically in LT
 	\end{itemize}
 
 \end{itemize}
@@ -212,43 +281,81 @@ Are these principles defensible?\\ Are they any good?
 % what does it mean to "test" a hypothesis?
 
 \frame{
+\frametitle{{\large Principle of Hypothesis Testing}}
 
-\frametitle{Two Forms of Hypothesis Testing}
+\begin{enumerate}\itemsep0.5em
+\item Identify and collect data
+\item<2-> Data should include:
+	\begin{itemize}
+	\item Independent variable(s)
+	\item Dependent variable(s)
+	\end{itemize}
+\item<3-> Need variation on both % because we want to observe counterfactuals
+\item<4-> Test difference between outcomes when (possibly) causal variable differs
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{{\large Forms of Hypothesis Testing}}
+
+\footnotesize
 
 \begin{columns}[T] % align columns
 \begin{column}{.4\textwidth}
 \begin{block}{Null hypothesis}
-Begin with \textit{null hypothesis} (commonly no relationship)
+Begin with \textit{null hypothesis}\\
 
-Your hypothesis expects an alternative state of the world
+\vspace{1em}
 
-Associated with Ronald Fisher
+Your hypothesis expects an alternative state of the world\\
+
+\vspace{2em}
+
+c/o Ronald Fisher
 \end{block}
 \end{column}
 
 \begin{column}{.4\textwidth}
 \begin{block}{Alternative hypotheses}
-Begin with two alternative hypotheses:\\
-One from your theory\\
-One from an alternative theory\\
+Begin with 2(+) alternative hypotheses\\
+
+\vspace{1em}
 
 Accept hypothesis consistent with observation
 
-Associated with Jerzy Neyman and Egon Pearson
+\vspace{1em}
+
+c/o Jerzy Neyman and Egon Pearson
 \end{block}
 \end{column}
 \end{columns}
-
-{\footnotesize You've probably previously been exposed to some blend of these ideas.}
 
 }
 
 % today we want to discuss principles of hypothesis testing as a way of thinking independent of statistics
 
+% You've probably previously been exposed to some blend of these ideas
+
+
+
+\frame{
+
+\frametitle{Fearon's Counterfactuals}
+
+\begin{itemize}\itemsep0.5em
+\item Sometimes we cannot test our hypothesis with actual observations % reasons for this: confounding, no counterfactual case, multiple causality
+\item What does Fearon suggest we do?
+\end{itemize}
+
+
+}
 
 % thinking counterfactually
 	% can we observe the counterfactual (in another case, in the same case at another time, in a collection of other cases)?
-	% if not, can we think about what that counterfactual might look like? (see Fearon's use of ``counterfactual method'')
+	% if not, can we think about what that counterfactual might look like? 
+	% see Fearon's use of ``counterfactual method''; thought experiments; hypothetical reasoning
 
 
 
@@ -256,14 +363,16 @@ Associated with Jerzy Neyman and Egon Pearson
 
 \frametitle{A Good Test}
 
-\begin{itemize}
+\small
+
+\begin{itemize}\itemsep-0.1em
 \item Correct level of analysis
 \item Within scope conditions of theory
 \item Well-defined concepts
 \item Measures of high construct validity, accuracy, and precision
-\item Possible to observe any correlation between potential cause and potential effect
+\item Possible to observe any correlation between potential cause and outcome
 \item Consistent with or an improvement upon past methods
-\item (Well-powered)
+\item Test using different data than data used to generate theory % distinguish between training set and test set
 \end{itemize}
 
 }
@@ -273,9 +382,10 @@ Associated with Jerzy Neyman and Egon Pearson
 
 \frametitle{Some Testing Challenges}
 
-\begin{enumerate}
+\begin{enumerate}\itemsep0.5em
 \item Deterministic and probabilistic causality
-\item Multiple causation, moderation
+\item Effect heterogeneity
+\item Multiple causation
 \item Equifinality
 \item Confirmation or disconfirmation bias
 \end{enumerate}
@@ -283,6 +393,11 @@ Associated with Jerzy Neyman and Egon Pearson
 }
 
 
+
+
+
+\section{Preview}
+\frame{\tableofcontents[currentsection]}
 
 
 % multiple specific forms of testing, which we'll be exposed to over the coming weeks
@@ -296,21 +411,14 @@ Associated with Jerzy Neyman and Egon Pearson
 
 
 
-% distinguish between training set and test set
-
-
-
-\section{Preview}
-\frame{\tableofcontents[currentsection]}
-
 \frame{
 
 \frametitle{Preview of Next Week}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item What is a case?
 \item What are case studies?
-\item How do we use case studies to test and build theories?
+\item How do we use case studies to test and/or build theories?
 \end{itemize}
 
 }
