@@ -19,7 +19,7 @@ You are being given a concept to think about. For this concept, you need to defi
 
  2. Using the family resemblance approach, list the essential, constitutive dimensions of this concept. These should be necessary and/or sufficient features.
 
- 3. Operationalize this concept. How would you measure it? How would you score an observation on this variable? Is the variable binary (``terrorism'' or ``not-terrorism'') or is it categorical or continuous? Justify your operationalization.
+ 3. Operationalize this concept. How would you measure it? How would you score an observation on this variable? Is the variable binary ("terrorism" or "not-terrorism") or is it categorical or continuous? Justify your operationalization.
 
  4. Identify two observable instances (cases) of this concept and two instances that do not fit this concept but may be closely related to the concept. Briefly explain and justify why each case falls within or outside the scope of the concept.
 
