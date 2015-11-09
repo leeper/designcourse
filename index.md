@@ -50,7 +50,7 @@ There are eight problem sets for the course (four in each term).
 | ---------- | -------- |
 | [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
 | [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
-| Case selection | Tuesday Nov. 24 |
+| [Case studies](ProblemSet3.html) | Tuesday Nov. 24 |
 | Text analysis | Tuesday Dec. 15 |
 | Interviewing | Tuesday Jan. 26 |
 | Basic Statistics | Tuesday Feb. 23 |

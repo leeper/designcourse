@@ -11,7 +11,7 @@ The purpose of this assignment is to assess your ability to identify, evaluate, 
 
 ## Overview ##
 
-You are being given a published article to read and evaluate. For this concept, you need to identify the theoretical argument being presented, generate rival theoretical explanations, evaluate the quality of the published theory and one or more alternatives, and assess the extent to which the article adequately describes and tests the observable implications of its theory.
+You are being given a published article to read and evaluate. For this assignment, you need to identify the theoretical argument being presented, generate rival theoretical explanations, evaluate the quality of the published theory and one or more alternatives, and assess the extent to which the article adequately describes and tests the observable implications of its theory.
 
 ## Your Task ##
 
