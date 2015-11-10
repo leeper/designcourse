@@ -21,7 +21,7 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  4. [Measurement: Concepts in Practice (Oct. 20)](Slides/lecture04.pdf)
  5. [Building and Testing Political Science Theories (Oct. 27)](Slides/lecture05.pdf)
  6. [Deriving Hypotheses from Theory (Nov. 3)](Slides/lecture06.pdf)
- 7. Case Studies (Nov. 10)
+ 7. [Case Studies (Nov. 10)](Slides/lecture07.pdf)
  8. Case Comparisons (Nov. 17)
  9. Causal Mechanisms and Process-Tracing (Nov. 24)
  10. Translating Texts into Interpretations and Numbers (Dec. 1)
