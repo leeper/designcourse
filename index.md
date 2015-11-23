@@ -50,7 +50,7 @@ There are eight problem sets for the course (four in each term).
 | ---------- | -------- |
 | [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
 | [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
-| [Case studies](ProblemSet3.html) | Tuesday Nov. 24 |
+| [Case studies](Assignments/ProblemSet3.html) | Tuesday Nov. 24 |
 | Text analysis | Tuesday Dec. 15 |
 | Interviewing | Tuesday Jan. 26 |
 | Basic Statistics | Tuesday Feb. 23 |
@@ -67,7 +67,9 @@ We will use LT reading week to prepare for the exam. As part of this, students w
 
 *Due: Tuesday, March 22, 2016*
 
-The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student’s choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
+The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student's choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
+
+[Click here](Assignments/ResearchDesignProposal.html) for a more detailed assignment specification.
 
 ### Written Exam ###
 
