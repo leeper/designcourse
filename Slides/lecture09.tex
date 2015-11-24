@@ -149,7 +149,7 @@
 
 \begin{itemize}
 \item A causal effect is an explanation of \textit{why} something occurs
-\item Mechanisms explain how that affect occurs
+\item Mechanisms explain \textit{how} that effect occurs
 \end{itemize}
 
 }
@@ -275,8 +275,8 @@
         \draw<3>[arrow] (M3) -- (M1);
           
         % mechanism confound
-        \node<4>[label={[label distance=0.05cm]180:{\footnotesize Z}}] at (0,2) (Z) {};
-        \fill<4> (Z) circle [fill=white, radius=2pt];
+        \node<4>[draw, circle, inner sep=0pt, minimum size=6pt, label={[label distance=0.05cm]180:{\footnotesize Z}}] at (0,2) (Z) {};
+        %\fill<4> (Z) circle [fill=white, radius=2pt];
         \draw<4>[arrow] (Z) -- (D);
         \draw<4>[arrow] (Z) -- (M2);
 
