@@ -1,6 +1,7 @@
 \input{preamble}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\usepackage[normalem]{ulem}
 
 \title{Translating Texts into Interpretations and Numbers}
 
@@ -76,6 +77,7 @@
 % texts in lieu of observation
 % we cannot see everything ourselves, so we rely on evidence
 
+% texts as CPOs vs. DSOs
 
 
 % selection bias -> when do we stop looking for evidence?
@@ -87,10 +89,17 @@
 % texts are subjective
 
 
+% research questions and text: 
+%% at one level, texts can be used to answer any research question
+%% there are, however, a lot of interesting research questions that are about text per se
 
-
-\section{Content Analysis}
-\frame{\tableofcontents[currentsection]}
+% what is the sentiment of this text?
+% what is the ideology of this text?
+% what discourses or frames does this text communicate?
+% what issues does this text mention?
+% how does this text differ from other texts (by other actors, from other time periods)?
+% what do these several texts have in common?
+% can we categorize texts to reveal something about their authors (e.g., their ideology, their emotional state, their intelligence)?
 
 
 % unit of analysis???
@@ -98,37 +107,131 @@
 % multiple texts that represent some larger unit (speaker/source, country, party)
 
 
+\section{Content Analysis}
+\frame{\tableofcontents[currentsection]}
+
+% definition: systematic description of the content of a communication
+
+% can be applied to any kind of document (primary, secondary, tertiary)
+% need not be textual (we can content analyze images, videos, audio, actions/behaviors/expressions)
+% graph showing textual input of one or more strings of text into an output of numbers/scores
+
+
+% what are the variables? what do we want to know about this text?
+
+
 % scoring: ideology, positivity/negativity (both rely on word associations)
 % dictionary methods (sentiment: lexicoder, ideology: wordfish)
-% training set and test set; human coding and automated coding
 
+% sentiment
+If only all politicians could \textit<3->{believe} in Britain as UKIP does. If only they could \textit<3->{share} our \textbf<2->{positive} vision of Britain as a \textbf<2->{proud}, \textit<3->{independent} \textit<3->{sovereign} nation, a country \textbf<2->{respected} on the world stage, a \textit<3->{major} player in global trade, with \textbf<2->{influence} and \textit<3->{authority} when it comes to tackling the pressing international issues of the day.
 
-% creating a codebook
+% ideology
+
 
 
 
 
 % categorization: 
 % identification of frames, arguments, discourse
+
+If only all politicians could \textbf<2>{believe in Britain} as UKIP does. If only they could share our \textbf<2>{positive vision of Britain} as a \textbf<2>{proud}, \textbf<3-4>{independent sovereign nation}, a \textbf<4>{country respected on the world stage}, a \textbf<4>{major player in global trade}, with \textbf<4>{influence and authority} when it comes to tackling the pressing international issues of the day.
+
+% discourses/frames
+% 1: national pride/patriotism
+% 2: independence
+% 3: influential world power
+% maybe others
+
 % tabulating persons, issues, mentions
 % necessarily iterative --> develop a set of categories as they are identified; requires revisiting texts
 
 
+% persons
+If only all \textbf<2>{politicians} could believe in Britain as \textbf<2>{UKIP} does. If only they could share our positive vision of Britain as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
+
 
 % issue mentions
+\sout<2->{If only all politicians could believe in Britain as UKIP does.}
+\sout<3->{If only they could share our positive vision of Britain}
+\sout<4->{as a proud,} \textbf<4->{independent} \sout<4->{sovereign nation,}
+\sout<5->{a country respected on the world stage,}
+\sout<6->{a major player in} \textbf<6->{global trade}, 
+\sout<7->{with influence and authority}
+\sout<9->{when it comes to tackling the \textit<8>{pressing international issues} of the day.}
+
+
+
+
+
+% sentence
+If only all politicians could believe in Britain as UKIP does.
+If only they could share our positive vision of Britain as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
+
 % sentence fragments
+If only all politicians could believe in Britain as UKIP does.
+If only they could share our positive vision of Britain 
+as a proud, independent sovereign nation, 
+a country respected on the world stage, 
+a major player in global trade, 
+with influence and authority 
+when it comes to tackling the pressing international issues of the day.
+
 
 
 % "bag of words" methods
+
+\sout<2->{If} only all politicians could believe \sout<2->{in} Britain \sout<2->{as} UKIP does \sout<2->{.} \sout<2->{If} only they could share our positive vision \sout<2->{of} Britain \sout<2->{as} \sout<2->{a} proud\sout<2->{,} independent sovereign nation\sout<2->{,} \sout<2->{a} country respected \sout<2->{on} \sout<2->{the} world stage\sout<2->{,} \sout<2->{a} major player \sout<2->{in} global trade\sout<2->{,} \sout<2->{with} influence \sout<2->{and} authority \sout<2->{when} \sout<2->{it} comes \sout<2->{to} tackling \sout<2->{the} pressing international issues \sout<2->{of} \sout<2->{the} day\sout<2->{.}
+
+only all politicians could believe Britain UKIP does only they could share our positive vision Britain proud independent sovereign nation country respected world stage major player global trade influence authority comes tackling pressing international issues day
+
+independent sovereign nation country international world global 
+positive proud respected major influence authority 
+politicians player Britain Britain UKIP 
+believe share tackling pressing 
+could could does comes 
+vision stage day trade issues 
+only only all they our 
+
+% term-document matrix
+
+
 % unigrams, bigrams, trigrams, n-grams
 % roots: family, families, families’, and familial all become famili.
 
-% term-document matrix
+% multiword expressions
+% example: ``If only'' has a negative connotation even though ``if'' and ``only'' are basically neutral words on their own
+
+
+% creating a codebook
+% what variables do you want to measure?
+% how do you measure them? at what unit of analysis?
+
+
+% training set and test set; human coding and automated coding
+
 
 
 
 \section{Group Discussions}
 \frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Problem Set 4}
+
+\small
+
+\begin{enumerate}\itemsep0.5em
+\item You have been assigned teams
+\item Develop a research question that can be answered using the party manifestos from the UK 2015 General Election
+\item Develop a content analyze scheme or codebook and use it to analyze the manifestos
+\item Write up your results as a group
+\end{enumerate}
+
+}
+
 
 \frame{
 
