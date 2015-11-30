@@ -22,9 +22,9 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  5. [Building and Testing Political Science Theories (Oct. 27)](Slides/lecture05.pdf)
  6. [Deriving Hypotheses from Theory (Nov. 3)](Slides/lecture06.pdf)
  7. [Case Studies (Nov. 10)](Slides/lecture07.pdf)
- 8. Case Comparisons (Nov. 17)
- 9. Causal Mechanisms and Process-Tracing (Nov. 24)
- 10. Translating Texts into Interpretations and Numbers (Dec. 1)
+ 8. [Case Comparisons (Nov. 17)](Slides/lecture08.pdf)
+ 9. [Causal Mechanisms and Process-Tracing (Nov. 24)](Slides/lecture09.pdf)
+ 10. [Translating Texts into Interpretations and Numbers (Dec. 1)](Slides/lecture10.pdf)
  11. Interviewing, Structured and Unstructured (Jan. 12)
  12. Actually Talking to People: Participant Observation (Jan. 19)
  13. Tabulation and Visualization (Jan. 26)
@@ -51,7 +51,7 @@ There are eight problem sets for the course (four in each term).
 | [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
 | [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
 | [Case studies](Assignments/ProblemSet3.html) | Tuesday Nov. 24 |
-| Text analysis | Tuesday Dec. 15 |
+| [Text analysis](Assignments/ProblemSet4.html) | Tuesday Dec. 15 |
 | Interviewing | Tuesday Jan. 26 |
 | Basic Statistics | Tuesday Feb. 23 |
 | Regression analysis | Tuesday Mar. 8 |
