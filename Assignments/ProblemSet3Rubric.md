@@ -4,7 +4,7 @@ title: Problem Set 3 Rubric
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 2 Rubric: Case Selection #
+# Problem Set 3 Rubric: Case Selection #
 
 Points possible: 100
 
@@ -26,7 +26,7 @@ Points possible: 100
  4. Identify what you see as the most important within-case or between-case comparisons made in the article. Why are these important and what do they demonstrate (do they provide description, do they clarify a concept, do they test a theory, etc.)?
 
     10 points: Identifies two or more comparisons made in the article.
-    20 points: Completely describes and justify why these comparisons are important.
+    20 points: Completely describes and justifies why these comparisons are important.
  
  5. Rather than comparing two actual cases, the authors could have adopted Fearon's "counterfactual" method of comparison. How would that have been useful here or wouldn't it have been useful? Justify your answer in a few sentences.
 
