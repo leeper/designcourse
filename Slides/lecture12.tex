@@ -1,6 +1,6 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 \usepackage[normalem]{ulem}
 
 \title{Participant Observation}
@@ -26,12 +26,12 @@
 \small
 
 \begin{itemize}\itemsep-0.25em
-	\item Is the question easy for respondents to understand?
-	\item Are the number and types of response options appropriate?
-	\item Are the categories sufficiently distinct from one another?
-	\item Is a ``no opinion,'' ``don't know,'' or ``neither support nor oppose'' response option available?
-	\item Is one survey item (i.e., one question) sufficient to measure this construct?
-	\item How long does it take to read and answer this question?
+	\item<1-> Is the question easy for respondents to understand?
+	\item<2-> Are the number and types of response options appropriate?
+	\item<3-> Are the categories sufficiently distinct from one another?
+	\item<4-> Is a ``no opinion,'' ``don't know,'' or ``neither support nor oppose'' response option available?
+	\item<5-> Is one survey item (i.e., one question) sufficient to measure this construct?
+	\item<6-> How long does it take to read and answer this question?
 \end{itemize}
 }
 
@@ -44,10 +44,10 @@
 \small
 
 \begin{itemize}\itemsep-0.25em
-\item Retrospective think-alouds (in which respondents describe how they arrive at their answers either just after they provide them or at the end of the interview)
-\item Paraphrasing (in which respondents restate the question in their own words)
-\item Definitions (in which respondents provide definitions for the key terms in the question)
-\item Probes (in which respondents answer follow-up questions designed to reveal their response strategies)
+\item<1-> Retrospective think-alouds (in which respondents describe how they arrive at their answers either just after they provide them or at the end of the interview)
+\item<2-> Paraphrasing (in which respondents restate the question in their own words)
+\item<3-> Definitions (in which respondents provide definitions for the key terms in the question)
+\item<4-> Probes (in which respondents answer follow-up questions designed to reveal their response strategies)
 \end{itemize}
 
 }
@@ -71,148 +71,69 @@
 \frame{
 \frametitle{Focus Groups}
 \begin{itemize}\itemsep1em
-\item Definition: 
+\item Definition: ``A discussion among a small number of members of a target population, guided by a moderator.''\footnote{Groves et al. 2009. \textit{Survey Methodology}. 2nd Edition. Wiley.}
 \item A bridge between interviewing and ethnography
+	\begin{itemize}
+	\item Less structured than an interview
+	\item Typically brief (1-2 hours)
+	\item Gather mostly \textit{qualitative} data
+	\end{itemize}
+
+% have any of you ever been in a focus group?
 \end{itemize}
 }
 
 
-% something about focus groups
-
-
-
-% focus group as bridge between individual interviews and observation of groups
-
-
-
+\frame{
+\frametitle{``Field work''}
+\begin{itemize}\itemsep0.5em
+\item Any research activity outside the university setting % soaking and poking
+	\begin{itemize}\footnotesize
+	\item Textual or archival searches
+	\item Interviews (structured or unstructured)
+	\item Focus groups
+	\item Participant observation
+	\item Some mix of these
+	\end{itemize}
+\item Term is agnostic about approach, theory, and method
+\item Might be one-off, sporadic, or long-term
+\end{itemize}
+}
 
 
 \frame{
 \frametitle{Participant Observation}
-\begin{itemize}\itemsep1em
-\item A common approach in case study research
+
+\small
+\begin{itemize}
 \item Definition: ``Participant observation is a research strategy whereby the researcher becomes involved in a social situation for the purpose of understanding the behaviour of those engaged in the setting\dots The outcome of the research is a detailed account of the activities and behaviour of those involved.''\footnote{p.265 from Burnham et al. 2008. \textit{Research Methods in Politics}. 2nd Edition. Palgrave.}
-\item<2-> Does this generate DSO or CPOs?
+\item<2-> Intentionally subjective/reflective; no belief in possible observational objectivity
+\item<3-> Generally inductive in nature
 \end{itemize}
 }
 
-
-% examples
-
-% Fenno, R. 1978. \textit{Home Style: U.S. House Members in their Districts}. Pearson.
-% Goffman, A. 2014. \textit{On the Run: Fugitive Life in an American City}. Chicago.
-% Cramer, K. 2016. \textit{The Politics of Resentment}. Chicago.
-% Festinger, Riecken, and Schachter. 1956. \textit{When Prophecy Fails}. Harper.
-
-
-% what kinds of observations?
-
-% what is your unit of analysis? (many)
-
-
-\frame{
-
-\frametitle{Four Ideal Types\footnote{Gold, R. 1958. ``Roles in Sociological Field Observation.'' \textit{Social Forces} 36(3): 217--23.}}
-
-\begin{itemize}\itemsep1em
-\item Complete participant
-\item Participant as observer
-\item Observer as participant
-\item Complete observer
-\end{itemize}
-
-}
-
-\frame{
-\frametitle{Complete participant}
-
-}
-
-\frame{
-\frametitle{Participant as observer}
-
-}
-
-\frame{
-\frametitle{Observer as participant}
-
-}
-
-\frame{
-\frametitle{Complete observer}
-
-}
-
-
-
-
-
-% how does your present change the situation?
-
-
-
-% permission to observe and/or participate, promises of confidentiality or anonymity, consent to be studied and reported
-
-
+% A common approach in case study research
 % Breakdown of objectivity is this desirable or not?
 
 
 
-
-
 \frame{
-\frametitle{Activity!}
+\frametitle{Assorted Examples}
 
-\begin{itemize}\itemsep1em
-\item Choose one of the following contexts:
-	\begin{itemize}
-	\item Observe Corbyn's shadow cabinet meetings
-	\item Observe the core leadership of Britain First
-	\end{itemize}
-\item Consider:
-	\begin{itemize}
-	\item What is your research question?
-	\item What kinds of observations do you make?
-	\item What constraints are placed on what you can do, say, observe, and record?
-	\item What perspectives/biases do you bring to the situation?
-	\end{itemize}
-\end{itemize}
+\small
+
+\begin{enumerate}
+\item Fenno, R. 1978. \textit{Home Style: U.S. House Members in their Districts}. Pearson.
+\item<2-> Goffman, A. 2014. \textit{On the Run: Fugitive Life in an American City}. Chicago.
+\item<3-> Cramer, K. 2016. \textit{The Politics of Resentment}. Chicago.
+\item<4-> Nielsen, R.K. 2012. \textit{Ground Wars}. Princeton.
+\item<5-> Festinger, Riecken, and Schachter. 1956. \textit{When Prophecy Fails}. Harper.
+\end{enumerate}
 
 }
 
 
-
-
-
-
-\section{Using Data}
-\frame{\tableofcontents[currentsection]}
-
-% something about how to use data gathered from text analysis, interviewing, and participant observation to answer research questions
-
 \frame{
-
-\begin{center}
-\begin{tikzpicture}
-\node [align=center] (ivm) at (0,0) {\footnotesize Independent Variable\\\footnotesize (Measured)};
-\node [align=center] (dvm) at (7,0) {\footnotesize Dependent Variable\\\footnotesize (Measured)};
-
-\node [align=center] (ivc) at (0,3) {\footnotesize Independent Variable\\\footnotesize (Concept)};
-\node [align=center] (dvc) at (7,3) {\footnotesize Dependent Variable\\\footnotesize (Concept)};
-
-\node (analysis) at (3.5, 0) {};
-\node (theory) at (3.5, 3) {};
-
-\draw [->, thick] (ivm) -- (dvm) node[midway, below] (analysis) {{\only<2->{\textit{Analysis}}}};
-\draw [->, thick] (ivc) -- (dvc) node[midway, below] (theory) {{\only<2->{\textit{Theory}}}};
-\draw [->, dashed, thick] (ivc) -- (ivm);
-\draw [->, dashed, thick] (dvc) -- (dvm);
-\end{tikzpicture}
-\end{center}
-
-
-}
-
 \frametitle{Operationalization}
 
 \vspace{-2em}
@@ -232,16 +153,16 @@
 \draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
 (-7.5,-3.4) -- (-7.5,0.5);
 
-\draw<2-> [block] node at (-5, -8) (m1) {{\small Measure(s)}};
-\draw<2-> [block] node at (0, -8) (m2) {{\small Measure(s)}};
-\draw<2-> [block] node at (5, -8) (m3) {{\small Measure(s)}};
+\draw<1-> [block] node at (-5, -8) (m1) {{\small Measure(s)}};
+\draw<1-> [block] node at (0, -8) (m2) {{\small Measure(s)}};
+\draw<1-> [block] node at (5, -8) (m3) {{\small Measure(s)}};
 
-\draw<2-> [->, very thick] (a1) -- (m1);
-\draw<2-> [->, very thick] (a2) -- (m2);
-\draw<2-> [->, very thick] (a3) -- (m3);
+\draw<1-> [->, very thick] (a1) -- (m1);
+\draw<1-> [->, very thick] (a2) -- (m2);
+\draw<1-> [->, very thick] (a3) -- (m3);
 
-\draw<2-> [block, align=center] node at (-11.5, -6.5) (def) {Operation-alization};
-\draw<2-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
+\draw<1-> [block, align=center] node at (-11.5, -6.5) (def) {Operation-alization};
+\draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
 (-7.5,-8.5) -- (-7.5,-3.6);
 
 
@@ -252,10 +173,185 @@
 }
 
 
+\frame{
+\frametitle{Measurement}
+
+\begin{itemize}\itemsep1em
+\item<2-> What kind of observations do these authors make?
+\item<3-> What is their unit of analysis?
+\item<4-> Does participant observation generate DSOs or CPOs?
+\end{itemize}
+
+}
 
 
 
-\frame{}
+
+\frame{
+
+\frametitle{Four Ideal Types\footnote{Gold, R. 1958. ``Roles in Sociological Field Observation.'' \textit{Social Forces} 36(3): 217--23.}}
+
+\begin{enumerate}\itemsep1em
+\item Complete participant
+\item Participant as observer
+\item Observer as participant
+\item Complete observer
+\end{enumerate}
+
+}
+
+\frame{
+\frametitle{Complete participant}
+\begin{itemize}\itemsep1em
+\item Participate without disclosing observer/researcher role
+\item Essentially covert (``being undercover'')
+\item May be useful in sensitive domains
+\item Raises ethical concerns
+\end{itemize}
+}
+
+\frame{
+\frametitle{Participant as observer}
+\begin{itemize}\itemsep1em
+\item Participate, but not fully
+\item Retain explicit observer role
+\item Negotiate exact role in the situation and access to group members and information
+\end{itemize}
+}
+
+\frame{
+\frametitle{Observer as participant}
+\begin{itemize}\itemsep1em
+\item Essentially interviews
+\item Limited time frames
+\item Note: Sometimes seen as indistinguishable from ``complete observer''
+\end{itemize}
+}
+
+\frame{
+\frametitle{Complete observer}
+\begin{itemize}\itemsep1em
+\item Purely observer role; no participation
+\item Still requires negotiated access in many cases, but may not require the same types of consent as participant roles
+\item Easier to keep a distance and avoid ``rapport'' with group members
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Participant vs. Observer}
+
+\begin{itemize}
+\item Not always a choice
+	\begin{itemize}\footnotesize
+	\item Access might be limited
+	\item Ethical obligations
+	\end{itemize}
+\item<2-> Is situation public vs. private?
+\item<3-> How does your presence change the situation?
+\item<4-> How does being a participant change your interpretations of events?
+\item<5-> How does being an observer change your interpretation of events?
+\end{itemize}
+}
+
+% Where is Fenno on the continuum between participant and observer?
+% Where is Goffman?
+
+
+\frame{
+\frametitle{{\large Ethnography vs. Journalism}}
+
+\begin{center}
+\Large What's the difference?
+\end{center}
+
+}
+
+
+
+
+
+
+
+
+
+\frame{
+\frametitle{Activity!}
+
+\begin{itemize}\itemsep1em
+\item Choose one of the following contexts:
+	\begin{itemize}\footnotesize
+	\item Observe Corbyn's shadow cabinet meetings
+	\item Observe the core leadership of Britain First
+	\end{itemize}
+\item Consider:
+	\begin{itemize}
+	\item What is your research question?
+	\item What kinds of observations do you make?
+	\item What constraints are placed on what you can do, say, observe, and record?
+	\item What perspectives/biases do you bring to the situation?
+	\item Are you a participant, observer, or both?
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\section{Preview}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Schedule: Lent Term}
+
+\footnotesize
+
+11 Interviewing, Structured and Unstructured (Jan. 12) \\
+12 Participant Observation (Jan. 19) \\
+13 Tabulation and Visualization (Jan. 26) \\
+14 Sampling and Representativeness (Feb. 2) \\
+15 Statistical Inference (Feb. 9) \\
+16 Regression Analysis (Feb. 23) \\
+17 Matching and Regression
+(Mar. 1) \\
+18 Experimental Design and Quasi-Experiments
+(Mar. 8) \\
+19 Ethics and Research Integrity (Mar. 15) \\
+20 Conclusion and Synthesis (Mar. 22) \\
+
+}
+
+
+\frame{
+
+\frametitle{LT Reading Week}
+
+\begin{itemize}\itemsep1em
+\item No lecture or class
+\item Opportunity for individual revision
+\item Structured revision assignment:
+	\begin{itemize}
+	\item Develop a study guide for the exam
+	\item Peer feedback on Moodle: \url{https://moodle.lse.ac.uk/mod/workshop/view.php?id=509034}
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Software}
+
+\begin{itemize}\itemsep1em
+\item We will use R
+\item Download from: \url{https://cran.r-project.org/}
+\item Helpful to bring your laptop to lecture
+\end{itemize}
+
+}
+
+
 
 
 \appendix
