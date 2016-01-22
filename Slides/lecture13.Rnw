@@ -1,0 +1,63 @@
+\input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
+\usepackage[normalem]{ulem}
+
+\title{Tabulation and Visualization}
+
+\date[]{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Getting a grip on data}
+\frame{\tableofcontents[currentsection]}
+
+
+\section{Tabulation}
+\frame{\tableofcontents[currentsection]}
+
+% counts
+% proportions
+
+
+% summaries
+
+
+
+% summaries of one variable by another variable
+
+
+\section{Visualization}
+\frame{\tableofcontents[currentsection]}
+
+
+% theory
+%% distributions
+%% relationships
+%% elements of a graphic that can represent a variable: axis, thickness/size, color, facet, time/animation
+
+
+%% ggplot2 practicalities
+
+
+
+% principles
+%% data-ink ratio
+%% balanced color palettes
+%% don't try to do too much
+%% steer the audience's attention
+%% honesty (y-axis; area not diameter of circles; )
+
+
+%% resources
+% http://www.braumoeller.info/dataviz/
+
+
+\appendix
+\frame{}
+
+\end{document}
