@@ -1,0 +1,637 @@
+\input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
+
+\newcounter{itemnum}
+
+\newcommand{\nt}[2][0pt]{%
+    \stepcounter{itemnum}%
+    \if###2##%
+    \else
+        #2%
+        \thinspace
+    \fi
+    \tikz[overlay,remember picture,baseline=(\theitemnum.base),xshift=#1]\node (\theitemnum){};%
+}
+
+\newcommand{\makebrace}[4][0pt]{%
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw [decoration={brace,amplitude=0.5em},decorate]
+        let \p1=(#2), \p2=(#3) in
+        ({max(\x1+#1,\x2+#1)}, {\y1+1.75ex}) -- 
+            node[right=0.6em] {#4} ({max(\x1+#1,\x2+#1)}, {\y2-0.5ex});
+    \end{tikzpicture}%
+}
+
+\newenvironment{braceitems}{%
+    \begin{enumerate}
+}{%
+    \end{enumerate}
+    \setcounter{itemnum}{0}%
+}
+
+
+\title{Tabulation and Visualization}
+
+\date[]{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Getting a grip on data}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Types of Measures}
+
+\begin{braceitems}\itemsep1em
+\item \nt{Categorical}
+	\begin{itemize}
+	\item Binary
+	\end{itemize}
+\item \nt{Ordinal}
+\item \nt{Interval}
+\end{braceitems}
+\makebrace{1}{2}{Qualitative}
+\makebrace{2}{3}{Quantitative}
+
+\vspace{0.5em}
+
+{\small Note: \textit{Ratio} scale measures are interval measures with a non-arbitrary zero value}
+
+}
+
+
+
+\frame{
+\frametitle{Definitions}
+\begin{itemize}
+\item Statistic: ``a quantitative summary of a variable for a set of units''
+\end{itemize}
+}
+
+
+
+
+
+% central tendency
+
+\frame{
+\frametitle{Central Tendency}
+
+\begin{itemize}\itemsep1em
+\item Mean (average): $\bar{Y} = \frac{1}{n}\sum_{i=1}^{n} Y_i$
+	\begin{itemize}
+	\item<2-> Trimmed mean
+	\end{itemize}
+\item<3-> Median: Middle value
+\item<4-> Mode: Most common value
+	\begin{itemize}
+	\item<5-> Unimodal, bimodal, multimodal
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Dispersion/variation}
+
+\begin{itemize}\itemsep1em
+\item (Element) Variance:\\
+	$Var(Y) = s_Y^2 = \sum_{i=1}^{n} \dfrac{(Y_i - \bar{Y})^2}{n-1}$
+\item<2-> Standard Deviation:\\ 
+	$sd(Y) = s_Y = \sqrt{Var(Y)}$
+\item<3-> Median absolute deviation (MAD):\\ 
+	$MAD = median(|Y_i - median(Y)|) $
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Shape}
+
+\begin{itemize}\itemsep1em
+\item Skewness
+	\begin{itemize}
+	\item<2-> Positive/right skew
+	\item<2-> Symmetric
+	\item<2-> Negative/left skew
+	\end{itemize}
+\item<3-> Kurtosis: peakedness of a distribution
+\end{itemize}
+
+}
+
+% 
+
+\frame{
+\frametitle{Skewness}
+\includegraphics[width=\textwidth]{images/skew.png}
+\vspace{2em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Negative_and_positive_skew_diagrams_(English).svg}{Rodolfo Hermans (Wikimedia)}}
+}
+
+% relationship with other variables
+
+\frame{
+\frametitle{Relationship}
+
+\begin{itemize}\itemsep1em
+\item<1-> Covariation:\\
+	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
+\item<2-> Correlation:\\
+	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{In R\dots}
+
+\begin{itemize}
+\item \texttt{mean()}
+\item \texttt{median()}
+\item \texttt{var()}
+\item \texttt{sd()}
+\item \texttt{cov()}
+\item \texttt{cor()}
+\end{itemize}
+
+}
+
+\section{Tabulation}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{Table}
+\begin{itemize}
+\item Definition: ``an arrangement of information into rows and columns''
+\item Tables can show:
+	\begin{itemize}
+	\item Values
+	\item Counts
+	\item Proportions
+	\item Summary statistics
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{In R\dots}
+
+\begin{itemize}
+\item \texttt{table()}
+\item \texttt{prop.table()}
+\item \texttt{ftable()}
+\item \texttt{aggregate()}
+\end{itemize}
+
+}
+
+
+\section{Visualization}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\Large
+\begin{center}
+Bad visualizations\dots
+\end{center}
+}
+
+\frame{
+\begin{center}
+\includegraphics[height=.8\textheight]{images/ipodsales.png}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Ipodsales_2008Q3_3d.svg}{Wikimedia}}
+}
+
+
+\frame{
+\begin{center}
+\includegraphics[height=.8\textheight]{images/executions.png}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{http://junkcharts.typepad.com/.a/6a00d8341e992c53ef01a511982206970c-pi}{JunkCharts}}
+}
+
+\frame[label=fox1]{
+\begin{center}
+\includegraphics[height=.7\textheight]{images/foxnews1.png}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{http://mediamatters.org/blog/2014/03/31/dishonest-fox-charts-obamacare-enrollment-editi/198679}{MediaMatters}}
+}
+
+\frame[label=fox2]{
+\begin{center}
+\includegraphics[height=.7\textheight]{images/foxnews2.png}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{http://mediamatters.org/blog/2014/03/31/dishonest-fox-charts-obamacare-enrollment-editi/198679}{MediaMatters}}
+}
+
+\frame{
+\begin{center}
+\only<1>{\includegraphics[height=.75\textheight]{images/redblue1.png}}
+\only<2>{\includegraphics[height=.75\textheight]{images/redblue2.png}}
+\only<3>{\includegraphics[height=.75\textheight]{images/redblue3.png}}
+\only<4>{\includegraphics[height=.75\textheight]{images/redblue4.png}}
+\end{center}
+\vspace{0.25em}
+{\tiny Source: \href{http://www-personal.umich.edu/~mejn/election/2012/}{(c) Mark Newman}}
+}
+
+
+\frame{
+\frametitle{Visualizations}
+\begin{itemize}
+\item Definition: ``Data graphics visually display measured quanitittes by means of the combined use of points, lines, a coordinate system, numbers, symbols, words, shading, and color.'' (Tufte, 2001)
+\end{itemize}
+
+\vspace{1em}
+{\footnotesize Tufte, E. 2001. \textit{The Visual Display of Quantitative Information}. Graphics Press.}
+}
+
+
+
+\frame{
+\frametitle{Anscombe's Quartet}
+
+{\tiny
+\begin{tabular}{rr rr rr rr}
+\multicolumn{2}{c}{I} & 
+\multicolumn{2}{c}{II} & 
+\multicolumn{2}{c}{III} & 
+\multicolumn{2}{c}{IV}\\
+10.0&8.04&10.0&9.14&10.0&7.46&8.0&6.58\\
+8.0&6.95&8.0&8.14&8.0&6.77&8.0&5.76\\
+13.0&7.58&13.0&8.74&13.0&12.74&8.0&7.71\\
+9.0&8.81&9.0&8.77&9.0&7.11&8.0&8.84\\
+11.0&8.33&11.0&9.26&11.0&7.81&8.0&8.47\\
+14.0&9.96&14.0&8.10&14.0&8.84&8.0&7.04\\
+6.0&7.24&6.0&6.13&6.0&6.08&8.0&5.25\\
+4.0&4.26&4.0&3.10&4.0&5.39&19.0&12.50\\
+12.0&10.84&12.0&9.13&12.0&8.15&8.0&5.56\\
+7.0&4.82&7.0&7.26&7.0&6.42&8.0&7.91\\
+5.0&5.68&5.0&4.74&5.0&5.73&8.0&6.89\\
+\end{tabular}
+}
+
+\vspace{0.5em}
+
+$\bar{X}=9$, $Var(X)=11$,\\
+$\bar{Y} = 7.5$, $Var(Y)=4.12$,\\
+$Corr(X,Y) = 08.16$
+}
+
+\frame{
+\frametitle{Anscombe's Quartet}
+\begin{center}
+\includegraphics[height=.7\textheight]{images/anscombe.png}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Anscombe\%27s_quartet_3.svg}{Wikimedia}}
+}
+
+
+\frame{
+\frametitle{{\normalsize Simpson's Paradox}}
+\begin{center}
+\only<2->{\includegraphics[height=.65\textheight]{images/simpsons.png}}
+\end{center}
+\vspace{0.5em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Simpson\%27s_paradox_continuous.svg}{Wikimedia}}
+}
+
+
+\frame{
+\frametitle{{\normalsize William Playfair}}
+\begin{center}
+\includegraphics[width=\textwidth]{images/playfair.png}
+\end{center}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Minard.png}{Wikimedia}}
+}
+
+
+\frame{
+\frametitle{{\normalsize Charles Minard}}
+\begin{center}
+\includegraphics[width=1.05\textwidth]{images/minard.png}
+\end{center}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Playfair_TimeSeries-2.png}{Wikimedia}}
+}
+
+\frame{
+\frametitle{{\normalsize Florence Nightingale}}
+\begin{center}
+\includegraphics[height=.7\textheight]{images/rose.png}
+\end{center}
+\vspace{-0.5em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Nightingale-mortality.jpg}{Wikimedia}}
+}
+
+
+
+
+
+% Do graphs address confounding?
+
+
+
+
+
+\frame<1>[label=principles]{
+\begin{enumerate}
+\item<1-> Be honest
+\item<2-> Data-Ink Ratio
+\item<3-> Tell a story
+\item<4-> Steer reader's attention
+\item<5-> Use balanced colour palettes
+\end{enumerate}
+
+}
+
+\againframe{fox1}
+
+\againframe{fox2}
+
+
+\frame{
+\begin{center}
+\includegraphics[trim=0in 4in 0in 0in, clip,height=\textheight]{images/vox1.png}
+\end{center}
+
+{\footnotesize Source: \href{http://t.co/UjR9o1MjBW}{Vox.com}}
+}
+
+\frame{
+\begin{center}
+\includegraphics[trim=0in 4in 0in 0in, clip,height=\textheight]{images/vox2.png}
+\end{center}
+
+{\footnotesize Source: \href{http://t.co/UjR9o1MjBW}{Vox.com}}
+}
+
+
+\againframe<1-2>{principles}
+
+\frame{
+\begin{center}
+\includegraphics[height=\textheight]{images/tuftediamonds1.png}
+\end{center}
+}
+
+\frame{
+\begin{center}
+\includegraphics[height=\textheight]{images/tuftediamonds2.png}
+\end{center}
+}
+
+\frame{
+\begin{center}
+\includegraphics[height=\textheight]{images/tufteboxplot.png}
+\end{center}
+
+{\footnotesize Source: \href{http://stackoverflow.com/questions/24152177/controlling-spacing-in-custom-ggplot2-geoms}{StackOverflow}}
+}
+
+
+
+\againframe<2-3>{principles}
+
+
+\frame{
+\begin{center}
+\includegraphics[width=\textwidth]{images/nicholascage.png}
+\end{center}
+\vspace{-0.5em}
+{\tiny Source: \href{http://www.tylervigen.com/about}{CC-BY Tyler Vigen}}
+}
+
+
+\againframe<3-4>{principles}
+
+\frame{
+\begin{center}
+\only<1>{\includegraphics[trim=0in 10in 0in 0in, clip, width=\textwidth]{images/piechart.png}}
+\only<2>{\includegraphics[width=\textwidth]{images/piechart.png}}
+\end{center}
+\vspace{-0.5em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Piecharts.svg}{Wikimedia}}
+}
+
+
+
+\againframe<4-5>{principles}
+
+\frame{
+\begin{center}
+\includegraphics[width=\textwidth]{images/flowingdata.png}
+\end{center}
+\vspace{-0.5em}
+{\tiny Source: \href{https://flowingdata.com/2009/06/15/6-easy-steps-to-make-your-graph-really-ugly/}{Flowing Data}}
+}
+
+
+
+\frame{
+\begin{center}
+\includegraphics[width=.7\textwidth]{images/colorblindness.png}
+\end{center}
+\vspace{-1em}
+{\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Ishihara_9.png}{Wikimedia}}
+}
+
+
+\frame{
+\frametitle{The bottom line}
+
+A visualization should be a display of quantitative (and/or qualitative) data that tells an information-rich story in an honest and beautiful manner.
+
+\vspace{3em}
+
+\onslide<2->{Questions?}
+
+}
+
+
+
+\frame{}
+
+
+\frame{
+\frametitle{In R\dots}
+
+R has 5+ graphics ``systems''
+
+\begin{itemize}
+\item Base graphics
+\item The \textbf{lattice} package
+\item The \textbf{ggplot2} package
+\item The \textbf{plotrix} package
+\item The \textbf{htmlwidgets} package + JavaScript's \href{https://cran.r-project.org/web/packages/plotrix/index.html}{d3 library}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{ggplot2}
+
+\begin{itemize}\itemsep1em
+\item Most coherent graphics system
+\item Based on a ``grammar'' of graphics
+\item Easily customized using various ``themes''
+	\begin{itemize}
+	\item Some built-in to ggplot2
+	\item Some in an add-on package (\href{https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html}{\textbf{ggthemes}})
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{A bit about the grammar}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+\item \texttt{ggplot()} creates a plot object
+\item \texttt{aes} describes a mapping of data to a visual element (e.g., color, shape, etc.)
+\item \texttt{geom\_()} displays a particular graphical representation
+\item \texttt{scale\_()} modifies the axes
+\item \texttt{coord\_()} modifies the coordinate system
+\item \texttt{theme\_()} modifies the overall look
+\item \texttt{facet\_()} creates small multiples
+\end{itemize}	
+
+}
+
+
+
+\begin{frame}[fragile]
+
+\tiny
+
+\begin{verbatim}
+library("rio")
+d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan15.dta")
+
+summary(d$wef_lifexp) # life expectancy
+summary(d$fh_polity2) # Polity scores
+summary(d$gle_cgdpc)  # GDP
+summary(d$dpi_finter) # executive term limits
+summary(d$bti_cr)     # civil rights index
+
+library("ggplot2")
+p <- ggplot(d)
+p + aes(x = fh_polity2) + geom_density()
+p + aes(x = fh_polity2) + geom_histogram()
+
+p + aes(x = bti_cr) + geom_bar()
+
+p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point() + 
+    scale_x_log10() + scale_y_log10()
+
+p + aes(1, fh_polity2) + geom_boxplot()
+p + aes(factor(bti_cr), fh_polity2) + geom_boxplot()
+
+p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point(aes(color = fh_polity2))
+p + aes(x = fh_polity2, y = wef_lifexp) + geom_point(aes(size = gle_cgdpc))
+
+p + aes(x = fh_polity2, y = wef_lifexp) + geom_point() + theme_bw()
+\end{verbatim}
+
+\end{frame}
+
+\frame{
+\frametitle{{\normalsize Ways to display a variable}}
+
+\small
+
+In a scatterplot, \texttt{geom\_point()} allows us to display a variable as:
+\footnotesize
+
+\begin{itemize}
+\item X/Y Axis variable (via \texttt{aes(x=, y=)})
+\item Colour (via \texttt{aes(color=)})
+\item Alpha (via \texttt{aes(alpha=)})
+\item Size (via \texttt{aes(size=)})
+\item Shape (via \texttt{aes(shape=)})
+
+\vspace{0.5em}
+
+\item Facets (via \texttt{facet\_wrap()})
+\item Animation (e.g., \url{http://www.gapminder.org/world})
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{Tools Beyond R}
+\begin{itemize}
+\item GUI-based tools:
+	\begin{itemize}
+	\item \href{https://inkscape.org/en/}{Inkscape}
+	\item \href{https://www.gimp.org}{GIMP}
+	\end{itemize}
+\item Command line tools:
+	\begin{itemize}
+	\item \href{http://www.imagemagick.org/script/index.php}{ImageMagick}
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{ggplot2 Resources}
+
+\small
+\begin{itemize}
+\item \url{http://docs.ggplot2.org/current/}
+\item \url{https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf}
+\item \url{https://github.com/jennybc/ggplot2-tutorial}
+\item \url{http://inundata.org/2013/04/10/a-quick-introduction-to-ggplot2/}
+\item \url{http://www.cookbook-r.com/Graphs/}
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{General Resources}
+
+\small
+
+\begin{itemize}
+\item \url{http://www.edwardtufte.com/tufte/}
+\item \url{http://www.informationisbeautiful.net/}
+\item \url{http://flowingdata.com/}
+\item \url{http://ourworldindata.org/}
+\item \url{http://www.thefunctionalart.com/}
+\item \url{http://www.visualisingdata.com/}
+\item \url{http://www.braumoeller.info/dataviz/}
+\end{itemize}
+
+}
+
+
+
+
+
+
+
+\appendix
+\frame{}
+
+\end{document}
