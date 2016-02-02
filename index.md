@@ -26,9 +26,9 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  9. [Causal Mechanisms and Process-Tracing (Nov. 24)](Slides/lecture09.pdf)
  10. [Translating Texts into Interpretations and Numbers (Dec. 1)](Slides/lecture10.pdf)
  11. [Interviewing, Structured and Unstructured (Jan. 12)](Slides/lecture11.pdf)
- 12. Actually Talking to People: Participant Observation (Jan. 19)
- 13. Tabulation and Visualization (Jan. 26)
- 14. Sampling and Representativeness (Feb. 2)
+ 12. [Actually Talking to People: Participant Observation (Jan. 19)](Slides/lecture12.pdf)
+ 13. [Tabulation and Visualization (Jan. 26)](Slides/lecture13.pdf)
+ 14. [Sampling and Representativeness (Feb. 2)](Slides/lecture14.pdf)
  15. Statistical Inference (Feb. 9)
  16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23)
  17. Matching and Regression: Accounting for Rival Explanations (Mar. 1)
@@ -53,7 +53,7 @@ There are eight problem sets for the course (four in each term).
 | [Case studies](Assignments/ProblemSet3.html) | Tuesday Nov. 24 |
 | [Text analysis](Assignments/ProblemSet4.html) | Tuesday Dec. 15 |
 | [Interviewing](Assignments/ProblemSet5.html) | Tuesday Jan. 26 |
-| Basic Statistics | Tuesday Feb. 23 |
+| [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday Feb. 23 |
 | Regression analysis | Tuesday Mar. 8 |
 | Experimentation | Tuesday Mar. 15 |
 
