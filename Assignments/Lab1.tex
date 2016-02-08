@@ -25,38 +25,331 @@ Using R as instructed, complete the following activities.
 \subsection{Sampling}
 
 \begin{enumerate*}
-\item 
+\item As we talked about in lecture, simple random sampling is the easiest design-based strategy for ensuring that your sample data are \textit{representative} of the population from which those observations are drawn. The first of today's activities reiterates this idea using R. Start by defining an R vector that is going to contain our ``population'' values. This vector will store numerical values between 0 and 20; you can imagine that they represent the number of years of formal education obtained my members of our population:
+
+\begin{verbatim}
+set.seed(1)      # this makes sure we all get the same answer
+x <- sample(0:20, 1e7, TRUE, c(1,2,3,4,5,6,7,8,9,10,11,12,13,12,11,10,9,8,7,6,5))
+\end{verbatim}
+
+\item Use the \texttt{length()} to verify how many people there are in our population.
+
+\item Use \texttt{mean()} to calculate the ``true'' population mean of this population. How many years of education, on average, does this population have?
+
+\item Now, we will draw a small sample from this population using the \texttt{sample()} function. (Note: we used this above to generate some fake population data; now we will use in a different way.). Start by drawing a small sample of just ten observations:
+
+\begin{verbatim}
+s1 <- sample(x, 5, FALSE)
+\end{verbatim}
+
+\item Use \textbf{ggplot2} to draw a histogram of these data:
+
+\begin{verbatim}
+ggplot(, aes(x = s1)) + geom_histogram(bins = 21)
+\end{verbatim}
+
+\item What is the sample mean of this sample?
+
+\item Calculate the element variance of the data: $Var(Y) = s_Y^2 = \sum_{i=1}^{n} \dfrac{(Y_i - \bar{Y})^2}{n-1}$. In R this is just \texttt{sum((mean(s1) - s1)\^2)/(length(s1)-1)}. Or, more simply, \texttt{var(s1)}. Calculate the element standard deviation (you can use \texttt{sd()}).
+
+\item Now, recall the formula for the standard error of the mean: $SE_{\bar{y}} = \sqrt{\frac{s^2}{n}}$, where $s^2 = $ sample (element) variance, and	$n = $ sample size.\footnote{Note we are sampling a very small proportion of our population, so we ignore the finite population correction.} Calculate the standard error of the population mean for your sample data.
+
+\item Recall the definition of the margin of error. For a typical margin of error, we simply double the standard error to create an interval within which we estimate the population mean to be. What is the margin of error for your sample mean? Is the population mean in your sample mean?
+
+\item Now, repeat the above exercises, but draw a larger sample size of size 100 (call this vector \texttt{s2}). How large is the margin of error of this larger sample compared to that of the smaller sample from before? Why?
+
+\item Recall that the standard error is meant to capture the idea that if we repeated our sampling process and calculated our statistic of interest (in this case, the mean) on each sample, the standard deviation of those estimates around the true mean would be equal to our standard error. To get a better grasp on this idea, we are going to simulate the process of drawing random samples from our population and then compare the standard deviation of our estimates from each sample to the standard errors we calculate above.
+
+\item To do this, we are going to use the \texttt{replicate()} function. This function allows us to repeat a calculate multiple times and return the results in a convenient form. To understand how it works, try generating a single sum of two random numbers: \texttt{rnorm(1) + rnorm(1)}. Then, use \texttt{replicate()} to do this five times:
+
+\begin{verbatim}
+replicate(5, rnorm (1) + rnorm (1))
+\end{verbatim}
+
+\noindent Note how the result is simply a vector.
+
+\item Now, we want to apply this function to the calculation of the sample mean, as above. To do so, we simply write:
+
+\begin{verbatim}
+# five samples of size n = 5
+replicate(5, mean(sample(x, 5, FALSE)))
+
+# 1,000 samples of size n = 5
+dist5 <- replicate(1000, mean(sample(x, 5, FALSE)))
+
+# 100 samples of size n = 100
+dist100 <- replicate(100, mean(sample(x, 100, FALSE)))
+\end{verbatim}
+
+\noindent Note that these operations may take some time. When they are done, examine the results:
+
+\begin{itemize}
+\item What does the histogram look like: \texttt{ggplot(, aes(x = dist5)) + geom\_histogram(bins = 21)} ?
+\item Are the sample means ``unbiased'' (meaning the mean of the sample means is close to the population mean): \texttt{mean(dist5)} \texttt{mean(dist100)}?
+\item How does the standard deviation of the sample means correspond to the standard errors you calculated above: \texttt{sd(dist5)} and \texttt{sd(dist100)} ?
+\end{itemize}
+
+\item The margin of error is a form of ``interval estimation'' in which we express our uncertainty about the value of a parameter by stating the range of values that the parameter is expected to be in based upon our sample estimate. The interval that is equivalent to estimate +/- 2 times the standard error is also called a 95\% confidence interval (for reasons we will return to below). You can compare the confidence interval from your data (mean +/- 2 SE) to the distribution of estimated sample means (\texttt{quantile(dist100, c(0.025, 0.975))}) to see how closely that interval compares to the interval of estimated values from repeated sampling.
+
+\item To ensure you are comfortable with these ideas, try repeating all of the above but for a different kind of variable. Rather than using an ordinal or interval measure (as above), try using a binary variable. You can create one using \texttt{rbinom()}:
+
+\begin{verbatim}
+# the `prob` argument controls the ratio of 1s and 0s
+y <- rbinom(1000000, 1, prob = .5) 
+\end{verbatim}
+
+
 \end{enumerate*}
 
 \subsection{Descriptive Statistics}
 
 \begin{enumerate*}
-\item 
+\item For the second major part of this activity, we will look at some real data from the Quality of Government project. This dataset contains country-level data on a very large number of economic, social, health, and political indicators. We will import the data using the \texttt{import()} function from the ``rio'' package. You may need to install this package using: \texttt{install.packages()}. Once the data are loaded, we can examine the data themselves by just confirming that they are loaded correctly:
+
+\begin{verbatim}
+library("rio")
+d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan16.dta")
+dim(d)
+nrow(d)
+ncol(d)
+names(d)
+str(d)
+\end{verbatim}
+
+\item To obtain some simple descriptive statistics about a few variables, we can use the \texttt{summary()} function:
+
+\begin{verbatim}
+summary(d$fh_polity2)  # Polity scores (a democracy measure)
+summary(d$gle_cgdpc)   # GDP
+summary(d$dpi_finter)  # executive term limits
+summary(d$bti_cr)      # civil rights index
+summary(d$bl_asy15f)   # female educational attainment
+\end{verbatim}
+
+\item Use ggplot2 to create a histogram of the distributions of these variables (see code above). You may want to play with the \texttt{bins} argument to control the look of the histograms.
+
+\item Use the R functions \texttt{mean()}, \texttt{median()}, and \texttt{table()} to inspect the central tendency and distribution of these variables.
+
+\item To assess the dispersion of each variable, use the functions we used above: \texttt{var()} and \texttt{sd()}.
+
+\item If you're feeling ambitious, you can create some of your own (``user-defined'') functions to calculate the skew and kurtosis statistics described by Kellstedt and Whitten:
+
+\begin{verbatim}
+skew <-  function(x) {
+  m3 <- mean((x-mean(x))^3)
+  skew <- m3/(sd(x)^3)
+  skew
+}
+skew(d$gle_cgdpc)
+
+kurtosis <- function(x) {  
+  m4 <- mean((x-mean(x))^4) 
+  kurt <- m4/(sd(x)^4)-3  
+  kurt
+}
+kurtosis(d$gle_cgdpc)
+\end{verbatim}
+
+\item Repeat all of the above for the variables mentioned, and possibly explore other variables in the dataset. A codebook is available here: \url{http://qog.pol.gu.se/data/datadownloads/qogstandarddata}
+
+\item Now, estimate the correlation between two variables. To do this, use \texttt{cor()}:
+
+\begin{verbatim}
+cor(d$gle_cgdpc, d$bl_asy15f)
+\end{verbatim}
+
+\noindent We can also generate a ``correlation matrix'' showing the correlation between many variables, but this requires specifying the data in a slightly different way:
+
+\begin{verbatim}
+cor(d[, c("gle_cgdpc", "bl_asy15f", "fh_polity2")])
+\end{verbatim}
+
+\item Based on the correlations, imagine what the scatterplots might look like (keeping in mind what the correlation coefficient measures). If the data are categorical (rather than interval), you may want to use a cross-tabulation rather than correlation coefficient to summarize the results:
+
+\begin{verbatim}
+table(d$dpi_finter, d$bti_cr)
+\end{verbatim}
+
+\noindent Note: You can also use \texttt{ftable()} to produce a slightly different looking table. You might also want to consider summarizing this relationship visually using a boxplot:
+
+\begin{verbatim}
+ggplot(d) + aes(x = factor(dpi_finter), y = bti_cr) + geom_boxplot()
+\end{verbatim}
+
+\item Use ggplot to create a scatterplot of the relationship between two variables. Here's an example showing the relationship between GDP (x-axis) and average female educational attainment:
+
+\begin{verbatim}
+ggplot(d) + aes(x = gle_cgdpc, y = bl_asy15f) + geom_point()
+\end{verbatim}
+
+\item You will note that R prints a warning message when producing this plot. This relates to missing values in the dataset, where one or both of these variables are unobserved for a particular country. To see which countries we are missing data for, try the following:
+
+\begin{verbatim}
+d$cname[is.na(d$gle_cgdpc)]  # for GDP
+d$cname[is.na(d$bl_asy15f)]  # for educational attainment
+\end{verbatim}
+
+\noindent You can also look at the data directly to see where these missing values are. You can use \texttt{table(is.na(\textit{var}))} to count how many missing values there are in the variable. What does the presence of these missing values do for our ability to analyze the data? to estimate the values of population parameters? to represent the population? to draw a causal inference?
+
+\item You may want to adjust the axis scales using, for example:
+
+\begin{verbatim}
+ggplot(d) + aes(x = gle_cgdpc, y = bl_asy15f) + geom_point() + scale_x_log10()
+\end{verbatim}
+
+\item You can modify the appearance of the plot in many, many ways. A common way to do this is by adding \texttt{aes()} features (see \texttt{? aes}) or by changing the plot theme (see \texttt{? theme}). Experiment with different plots until you feel comfortable with the various options.
+
+\item One useful feature of ggplot2 is the ability to create multiple ``panels'' or ``facets'' (visual designer Edward Tufte calls these ``small multiples''). To do this, you use the \texttt{facet\_wrap()} function and specify a ``formula'' including the variable you would like to split the data by. This example create subpanels for different regions of the world:
+
+\begin{verbatim}
+ggplot(d) + aes(x = gle_cgdpc, y = bl_asy15f) + geom_point() + facet_wrap(~ht_region)
+\end{verbatim}
+
+\item Pause for a moment to consider how each facet represents a subset of the dataset. In this way, each facet is a summary of the dataset for only a subset of the dataset. If we want to summarize data in this way without plotting, we might consider using the \texttt{aggregate()} function. For example to calculate the mean level of GDP by region, you can do:
+
+\begin{verbatim}
+aggregate(gle_cgdpc ~ ht_region, data = d, FUN = mean)
+\end{verbatim}
+
+\noindent Try this aggregate command using different variables and using a different value of the \texttt{FUN} argument (which takes the name of a function, such as \texttt{mean}, \texttt{sd}, etc. without the parentheses) until you feel comfortable with the process of generating data summaries.
+
+
+
 \end{enumerate*}
 
 \subsection{Statistical Significance}
 
 \begin{enumerate*}
-\item 
+
+\item For the final activity, we will examine the idea of ``statistical significance.'' Statistical significance is a concept related to \textit{statistical} hypothesis testing. If you recall from much earlier in the course (MT Week 6), we discussed two different ``flavours'' of hypothesis testing --- one associated with Fisher and one associated with Neyman and Pearson. We will see how both kinds of hypothesis testing manifest and how current statistical practice is a blend of these two perspectives. That practice most closely approximates Fisher's ideas (the calculation of a $p$-value) but differs in other ways (the estimation of a ``confidence interval'').
+
+\item To put this exercise in context, we will focus on a common research question: do two groups significantly differ from one another on a variable of interest?
+
+
+
+
+% We often use "no effect" null hypotheses
+
+% "No effect" null hypotheses test whether $\theta$ is different from zero
+
+
+% To conduct the test, we calculate a *t*-statistic: $t_{\hat{\beta_1}} = \frac{\hat{\beta_1}}{SE_{\hat{\beta_1}}}$
+% When *t* is large enough, the cumulative probability of *t*-ratios larger than that value is small
+% - i.e., large positive or large negative *t*-ratios put us in the tails of the t-distribution
+
+% We are not restricted to "no effect" null hypotheses
+% We can test against any null value
+% To do so we simply calculate `\(\frac{\hat{\beta_1} - \alpha}{SE_{\hat{\beta_1}}}\)`, where `\(\alpha\)` is our null hypothesis value
+% One such hypothesis would be `\(H_0: \beta_1=1\)`, to test whether there is a one-to-one correspondence between `\(x\)` and `\(y\)`
+
+% The p-value is the probability of seeing a t-ratio/t-statistic as large or larger than the one we observed in our data, given the null hypothesis
+
+
+% A small p-value represents: the probability of a *t*-statistic as extreme as the one we observed, if the null hypothesis was true
+
+
+The p-value is not:
+
+  - The probability that a hypothesis is true or false
+
+  - A reflection of our confidence or certainty about the result
+
+  - The probability that the true slope is in any particular range of values
+
+  - A statement about the importance or substantive size of the effect
+  
+  
+  Confidence intervals
+  
+    - CIs are often better measures of our uncertainty about the true value of a coefficient
+    
+    - A CI is simply a range, centered on the slope
+      - Calculated as a function of `\(SE_{\hat{\beta}}\)` and values derived from the *t*-distribution
+  
+    - CIs and p-values convey the same information
+      - CIs are on the scale of the statistic of interest (and thus the scale of the original data)
+      
+      
+      
+      But, like p-values, CIs are confusing
+      
+        - A confidence interval tells us:
+        > Were we to repeat our procedure of sampling, analyzing the sample, and calculating a confidence interval *repeatedly* from the population, a fixed percentage of the resulting intervals would include the true population-level slope.
+        
+        - We cannot say for sure whether the estimated confidence interval *this time* actually includes that true slope
+        
+        
+        Thus, we can be certain that some percent of the time (the percent being the p-threshold we set in calculating the CI), a given confidence interval includes the true slope
+        
+
+
+% bootstrapping 
+
+
+
+% confidence interval
+
+
+\begin{verbatim}
+################   95%  Confidence Intervals w/ 100 observations #######################
+means=NA  #define new variables
+lower=NA  
+upper=NA                       
+for (i in 1:100){                                           #Take 100 samples from our distribution
+  temp=sample(x,100,replace=FALSE)                          #Store samples of set set w/o replacement in "temp"
+  means[i]=mean(temp)                                       #calculate and store mean
+  lower[i]=mean(temp)-1.96*(sd(temp)/sqrt(length(temp)))    #calculate and store lower CI limit
+  upper[i]=mean(temp)+1.96*(sd(temp)/sqrt(length(temp)))    #calculate and store upper CI limit
+}
+#summary(lower); summary(upper)
+plot(c(mean(x),mean(x)),c(0,101),xlim=c(-.5,.5),ylim=c(0,101),type="l",      #plot mean value, and set layout parameters
+     xlab="Sample Mean & 95% CI for 100 obs",ylab="Sample",main="Confidence Intervals",col="gray")      #set graphing parameters
+for (i in 1:length(upper)){                   
+  lines(c(lower[i],upper[i]),c(i,i))          #plot confidence intervals for each sample
+  points(means[i],i,pch=20,col="gray20")      #plot the mean value for each sample
+}
+
+################   50%  Confidence Intervals w/ 100 observations #######################
+means=NA  #define new variables
+lower=NA  
+upper=NA                       
+for (i in 1:100){                                           #Take 100 samples from our distribution
+  temp=sample(x,100,replace=FALSE)                          #Store samples of set set w/o replacement in "temp"
+  means[i]=mean(temp)                                       #calculate and store mean
+  lower[i]=mean(temp)-.67*(sd(temp)/sqrt(length(temp)))    #calculate and store lower CI limit
+  upper[i]=mean(temp)+.67*(sd(temp)/sqrt(length(temp)))    #calculate and store upper CI limit
+}
+#summary(lower); summary(upper)
+plot(c(mean(x),mean(x)),c(0,101),xlim=c(-.5,.5),ylim=c(0,101),type="l",      #plot mean value, and set layout parameters
+     xlab="Sample Mean & 95% CI for 100 obs",ylab="Sample",main="Confidence Intervals",col="gray")      #set graphing parameters
+for (i in 1:length(upper)){                   
+  lines(c(lower[i],upper[i]),c(i,i))          #plot confidence intervals for each sample
+  points(means[i],i,pch=20,col="gray20")      #plot the mean value for each sample
+}
+\end{verbatim}
+
+
+
+% calculate p-value based on a simulated distribution
+
+% calculate p-value based upon a Normal distribution (\texttt{pnrom()})
+
+
+
+% equivalence of p-value, t-statistic, and confidence interval
+
+
+
+
+
+\item A major caveat in any discussion of \textit{statistical} significance is that we can never forget \textit{substantive} significance. Statistical significance tells us whether an estimate, a relationship, or an effect is large relative to a hypothetical distribution of test statistics corresponding to null expectation. This says nothing about whether that effect is large or important in substantive terms. If we have enough data (i.e., our sample is large enough), almost any test statistic will ``statistically significant'' but that does not mean that the estimated parameter is large or important. If we find that democracy and non-democracies differ by \$50 in per capita GDP that this difference is statistically different from zero, that is a statistically significant difference. Whether that difference is large or important depends upon the state of broader scientific understanding, the amount of dispersion in the data (is the difference large if measured in number of standard deviations), the size of other differences (do regions of the world vary more than one another on this variable), the research context, and our own judgment. \$50 may be a substantively small effect when talking about GDP but it may be a large effect when talking about the cost of tonight's dinner. This is something for you to consider.
+
+
 \end{enumerate*}
-
-\subsection{Matching}
-
-\begin{enumerate*}
-\item 
-\end{enumerate*}
-
-\subsection{Regression Analysis}
-
-\begin{enumerate*}
-\item 
-\end{enumerate*}
-
 
 \section{Submission Instructions}
 
-You will not submit this assignment for marking or feedback. You will have time in subsequent weeks to discuss your progress.
-
+You will not submit this assignment for marking or feedback. We will continue working interactively with R in the coming weeks and you will have time to discuss your progress.
 
 \end{document}
 
