@@ -30,7 +30,7 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  13. [Tabulation and Visualization (Jan. 26)](Slides/lecture13.pdf)
  14. [Sampling and Representativeness (Feb. 2)](Slides/lecture14.pdf)
  15. Statistical Inference (Feb. 9) - [Lab Activity](Assignments/lab1.pdf)
- 16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23)
+ 16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23) - [Lab Activity](Assignments/lab2.pdf)
  17. Matching and Regression: Accounting for Rival Explanations (Mar. 1)
  18. Experimental Design and the Search for Quasi-Experiments (Mar. 8)
  19. Ethics and Research Integrity (Mar. 15)
