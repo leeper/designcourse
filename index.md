@@ -29,8 +29,8 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  12. [Actually Talking to People: Participant Observation (Jan. 19)](Slides/lecture12.pdf)
  13. [Tabulation and Visualization (Jan. 26)](Slides/lecture13.pdf)
  14. [Sampling and Representativeness (Feb. 2)](Slides/lecture14.pdf)
- 15. Statistical Inference (Feb. 9) - [Lab Activity](Assignments/lab1.pdf)
- 16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23) - [Lab Activity](Assignments/lab2.pdf)
+ 15. Statistical Inference (Feb. 9) - [Lab Activity](Assignments/Lab1.pdf)
+ 16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23) - [Lab Activity](Assignments/Lab2.pdf)
  17. Matching and Regression: Accounting for Rival Explanations (Mar. 1)
  18. Experimental Design and the Search for Quasi-Experiments (Mar. 8)
  19. Ethics and Research Integrity (Mar. 15)
@@ -54,7 +54,7 @@ There are eight problem sets for the course (four in each term).
 | [Text analysis](Assignments/ProblemSet4.html) | Tuesday Dec. 15 |
 | [Interviewing](Assignments/ProblemSet5.html) | Tuesday Jan. 26 |
 | [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday Feb. 23 |
-| Regression analysis | Tuesday Mar. 8 |
+| [Regression analysis](Assignments/ProblemSet7.html) | Tuesday Mar. 8 |
 | Experimentation | Tuesday Mar. 15 |
 
 ## LT Reading Week Study Guide Assignment ##
@@ -79,6 +79,7 @@ The 2-hour written exam covers the full breadth of material from the course and 
 
 The exam will consist of two parts: Part A and Part B. Part A contains 15 questions, of which students must answer 5. Part B contains 4 questions, of which students must answer 1. Each part counts equally (50%), and each question of Part A counts equally (10% each), toward this portion of the overall course mark.
 
+[A sample paper for the exam is available here](Syllabus/SamplePaper.pdf).
 
 ---
 ## Why GitHub? ##

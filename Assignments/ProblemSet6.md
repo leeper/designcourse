@@ -12,7 +12,7 @@ The purpose of this problem set is to assess your understanding of basic methods
 
 ## Overview ##
 
-You will use the [Quality of Government](http://www.qogdata.pol.gu.se/) dataset to provide a quantitative description of the quality of democratic institutions across the world. Note: You may use the "Standard" dataset (which is based on a single cross-section of data) or the "Time Series" dataset (which has country-year observations)
+You will use the [Quality of Government](http://www.qogdata.pol.gu.se/) dataset to provide a quantitative description of the quality of democratic institutions across the world. Note: You may use the "Standard" dataset (which is based on a single cross-section of data) or the "Time Series" dataset (which has country-year observations).
 
 ## Your Task ##
 
