@@ -81,7 +81,8 @@ levels(d$happy)[12:14] <- NA
 
 \begin{verbatim}
 library("ggplot2")
-ggplot(d, aes(x = as.integer(rlgdgr), y = as.integer(happy))) + geom_jitter(na.rm = TRUE)
+ggplot(d, aes(x = as.integer(rlgdgr), y = as.integer(happy))) +
+    geom_jitter(na.rm = TRUE)
 \end{verbatim}
 
 \noindent Looking at the plot, how correlated would you say these variables are? Does happiness go with religiosity?
@@ -256,12 +257,12 @@ sum((new$happy - mean(new$happy))^2)
 \fill[blue, opacity=0.5] (5,2) rectangle (8.03,5.03);
 \fill[blue, opacity=0.5] (6,7) rectangle (7.29,5.71);
 \end{tikzpicture}
-\caption{Explained Sum of Squares}
+\caption{Residual Sum of Squares}
 \end{subfigure}
 \caption{Sum of Squares for a Simple Scatterplot}\label{fig:tss}
 \end{figure}
 
-\item In regression, we are ``explaining'' some of that total variation in y with the covariation between x (religiosity) and y (happiness). This explained portion of the sum of squares is called the ``sum of squares, explained'' or ``model sum of squares''; the amount of variation in y that is not ``explained'' by x is called the ``residual sum of squares''. This residual sum of squares is literally the sum of the squared areas formed by the distance between each point and the ``predicted value'' (or ``fitted value'') of y expected by the regression line given that observation's value of x. Figure \ref{fig:tss}(b) shows the residual some of squares for the same example scatterplot.
+\item In regression, we are ``explaining'' some of that total variation in y with the covariation between x (religiosity) and y (happiness). This explained portion of the sum of squares is called the ``sum of squares, explained'' or ``model sum of squares''; the amount of variation in y that is not ``explained'' by x is called the ``residual sum of squares''. This residual sum of squares is literally the sum of the squared areas formed by the distance between each point and the ``predicted value'' (or ``fitted value'') of y expected by the regression line given that observation's value of x. Figure \ref{fig:tss}(b) shows the residual sum of squares for the same example scatterplot.
 
 \item If all of the variation in y is explained by the variation in x, then the residual sum of squares will be \textit{small} while the explained sum of squares will be large. You can calculate the residual sum of squares using the following:
 
@@ -437,7 +438,6 @@ cor(new2$happy, new2$religiosity)
 
 \begin{verbatim}
 lm(r1 ~ r2)
-
 # or:
 lm( lm(happy ~ pinterest, data = new2)$residuals ~
     lm(religiosity ~ pinterest, data = new2)$residuals )$coef
