@@ -224,10 +224,10 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \againframe<3->{smoking}
 
 \frame{
-\frametitle{Example}
+\frametitle{Example I}
 \begin{center}
 \begin{tabular}{l r}
-\textbf{X} & \textbf{Y (Cancer)} \\
+$X$ & $Y$ \textbf{(Cancer)} \\
 Smokers & 0.15 \\
 Non-smokers & 0.05 \\
 \end{tabular}
@@ -241,20 +241,88 @@ ATE & = \bar{Y}_{X=1} - \bar{Y}_{X=0} \\
 
 }
 
-\frame{
-\frametitle{Example}
+\frametitle{Example II}
 \begin{center}
-\begin{tabular}{l r}
-\textbf{X} & \textbf{Y (Cancer)} \\
-\textit{Men} \\
-Smokers & 0.15 \\
-Non-smokers & 0.15 \\
-\textit{Women} \\
-Smokers & 0.20 \\
-Non-smokers & 0.10 \\
+\begin{tabular}{l l r}
+$Z_1$ (Sex) & $X$ & $Y$ (Cancer)} \\
+0 & Smokers & \dots \\
+0 & Non-smokers & \dots \\
+1 & Smokers & \dots \\
+1 & Non-smokers & \dots \\
 \end{tabular}
 \end{center}
+
+\begin{align*}
+ATE = & \sum p_{\text{Male} (\bar{Y}_{X=1, Z_1 = 1} - \bar{Y}_{X=0, Z_1 = 1}) + \\
+& p_{\text{Female}} (\bar{Y}_{X=1, Z_1 = 0} - \bar{Y}_{X=0, Z_1 = 0}) \\
+\end{align*}
+
 }
+
+
+\frame{
+\frametitle{Example III}
+
+\small
+
+\begin{center}
+\begin{tabular}{l l l r}
+$Z_2$ (Parent) & $Z_1$ (Sex) & $X$ & $Y$ (Cancer)} \\
+0 & 0 & Smokers & \dots \\
+0 & 0 & Non-smokers & \dots \\
+0 & 1 & Smokers & \dots \\
+0 & 1 & Non-smokers & \dots \\
+1 & 0 & Smokers & \dots \\
+1 & 0 & Non-smokers & \dots \\
+1 & 1 & Smokers & \dots \\
+1 & 1 & Non-smokers & \dots \\
+\end{tabular}
+\end{center}
+
+\begin{align*}
+ATE = & \sum p_{\text{Male, Parent non-smoker}} (\bar{Y}_{X=1, Z_1 = 1, Z_2=0} - \bar{Y}_{X=0, Z_1 = 1, Z_2=0}) + \\
+& p_{\text{Female, Parent non-smoker}} (\bar{Y}_{X=1, Z_1 = 0, Z_2=0} - \bar{Y}_{X=0, Z_1 = 0, Z_2=0}) + \\
+& \sum p_{\text{Male, Parent smoker}} (\bar{Y}_{X=1, Z_1 = 1, Z_2=1} - \bar{Y}_{X=0, Z_1 = 1, Z_2=1}) + \\
+& p_{\text{Female, Parent smoker}} (\bar{Y}_{X=1, Z_1 = 0, Z_2=1} - \bar{Y}_{X=0, Z_1 = 0, Z_2=1}) + \\
+\end{align*}
+
+}
+
+
+\frame{
+
+\frame{Exact Matching}
+
+\begin{itemize}\itemsep1em
+\item Repeat this partitioning of the space into ``strata'' (or ``subclasses'')
+\item Requires at least one ``treated'' and one ``untreated'' case at every combination of every covariate
+\item More convenient notation:
+
+	\begin{align*}
+	\text{Naive Effect} & = \bar{Y}_{X=1} - \bar{Y}_{X=0}\\
+	\text{Average Treatment Effect} & = \bar{Y}_{X=1, \mathbf{Z}} - \bar{Y}_{X=0, \mathbf{Z}}
+	\end{align*}
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+	\frametitle{Omitted Variables}
+	
+	In the language of potential outcomes:
+	
+	{\small
+	$\underbrace{E[Y_i| X_i = 1] - E[Y_i | X_i = 0] =}_{\text{Naive Effect}}$\\
+	\vspace{1em}
+	$\underbrace{E[Y_{1i}|X_i =1] - E[Y_{0i} | X_i = 1]}_{\text{Treatment Effect on Treated (ATT)}} + \underbrace{E[Y_{0i}|X_i = 1] - E[Y_{0i}|X_i=0]}_{\text{Selection Bias}}$
+	}
+
+	By conditioning, we assert that the potential (control) outcomes are equivalent between treated and non-treated cases.
+}
+
 
 
 \frame{
@@ -274,15 +342,94 @@ Non-smokers & 0.10 \\
 
 \frame{
 
-\frametitle{Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}
+	\frametitle{Common Conditioning Strategies}
+	\begin{enumerate}\itemsep1em
+    	\item<2-> Condition on nothing (``naive effect'')
+    	\item<3-> Condition on some variables
+    	\item<4-> Condition on all observables
+	\end{enumerate}
+	\vspace{1em}
+	\onslide<5->{Which of these are good strategies?}
+}
 
-\begin{enumerate}
-\item Correlation
-\item Nonconfounding
-\item Direction (``temporal precedence'')
-\item Mechanism
-\item (Appropriate level of analysis)
-\end{enumerate}
+
+\frame{
+	\frametitle{Post-treatment Bias}
+	\begin{itemize}\itemsep1em
+	\item We usually want to know the \textbf{total effect} of a cause
+	\item If we include a mediator, $D$, of the $X \rightarrow Y$ relationship, the coefficient on $X$:
+		\begin{itemize}
+    		\item Only reflects the \textbf{direct} effect
+    		\item Excludes the \textbf{indirect} effect of $X$ through $M$
+		\end{itemize}
+	\item So don't control for mediators!
+	\end{itemize}
+}
+
+
+% post-treatment example
+
+
+\begin{frame}
+\frametitle{Post-Treatment Bias}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (2,0) node (D) {Tar};
+    \draw[->] (D) -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below] (E) {Other factors} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+\frame{
+\frametitle{Post-Treatment Bias}
+\begin{center}
+\begin{tabular}{l r}
+$D$ \textbf{(Tar)} & $X$ & $Y$ \textbf{(Cancer)} \\
+0 & Smokers & \dots \\
+0 & Non-smokers & \dots \\
+1 & Smokers & \dots \\
+1 & Non-smokers & \dots \\
+\end{tabular}
+\end{center}
+
+\begin{align*}
+ATE_{\text{Tar}} = & \sum (\bar{D}_{X=1} - \bar{D}_{X=0})\\
+
+ATE_{\text{Cancer}} = & \sum p_{D=1} (\bar{Y}_{X=1} - \bar{Y}_{X=0}) + \\
+& p_{D=0} (\bar{Y}_{X=1} - \bar{Y}_{X=0}) \\
+\end{align*}
+
+}
+
+
+
+\section{Multiple Regression}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Multiple Regression}
+
+	\begin{itemize}
+	\item Regression achieves the same objectives as matching
+	\item Requires a \textit{linear} relationship between all RHS ($X$ variables) and $Y$
+		\begin{itemize}
+		\item Can be a set of binary indicator variables
+		\end{itemize}
+	\item We interpret coefficient estimates as conditional average treatment effects
+	\end{itemize}
+
 }
 
 
@@ -292,12 +439,53 @@ Non-smokers & 0.10 \\
 
 
 
-% Matching 
 
-\section{Multiple Regression}
-\frame{\tableofcontents[currentsection]}
 
-% Causal graphs
+
+
+
+\begin<1>[label=cis]{frame}
+\frametitle{{\normalsize Cusack, Iversen, and Soskice}}
+
+\vspace{-1em}
+
+\begin{center}
+\small
+\begin{tikzpicture}[>=latex',n/.style={align=center, text width=4cm, inner sep=0, outer sep=3}]
+    \draw<1,3->[->] (0,0) node[left,n] (X) {Strength/Threat\\of Left} -- (2.5,0) node[right,n] (Y) {Proportional\\Representation};
+    \draw<2->[->] (-3,3) node[above,n] (Z) {Business-Labour\\Coordination} -- (X);
+    \draw[->] (Z) -- (Y);
+    %\draw[->] (5,2) node[above] (A) {A} -- (Y);
+    \draw[->] (4,-2) node[below] (E) {(Other factors)} -- (Y);
+    \draw[->] (-3, -2) node[below,n] (W) {Ethno-Linguistic\\Division} -- (X);
+    \draw[->] (W) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+
+
+
+\frame{
+	\frametitle{Omitted Variable Bias}
+	\begin{itemize}
+	\item We want to estimate:
+	\begin{align*}
+	Y = \beta_0 + \beta_1 X + \beta_2 Z + \epsilon
+	\end{align*}
+	\item We actually estimate:
+	\begin{align*}
+	\tilde{y} & = \tilde{\beta_0} + \tilde{\beta_1} x + \epsilon\\
+	& = \tilde{\beta_0} + \tilde{\beta_1} x + (0 * z) + \epsilon\\
+	& = \tilde{\beta_0} + \tilde{\beta_1} x + \nu
+	\end{align*}
+	\item Bias: $\tilde{\beta}_1 = \hat{\beta}_1 + \hat{\beta}_2 \tilde{\delta}_1$, where $\tilde{z} = \tilde{\delta}_0 + \tilde{\delta}_1 x$
+	\end{itemize}
+}
+
 
 
 
@@ -366,11 +554,96 @@ Non-smokers & 0.10 \\
 
 % Rival hypotheses
 
-% Multiple regression
+\frame{
+\frametitle{Testing Rival Hypotheses}
 
-	% equations
-	
-	% inference to a population
+\begin{itemize}\itemsep1em
+\item Rival hypotheses can be derived from two (or more) different theories
+\item We can conduct independent tests of each
+	\begin{itemize}
+	\item Is there evidence consistent with Hyp 1?
+	\item Is there evidence consistent with Hyp 2?
+	\end{itemize}
+\item Regression allows us to test both simultaneously on the same data
+	\begin{itemize}
+	\item Is the data more consistent with Hyp 1 or Hyp 2?
+	\end{itemize}
+\item Draw inference about causality and about validity of theories based on data
+\end{itemize}
+}
+
+\againframe<1->{cis}
+
+
+
+% CIS regression equation
+
+
+\frame<1>[label=rival]{
+
+\frametitle{Rival Theories}
+\begin{itemize}\itemsep1em
+\item<1-> Rokkan--Boix:\\
+
+\begin{equation}
+PR = \beta_0 + \beta_1 Threat + \epsilon
+\end{equation}
+
+\item<2-> Cusack, Iversen, and Soskice:\\
+
+\begin{equation}
+PR = \beta_0 + \beta_2 Coordination + \epsilon
+\end{equation}
+
+\item<3-> Combined test:\\
+\begin{equation}
+PR = \beta_0 + \beta_1 Threat + \beta_2 Coordination + \epsilon
+\end{equation}
+
+\end{itemize}
+
+}
+
+\frame{\includegraphics[width=\textwidth]{images/CusackIversenSoskiceTable3}}
+
+\frame{
+	\frametitle{Multivariate Regression Interpretation}
+	\begin{itemize}\itemsep1em
+	\item All our interpretation rules from earlier still apply in a multivariate regression
+	\item Now we interpret a coefficient as an effect ``all else constant''
+	\item Generally, not good to give all coefficients a causal interpretation
+		\begin{itemize}
+		\item Think ``forward causal inference''
+		\item We're interested in the $X \rightarrow Y$ effect
+		\item All other coefficients are there as ``controls''
+		\end{itemize}
+	\end{itemize}
+}
+
+
+\againframe<1-2>{rival}
+
+\frame{\includegraphics[width=\textwidth]{images/CusackIversenSoskiceTable5}}
+
+
+\againframe<2-3>{rival}
+
+
+% TABLE OF REGRESSION RESULTS
+
+
+
+
+% inference to a population
+
+
+% further rival theories
+
+
+
+\frame{\includegraphics[width=\textwidth]{images/CusackIversenSoskiceTable4}}
+
+
 
 
 
@@ -424,9 +697,6 @@ Non-smokers & 0.10 \\
 	\item So don't control for mediators!
 	\end{itemize}
 }
-
-
-
 
 
 
