@@ -1,4 +1,5 @@
 \input{preamble}
+\usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
@@ -44,10 +45,252 @@
 \frame{}
 
 
+
+\section[Regression]{Regression, Briefly}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+	\frametitle{Uses of Regression}
+	\begin{enumerate}\itemsep2em
+	\item Description
+	\item Prediction
+	\item Causal Inference
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Descriptive Inference}
+	\begin{enumerate}\itemsep1em
+	\item We want to understand a \textit{population} of cases
+	\item We cannot observe them all, so:
+		\begin{enumerate}
+    		\item Draw a \textit{representative} sample
+    		\item Perform mathematical procedures on sample data
+    		\item Use assumptions to make inferences about population
+    		\item Express uncertainty about those inferences based on assumptions
+		\end{enumerate}
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Parameter Estimation}
+	\begin{itemize}\itemsep1em
+    	\item We want to observe population \textit{parameter} $\theta$
+    	\item If we obtain a representative sample of population units:\\
+    		\begin{itemize}\itemsep1em
+        		\item Our sample statistic $\hat{\theta}$ is an unbiased estimate of $\theta$
+        		\item Our sampling procedure dictates how uncertain we are about the value of $\theta$
+    		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+
+	\frametitle{Three Equations}
+	\begin{enumerate}\itemsep2em
+	\item Population: $Y = \beta_0 + \beta_1 X \hspace{0.5em} (+ \epsilon)$
+	\item Sample estimate: $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$
+	\item Unit:
+		
+		$y_i = \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i$\\
+		$y_i = \bar{y}_{0i} + (y_{1i} - y_{0i}) x_i + (y_{0i} - \bar{y}_{0i})$
+	\end{enumerate}
+}
+
+
+
+\frame{
+
+\frametitle{Mathematically, regression\dots}
+
+\begin{itemize}\itemsep0.5em
+\item<1-> \dots describes multivariate relationships in a sample of data points
+\item<2-> \dots depending on sampling procedure, estimates those relationships in the population
+\item<3-> \dots depending on model fit, provides a way to predict outcome values for new cases
+\item<4-> \dots depending on model completeness, provides inferences about the effect of $X$ on $Y$
+\end{itemize}
+
+}
+
 \section{Matching and Conditioning}
 \frame{\tableofcontents[currentsection]}
 
+
+\frame{
+	Causal inference is about comparing an observed outcome to a counterfactual, ``potential outcome'' for the same cases
+
+	Regression provides a ``statistical solution'' to the fundamental problem of causal inference (Holland)
+}
+
+
+
+\frame{
+
+\frametitle{An Example}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item For example, if we think smoking might cause lung cancer, how would we know?
+\vspace{0.5em}
+\item How would we know if smoking caused lung cancer for an individual who smoked?
+	\begin{itemize}
+	\item What's the relevant counterfactual?
+	\end{itemize}
+\item How would we know if smoking causes lung cancer on average across many individuals?
+	\begin{itemize}
+	\item What's the relevant counterfactual?
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Confounding}
+
+\begin{itemize}
+\item A source of ``endogeneity''
+\item Synonyms: selection bias, omitted variable bias
+\item In lay terms: the (non)correlation between $X$ and $Y$ does not reflect a causal relationship between $X$ and $Y$ are related for other reasons
+	\begin{itemize}
+	\item Most commonly: Some $Z$ causes both $X$ and $Y$
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Addressing Confounding}
+
+\begin{enumerate}\itemsep1em
+\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<3-> Identify all possible confounds (\textbf{Z})
+\item<4-> ``Condition'' on all confounds
+	\begin{itemize}
+	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\end{itemize}
+\end{enumerate}
+
+}
+
 % Mill's method of difference
+\frame{
+\frametitle{Mill's Method of Difference}
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+}
+
+
+
+\frame<1-3>[label=smoking]{
+
+\frametitle{Smoking Example}
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> Partition sample into ``smokers'' ($X = 1$) and ``non-smokers'' ($X = 0$) 
+\item<3-> Identify possible confounds
+	\begin{itemize}
+	\item Sex
+	\item Parental smoking
+	\item etc.
+	\end{itemize}
+\item<4-> Estimate difference in cancer rates between smokers and non-smokers within each group of \textit{covariates}
+\end{enumerate}
+
+}
+
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below] (E) {Other factors} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\againframe<3->{smoking}
+
+\frame{
+\frametitle{Example}
+\begin{center}
+\begin{tabular}{l r}
+\textbf{X} & \textbf{Y (Cancer)} \\
+Smokers & 0.15 \\
+Non-smokers & 0.05 \\
+\end{tabular}
+\end{center}
+
+\begin{align*}
+ATE & = \bar{Y}_{X=1} - \bar{Y}_{X=0} \\
+& = 0.15-0.05 \\
+& = 0.10
+\end{align*}
+
+}
+
+\frame{
+\frametitle{Example}
+\begin{center}
+\begin{tabular}{l r}
+\textbf{X} & \textbf{Y (Cancer)} \\
+\textit{Men} \\
+Smokers & 0.15 \\
+Non-smokers & 0.15 \\
+\textit{Women} \\
+Smokers & 0.20 \\
+Non-smokers & 0.10 \\
+\end{tabular}
+\end{center}
+}
+
+
+\frame{
+
+\frametitle{Caveat!}
+
+\begin{itemize}\itemsep1em
+\item We can only condition on \textit{observed} confounding variables
+\item If we think other confounds might exist, but are unobservable, no form of conditioning can help us
+	\begin{itemize}
+	\item Example: Tobacco companies argued that an unknown genetic factor was a common cause of both smoking addiction and lung cancer
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}
+
+\begin{enumerate}
+\item Correlation
+\item Nonconfounding
+\item Direction (``temporal precedence'')
+\item Mechanism
+\item (Appropriate level of analysis)
+\end{enumerate}
+}
+
+
+
+
+
+
+
 
 % Matching 
 
@@ -55,6 +298,71 @@
 \frame{\tableofcontents[currentsection]}
 
 % Causal graphs
+
+
+
+\begin{frame}
+\frametitle{{\normalsize Cusack, Iversen, and Soskice}}
+
+\vspace{-1em}
+
+\begin{center}
+\small
+\begin{tikzpicture}[>=latex',n/.style={align=center, text width=4cm, inner sep=0, outer sep=3}]
+    \draw[->] (0,0) node[left,n] (X) {Strength/Threat\\of Left} -- (2.5,0) node[right,n] (Y) {Proportional\\Representation};
+    \draw[->] (-3,3) node[above,n] (Z) {Business-Labour\\Coordination} -- (X);
+    \draw[->] (Z) -- (Y);
+    %\draw[->] (5,2) node[above] (A) {A} -- (Y);
+    \draw[->] (4,-2) node[below] (E) {(Other factors)} -- (Y);
+    \draw[->] (-3, -2) node[below,n] (W) {Ethno-Linguistic\\Division} -- (X);
+    \draw[->] (W) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\frame{
+	\frametitle{Confounding (Selection Bias)}
+	\begin{itemize}\itemsep1em
+	\item If $x$ is not randomly assigned, potential outcomes are not independent of $x$
+	\item Other factors explain why a unit $i$ received their particular value $x_i$
+	\vspace{1em}
+	\item In matching, we obtain this \textit{conditional independence} by comparing units that are identical on all confounding variables
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Omitted Variables}
+	{\small
+	$\underbrace{E[Y_i| X_i = 1] - E[Y_i | X_i = 0] =}_{\text{Naive Effect}}$\\
+	\vspace{1em}
+	$\underbrace{E[Y_{1i}|X_i =1] - E[Y_{0i} | X_i = 1]}_{\text{Treatment Effect on Treated (ATT)}} + \underbrace{E[Y_{0i}|X_i = 1] - E[Y_{0i}|X_i=0]}_{\text{Selection Bias}}$
+	}
+	\vspace{1em}
+}
+
+
+
+
+\frame{
+	\frametitle{Omitted Variable Bias}
+	\begin{itemize}
+	\item We want to estimate:
+	\begin{align*}
+	Y = \beta_0 + \beta_1 X + \beta_2 Z + \epsilon
+	\end{align*}
+	\item We actually estimate:
+	\begin{align*}
+	\tilde{y} & = \tilde{\beta_0} + \tilde{\beta_1} x + \epsilon\\
+	& = \tilde{\beta_0} + \tilde{\beta_1} x + (0 * z) + \epsilon\\
+	& = \tilde{\beta_0} + \tilde{\beta_1} x + \nu
+	\end{align*}
+	\item Bias: $\tilde{\beta}_1 = \hat{\beta}_1 + \hat{\beta}_2 \tilde{\delta}_1$, where $\tilde{z} = \tilde{\delta}_0 + \tilde{\delta}_1 x$
+	\end{itemize}
+}
+
+
+
 
 % Rival hypotheses
 
@@ -64,7 +372,62 @@
 	
 	% inference to a population
 
+
+
+
+\frame{
+	\frametitle{Multivariate Regression Interpretation}
+	\begin{itemize}\itemsep1em
+	\item All our interpretation rules from earlier still apply in a multivariate regression
+	\item Now we interpret a coefficient as an effect ``all else constant''
+	\item Generally, not good to give all coefficients a causal interpretation
+		\begin{itemize}
+		\item Think ``forward causal inference''
+		\item We're interested in the $X \rightarrow Y$ effect
+		\item All other coefficients are there as ``controls''
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
 % Interactions/heterogeneity
+
+
+
+
+
+
+
+\frame{
+	\frametitle{Common Conditioning Strategies}
+	\begin{enumerate}\itemsep1em
+    	\item<2-> Condition on nothing (``naive effect'')
+    	\item<3-> Condition on some variables
+    	\item<4-> Condition on all observables
+	\end{enumerate}
+	\vspace{1em}
+	\onslide<5->{Which of these are good strategies?}
+}
+
+
+\frame{
+	\frametitle{Post-treatment Bias}
+	\begin{itemize}\itemsep1em
+	\item We usually want to know the \textbf{total effect} of a cause
+	\item If we include a mediator, $D$, of the $X \rightarrow Y$ relationship, the coefficient on $X$:
+		\begin{itemize}
+    		\item Only reflects the \textbf{direct} effect
+    		\item Excludes the \textbf{indirect} effect of $X$ through $M$
+		\end{itemize}
+	\item So don't control for mediators!
+	\end{itemize}
+}
+
+
+
+
 
 
 
