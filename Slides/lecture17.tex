@@ -3,7 +3,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Matching and Regression:\\Accounting for Rival Explanations}
+\title{Matching \& Regression:\\Accounting for Rival Explanations}
 
 \date[]{}
 
@@ -76,11 +76,11 @@
 \frame{
 	\frametitle{Parameter Estimation}
 	\begin{itemize}\itemsep1em
-    	\item We want to observe population \textit{parameter} $\theta$
+    	\item We want to observe population \textit{parameter} $\beta$
     	\item If we obtain a representative sample of population units:\\
     		\begin{itemize}\itemsep1em
-        		\item Our sample statistic $\hat{\theta}$ is an unbiased estimate of $\theta$
-        		\item Our sampling procedure dictates how uncertain we are about the value of $\theta$
+        		\item Our sample statistic $\hat{\beta}$ is an unbiased estimate of $\beta$
+        		\item Our sampling procedure dictates how uncertain we are about the value of $\beta$
     		\end{itemize}
 	\end{itemize}
 }
@@ -490,6 +490,33 @@ $D$ (Tar) & $X$ & $Y$ (Cancer) \\
 }
 
 
+\frame{
+	\frametitle{From Line to Surface I}
+	\begin{itemize}\itemsep1em
+	\item In simple regression, we estimate a \textbf{line}
+	\item In multiple regression, we estimate a \textbf{surface}
+	\item Each coefficient is the \textit{marginal effect}, all else constant (at mean)
+	\item This can be hard to picture in your mind
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{From Line to Surface II}
+	\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	    \draw[thick,->] (0,0,0) -- (6,0,0) node[anchor=north east]{$x$};
+	    \draw[thick,->] (0,0,0) -- (0,4,0) node[anchor=north west]{$y$};
+	    \draw<1> (5,3,0) node {$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 X$};
+        \draw<2> (5,3,0) node {$\hat{y} = \hat{\beta}_0 + \hat{\beta}_2 Z$};
+	    \draw<3> (5,3,0) node {$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 X + \hat{\beta}_2 Z$};
+	    \draw<1,3>[thick, blue] (0,2,0) -- (5,0,0);
+	    \draw<2->[thick,->] (0,0,0) -- (0,0,5) node[anchor=south]{$z$};
+	    \draw<2->[thick, blue] (0,2,0) -- (0,0,4);
+	    \filldraw<3->[draw=red,fill=red!20,opacity=0.5]
+	        (0,2,0) -- (0,0,4) -- (5,-2,4) -- (5,0,0) -- cycle;
+	\end{tikzpicture}
+	\end{center}
+}
 
 
 
@@ -656,7 +683,7 @@ F Statistic & 35.673$^{***}$ (df = 4; 8) & 32.084$^{***}$ (df = 4; 7) \\
 
 }
 
-\frame{
+\frame[label=CISscatter]{
 
 % ggplot(cis, aes(x = coordds, y = thresh))+ geom_jitter(width=0.3, height=1, size = 3, alpha = 0.5) + geom_smooth(method = "lm") + theme_bw()
 \begin{center}
@@ -664,6 +691,7 @@ F Statistic & 35.673$^{***}$ (df = 4; 8) & 32.084$^{***}$ (df = 4; 7) \\
 \end{center}
 
 }
+
 
 
 \frame{
@@ -763,33 +791,57 @@ F Statistic & 25.390$^{***}$ (df = 5; 7) & 39.083$^{***}$ (df = 5; 6) \\
 
 \frame{}
 
+\frame{
+\frametitle{{\normalsize Aside: Interpolation/Extrapolation}}
+
+\normalsize
+
+In \textit{prediction}, we may want to use our estimated coefficients to predict outcome values for new cases
+
+\begin{itemize}
+\item \textit{Interpolation} is prediction within the interval covered by our observed data
+\item \textit{Extrapolation} is prediction outside the interval covered by our observed data
+\end{itemize}
+
+}
+
+
+\againframe{CISscatter}
+
+
 
 
 \frame{
-\frametitle{Two Lingering Issues}
+\frametitle{{\normalsize Lingering Issues}}
 
-\begin{enumerate}\itemsep1em
+\begin{enumerate}\itemsep0.5em
+
+\small
 
 \item<2-> Inference to a population
 
-	\begin{itemize}\itemsep0.5em
+	\begin{itemize}\itemsep0.25em
 	\item Inferences from data to population depend on generalizability
-	\item We may imagine that we are drawing from a ``superpopulation''
 	\end{itemize}
 
-\item<3-> Interactions, or effect \textit{heterogeneity}
+\item<3-> Interactions terms
 
 	\begin{itemize}
-	\item Interaction terms allow us to test whether than effect varies across values of a second variable
-	
-	\begin{align*}
-	PR & = \beta_0 + \beta_1 Threat + \beta_2 Coordination + \epsilon \\
-	   & = \beta_0 + \beta_1 Threat + \beta_2 Coordination + \beta_3 (Threat * Coordination) + \epsilon
-	\end{align*}
-
-	\item The interpretation of coefficient estimates changes!
+	\item Allow us to test whether than effect varies across values of other variables
 	
 	\end{itemize}
+	\vspace{-1em}
+
+{\footnotesize
+\begin{align*}
+PR & = \beta_0 + \beta_1 Threat + \beta_2 Coord + \epsilon \\
+& = \beta_0 + \beta_1 Threat + \beta_2 Coord + \beta_3 (Threat * Coord) + \epsilon
+\end{align*}
+}
+
+\vspace{-1em}
+
+\item<4-> Kellstedt and Whitten cover more in-depth mathematical requirements
 
 \end{enumerate}
 }
