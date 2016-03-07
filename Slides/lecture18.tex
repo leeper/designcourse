@@ -2,7 +2,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Experimental Design\\ and\\ the Search for Quasi-Experiments}
+\title{{\large Experimental Design and\\ the Search for Quasi-Experiments}}
 
 \date[]{}
 
@@ -11,6 +11,10 @@
 \frame{\titlepage}
 
 \frame{\tableofcontents}
+
+
+\normalsize
+
 
 \section{Research Proposals}
 \frame{\tableofcontents[currentsection]}
@@ -21,7 +25,45 @@
 \section[Review]{A Review of Conditioning}
 \frame{\tableofcontents[currentsection]}
 
-% Review matching 
+
+\frame{
+
+\frametitle{Principles of causality\footnote{From Kellstedt and Whitten}}
+
+\begin{enumerate}\itemsep0.5em
+\item Correlation
+\item Nonconfounding
+\item Direction (``temporal precedence'')
+\item Mechanism
+\item (Appropriate level of analysis)
+\end{enumerate}
+}
+
+
+% Mill's method of difference
+\frame{
+\frametitle{{\normalsize Mill's Method of Difference}}
+
+\small
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+}
+
+\frame{
+
+\frametitle{Addressing Confounding}
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<3-> Identify all possible confounds (\textbf{Z})
+\item<4-> ``Condition'' on all confounds
+	\begin{itemize}
+	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\end{itemize}
+\end{enumerate}
+
+}
+
 
 
 \section{Randomized Experiments}
@@ -29,19 +71,690 @@
 
 % Causal graphs
 
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
+    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
 % Individual-level effects versus ATEs
+
+
+\frame{
+	\frametitle{The Experimental Ideal}
+	\small
+	A randomized experiment, or randomized control trial is:
+ 		\begin{quote}\small
+ 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+ 		\end{quote}
+ 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
+}
+
+\frame{
+	\frametitle{The Experimental Ideal}
+	\begin{itemize}\itemsep0.5em
+    	\item It solves both the temporal ordering and confounding problems
+    		\begin{itemize}
+        		\item Treatment (X) is applied by the researcher before outcome (Y)
+        		\item Randomization means there are no confounding (Z) variables
+    		\end{itemize}
+    	\item Thus experiments are a ``gold standard'' that always provides causal inference
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Random Assignment}
+
+\small
+\begin{itemize}\itemsep0.5em
+\item A physical process of randomization
+\item Breaks the ``selection process''
+	\begin{itemize}\small
+	\item Units only take value of $X$ because of assignment
+	\end{itemize}
+\item This means:
+	\begin{itemize}\small
+	\item All covariates are balanced between groups
+	\item Potential outcomes are balanced between groups
+	\item In sum: No confounding
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+% design-based experimental inference
+\frame{
+	\frametitle{Experimental Inference I}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> Causal inference is a comparison of two \textit{potential outcomes}
+    	\item<2-> A potential outcome is the value of the outcome (Y) for a given unit (i) after receiving a particular version of the treatment (X)
+    	\item<3-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them
+    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference II}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> We cannot see individual-level causal effects
+    	\item<2-> We can see \textit{average causal effects}
+    		\begin{itemize}
+        		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
+    		\end{itemize}
+    	\item<3-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference III}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+		\item<2-> We can average: $ATE = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
+    		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    	\item<4-> Is this what we want to know?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Experimental Inference IV}
+	\small
+	\begin{itemize}\itemsep0.5em
+	\item What we want and what we have:
+		\begin{align}
+		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
+		ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]
+		\end{align}		
+	\item<2-> Are the following statements true?\\
+  		\begin{itemize}\itemsep0.5em
+      		\item<2-> $E[Y_{1i}] = E[Y_{1i} | X = 1]$
+      		\item<2-> $E[Y_{0i}] = E[Y_{0i} | X = 0]$
+  		\end{itemize}
+  	\item<3-> Not in general!
+  	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference V}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item Only true when both of the following hold:
+    	\begin{align}
+    	E[Y_{1i}] = E[Y_{1i} | X = 1] = E[Y_{1i} | X = 0]\\
+    	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
+    	\end{align}
+    	\item In that case, potential outcomes are \textit{independent} of treatment assignment
+		\item If true, then:
+    	\begin{align*}
+    	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
+    	& = E[Y_{1i}] - E[Y_{0i}]\\
+    	& = ATE
+    	\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference VI}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item This holds in experiments because of randomization\\
+    		\begin{itemize}
+        		\item Units differ only in what side of coin was up
+        		\item Experiments randomly reveal potential outcomes
+    		\end{itemize}
+    	\item<2-> Matching/regression/etc. attempts to eliminate those confounds, such that:
+    	\begin{align*}
+    	E[Y_{1i} | Z] = E[Y_{1i} | X = 1, Z] = E[Y_{1i} | X = 0, Z]\\
+    	E[Y_{0i} | Z] = E[Y_{0i} | X = 1, Z] = E[Y_{0i} | X = 0, Z]
+    	\end{align*}
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{``The Perfect Doctor''}
+
+\small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & ? & ? \\
+2 & ? & ? \\
+3 & ? & ? \\
+4 & ? & ? \\
+5 & ? & ? \\
+6 & ? & ? \\
+7 & ? & ? \\
+8 & ? & ? \\ \hline
+\textbf{Mean} & \textbf{?} & \textbf{?} \\
+\end{tabular}
+\end{center}
+}
+
+\frame{
+	\frametitle{``The Perfect Doctor''}
+
+\small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & ? & 14 \\
+2 & 6 & ? \\
+3 & 4 & ? \\
+4 & 5 & ? \\
+5 & 6 & ? \\
+6 & 6 & ? \\
+7 & ? & 10 \\
+8 & ? & 9 \\ \hline
+\textbf{Mean} & \textbf{5.4} & \textbf{11} \\
+\end{tabular}
+\end{center}
+}
+
+\frame{
+	\frametitle{``The Perfect Doctor''}
+
+\small
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $Y_0$ & $Y_1$ \\ \hline 
+1 & 13 & 14 \\
+2 & 6 & 0 \\
+3 & 4 & 1 \\
+4 & 5 & 2 \\
+5 & 6 & 3 \\
+6 & 6 & 1 \\
+7 & 8 & 10 \\
+8 & 8 & 9 \\ \hline
+\textbf{Mean} & \textbf{7} & \textbf{5} \\
+\end{tabular}
+\end{center}
+}
+
+
+
+\frame{
+\frametitle{Experimental Analysis I}
+\small
+\begin{itemize}
+\item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
+\item This boils down to being a mean-difference between two groups:
+	\begin{equation}
+	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
+	\end{equation}
+\item In practice we often estimate this using:
+	\begin{itemize}
+	\item t-tests
+	\item Linear regression
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Experimental Analysis II}
+	\small
+\begin{itemize}\itemsep0.5em
+\item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
+\item To know that, we need to estimate the \textit{variance} of the SATE
+\item The variance is influenced by:
+	\begin{itemize}
+	\item Total sample size
+	\item Variance of the outcome, $Y$
+	\item Relative size of each treatment group
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Experimental Analysis III}
+	\small
+\begin{itemize}\itemsep0.5em
+\item Formula for the variance of the SATE is:\\
+$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{N_0} + \dfrac{\widehat{Var}(Y_1)}{N_1}$
+
+	\begin{itemize}
+	\item $\widehat{Var}(Y_0)$ is control group variance
+	\item $\widehat{Var}(Y_1)$ is treatment group variance
+	\end{itemize}
+
+\item We often express this as the \textit{standard error} of the estimate:\\
+$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var}(Y_1)}{N_1}}$
+\end{itemize}
+}
+
+
+\frame{}
+
+\frame{
+\frametitle{Compliance}
+\begin{itemize}
+\item Compliance is when individuals receive and accept the treatment to which they are assigned:
+	\begin{itemize}
+	\item Receive the wrong treatment (cross-over)
+	\item Fail to receive any treatment 
+	\end{itemize}
+\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
+\end{itemize}
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (3.5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw[->, very thick, color=red] (X) -- (Y);
+    \draw<2->[->, very thick, color=blue] (-3,-0.5) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (X);
+    \draw<2->[->, very thick, color=blue] (X2) -- (Tr);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\frame{
+\frametitle{Ethics}
+\small
+\begin{itemize}\itemsep0.5em
+\item Experiments raise lots of ethical considerations
+\item Because we are intervening in peoples' lives, we have to weight harm and benefits of our interventions
+\item A big question relates to ``deception'' (are we deceiving our experimental participants? is that a problem?)
+\item More next week\dots
+\end{itemize}
+}
+
+
 
 \section{Quasi-Experiments}
 \frame{\tableofcontents[currentsection]}
 
 % Instruments
+\frame{
+	\frametitle{Why Quasi-Experiments?}
+	\begin{itemize}\itemsep0.5em
+		\item We are interested in the effect of $X \rightarrow Y$
+		\item How can we identify the effect $X \rightarrow Y$?
+		\item<2-> Relationship is confounded by unobservables
+		\item<2-> We cannot manipulate $X$ (i.e., no experiments)
+	\end{itemize}
+}
 
-% Discontinuities
+\frame{
+	\frametitle{What is a Quasi-Experiment?}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item Quasi-Experiments are situations where randomization-like forces influence the values of independent variables
+		\item Most of the time, these are ``natural'' experiments where boundaries, discontinuities, or interruptions disrupt a continuous treatment-assignment process
+		\item Analyzing a quasi-experiment involves searching for an ``instrument variable''
+	\end{itemize}
+}
 
-% Boundaries
+
+\frame{
+	\frametitle{What is ``instrumental''?}
+	\begin{enumerate}\itemsep0.5em
+		\item \alert<2>{serving as a crucial means, agent, or tool}
+		\item of, relating to, or done with an instrument or tool
+		\item relating to, composed for, or performed on a musical instrument
+		\item of, relating to, or being a grammatical case or form expressing means or agency
+	\end{enumerate}
+}
+
+
+
+\frame{
+	\frametitle{What is ``instrumental''?}
+	\begin{itemize}\itemsep1em
+		\item $W$ must be a crucial cause of $X$'s effect on $Y$
+		\item $W$ is the quasi-experimental shock to the causal process in our graph
+			\begin{itemize}
+			\item It is not caused by $X$ or $Y$
+			\item It does not cause $Y$ except through $X$
+			\end{itemize}
+	\end{itemize}	
+}
+
+\frame{
+	\frametitle{Formal Definition}
+	An \textbf{instrumental variable} is a variable that satisfies two properties:\\
+	\begin{enumerate}\itemsep0.5em
+		\item Exogeneity\\ % Not testable
+			\begin{itemize}
+				\item $W$ temporally precedes $X$
+				\item $Cov(B, \epsilon) = 0$
+			\end{itemize}
+		\item Relevance\\ % Is testable
+			\begin{itemize}
+				\item $W$ causes $X$
+				\item $Cov(W, X) \neq 0$
+			\end{itemize}
+	\end{enumerate}
+}
+
+
+
+\frame{
+	\frametitle{How IV Works I}
+	\begin{itemize}\itemsep0.5em
+		\item Start with case where $W$ is 0,1
+		\item To identify the effect $X \rightarrow Y$, all we need is $W$
+		\item We don't need to worry about other omitted variables, but we don't learn anything about the rest of the causal graph
+	\end{itemize}
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\frame{
+	\frametitle{How IV Works II (Wald)}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item Imagine two effects:
+		\begin{align}
+		ITT_y & = E[y_i | w_i = 1] - E[y_i | w_i = 0]\\
+		ITT_x & = E[x_i | w_i = 1] - E[x_i | w_i = 0]
+		\end{align}
+		\item IV estimates the LATE: $\dfrac{ITT_y}{ITT_x}$
+		\item In a regression, this is:\\
+			$E[y_i|w_i] = \beta_0 + \text{LATE} \times E[x_i|w_i]$
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{{\large Local Average Treatment Effect}}
+	\small
+	\begin{itemize}\itemsep0.5em
+	\item IV estimate \textit{local} to the variation in $X$ that is due to variation $W$ (i.e., the LATE)
+	\item This matters if effects are \textit{heterogeneous}
+	\item LATE is effect for those who \textit{comply} with instrument
+	\item Four subpopulations:
+		\begin{itemize}\small
+		\item Compliers: $X = 1$ only if $W = 1$
+		\item Always-takers: $X = 1$ regardless of $W$
+		\item Never-takers: $X = 0$ regardless of $W$
+		\item Defiers: $X = 1$ only if $W = 0$
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+\frame{
+	\frametitle{Finding Instruments}
+	\begin{itemize}\itemsep0.5em
+		\item Forward, not backward, causal inference
+		\item Most instruments are not things we care about
+			\begin{itemize}
+				\item Weather, disasters
+				\item Geography, borders, climate
+				\item Lotteries
+			\end{itemize}
+		\item A good instrument is one that satisfies both of our conditions, so we need:
+			\begin{itemize}
+				\item A good story about exogeneity
+				\item Evidence that instrument is \textit{strong}
+			\end{itemize}
+	\end{itemize}
+}
+
 
 % Interrupted time-series
 
+\frame<1>[label=itshow]{
+	\frametitle{How ITS Works}
+	\begin{itemize}\itemsep0.5em
+		\item Identify an exogenous shock in $X$ that might affect $Y$
+		\item Look at $Y$ before ($t$) and after ($t+1$) the shock
+		\item We only observe one manifest outcome at each point in time
+		\item<2-> To make a causal inference, we need:
+			\begin{itemize}
+				\item $Y_{0,t}$ and $Y_{1,t}$, or
+				\item $Y_{0,t+1}$ and $Y_{1,t+1}$
+			\end{itemize}
+		\item<2-> Use pre-post comparisons to infer the value of unobserved potential outcomes		
+	\end{itemize}
+}
+
+\frame<1-2>[label=its]{
+	\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+    \draw[->] (0,0) -- (11,0) node[right] (xaxis) {\small time};
+    \draw[->] (0,0) -- (0,11) node[left] (yaxis) {};
+    % x ticks
+    \foreach \x in {1,2,...,10}
+       	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+    % y ticks
+    \foreach \y in {0,...,10}
+         \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {};
+    % intervention
+    \draw (5.5,-0.25) node[below, scale=0.5] (IV) {Intervention};
+    \draw (5.5,0) -- (5.5,11);
+
+	\draw<1>[thick,blue] (5,10) -- (6,7);
+	\draw<2->[dashed,thick,blue] (5,10) -- (6,7);
+	\draw<2->[thick,blue] (1,4) -- (2,2) -- (3,5) -- (4,3) -- (5,10);
+	\draw<2->[thick,blue] (6,7) -- (7,6) -- (8,6) -- (9,4) -- (10,3);
+	
+	\draw<3->[thick,red] (1,8) -- (2,8.5) -- (3,7.5) -- (4,8.5) -- (5,8) -- (6,7.5) -- (7,8.5) -- (8,8) -- (9,8.5) -- (10,7.5);
+	\end{tikzpicture}
+	\end{center}
+}
+
+\againframe<1-2>{itshow}
+
+
+\frame{
+	\begin{center}
+	\begin{tikzpicture}[scale=1]
+    \draw[->] (0,0) -- (5,0) node[right] (xaxis) {\small time};
+    \draw[->] (0,0) -- (0,7) node[left] (yaxis) {};
+    % x ticks
+    \foreach \x in {0,...,4}
+       	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+    % y ticks
+    \foreach \y in {0,...,6}
+         \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {};
+    % intervention
+    \draw (2.5,-0.25) node[below, scale=0.5] (IV) {Intervention};
+    \draw (2.5,0) -- (2.5,7);
+
+	\draw[thick,blue] (2,5) -- (3,2);
+	\node<2-> [red] at (2,5) {\small \textbullet};
+	\node<2-> [red] at (3,2) {\small \textbullet};
+	
+	\draw<3-5>[red] (0,5) -- (5,5);
+	\draw<3-5>[red] (0,2) -- (5,2);
+	\draw<4-5>[right,decorate,decoration={brace, amplitude=15pt}] (5,5) -- (5,2) node[right, xshift=15pt, pos=0.5] (diff) {\small Effect?};
+	        
+	\draw<5->[thick,blue] (1,0) -- (2,5) -- (3,2) -- (4,1);
+	\draw<6->[red] (1,0) -- (2.5,7.5);
+	\draw<6->[red] (2.5,2.5) -- (5,0);
+	\draw<7->[right,decorate,decoration={brace, amplitude=15pt}] (2.5,7.5) -- (2.5,2.5) node[right, xshift=15pt, pos=0.5] (diff) {\small Effect?};
+	
+	\end{tikzpicture}
+	\end{center}
+}
+
+\frame{
+	\frametitle{Threats to Validity}
+	\begin{itemize}\itemsep0.5em
+	\item Campbell and Ross talk about six ``threats to validity'' (i.e., threats to causal inference) related to time-series analysis
+	\item What are those threats?
+	\end{itemize}
+}
+
+\frame{
+
+	\frametitle{Threats to Validity}
+	\begin{enumerate}
+	\item History
+	\item Maturation
+	\item Testing
+	\item Instrumentation
+	\item Instability
+	\item Regression to the mean
+	\end{enumerate}
+}
+% history: stimultaneous alterntive cause
+% maturation: time trends
+% testing: measurement changes behavior
+% instrumentation: operationalization changes over time
+% instability: measurement error
+% regression (to the mean):
+% - statistically: extreme cases will be less extreme on second measurement
+% - in policy terms: interventions are most likely when problems are extreme
+
+% one more not mentioned by Campbell and Ross: If the series is an aggregation, it's also possibly due to attrition or changing composition of the sample from which the data is aggregated
+
+\frame{
+	\frametitle{Difference-In-Differences}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item How do we know change in $Y$ wasn't due to something else?
+			\begin{itemize}
+				\item How do we know $Y_{0,t}$ is a good stand-in for $Y_{0,t+1}$?
+			\end{itemize}
+		\item<2-> Use a comparison case (or cases)!
+		\item<3-> Instead of using the pre-post difference in $Y_i$ to estimate the causal effect, use the difference in pre-post differences for two units $i$ and $j$:
+		\begin{align*}
+		(Y_{i,t+1} - Y_{i,t}) - (Y_{j,t+1} - Y_{j,t})
+		\end{align*}
+	\end{itemize}
+}
+
+
+\frame{
+	\begin{center}
+	\begin{tikzpicture}[>=latex', scale=0.8]
+        \draw[->] (0,0) node (origin) {}  -- (8,0) node[right] (xaxis) {time};
+        \draw[->] (origin) -- (0,8) node[left] (yaxis) {y};
+        % x ticks
+        \foreach \x in {2,4,6}
+        	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+        \draw (2,0) node[below] (before) {$t$};
+        \draw (6,0) node[below] (after) {$t+1$};
+        \draw (4,-0.25) node[below, scale=0.5] (IV) {Intervention};
+        % y ticks
+        \foreach \y in {0,...,7}
+             \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
+        % intervention
+        \draw (4,0) -- (4,8);
+
+        % line
+        \draw<2-> (6,3.5) node (tr) {};
+        \draw<3-> (6,5) node (ctrl) {};
+        \draw<2-3>[blue] (8,3.5) node (trlab) {Treated};
+        \draw<3-3>[red] (8,5) node (ctrllab) {Control};        
+        \draw<2->[blue, line width=2pt] (2,3) -- (tr);
+        \draw<3->[red, line width=2pt] (2,7) -- (ctrl);
+        
+        % diffs
+        \draw<4-6>[right,decorate,decoration={brace,mirror}] 
+        	(6,3) -- (6,3.5) node[right, pos=0.5] (idiff) {\small $Y_{i,t+1} - Y_{i,t} = +0.5$};
+        \draw<4-6>[right,decorate,decoration={brace}] 
+            (6,7) -- (6,5) node[right, pos=0.5] (jdiff) {\small $Y_{j,t+1} - Y_{j,t} = -2.0$};
+        
+        % trends
+        \draw<5-6>[red,->] (1,7) -- (1,4);
+        \draw<5->[red, dashed] (0,8) -- (8,4);
+        \draw<5->[red, dashed] (0,4) -- (8,0);
+        \draw<6>[right,decorate,decoration={brace}] 
+            (6,3) -- (6,1) node[right, pos=0.5] (idiff2) {\small $2.0$};
+        \draw<7>[right,decorate,decoration={brace}] 
+            (6,3.5) -- (6,1) node[right, pos=0.5] (idiff2) {\small $DID = +2.5$};
+                        
+        
+    \end{tikzpicture}
+    \end{center}
+}
+
+
+\frame{
+	\frametitle{Conclusion}
+	\small
+	\begin{itemize}
+	\item In \textbf{regression}/\textbf{matching}, we address confounding through conditioning on observable variables
+	\item In \textbf{quasi-experiments}, we address confounding and ordering through experiment-like discontinuities or interventions that occur at specific points in time for specific subsets of units
+	\item In \textbf{experimentation}, we solve confounding and ordering through \textit{randomized} intervention
+	\end{itemize}
+}
+
+\frame{}
+
+\frame{
+	\frametitle{Preview}
+	\begin{itemize}
+	\item Next week: Ethics
+		\begin{itemize}
+		\item Scenarios Handout
+		\end{itemize}
+	\item Problem Set 6 is marked
+	\item Will mark Problem Set 7 this week
+	\item Problem Set 8 is due \textit{after} Research Design Proposal
+	\end{itemize}
+}
 
 \appendix
 \frame{}
