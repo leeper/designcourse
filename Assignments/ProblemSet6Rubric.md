@@ -17,7 +17,7 @@ Points possible: 100
     5 points: Reasonable conceptual definition of democracy provided.
     5 points: Reasonable conceptual definition of health provided.
     5 points: Reasonable indicator(s) of democracy selected and justified.
-    5 points: Reasonable indicator(s) of democracy selected and justified.
+    5 points: Reasonable indicator(s) of health selected and justified.
  
  3. Create 3 distinct types of visualizations showing different patterns or relationships in your data that are relevant to your hypothesis. For each plot, create a "worse" version and "better" version of the visualization and discuss why the "better" version communicates the pattern or relationship better, either in substantive terms or in purely aesthetic ones.
  
