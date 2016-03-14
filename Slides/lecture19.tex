@@ -12,7 +12,7 @@
 
 \frame{\tableofcontents}
 
-\section{ITS}
+\section{Review ITS}
 \frame{\tableofcontents[currentsection]}
 
 % Interrupted time-series
@@ -93,37 +93,6 @@
 }
 
 \frame{
-	\frametitle{Threats to Validity}
-	\begin{itemize}\itemsep0.5em
-	\item Campbell and Ross talk about six ``threats to validity'' (i.e., threats to causal inference) related to time-series analysis
-	\item What are those threats?
-	\end{itemize}
-}
-
-\frame{
-
-	\frametitle{Threats to Validity}
-	\begin{enumerate}
-	\item History
-	\item Maturation
-	\item Testing
-	\item Instrumentation
-	\item Instability
-	\item Regression to the mean
-	\end{enumerate}
-}
-% history: stimultaneous alterntive cause
-% maturation: time trends
-% testing: measurement changes behavior
-% instrumentation: operationalization changes over time
-% instability: measurement error
-% regression (to the mean):
-% - statistically: extreme cases will be less extreme on second measurement
-% - in policy terms: interventions are most likely when problems are extreme
-
-% one more not mentioned by Campbell and Ross: If the series is an aggregation, it's also possibly due to attrition or changing composition of the sample from which the data is aggregated
-
-\frame{
 	\frametitle{Difference-In-Differences}
 	\small
 	\begin{itemize}\itemsep0.5em
@@ -185,6 +154,32 @@
     \end{center}
 }
 
+\frame{
+
+	\frametitle{Threats to Validity}
+	\begin{enumerate}
+	\item History
+	\item Maturation
+	\item Testing
+	\item Instrumentation
+	\item Instability
+	\item Regression to the mean
+	\end{enumerate}
+}
+% history: stimultaneous alterntive cause
+% maturation: time trends
+% testing: measurement changes behavior
+% instrumentation: operationalization changes over time
+% instability: measurement error
+% regression (to the mean):
+% - statistically: extreme cases will be less extreme on second measurement
+% - in policy terms: interventions are most likely when problems are extreme
+
+% one more not mentioned by Campbell and Ross: If the series is an aggregation, it's also possibly due to attrition or changing composition of the sample from which the data is aggregated
+
+
+\frame{}
+
 
 \section{Ethics}
 \frame{\tableofcontents[currentsection]}
@@ -192,58 +187,130 @@
 \frame{
 \frametitle{History: Key Moments}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{enumerate}
 \item Tuskegee (1932-1972) and Guatemala (1946-1948) Studies
-\item Nuremberg Trials
-\item 
-\end{itemize}
+\item Nuremberg Code (1947)
+\item Helsinki Declaration (1964)
+\item U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\item The Belmont Report (1979)
+\item EU Data Protection Directive (1995; 2012)
+	\begin{itemize}
+	\item UK Data Protection Act (1998)
+	\end{itemize}
+\end{enumerate}
 }
 
 
-% Nuremberg Code (1947)
+\frame{
+	\frametitle{Helsinki Declaration}
+	
+	\small
+	\begin{itemize}
+	\item Adopted by the World Medical Association in 1964\footnote{\url{http://www.bmj.com/content/2/5402/177}}
+	\item Narrowly focused on medical research
+	\item Expanded the Nuremberg Code
+		\begin{itemize}
+		\item Relaxed consent requirements
+		\item Risks should not exceed benefits
+		\item Institutionalization of ethics oversight
+		\end{itemize}
+	\item<2-> Do these rules apply to non-experimental research? To non-medical research?
+	\end{itemize}
 
-% Helsinki Declaration (1964)
+}
 
-% U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\frame{
+	\frametitle{Social Science Examples}
+	\begin{enumerate}\itemsep2em
+	\item \href{https://www.youtube.com/watch?v=yr5cjyokVUs}{Milgram Obedience Study (1961)}
+	\item \href{https://www.youtube.com/watch?v=760lwYmpXbc}{Stanford Prison Study (1971)}
+	\end{enumerate}
+}
 
-% The Belmont Report (1979)
 
-% EU Data Protection Directive (1995; 2012)
+\frame{
+	\frametitle{The Belmont Report}
+	
+	\small
+	\begin{itemize}
+	\item Commissioned by the U.S. Government in 1979\footnote{\url{http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.html}}
+	\item Three overarching principles:
+		\begin{enumerate}
+		\item Respect for persons
+		\item Beneficence
+		\item Justice
+		\end{enumerate}
+	\item Three policy implications:
+		\begin{itemize}
+		\item Informed consent
+		\item Assessment of risks/benefits
+		\item Care for vulnerable populations
+		\end{itemize}
+	\end{itemize}
 
-% Data Protection Act (1998)
+}
 
 
-% medical studies: do the same rules apply to social science?
-% ``classic'' social science examples: Milgram Study, Stanford Prison Experiment
+\frame{
+	\frametitle{Informed Consent}
+	\begin{itemize}
+	\item Persons must consent to being a research subject
+	\item<2-> What this means in practice is complicated
+		\begin{itemize}
+		\item What is research?
+		\item What is consent?
+		\item What is ``informed'' consent?
+		\end{itemize}
+	\item<3-> Cross-national variations
+		\begin{itemize}
+		\item Consent forms required in U.S.
+		\item Not required in UK
+		\end{itemize}
+	\end{itemize}
 
-% Codes of professional practice
+}
 
 \frame{
 \frametitle{Benefits and Harm}
-
+	\begin{itemize}\itemsep2em
+	\item What is a ``benefit''?
+	\item What is a ``harm''?
+	\item How do we balance the two?
+	\end{itemize}
 }
 
 
-\subsection{Privacy}
 \frame{
-\frametitle{Privacy}
-
+	\frametitle{Privacy}
+	\begin{itemize}
+	\item EU Data Protection Directive (1995) and UK Data Protection Act (1998)
+	\item Deals with ``personal data''
+	\item Data can be processed when:
+		\begin{itemize}
+		\item Consent is given
+		\item Data are used for a ``legitimate'' purpose
+		\item Anonymous or confidential
+		\end{itemize}
+	\item Data cannot leave the EU except under conditions
+	\end{itemize}
 }
 
-% Data Protection Act
 
-% Activity
+\frame{
+	\frametitle{{\normalsize Lots of Other Ethical Questions}}
+	\begin{enumerate}
+	\item<2-> Funding
+	\item<3-> Independence and Politicization
+	\item<4-> Vulnerable populations (e.g. children, sick)
+	\item<5-> Cross-national research
+	\item<6-> Participant-observation disclosures
+	\item<7-> End uses/users of research
+	\item<8-> Others?
+	\end{enumerate}
+}
 
-
-
-% Discussion
-
-	% funding and politicization
-	% research questions/topics
-	% subjects (vulnerable populations)
-	% end-users (harm/benefit)
-	% procedures (harm/benefit/privacy)
-	% confidentiality versus anonymity
 
 
 
@@ -268,7 +335,7 @@
 \frame{
 
 \begin{center}
-\includegraphics[width=\textwidth]{images/lse_ethics_flowchart}
+\href{http://www.lse.ac.uk/intranet/researchAndDevelopment/researchDivision/policyAndEthics/ethics-annexC.pdf}{\includegraphics[width=\textwidth]{images/lse_ethics_flowchart}}
 \end{center}
 
 }
@@ -297,11 +364,6 @@
 	\end{itemize}
 	
 }
-
-\section*{Course Evaluations}
-
-\frame{}
-
 
 \appendix
 \frame{}
