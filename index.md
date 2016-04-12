@@ -29,12 +29,12 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  12. [Actually Talking to People: Participant Observation (Jan. 19)](Slides/lecture12.pdf)
  13. [Tabulation and Visualization (Jan. 26)](Slides/lecture13.pdf)
  14. [Sampling and Representativeness (Feb. 2)](Slides/lecture14.pdf)
- 15. Statistical Inference (Feb. 9) - [Lab Activity](Assignments/Lab1.pdf)
- 16. Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23) - [Lab Activity](Assignments/Lab2.pdf)
- 17. Matching and Regression: Accounting for Rival Explanations (Mar. 1)
- 18. Experimental Design and the Search for Quasi-Experiments (Mar. 8)
- 19. Ethics and Research Integrity (Mar. 15)
- 20. Conclusion and Synthesis (Mar. 22)
+ 15. [Statistical Inference (Feb. 9)](Slides/lecture15.pdf) - [Lab Activity](Assignments/Lab1.pdf)
+ 16. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23)](Slides/lecture16.pdf) - [Lab Activity](Assignments/Lab2.pdf)
+ 17. [Matching and Regression: Accounting for Rival Explanations (Mar. 1)](Slides/lecture17.pdf)
+ 18. [Experimental Design and the Search for Quasi-Experiments (Mar. 8)](Slides/lecture18.pdf)
+ 19. [Ethics and Research Integrity (Mar. 15)](Slides/lecture19.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
+ 20. Conclusion and Synthesis (Mar. 22) - no slides
 
 Notes:
 
@@ -55,7 +55,7 @@ There are eight problem sets for the course (four in each term).
 | [Interviewing](Assignments/ProblemSet5.html) | Tuesday Jan. 26 |
 | [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday Feb. 23 |
 | [Regression analysis](Assignments/ProblemSet7.html) | Tuesday Mar. 8 |
-| Experimentation | Tuesday Mar. 15 |
+| [Experimentation](Assignments/ProblemSet8.html) | Tuesday Mar. 22 |
 
 ## LT Reading Week Study Guide Assignment ##
 
