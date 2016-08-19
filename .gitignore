@@ -12,6 +12,7 @@ Syllabus/*.*
 *.log
 *.out
 *.synctex.gz
+*.synctex.gz(busy)
 *.bbl
 *.blg
 *.nav

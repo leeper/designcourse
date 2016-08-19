@@ -1,12 +1,13 @@
 ---
 layout: default
 title: Home
+description: "Research Design in Political Science" introduce students to the fundamentals of research design in political science, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
 # Research Design in Political Science #
 
-These are course materials for [GV249: Research Design in Political Science](http://www.lse.ac.uk/resources/calendar/courseGuides/GV/2015_GV249.htm) lecture series at the London School of Economics and Political Science. The course is taught for the full Academic Year 2015-2016. 
+These are course materials for [GV249: Research Design in Political Science](http://www.lse.ac.uk/resources/calendar/courseGuides/GV/2015_GV249.htm) lecture series at the London School of Economics and Political Science. The course is taught for the full Academic Year 2016-2017. 
 
 The course will introduce students to the fundamentals of research design in political science. The course will cover a range of topics, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques. The course will address a variety of approaches to empirical political science research including experimental and quasi-experimental designs, large-n survey research, small-n case selection, and comparative/historical comparisons. As a result, topics covered in the course will be varied and span all areas of political science including political behaviour, institutions, comparative politics, international relations, and public administration.
 
@@ -15,31 +16,31 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 
 ## Slides ##
 
- 1. [Welcome and First Lecture (Sep. 28)](Slides/lecture01.pdf)
- 2. [Causality: Explanation versus Prediction (Oct. 6)](Slides/lecture02.pdf)
- 3. [Concepts: "I'll know it when I see it" (Oct. 13)](Slides/lecture03.pdf)
- 4. [Measurement: Concepts in Practice (Oct. 20)](Slides/lecture04.pdf)
- 5. [Building and Testing Political Science Theories (Oct. 27)](Slides/lecture05.pdf)
- 6. [Deriving Hypotheses from Theory (Nov. 3)](Slides/lecture06.pdf)
- 7. [Case Studies (Nov. 10)](Slides/lecture07.pdf)
- 8. [Case Comparisons (Nov. 17)](Slides/lecture08.pdf)
- 9. [Causal Mechanisms and Process-Tracing (Nov. 24)](Slides/lecture09.pdf)
- 10. [Translating Texts into Interpretations and Numbers (Dec. 1)](Slides/lecture10.pdf)
- 11. [Interviewing, Structured and Unstructured (Jan. 12)](Slides/lecture11.pdf)
- 12. [Actually Talking to People: Participant Observation (Jan. 19)](Slides/lecture12.pdf)
- 13. [Tabulation and Visualization (Jan. 26)](Slides/lecture13.pdf)
- 14. [Sampling and Representativeness (Feb. 2)](Slides/lecture14.pdf)
- 15. [Statistical Inference (Feb. 9)](Slides/lecture15.pdf) - [Lab Activity](Assignments/Lab1.pdf)
- 16. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Feb. 23)](Slides/lecture16.pdf) - [Lab Activity](Assignments/Lab2.pdf)
- 17. [Matching and Regression: Accounting for Rival Explanations (Mar. 1)](Slides/lecture17.pdf)
- 18. [Experimental Design and the Search for Quasi-Experiments (Mar. 8)](Slides/lecture18.pdf)
- 19. [Ethics and Research Integrity (Mar. 15)](Slides/lecture19.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
- 20. Conclusion and Synthesis (Mar. 22) - no slides
+ 1. [Welcome and First Lecture (XXXX)](Slides/lecture01.pdf)
+ 2. [Causality: Explanation versus Prediction (XXXX)](Slides/lecture02.pdf)
+ 3. [Concepts: "I'll know it when I see it" (XXXX)](Slides/lecture03.pdf)
+ 4. [Measurement: Concepts in Practice (XXXX)](Slides/lecture04.pdf)
+ 5. [Building and Testing Political Science Theories (XXXX)](Slides/lecture05.pdf)
+ 6. [Deriving Hypotheses from Theory (XXXX)](Slides/lecture06.pdf)
+ 7. [Case Studies (XXXX)](Slides/lecture07.pdf)
+ 8. [Case Comparisons (XXXX)](Slides/lecture08.pdf)
+ 9. [Causal Mechanisms and Process-Tracing (XXXX)](Slides/lecture09.pdf)
+ 10. [Translating Texts into Interpretations and Numbers (XXXX)](Slides/lecture10.pdf)
+ 11. [Interviewing, Structured and Unstructured (XXXX)](Slides/lecture11.pdf)
+ 12. [Actually Talking to People: Participant Observation (XXXX)](Slides/lecture12.pdf)
+ 13. [Tabulation and Visualization (XXXX)](Slides/lecture13.pdf)
+ 14. [Sampling and Representativeness (XXXX)](Slides/lecture14.pdf)
+ 15. [Statistical Inference (XXXX)](Slides/lecture15.pdf) - [Lab Activity](Assignments/Lab1.pdf)
+ 16. [Getting to Regression: The Workhorse of Quantitative Political Analysis (XXXX)](Slides/lecture16.pdf) - [Lab Activity](Assignments/Lab2.pdf)
+ 17. [Matching and Regression: Accounting for Rival Explanations (XXXX)](Slides/lecture17.pdf)
+ 18. [Experimental Design and the Search for Quasi-Experiments (XXXX)](Slides/lecture18.pdf)
+ 19. [Ethics and Research Integrity (XXXX)](Slides/lecture19.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
+ 20. [Conclusion, Synthesis, and Exam Prep (XXXX)](Slides/lecture20.pdf)
 
 Notes:
 
  - Sessions 1-10 meet during Michaelmas Term and Sessions 11-20 meet during Lent Term.
- - There will be no lecture or class during Lent Term reading week (Feb. 15–19), but there will be [an assignment](Assignments/StudyGuideAssignment.html).
+ - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 31 - Nov.5; Feb. 15 – Feb. 19), but there will be [an assignment](Assignments/StudyGuideAssignment.html) during LT reading week.
 
  
 ## Problem Sets ##
@@ -48,14 +49,14 @@ There are eight problem sets for the course (four in each term).
 
 | *Assignment* | *Due Date* |
 | ---------- | -------- |
-| [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday Oct. 27 |
-| [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday Nov. 10 |
-| [Case studies](Assignments/ProblemSet3.html) | Tuesday Nov. 24 |
-| [Text analysis](Assignments/ProblemSet4.html) | Tuesday Dec. 15 |
-| [Interviewing](Assignments/ProblemSet5.html) | Tuesday Jan. 26 |
-| [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday Feb. 23 |
-| [Regression analysis](Assignments/ProblemSet7.html) | Tuesday Mar. 8 |
-| [Experimentation](Assignments/ProblemSet8.html) | Tuesday Mar. 22 |
+| [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday XXXX |
+| [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday XXXX |
+| [Case studies](Assignments/ProblemSet3.html) | Tuesday XXXX |
+| [Text analysis](Assignments/ProblemSet4.html) | Tuesday XXXX |
+| [Interviewing](Assignments/ProblemSet5.html) | Tuesday XXXX |
+| [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday XXXX |
+| [Regression analysis](Assignments/ProblemSet7.html) | Tuesday XXXX |
+| [Experimentation](Assignments/ProblemSet8.html) | Tuesday XXXX |
 
 ## LT Reading Week Study Guide Assignment ##
 
@@ -65,7 +66,7 @@ We will use LT reading week to prepare for the exam. As part of this, students w
 
 ### Research Design Proposal ###
 
-*Due: Tuesday, March 22, 2016*
+*Due: Tuesday, March XXXX, 2017*
 
 The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student's choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
 
@@ -77,7 +78,7 @@ The 3000-word research design paper should outline the basic elements of a novel
 
 The 2-hour written exam covers the full breadth of material from the course and will test students' knowledge of course content, including concept definition, the appraisal of political science theories, the generation of hypotheses, and — most importantly — the appropriateness of different research designs for answering specific research questions. This will count for 50% of the final mark.
 
-The exam will consist of two parts: Part A and Part B. Part A contains 15 questions, of which students must answer 5. Part B contains 4 questions, of which students must answer 1. Each part counts equally (50%), and each question of Part A counts equally (10% each), toward this portion of the overall course mark.
+The exam will consist of three parts: Part A, Part B, and Part C. Part A contains 5 "short-answer" questions requiring answers of no longer than 1-page of written text, of which students must answer 3. Part B contains 1 question, of which students must answer 1. Part C contains 3 question, of which students must answer 1. Part A is worth 15% of the total (each question worth 5%); Part B is worth 35% of the total; and Part C is worth 50% of the total.
 
 [A sample paper for the exam is available here](Syllabus/SamplePaper.pdf).
 

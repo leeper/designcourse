@@ -22,9 +22,9 @@ You are being asked to develop a research design proposal that demonstrates your
  
  3. Using your own ideas, empirical observation, extant theory, and/or other sources, develop a theory that explains the cause(s) of the outcome your are interested in or the effect(s) of the potential cause you are interested in.
  
- 4. Derive explicit observable implications of your theory.
+ 4. Derive explicit observable implications of your theory. (If your research is primarily inductive in nature, describe possible theoretical implications of the research and relevant existing theory.)
  
- 5. Describe a process of empirical data collection and analysis that tests your hypotheses.
+ 5. Describe a process of empirical data collection and analysis that tests your hypotheses and/or generates new theory and hypotheses.
  
  6. Critically reflect on strengths and weaknesses of your quesiton, theory, hypotheses, data collection, and proposed analysis.
  
@@ -34,5 +34,5 @@ You are being asked to develop a research design proposal that demonstrates your
 
 Your assignment must be no more than 3000 words and comply with the Government Department's "Word Count Policy" regarding the formatting and length requirements.
 
-The paper must be submitted by Tuesday March 22nd, 2016.
+The paper must be submitted by Tuesday March 22nd, XXXX.
 
