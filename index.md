@@ -16,31 +16,31 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 
 ## Slides ##
 
- 1. [Welcome and First Lecture (XXXX)](Slides/lecture01.pdf)
- 2. [Causality: Explanation versus Prediction (XXXX)](Slides/lecture02.pdf)
- 3. [Concepts: "I'll know it when I see it" (XXXX)](Slides/lecture03.pdf)
- 4. [Measurement: Concepts in Practice (XXXX)](Slides/lecture04.pdf)
- 5. [Building and Testing Political Science Theories (XXXX)](Slides/lecture05.pdf)
- 6. [Deriving Hypotheses from Theory (XXXX)](Slides/lecture06.pdf)
- 7. [Case Studies (XXXX)](Slides/lecture07.pdf)
- 8. [Case Comparisons (XXXX)](Slides/lecture08.pdf)
- 9. [Causal Mechanisms and Process-Tracing (XXXX)](Slides/lecture09.pdf)
- 10. [Translating Texts into Interpretations and Numbers (XXXX)](Slides/lecture10.pdf)
- 11. [Interviewing, Structured and Unstructured (XXXX)](Slides/lecture11.pdf)
- 12. [Actually Talking to People: Participant Observation (XXXX)](Slides/lecture12.pdf)
- 13. [Tabulation and Visualization (XXXX)](Slides/lecture13.pdf)
- 14. [Sampling and Representativeness (XXXX)](Slides/lecture14.pdf)
- 15. [Statistical Inference (XXXX)](Slides/lecture15.pdf) - [Lab Activity](Assignments/Lab1.pdf)
- 16. [Getting to Regression: The Workhorse of Quantitative Political Analysis (XXXX)](Slides/lecture16.pdf) - [Lab Activity](Assignments/Lab2.pdf)
- 17. [Matching and Regression: Accounting for Rival Explanations (XXXX)](Slides/lecture17.pdf)
- 18. [Experimental Design and the Search for Quasi-Experiments (XXXX)](Slides/lecture18.pdf)
- 19. [Ethics and Research Integrity (XXXX)](Slides/lecture19.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
- 20. [Conclusion, Synthesis, and Exam Prep (XXXX)](Slides/lecture20.pdf)
+ 1. [Welcome and First Lecture (Sep. 30)](Slides/lecture01.pdf)
+ 2. [Concepts: "I'll know it when I see it" (Oct. 7)](Slides/lecture02.pdf)
+ 3. [Measurement: Concepts in Practice (Oct. 14)](Slides/lecture03.pdf)
+ 4. [Tabulation and Visualization (Oct. 21)](Slides/lecture04.pdf)
+ 5. [Translating Texts into Interpretations and Numbers (Oct. 28)](Slides/lecture05.pdf)
+ 6. [Interviewing, Structured and Unstructured (Nov. 11)](Slides/lecture06.pdf)
+ 7. [Actually Talking to People: Participant Observation (Nov. 18)](Slides/lecture07.pdf)
+ 8. [Case Studies (Nov. 25)](Slides/lecture08.pdf)
+ 9. [Sampling and Representativeness (Dec. 2)](Slides/lecture09.pdf)
+ 10. [Ethics and Research Integrity (Dec. 9)](Slides/lecture10.pdf)
+ 11. [Causality: Explanation versus Prediction (Jan. 11)](Slides/lecture11.pdf)
+ 12. [Theory Development and Hypothesis Generation (Jan. 20)](Slides/lecture12.pdf)
+ 13. [Literature Review (Jan. 27)](Slides/lecture13.pdf)
+ 14. [Case Comparisons (Feb. 3)](Slides/lecture14.pdf)
+ 15. [Causal Mechanisms (Feb. 10)](Slides/lecture15.pdf) - [Lab Activity](Assignments/Lab1.pdf)
+ 16. [Statistical Inference (Feb. 24)](Assignments/Lab2.pdf)
+ 17. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Mar. 3)](Slides/lecture17.pdf)
+ 18. [Matching and Regression: Accounting for Rival Explanations (Mar. 10)](Slides/lecture18.pdf)
+ 19. [Experimental Design and the Search for Quasi-Experiments (Mar. 17)](Slides/lecture19.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
+ 20. [Conclusion, Synthesis, and Exam Prep (Mar. 24)](Slides/lecture20.pdf)
 
 Notes:
 
  - Sessions 1-10 meet during Michaelmas Term and Sessions 11-20 meet during Lent Term.
- - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 31 - Nov.5; Feb. 15 – Feb. 19), but there will be [an assignment](Assignments/StudyGuideAssignment.html) during LT reading week.
+ - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 31 - Nov.5; Feb. 15 – Feb. 19).
 
  
 ## Problem Sets ##
@@ -49,14 +49,14 @@ There are eight problem sets for the course (four in each term).
 
 | *Assignment* | *Due Date* |
 | ---------- | -------- |
-| [Concepts and measurement](Assignments/ProblemSet1.html) | Tuesday XXXX |
-| [Theory and hypothesis generation](Assignments/ProblemSet2.html) | Tuesday XXXX |
-| [Case studies](Assignments/ProblemSet3.html) | Tuesday XXXX |
-| [Text analysis](Assignments/ProblemSet4.html) | Tuesday XXXX |
-| [Interviewing](Assignments/ProblemSet5.html) | Tuesday XXXX |
-| [Basic Statistics](Assignments/ProblemSet6.html) | Tuesday XXXX |
-| [Regression analysis](Assignments/ProblemSet7.html) | Tuesday XXXX |
-| [Experimentation](Assignments/ProblemSet8.html) | Tuesday XXXX |
+| [Identifying and Evaluating Claims](Assignments/) | Tuesday Oct. 11 |
+| [Concepts and Measurement](Assignments/) | Tuesday Nov. 8 |
+| [Data Collection I](Assignments/) | Tuesday Nov. 22 |
+| [Data Collection II](Assignments/) | Tuesday Dec. 13 |
+| [Causality](Assignments/) | Tuesday Jan. 24 |
+| [Theory Evaluation](Assignments/) | Tuesday Feb. 7 |
+| [Article Critique](Assignments/) | Tuesday Feb. 21 |
+| [Statistical analysis](Assignments/) | Tuesday Mar. 21 |
 
 ## LT Reading Week Study Guide Assignment ##
 
