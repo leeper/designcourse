@@ -1,8 +1,11 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
+\usetikzlibrary{shapes,arrows}
 
-\title{Sampling and Representativeness}
+\title{Case Comparisons}
+
+% How do comparisons between cases help us to make inferences about causality? How do we select cases so that comparisons between them are informative about theories and hypotheses?
+
 
 \date[]{}
 
@@ -12,331 +15,226 @@
 
 \frame{\tableofcontents}
 
-\section[Review]{Simple Statistics}
+\section[Case Studies]{Case Studies Continued}
 \frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{What is a case study?}
+
+\begin{itemize}\itemsep0.1em
+\item Definition: ``an intensive study of a single unit for the purpose of understanding a larger class of (similar) units'' (Gerring 2004, 342)
+\item Broad uses:
+	\begin{itemize}
+	\item Description
+	\item Induction/Theory development
+	\item Theory testing
+	\item Exploration of mechanisms
+	\item Concept definition and measurement
+	\end{itemize}
+\end{itemize}
+
+}
+
+% not simply attempting to score a case on a variable but attempting to understand it at a very deep level
+
 
 
 \frame{
-\frametitle{Relationship}
+
+\frametitle{What counts as a case?} % activity
+
+\begin{itemize}\itemsep0.25em
+\item<2-> The more important question is what is something a \textit{case of}
+\item<2-> Cases are instances of a concept or phenomenon
+	\begin{itemize}
+	\item<3-> What is the Brexit referendum a case of?
+	\item<4-> What is Islamic State a case of?
+	\item<5-> What is Angela Merkel a case of?
+	\item<6-> What is Sep. 11th a case of?
+	\item<7-> What is Wales a case of?
+	\end{itemize}
+\end{itemize}
+
+}
+
+% common cases: countries, subnational units, persons, political parties, events (e.g., acts of terrorism), revolutions, transitions to democracy, wars, policies, legislatures, elections
+
+
+% an instance or observation can be a case of many different things
+% September 11th might be a case of terrorism, of structural deficiencies in buildings, of airplane hijacking, of airport security, of intelligence failure, of presidential leadership, of the onset of war, of "rallying around the flag", etc.
+% to study something as a case, you need to know what it is a case *of*
+
+
+\frame{
+
+\frametitle{Types of testing}
+
+\small
 
 \begin{itemize}\itemsep1em
-\item<1-> Covariance:\\
-	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
-\item<2-> Correlation:\\
-	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
+\item Hypothesis confirming: ``most likely'' case
+\item Hypothesis weakening: ``least likely'' case
+\item Hypothesis generating: ``deviant'' cases
+\item Concept definition: ``new'' cases
 \end{itemize}
-}
-
-
-\frame{
-
-\frametitle{Correlation is linear!}
-
-\includegraphics[width=\textwidth]{images/correlation}
-
-\vspace{1em}
-{\footnotesize Source: \href{https://commons.wikimedia.org/wiki/File:Correlation_examples2.svg}{Wikimedia}}
-}
-
-\frame{
-	\frametitle{Guess the Correlation!}
-	\begin{enumerate}\itemsep0.5em
-	\item Go to: {\small \url{http://guessthecorrelation.com/}}
-	\item Play a few rounds
-	\end{enumerate}
 
 }
 
-\section{Research Design Proposal}
+
+\section{Case Comparisons}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{{\normalsize Rubric for Research Design Proposal}}
 
-	\footnotesize
+\frametitle{Doner, Ritchie, Slater (2005)}
 
-	\begin{itemize}
-	\item Politically interesting and important topic and research question
-	\item Research question, theory, and methods situated in relevant political science literature
-	\item Thorough discussion of theory and explicitly stated, empirically testable hypotheses
-	\item Appropriate, well-designed research methodology
-		\begin{itemize}\footnotesize
-		\item Strengths and weaknesses
-		\item Trade-offs discussed against alternative designs
-		\item Able to generate data that will allow a test of hypotheses
-		\end{itemize}
-	\item Well-written, coherent, well-structured
-	\end{itemize}
+In pairs, discuss the following:
 
-}
+\begin{itemize}
+\item What is the outcome?
+\item What is the theory?
+\item What are the cases examined?
+\item How are the cases compared?
+\end{itemize}
 
+You have 3 minutes.
 
-\section{Representativeness}
-\frame{\tableofcontents[currentsection]}
-
-
-\frame{
-	\frametitle{Case selection}
-	\begin{itemize}
-	\item Earlier in the course we talked about case selection
-	\item What did we discuss?
-	\end{itemize}
 }
 
 
 \frame{
-	\frametitle{Discuss in Pairs!}
-	
-	\Large
-	\begin{center}
-	What does it mean for a sample to be representative of a population?
-	\end{center}
-}
 
-\frame{
-	\frametitle{{\large Different conceptualizations\\ of representativeness}}
-	
-	\small
-	
-	\begin{itemize}\itemsep0.5em
-		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
-		\item \textbf{Demographic-based}: A sample is representative because it resembles in the population some way (e.g., same proportion of women in sample and population, etc.)
-		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
-	\end{itemize}
-}
-
-
-\frame{
-	\frametitle{Obtaining Representativeness}
-	\begin{itemize}\itemsep0.5em
-		\item<2-> Census
-		\item<3-> Convenience/Purposive samples
-		\item<4-> Quota sampling (common before 1940s)
-		\item<5-> \textbf<7>{Simple random sampling}
-		\item<6-> Complex survey designs
-	\end{itemize}
-}
-
-
-
-
-\section{Sampling}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-	\frametitle{Inference from Sample to Population}
-	\begin{itemize}\itemsep0.5em
-	\item We want to know population parameter $\theta$
-	\item We only observe sample estimate $\hat{\theta}$
-	\item We have a guess but are also uncertain
-	\vspace{1em}
-	\item<2-> What range of values for $\theta$ does our $\hat{\theta}$ imply?
-	\end{itemize}
-}
-
-\frame[label=srs]{
-	\frametitle{Simple Random Sampling}
-	\begin{enumerate}\itemsep0.5em
-		\item Define target population
-		\item Create ``sampling frame''
-		\item Each unit in frame has equal probability of selection
-		\item Collect data on each unit
-		\item Calculate sample \textit{statistic}
-		\item Draw an inference to the population
-	\end{enumerate}
-}
-
-
-\begin{frame}[fragile]
 \begin{center}
 \begin{tikzpicture}
-    \fill<1->[red!60,opacity=0.75] (0,0) circle (4cm) 
-        node[text=white, align=center, text width=3cm] {};
-    \node<1-> (pop) at (-3,2) {\textbf{Population}};
-    \fill<2->[blue!80,opacity=0.5] (2,0) circle (3.8cm) 
-        node[text=white, align=center, text width=3cm] {};
-    \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
-    \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
+\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[height=.8\textheight]{images/doner-figure1}};
+\draw<2->[red,ultra thick,rounded corners] (0,6.6) rectangle (5,7.25);
+\draw<3->[red,ultra thick,rounded corners] (2,4.5) rectangle (5.5,5.25);
+\draw<4->[red,ultra thick,rounded corners] (3.5,2.25) rectangle (6.5,3);
+\draw<5->[blue,ultra thick,->] (3.7, 6.8) -- (3.7,6) -- (4.5,4.9) -- (4.5,3.7) -- (5.85,2.9) -- (5.85,0.5);
 \end{tikzpicture}
 \end{center}
-\end{frame}
 
-
-\againframe{srs}
-
-\frame{
-	\frametitle{Statistical Inference I}
-
-	To calculate a sample mean (or proportion):
-
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	{\small
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	}
-	\vspace{0.5em}
-	
-	%This is a \textit{statistic} (the sample mean) that \textit{estimates} the population \textit{parameter} (the population mean)
-	
+{\tiny Figure 1 from Doner, Ritchie, Slater (2005). ``Systemic Vulnerability and the Origins of Developmental States.'' \textit{International Organization} 59: 327--361.\par} 
 }
 
 
 \frame{
-	\frametitle{Statistical Inference II}
-	\begin{itemize}\itemsep1em
-	\item If we calculate $\bar{y}$ in our \textit{sample}, what does this tell us about the $\bar{Y}$ in the \textit{population}?
-	\item<2-> The sample \textit{estimate} is our guess at the value of the population \textit{parameter} within some degree of uncertainty
-	\end{itemize}
+\frametitle{Mill's methods\footnote{Discussed in Holland (1986) from Week 2}}
+
+\begin{enumerate}\itemsep0.5em
+\item \textbf<2->{Agreement}
+\item \textbf<2->{Difference}
+\item \textbf<2->{Agreement and Difference}
+\item Residue
+\item Concomitant variations
+\end{enumerate}
 }
 
-
 \frame{
-	\frametitle{Law of Large Numbers}
+
+\frametitle{Using Mill's Methods}
+
+\begin{enumerate}\itemsep0.5em
+\item<1-> Identify an outcome to explain
+\item<2-> Find cases and score on outcome
 	\begin{itemize}
-	\item Definition: The \textit{mean} of the $\hat{\theta}$ from each of a number of samples will converge on the population $\theta$, as the number of samples increases
+	\item Need outcome variation
 	\end{itemize}
-}
-
-\frame{
-	\frametitle{Sampling Variance}
-	\begin{itemize}\itemsep1em
-	\item The $\hat{\theta}$ in any particular sample can differ from the population value $\theta$
-	\item This variation is calling ``sampling variance'' or ``sampling error''
-	\item The standard error describes the average amount of variation of the $\hat{\theta}$'s around $\theta$
-\end{itemize}
-}
-
-
-\frame{
-	\frametitle{How Uncertain Are We?}
-	\begin{itemize}\itemsep1em
-	\item Our uncertainty depends on sampling procedures
-	\item Most importantly, \textit{sample size}
-		\begin{itemize}
-		\item As $n \rightarrow \infty$, uncertainty $\rightarrow 0$
-		\end{itemize}
-	\item We typically summarize our uncertainty as the \textit{standard error}
+\item<3-> Categorize cases on possible explanations
+	\begin{itemize}
+	\item Need variation
 	\end{itemize}
-}
-
-\frame{
-	\frametitle{Standard Errors (SEs)}
-	\begin{itemize}\itemsep1em
-	\item Definition: ``The standard error of a sample estimate is the average distance that a sample estimate ($\hat{\theta}$) would be from the population parameter ($\theta$) if we drew many separate random samples and applied our estimator to each.''
-	\item<2-> Square root of the sampling variance
-\end{itemize}
-}
-
-
-
-\frame{
-	\frametitle{Sample mean}
-	
-	\small
-	
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	
-	\begin{equation}
-	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
-	\end{equation}
-	where $f = $ proportion of population sampled,\\
-	$s^2 = $ sample (element) variance, and\\
-	$n = $ sample size
-}
-
-\frame{
-	\frametitle{Sample proportion}
-	
-	\small
-	
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	
-	\begin{equation}
-	SE_{\bar{y}} = \sqrt{\frac{(1-f)}{n}p(1-p)}
-	\end{equation}
-	where $f = $ proportion of population sampled,\\
-	$p = $ sample proportion, and\\
-	$n = $ sample size
-}
-
-
-\frame<1>[label=moe]{
-
-	\frametitle{Margin of Error}
-
-	\begin{itemize}\itemsep0.5em
-	\item Common to express SE as a ``margin of error''
-	\item MoE is twice the Standard Error
-	\item For estimated proportions, expressed as:\\
-		``+/- MoE percentage points''
-	\item<2-> So for an SE of 0.01, how can we describe this?
+\item<4-> Apply Mill's methods to:
+	\begin{itemize}
+	\item Identify deterministic causes
+	\item Eliminate deterministic causes
 	\end{itemize}
+\end{enumerate}
+
 }
 
-\frame{
-	\only<1>{\includegraphics[height=.9\textheight]{images/ukpoll1}}
-	\only<2>{\includegraphics[height=.9\textheight]{images/ukpoll2}}
-	
-	{\tiny Source: \url{http://www.abc.net.au/news/2016-01-17/new-poll-show-widening-support-for-uk-to-leave-eu/7093730}\par}
-}
+% what is the outcome in Doner et al.?
 
 
 \frame{
+\frametitle{Agreement}
 
-\LARGE
+\begin{quote}
+If two or more instances of the phenomenon under investigation have only one circumstance in common, the circumstance in which alone all the instances agree, is the cause (or effect) of the given phenomenon.
+\end{quote}
 
+Often called ``most different systems'' design.
+
+}
+
+
+% how do Doner et al. use the method of agreement?
+% use this to eliminate potential causes
+
+\frame<1-2>[label=table2]{
 \begin{center}
-Questions?
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth, trim={0 0 8cm 0}, clip]{images/doner-table2}};
+\draw<2>[red,ultra thick,rounded corners] (1,0.75) rectangle (6.2,4);
+\draw<3>[red,ultra thick,rounded corners] (6.2,0.75) rectangle (10.75,4);
+\end{tikzpicture}
 \end{center}
 
+{\tiny Table 2 from Doner, Ritchie, Slater (2005). ``Systemic Vulnerability and the Origins of Developmental States.'' \textit{International Organization} 59: 327--361.\par} 
 }
+% table showing method of agreement for Doner et al.
+
+
 
 \frame{
-\frametitle{Activity!}
-\includegraphics[width=\textwidth]{images/haribo}
+\frametitle{Difference}
 
-{\footnotesize Source: \href{https://www.flickr.com/people/34415916@N07}{ganeshaisis} on \href{https://commons.wikimedia.org/wiki/File:I_love_haribo_(5573044236).jpg}{Wikimedia}}
+\small
+
+\begin{quote}
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+\end{quote}
+
+\normalsize 
+
+Often called ``most similar systems'' design.
 
 }
 
-\frame[label=activity1]{
+% how do Doner et al. use the method of agreement?
+% use this to identify potential causes
 
-What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 
-	\begin{enumerate}
-	\item<2-> Everyone collect a random sample
-	\item<3-> Calculate $\hat{p} = \frac{\heartsuit}{n}$
-	\item<4-> Report $\hat{p}$
-	\item<5-> Calculate element variance: $p(1-p)$
-	\item<6-> What is your margin of error?
-	\end{enumerate}
+\againframe<1,3>{table2}
+
+
+
+\frame{
+\frametitle{Agreement and Difference}
+
+\small
+
+\begin{quote}
+If two or more instances in which the phenomenon occurs have only one circumstance in common, while two or more instances in which it does not occur have nothing in common save the absence of that circumstance; the circumstance in which alone the two sets of instances differ, is the effect, or cause, or a necessary part of the cause, of the phenomenon.
+\end{quote}
+
+}
+
+
+\frame{
+
+\frametitle{{\large Limitations of Mill's Methods}}
+
+\begin{itemize}\itemsep0.5em
+\item Necessary causes (Deterministic)
+\item Works best with limited number of variables
+	\begin{itemize}
+	\item Multiple causation is difficult to accommodate
+	\end{itemize}
+\item Works best with limited number of cases
+\item Assume all potential explanations not examined do not matter
+\end{itemize}
 
 }
 
@@ -344,98 +242,113 @@ What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 
 
 
+\section[Uses of Case Studies]{Five Uses of Case Studies}
+\frame{\tableofcontents[currentsection]}
+
+
 \frame{
-	\frametitle{{\normalsize How large of a sample do we need?}}
-	\begin{itemize}\itemsep1em
-	\item<2-> Uncertainty is influenced by:
-		\begin{itemize}
-		\item Sample size
-		\item \textit{Element} variance
-		\item Population size?
-		\end{itemize}
-	\item<3-> So what do we do?
-		\begin{itemize}
-		\item Decide on desired uncertainty
-		\item Guess at element variance
-		\item<4-> Adjust sample size based on feasibility
-		\end{itemize}
+\frametitle{1: Description}
+\begin{itemize}\itemsep1em
+\item Case study might be descriptive
+\item Historical or interpretive
+\item Think ``biography''
+\end{itemize}
+}
+
+% what happened; when did events happen; who was involved; etc.
+
+\frame{
+\frametitle{2: Theory development}
+\begin{itemize}\itemsep0.5em
+\item Case is an instance of a phenomenon
+\item There is some outcome to be explained
+	\begin{itemize}
+	\item Outcome is case itself
+	\item Outcome of a case
+	\item Outcome as part of case
 	\end{itemize}
+\item Look for ``Causal Process Observations''
+\item Attempt to identify generalizable explanations
+\end{itemize}
 }
 
-\frame{
-	\frametitle{Estimating sample size}
-    Determining sample size requires:
-    	\begin{itemize}
-    		\item A possible value of $p$
-    		\item A desired precision (SE)
-    	\end{itemize}
-	\vspace{1em}
-	So:
-	\begin{equation}
-	n = \frac{p(1-p)}{SE^2} = \frac{0.5(1-0.5)}{SE^2} = \frac{0.25}{SE^2}
-	\end{equation}
-	\vspace{1em}
-	{\footnotesize Note: Element variance is highest when $p = 0.5$ .}
-}
+% we see this in the second half of Doner et al.
+
 
 \frame{
-	\frametitle{Estimating sample size}
-	What precision (margin of error) do we want?
-	\begin{itemize}\small
-		\item +/- 2 percentage points: $SE = 0.01$
-			\begin{equation}
-			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
-			\end{equation}
-		\item<2-> +/- 5 percentage points: $SE = 0.025$
-			\begin{equation}
-			n = \frac{0.25}{0.000625} = 400
-			\end{equation}
-		\item<3-> +/- 0.5 percentage points: $SE = 0.0025$
-			\begin{equation}
-			n = \frac{0.25}{0.00000625} = 40,000
-			\end{equation}
+\frametitle{{\large Causal Process Observations}}
+
+\normalsize
+
+\begin{itemize}\itemsep0.5em
+\item Definition: ``An insight or piece of data that provides information about the context, process, or mechanism, and that contributes distinctive leverage in causal inference''\footnote{Brady and Collier 2004, p.277}
+\item Essentially pieces of evidence that offer insight into within-case counterfactuals
+\end{itemize}
+}
+
+% more on this next week
+
+\frame{
+\frametitle{3: Theory testing}
+\begin{itemize}\itemsep1em
+\item ``Actual case'' comparisons
+	\begin{itemize}
+	\item Mill's methods
 	\end{itemize}
+\item Fearon's ``Counterfactual method''
+\item Process tracing
+\end{itemize}
+}
+
+
+% thinking counterfactually
+	% can we observe the counterfactual (in another case, in the same case at another time, in a collection of other cases)?
+	% if not, can we think about what that counterfactual might look like? 
+	% see Fearon's use of ``counterfactual method''; thought experiments; hypothetical reasoning
+% actual case comparisons need to take the form of Mill's methods
+
+\frame{
+\frametitle{4: Mechanisms}
+\begin{itemize}\itemsep0.5em
+\item Imagine you already have evidence for a causal relationship
+\item A case study can help you explore or test for ``mechanisms'' of that effect
+\item This is our focus next week
+\end{itemize}
 }
 
 \frame{
-
-	\frametitle{{\normalsize How do we reduce uncertainty?}}
-	\begin{itemize}\itemsep1em
-	\item<2-> Increase sample size
-	\item<3-> Reduce element variance
-	\item<4-> Change sampling design
-		\begin{itemize}
-		\item Stratified sampling\\(tends to decrease SEs)
-		\item Cluster sampling\\(tends to increase SEs)
-		\end{itemize}
+\frametitle{5: Concept Definition}
+\begin{itemize}\itemsep0.5em
+\item Sometimes you don't know what you are studying
+\item Case studies can clarify what something is a \textit{case of}
+\item This helps you to:
+	\begin{itemize}
+	\item Refine your concept definition
+	\item Improve measurement
 	\end{itemize}
-
+\end{itemize}
 }
+
+\frame{}
 
 
 \frame{
-	\frametitle{Big Caveat!}
-	\begin{itemize}\itemsep1em
-	\item Calculations from today assume SRS
-	\item Lots of data comes from other kinds of samples
-	\item Think of SRS as a baseline
-	\end{itemize}
-}
 
-
-\section*{Preview}
-
-\frame{
 \frametitle{Preview}
 
-	\begin{itemize}\itemsep1em
-	\item Feedback on PS5 this week
-	\item PS6 due Feb. 23
-	\item Next week we'll discuss hypothesis testing
-	\item Remember Reading Week assignment!
-	\end{itemize}
+\begin{itemize}\itemsep1em
+\item Next week: Process-tracing
+\item Problem Set 3 Due
+\item Start thinking about research topics for Week 11
+\end{itemize}
 
 }
+
+
+\frame{}
+% If time is permitting, use TV reality shows as a way to create a typology
+
+
 
 \appendix
 \frame{}

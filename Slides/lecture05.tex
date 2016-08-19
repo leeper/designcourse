@@ -1,10 +1,13 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows,positioning}
+\usetikzlibrary{shapes,arrows}
+\usepackage[normalem]{ulem}
 
-\title{Building and Testing Political Science Theories}
+\title{Translating Texts into Interpretations and Numbers}
 
-% How do we create social science theories based on past evidence and novel observation? What roles do induction and deduction play in contemporary political science?
+% Primary and secondary source documents provide a written record of politically relevant events and processes. Texts can be used in a number of ways in political science research. How do we draw meaning from texts in qualitative and quantitative ways? How does textual information become useful data for making political inferences?
+
+
 
 \date[]{}
 
@@ -14,414 +17,572 @@
 
 \frame{\tableofcontents}
 
-\section{Finish Measurement}
+\frame{
+
+\frametitle{Preview}
+
+\begin{itemize}\itemsep1em
+\item Three weeks on data collection
+	\begin{itemize}
+	\item Text analysis
+	\item Interviewing
+	\item Participant Observation
+	\end{itemize}
+\item Problem Set 4
+	\begin{itemize}
+	\item Due December 15
+	\item Team assignment
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\section{Texts as Sources}
 \frame{\tableofcontents[currentsection]}
 
 
 \frame{
 
-\frametitle{{\large Assessing Measurement Quality}}
+\frametitle{What counts as text?}
+
+\begin{itemize}\itemsep1em
+\item Tertiary sources
+\item Secondary sources
+\item Primary sources
+\end{itemize}
+
+}
+
+% tertiary: compendia or indices of two other types of sources
+% secondary: interpretations of raw evidence
+% primary: raw evidence
+
+% brainstorm examples
+
+
+\frame{
+
+\frametitle{How do you use texts?}
+
+\small
+
+\begin{itemize}\itemsep0.75em
+\item Think about your own experience reading, interpreting, and interacting with textual sources for academic purposes (e.g, for writing a term paper).
+\item With the person sitting next to you, discuss:
+	\begin{enumerate}
+	\item The process by which you try to understand the meaning and content of texts
+	\item How you choose texts to read
+	\end{enumerate}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Use of Texts}
+
+\begin{itemize}\itemsep1em
+\item<1-> Text as desription
+	\begin{itemize}
+	\item Rely on text in lieu of direct observation
+	\item Possibly serve as basis of CPO
+	\end{itemize}
+\item<2-> Text as DSOs
+	\begin{itemize}
+	\item Treat texts as units
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+% texts in lieu of observation
+% we cannot see everything ourselves, so we rely on evidence
+
+% texts as CPOs vs. DSOs
+
+\frame{
+
+\frametitle{Challenges of Text}
 
 \begin{enumerate}\itemsep1em
-\item Conceptual clarity
-\item Construct validity
-	\begin{itemize}
-	\item Convergent validity
-	\item Divergent validity
-	\end{itemize}
-\item Accuracy and precision
+\item Subjectivity
+\item Historiography
+\item Selection bias
 \end{enumerate}
 
 }
 
-\frame{
-\frametitle{Assessing Measures I}
 
-\begin{itemize}\itemsep1em
-\item Conceptual clarity is about knowing what we want to measure
-\item Sloppy concepts make for bad measures
-	\begin{itemize}
-	\item Ambiguity % multiple meanings or multiple labels
-	\item Vagueness % concept without a definition
-	\end{itemize}
-\item<2-> Revise concept definition as needed
-\end{itemize}
-}
+% selection bias -> when do we stop looking for evidence?
+% -> how do we know that we have all of the evidence?
+% -> If we go looking for information about a case as something, do we miss evidence that sees that case as a case of something else?
 
+% define historiography
 
-\frame{
-\frametitle{Assessing Measures II}
+% texts are subjective
 
-\begin{itemize}\itemsep0.5em
-\item Construct validity is the degree to which a variable measures a concept\footnote{Note: Kellstedt and Whitten call this ``content validity''. They use ``construct validity'' to mean whether a measure has predictive validity (i.e., that the measure is related to measures of other concepts that are theorized to be related).}
-\item<2-> Construct validity is \textbf{high} if a variable is a measure of the concept we care about
-\item<3-> Construct validity is \textbf{low} if a variable is actually a measure of something else
-\end{itemize}
-}
+% what is this a case of 
 
-% sources: bad concept definition; totally inappropriate measures (using income to measure weight); measure becomes the concept (actual income is replaced by self-reported income)
+% research questions and text: 
+%% at one level, texts can be used to answer any research question
+%% there are, however, a lot of interesting research questions that are about text per se
 
-\frame{
-
-\frametitle{{\large Assessing Construct Validity}}
-
-\begin{itemize}\itemsep1em
-\item Multiple measures!
-\item Convergence (Convergent validity)
-\item Discrimination (Discriminant validity)
-\end{itemize}
-}
-
-% two (or more) measures of the same concept are highly correlated; scaling
-% two (or more) measures of distinct concepts are not correlated
-% Measures of distinct concepts may be correlated if they are causally related to one another, so simple correlations do not mean two measures are necessarily of the same concept
-
-% mention predictive validity (what Kellstedt and Whitten call construct validity)
+% unit of analysis???
+% text, paragraph, sentence
+% multiple texts that represent some larger unit (speaker/source, country, party)
 
 
-\frame{}
-
-
-\section{Theory}
+\section{Content Analysis}
 \frame{\tableofcontents[currentsection]}
 
+\frame{
+
+\frametitle{Content Analysis}
+
+\begin{itemize}\itemsep0.5em
+\item Definition: ``systematic description of the contents of a communication''
+\item Treat texts as DSOs or a source of multiple DSOs
+	\begin{itemize}
+	\item Data set observation: score for a case on a variable
+	\end{itemize}
+\item Technique can be applied to any kind of document
+\end{itemize}
+
+}
+
+% can be applied to any kind of document (primary, secondary, tertiary)
+% need not be textual (we can content analyze images, videos, audio, actions/behaviors/expressions)
+% graph showing textual input of one or more strings of text into an output of numbers/scores
 
 
 \frame{
-\frametitle{Scientific method}
+
+\frametitle{Content Analysis Process}
 
 \begin{enumerate}
-\item Research question(s)
-\item Clarify the core concepts
-\item \textbf{Develop theory}
-\item Derive specific, testable hypotheses
-\item Plan data collection
-\item Gather data/evidence
-\item Analyze data
-\item Draw inferences
+\item<1-> Define a research question
+\item<2-> Define concepts
+\item<3-> Select texts
+\item<4-> Create a \textit{codebook} that describes how to operationalize concepts using text
+\item<5-> Assign scores to texts based on codebook
+\item<6-> Summarize results
 \end{enumerate}
 
 }
 
-\frame{
-\frametitle{{\large Key Points from Last Week}}
+% RQs and concepts are linked:
+% what is the sentiment of this text?
+% what is the ideology of this text?
+% what ideas/arguments/frames/discourses are presented in this text?
+% Tend to be descriptive RQs; causal inferences will come later once we've described the text fully
+% content analysis is almost always comparative (comparing sources, authors, time period, contexts, etc.)
 
-\begin{enumerate}\itemsep1em
-\item Theory is about concepts
-\item Analysis is about measured variables
-\item So our task as scientists is to:
+% what are the variables? what do we want to know about this text?
+
+% scoring: ideology, positivity/negativity (both rely on word associations)
+% dictionary methods (sentiment: lexicoder, ideology: wordfish)
+
+
+
+\frame{
+
+\frametitle{Example 1: Categorization}
+
+\begin{itemize}\itemsep0.5em
+\item Common RQ relates to categorization:\\ What is this text saying?
+\item Example RQs:
+
 	\begin{itemize}
-	\item Find observable implications of theory
-	\item Draw theoretical implications from measures
+	\item What arguments are raised in this text?
+	\item Are certain ideas more prevalent in some texts than others?
+	\item How is an issue discussed in politics?
 	\end{itemize}
-\end{enumerate}
-}
-
-
-\frame{
-
-\begin{center}
-\begin{tikzpicture}
-\node [align=center] (ivm) at (0,0) {\footnotesize Independent Variable\\\footnotesize (Measured)};
-\node [align=center] (dvm) at (7,0) {\footnotesize Dependent Variable\\\footnotesize (Measured)};
-
-\node [align=center] (ivc) at (0,3) {\footnotesize Independent Variable\\\footnotesize (Concept)};
-\node [align=center] (dvc) at (7,3) {\footnotesize Dependent Variable\\\footnotesize (Concept)};
-
-\node (analysis) at (3.5, 0) {};
-\node (theory) at (3.5, 3) {};
-
-\draw [->, thick] (ivm) -- (dvm) node[midway, below] (analysis) {{\only<2->{\textit{Analysis}}}};
-\draw [->, thick] (ivc) -- (dvc) node[midway, below] (theory) {{\only<2->{\textit{Theory}}}};
-\draw [->, dashed, thick] (ivc) -- (ivm);
-\draw [->, dashed, thick] (dvc) -- (dvm);
-\end{tikzpicture}
-\end{center}
-
-
-}
-
-
-\frame{}
-
-\frame{
-
-\frametitle{{\large What is a theory?}}
-
-\begin{itemize}\itemsep1em
-\item Kellstedt and Whitten's definition:\footnote{Kellstedt and Whitten, p.3}\\
-A tentative conjecture about the causes of some phenomenon of interest
-\item<2-> Another way of saying this:\\
-An \alert<3>{argument} that attempts to \alert<3>{explain} how concepts are causally related
-\end{itemize}
-
-}
-
-% theories are arguments and they are (potential) explanations
-% concepts may also be hierarchical - some are grand, macro theories; others are small micro theories and it may be that the micro theories build on macro theories
-
-% there are also descriptive theories, e.g., typologies (Presidential character, welfare states, )
-
-
-
-\frame{
-
-\frametitle{Generating Theory I}
-
-\begin{itemize}\itemsep0.5em
-\item One way to theorize is to reason \textit{inductively} % bottom-up appraoch
-
-\item Induction works by drawing generalities from specific observations
-
-\item Sometimes called ``bottom-up'' theorizing
-\end{itemize}
-
-}
-
-% activity to practice inductive reasoning
-%% why do people vote or why do people not vote?
-
-%% perhaps gender differences in female legislative representation?
-
-
-\frame{
-
-\frametitle{Generating Theory II}
-
-\begin{itemize}\itemsep0.5em
-\item An alternative way of developing theory is through \textit{deduction} 
-
-\item Deduction begins from general, assumed principles/axioms to reach more specific observable realities % top-down approach
-
-\item<2-> Common example: Rational choice theory
 
 \end{itemize}
 
 }
 
-% the first calculus of voting (Arrow; Downs) was purely deductive
+
+\frame{
+
+\frametitle{{\large Example 1 (Frames/Discourses)}}
+
+If only all politicians could \textbf<2>{believe in Britain} as UKIP does. If only they could share our \textbf<2>{positive vision of Britain} as a \textbf<2>{proud}, \textbf<3-4>{independent sovereign nation}, a \textbf<4>{country respected on the world stage}, a \textbf<4>{major player in global trade}, with \textbf<4>{influence and authority} when it comes to tackling the pressing international issues of the day.
 
 
-\frame<1>[label=theory1]{
+}
+% categorization: 
+% identification of frames, arguments, discourse
 
-\frametitle{Generating Theory III}
+% discourses/frames
+% 1: national pride/patriotism
+% 2: independence
+% 3: influential world power
+% maybe others
 
-\begin{itemize}\itemsep0.5em
-\item ``The Calculus of Voting'' is a \textit{rational choice} theory
-	\begin{itemize}
-	\item Assumes utility maximization is the driver of all behaviour
-	\item Understanding phenomena is a matter of figuring out utility structures, especially those created by institutions
-	\end{itemize}
-\item<2-> Not the only broad theoretical paradigm
-\end{itemize}
+% tabulating persons, issues, mentions
+% necessarily iterative --> develop a set of categories as they are identified; requires revisiting texts
+
+
+\frame{
+
+\frametitle{{\large Example 2 (Mentions)}}
+
+
+% persons
+If only all \textbf<2>{politicians} could believe in \textbf<2>{Britain} as \textbf<2>{UKIP} does. If only they could share our positive vision of \textbf<2>{Britain} as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
 }
 
 
 \frame{
 
-\frametitle{The Calculus of Voting}
+\frametitle{{\large Example 3 (Issues/Priorities)}}
 
-\small
-
-Theory: Voting is explained by \only<1>{3}\only<2>{4} factors\\
-
-\begin{columns}
-  \begin{column}{0.45\textwidth}
-    \begin{itemize}
-	\item Costs of voting
-	\item Benefits from preferred alternative winning
-	\item Probability of impacting result
-	\item<2-> Benefits from voting \textit{per se}
-    \end{itemize}
-  \end{column}
-  
-  \begin{column}{0.55\textwidth}
-  \tikzstyle{block} = [rectangle, draw, text width=2cm, text centered, rounded corners, minimum height=1em, node distance=9cm]
-  \begin{tikzpicture}[scale=0.3]
-  \draw<1-> [block] node at (0,0) (voting) {{\small Pr(Voting)}};
-  \draw<1-> [block, above left of=voting] node (costs) {{\small Costs}};
-  \draw<1-> [block, left of=voting] node (ben) {{\small Benefits}};
-  \draw<1-> [block, below left of=voting] node (p) {{\small Pr(Impact)}};
-  \draw<2-> [block, below of=voting] node (d) {{\small ``D term''}};
-  \draw<1-> [->, very thick] (costs) -- (voting);
-  \draw<1-> [->, very thick] (ben) -- (voting);
-  \draw<1-> [->, very thick] (p) -- (voting);
-  \draw<2-> [->, very thick] (d) -- (voting);
-  \end{tikzpicture}
-  
-  \end{column}
-\end{columns}
-
-}
-
-
-% other examples of this:
-% logic of collecive action; selective incentives; Mancur Olson
-% common pool resource problems; communication and sanctions; Elinor Ostrom
-
-% an example: calculus of voting
-
-
-
-\frame{
-
-\frametitle{Aside: Assumptions}
-
-\begin{center}
-If a theory require assumptions, is that theory credible?
-\end{center}
-
-}
-
-% there are debates about whether it is okay to make assumptions that we do not test (see, e.g., Kahneman and Tversky)
-% there are also debates about whether theories are useful independent of whether they explain the world as it is (see, e.g., Clark and Primo)
-
-\againframe{theory1}
-
-
-
-\frame{
-
-\frametitle{The Michigan Model}
-
-\small
-
-Theory: Vote choice is explained by long-standing partisan identification, which is in turn shaped by early socialization.
-
-\vspace{2em}
-
-\tikzstyle{block} = [draw, text width=2.5cm, minimum height=1em, node distance=8cm]
-\begin{tikzpicture}[scale=0.75]
-\draw [block] node at (0,0) (voting) {{\small Vote Choice}};
-\draw [block] node at (-5,0) (pid) {{\small Party\\ Identification}};
-\draw [block] node at (-10,1.5) (p) {{\small Parental\\ Party ID}};
-\draw [block] node at (-10,-1.5) (e) {{\small Early Adult\\ Experiences}};
-\draw [->, very thick] (p) -- (pid);
-\draw [->, very thick] (e) -- (pid);
-\draw [->, very thick] (pid) -- (voting);
-\end{tikzpicture}
-}
-
-
-
-
-\frame{
-
-\frametitle{Induction vs. Deduction?}
-
-\begin{itemize}\itemsep0.5em
-\item Induction and deduction are both integral to science
-
-% example: the calculus of voting; modified theory based on new evidence
-
-\item Theory testing and theory building both require observation
-\end{itemize}
-
-}
-
-% the second calculus of voting (Riker and Ordeshook) was partly inductive
-
-% theory development is separate from theory testing
-% but the two are interrelated
-
-
-
-% induction (bottom up) vs. deduction (top down; from theory to observation)
-% generally, in political science, we are interested in building theories from earlier more acceptable theoretical premises
-% if we believe the world operates in some way, we can draw more specific conjectures about features of the world
-% and then test those conjectures using evidence
-
-% yet, the result is that when we collect evidence, sometimes we falsify (or fail to find evidence in support of) our theories
-% the results is that we must either amend our premises, amend our argument, or set scope conditions on theory
-
-% these theories then become useful because by drawing generalities about the world, we are able to understand particular events
-% when those particular events then deviate from expectations, it invites renewed theorizing, amendment of argument, or the implication of scope conditions
-
-% so science is both deductive and inductive, though the way we talk about science is typically deductive
-
-
-% in the end, however, our goal is to "explain" the world...that has to start from a mix of assumption-based theory, theory development expanding on previously validated theory, and novel data collection
-
-
-\frame{
-
-\frametitle{Theory Generation in Practice}
-
-As you theorize an explanation for some phenomenon, you will draw on:
-
-\begin{itemize}\itemsep1em
-\item General principles
-\item Extant theory
-% application; generalization; moderation; scope conditions; proposing mechanisms for extant relationships
-\item Specific evidence
-% don't use the evidence we will eventually test our theory on
-\end{itemize}
+% issue mentions
+\textcolor<2->{gray}{If only all politicians could believe in Britain as UKIP does.}
+\textcolor<3->{gray}{If only they could share our positive vision of Britain}
+\textcolor<4->{gray}{as a proud,} \textbf<4->{independent sovereign nation,}
+\textcolor<5->{gray}{a country respected on the world stage,}
+\textcolor<6->{gray}{a major player in} \textbf<6->{global trade}, 
+\textcolor<7->{gray}{with influence and authority}
+\textcolor<8->{gray}{when it comes to tackling the} \textbf<8>{pressing international issues} \textcolor<8->{gray}{of the day.}
 
 }
 
 
 \frame{
 
-\frametitle{{\large What makes for a good theory?}}
+\frametitle{Developing Codebooks I}
 
 \begin{itemize}
-\item Truth
-\item Falsifiability
-\item Relevance
-\item Coherence
-\item Generality
-\item Parsimony
+\item Developed deductively
+	\begin{enumerate}\itemsep0.5em
+	\item Start with set of concepts
+	\item Describe how those concepts might be expressed in text
+	\item Create a ``coding scheme'' by which to score a case on a variable
+	\end{enumerate}
 \end{itemize}
 
 }
 
+
 \frame{
 
-\frametitle{Generality \& Parsimony}
+\frametitle{Developing Codebooks II}
 
-Think for 90 seconds about each of these principles:
-
-\small 
-
-\begin{itemize}\itemsep1em
-\item Generality: Theories that can explain more are preferred over theories that can explain less
-\item Parsimony: Simple theories are preferred over complex theories
+\begin{itemize}
+\item Developed inductively
+	\begin{enumerate}\itemsep0.5em
+	\item Examine texts for key ideas and expressions
+	\item Create a set of categories that summarize those expressions
+	\item Examine new texts for expressions of those categories
+	\item Expand and clarify the codebook as new concepts or expressions emerge
+	\end{enumerate}
 \end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Codebook Examples}
+
+\footnotesize
+
+\begin{enumerate}
+\item<1-> Assign 1 if the text mentions ``Europe''
+\item<2-> Count times ``Europe'' is mentioned
+\item<3-> More complex example:
+	\begin{itemize}
+	\item Assign +1 if mentions ``Europe'' positively
+	\item Assign -1 if mentions ``Europe'' negatively
+	\item Assign 0 if text does not mention ``Europe''
+	\end{itemize}
+\item<4-> List all frames used in the text
+\item<5-> Count number of words (or characters) in sentence
+\end{enumerate}
+
+}
+
+% different types of variables: binary, categorical/qualitative, interval (sums, proportions)
+
+
+
+\begin{frame}
+
+\frametitle{Example Scoring Sheet}
 
 \normalsize
 
-Are these principles defensible?\\ Are they any good?
+\begin{center}
+\begin{tabular}{|l|r|r|r|r|} \hline
+ & Mention & Count & Affect & Frame\\ \hline
+UKIP &  &  & & \\ \hline
+Conservative &  &  & & \\ \hline
+Labour &  &  & & \\ \hline
+LibDems &  &  & & \\ \hline
+SNP &  &  & & \\ \hline
+Greens &  &  & & \\ \hline
+\end{tabular}
+\end{center}
 
-}
+\end{frame}
 
 
 
-\frame{}
-
-
-\section{Preview Next Week}
-\frame{\tableofcontents[currentsection]}
 
 \frame{
-\frametitle{Preview}
+
+\frametitle{{\large Example 2: Dictionary Methods}}
+
+\small
 
 \begin{itemize}\itemsep0.5em
-\item Drawing inferences requires tests
-\item Testing theories requires observation of reality
-\item Focus on two tasks:
+\item<1-> Rather than rely on subjective interpretation, dictionary methods create a ``dictionary'' of terms or expressions that operationalize a concept
+\item<1-> Score is based on word presence of words or their frequencies
+\item<1-> Often, goal is to categorize the text based on how it scores relative to other texts
 	\begin{itemize}
-	\item Generating specific ``observable implications'' of theories
-	\item Discuss how to distinguish between rival theories
+	\item<2-> Sentiment (positivity/negativity)
+	\item<2-> Ideology (left/right)
 	\end{itemize}
 \end{itemize}
+
 }
 
-% evidence + rules for evaluating evidence
-%% what counts as evidence and rules for evaluating evidence vary quite a bit
+% sentiment
+\frame{
 
-% broadly, we "test" theories by drawing observable implications of those theories, such that the theories are "observationally inequivalent" (each theory would produce different expectations about how the world would look), and then updating our beliefs about the alternative theories (such that the one more consistent with evidence is more likely to be "true")
+\frametitle{Affect/Sentiment}
 
-% there is no truth, there are only beliefs about the true nature of the world
+If only all politicians could \textit<3->{believe} in Britain as UKIP does. If only they could \textit<3->{share} our \textbf<2->{positive} vision of Britain as a \textbf<2->{proud}, \textit<3->{independent} \textit<3->{sovereign} nation, a country \textbf<2->{respected} on the world stage, a \textit<3->{major} player in global trade, with \textbf<3->{influence} and \textit<3->{authority} when it comes to tackling the pressing international issues of the day.
+
+}
+
+% can create a dictionary for many ideas
+
+
+
+\frame{
+
+\frametitle{Unit of Analysis}
+
+\begin{itemize}
+\item Can be difficult to decide what the correct unit of analysis is
+\item Possibilities:
+	\begin{itemize}
+	\item Author/Source
+	\item Text as a whole
+	\item Section
+	\item Page
+	\item Paragraph
+	\item Sentence
+	\item Sentence fragment
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Sentence}
+
+\small
+
+If only all politicians could believe in Britain as UKIP does.\\
+
+\vspace{1em}
+
+If only they could share our positive vision of Britain as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
+
+}
+
+\frame{
+
+\frametitle{Sentence fragments}
+
+\small
+
+If only all politicians could believe in Britain as UKIP does.\\
+
+\vspace{0.5em}
+
+If only they could share our positive vision of Britain \\
+
+\vspace{0.5em}
+as a proud, independent sovereign nation, \\
+
+\vspace{0.5em}
+a country respected on the world stage, \\
+
+\vspace{0.5em}
+a major player in global trade, \\
+
+\vspace{0.5em}
+with influence and authority \\
+
+\vspace{0.5em}
+when it comes to tackling the pressing international issues of the day.
+
+}
+
+
+
+% "bag of words" methods
+
+\frame{
+
+\frametitle{{\large ``Bag of Words'' Approaches I}}
+
+\textcolor<2->{gray}{If} only all politicians could believe \textcolor<2->{gray}{in} Britain \textcolor<2->{gray}{as} UKIP does \textcolor<2->{gray}{.} \textcolor<2->{gray}{If} only they could share our positive vision \textcolor<2->{gray}{of} Britain \textcolor<2->{gray}{as} \textcolor<2->{gray}{a} proud\textcolor<2->{gray}{,} independent sovereign nation\textcolor<2->{gray}{,} \textcolor<2->{gray}{a} country respected \textcolor<2->{gray}{on} \textcolor<2->{gray}{the} world stage\textcolor<2->{gray}{,} \textcolor<2->{gray}{a} major player \textcolor<2->{gray}{in} global trade\textcolor<2->{gray}{,} \textcolor<2->{gray}{with} influence \textcolor<2->{gray}{and} authority \textcolor<2->{gray}{when} \textcolor<2->{gray}{it} comes \textcolor<2->{gray}{to} tackling \textcolor<2->{gray}{the} pressing international issues \textcolor<2->{gray}{of} \textcolor<2->{gray}{the} day\textcolor<2->{gray}{.}
+
+}
+
+
+\frame{
+
+\frametitle{{\large ``Bag of Words'' Approaches II}}
+
+only all politicians could believe Britain UKIP does only they could share our positive vision Britain proud independent sovereign nation country respected world stage major player global trade influence authority comes tackling pressing international issues day
+
+}
+
+
+\frame{
+
+\frametitle{{\large ``Bag of Words'' Approaches III}}
+
+\small
+
+independent sovereign nation country international world global
+
+\vspace{0.5em} 
+positive proud respected major influence authority 
+
+\vspace{0.5em} 
+politicians player Britain Britain UKIP 
+
+\vspace{0.5em} 
+believe share tackling pressing 
+
+\vspace{0.5em} 
+could could does comes 
+
+\vspace{0.5em} 
+vision stage day trade issues 
+
+\vspace{0.5em} 
+only only all they our 
+
+}
+
+% term-document matrix
+
+
+\frame{
+
+\frametitle{N-grams and ``words''}
+
+\small
+
+\begin{itemize}\itemsep0.75em
+\item<1-> ``Bag of words'' usually uses \textit{unigrams}
+\item<2-> Unigrams are often ``stemmed''
+	\begin{itemize}
+	\item family, families, familiarity, and familial all become \textit{famil}.
+	\end{itemize}
+\item<3-> Can also be bigrams, trigrams, \textit{n}-grams
+\item<4-> These allow for \textit{multi-word expressions}
+	\begin{itemize}
+	\item ``If only'' has a negative connotation even though ``if'' and ``only'' are basically neutral words on their own
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+
+
+\frame{
+
+\frametitle{{\large Content Analysis in Practice}}
+
+\begin{itemize}\itemsep1em
+\item Inductive processes generally require a ``training set'' and ``test set''
+	\begin{itemize}
+	\item Establish coding scheme on ``training set''
+	\item Apply it to broader ``test set''
+	\end{itemize}
+\item<2-> Be cautious about scope conditions % codebook for news articles may not apply to speeches
+\item<3-> Develop a precise and reliable codebook
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Intercoder Reliability}
+
+\small
+
+\begin{itemize}\itemsep1em
+\item Definition: ``extent to which two (or more) coders agree on scores''
+\item<2-> Have multiple coders analyze same text using coding scheme
+\item<2-> Assess \% of time they assign same scores
+\item<2-> Increase specificity of codebook if reliability is low (<80\%)
+\end{itemize}
+
+}
+
+
+
+
+\section{Group Discussions}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Problem Set 4}
+
+\small
+
+\begin{enumerate}\itemsep0.5em
+\item You have been assigned teams
+\item Develop a research question that can be answered using the party manifestos from the UK 2015 General Election
+\item Develop a content analyze scheme or codebook and use it to analyze the manifestos
+\item Write up your results as a group
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{Group Discussion Time}
+
+With remaining time, gather in your Problem Set 4 groups and discuss the assignment.\\
+
+\vspace{1em}
+
+Let me know via email or office hours if you have questions between now and the due date.
+
+}
+
+
+\frame{
+
+\vspace{3em}
+
+\begin{center}
+Enjoy your holiday break!
+\end{center}
+
+
+}
+
 
 
 \appendix

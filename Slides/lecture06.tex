@@ -1,11 +1,9 @@
 \input{preamble}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\usepackage[normalem]{ulem}
 
-\title{Deriving Hypotheses from Theory}
-
-% Hypotheses are the observable implications of theories. How do we derive hypotheses from theories? How do we overcome ``observational equivalence'' wherein multiple theories yield similar expectations about the world? What does it mean to test a hypothesis?
-
+\title{Interviewing, Structured and Unstructured}
 
 \date[]{}
 
@@ -15,414 +13,542 @@
 
 \frame{\tableofcontents}
 
-
-\section[News]{Causal Claims in the News}
-%\frame{\tableofcontents[currentsection]}
-
-
-\frame{
-
-\frametitle{Causal Claims in the News}
-
-\begin{itemize}\itemsep0.5em
-\item Share news stories
-\item What was the claim?
-\item Was there any evidence or test?
-\end{itemize}
-
-}
-
-\section{Review of Last Week}
+\section{Questionnaire Design}
 \frame{\tableofcontents[currentsection]}
 
-
 \frame{
-
-\frametitle{Last Week}
-
-\begin{itemize}\itemsep0.5em
-\item What are theories?
-	\begin{itemize}
-	\item A tentative conjecture about the causes of some phenomenon of interest
-	\item An argument that attempts to explain how concepts are causally related
+	\frametitle{Problem Set 4}
+	\begin{itemize}\itemsep1em
+	\item PS 4 was the first time we tried to obtain data from raw materials
+	\item How did that go? What was challenging about it?
+	\item<2-> Interviewing may seem easier than text analysis, but it poses unique challenges
 	\end{itemize}
-\item Deduction and Induction
-\item Evaluating theories
-\end{itemize}
-
 }
 
 
 \frame{
+	\frametitle{Concept definition and Operationalization}
+	\begin{itemize}\itemsep1em
+		\item Questionnaires start with concept definition
+		\item Multiple ways to operationalize any concept
+		\item Important concepts may require multiple measures
+	\end{itemize}
+}
 
-\frametitle{Generality \& Parsimony}
+\frame{
+	\frametitle{Construct Validity, Accuracy, and Precision}
+	\begin{itemize}\itemsep1em
+		\item Question should measure concept of interest
+		\item Questionnaires can generate data at any level of measurement
+			\begin{itemize}
+			\item Binary/logical
+			\item Categorical
+			\item Ordinal
+			\item Interval
+			\end{itemize}
+		\item That question (or a set of questions) should provide a measure that is:
+			\begin{itemize}
+			\item Accurate
+			\item Precise
+			\end{itemize}
+	\end{itemize}
+}
 
-Think for 90 seconds about each of these principles:
+\frame{\frametitle{How do we know if a survey response is ``true''?}}
 
-\small 
 
-\begin{itemize}\itemsep1em
-\item Generality: Theories that can explain more are preferred over theories that can explain less
-\item Parsimony: Simple theories are preferred over complex theories
-\end{itemize}
-
-\normalsize
-
-Are these principles defensible?\\ Are they any good?
-
+\frame{
+	\frametitle{Validation studies}
+	\begin{enumerate}\itemsep1em
+		\item Some survey responses can be \textit{validated}
+		\item Easy for some behavioural constructs
+		\item Direct observation, administrative data, etc.
+	\end{enumerate}
 }
 
 
 
-\section{Generating Hypotheses}
+\frame{
+	\frametitle{Topics of questions}
+	\begin{itemize}\itemsep1em
+		\item Evaluations (opinions, attitudes, etc.)
+		\item Recall (behaviour, events, knowledge, etc.)
+		\begin{itemize}
+		    \item Demographics (age, sex, ethnicity, etc.)
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Structure of a question}
+	\begin{itemize}\itemsep0.5em
+		\item Survey mode
+		\item Survey context
+		\item Vignette or introductory text
+		\item Question itself
+		\item Response format and options
+		\item Follow-ups, branches, checks, validation, clarification
+	\end{itemize}
+}
+
+\subsection{Evaluative Questions}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{
+	\frametitle{Evaluative questions}
+	\begin{itemize}\itemsep1em
+		\item Name an object of evaluation
+		\item Possibly describe that object
+		\item Ask for a transformation of the evaluation onto a set of responses
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Question templates}
+
+	\small
+	
+	\begin{itemize}
+		\item Ratings
+			\begin{itemize}
+				\item Several varieties of rating scales
+			\end{itemize}
+		\item Scales/Thermometers
+		\item Agree-disagree
+		\item Forced choices
+		\item Open-ended
+		\item Rankings (note: need alternatives to rank against)
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Extended Example}
+	\begin{itemize}\itemsep1em
+		\item Public opinion survey in Great Britain
+		\item Construct: Opinion toward UK involvement in air strikes on Islamic State militants in Iraq and Syria
+		\item Think about strengths and weaknesses of each question
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (bipolar)}}
+	Do you support or oppose Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Strongly support
+		\item Somewhat support
+		\item Neither support nor oppose
+		\item Somewhat oppose
+		\item Strongly oppose
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (branching)}}
+	
+	\footnotesize
+	
+	Do you support or oppose Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Support
+		\item Neither support nor oppose
+		\item Oppose
+	\end{itemize}
+	\vspace{1em}
+	Would you say that you strongly [support|oppose] or somewhat [support|oppose] Great Britain's participation?
+	\begin{itemize}
+		\item Strongly
+		\item Somewhat
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (bipolar)}}
+	Are you favourable or unfavourable toward Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Very favourable
+		\item Somewhat favourable
+		\item Neither favourable nor unfavourable
+		\item Somewhat unfavourable
+		\item Strongly unfavourable
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (unipolar)}}
+	To what extent do you support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Strongly
+		\item Moderately
+		\item Somewhat
+		\item Not at all
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (unipolar)}}
+	How favourable are you toward Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Extremely favourable
+		\item Very favourable
+		\item Moderately favourable
+		\item Somewhat favourable
+		\item Not at all favourable
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Numbered Scale}}
+	
+	\small
+	
+	On a scale from 1 to 5, with 1 being ``strongly oppose'' and 5 being ``strongly support,'' to what extent do you support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{enumerate}
+		\item Strongly oppose
+		\item 
+		\item 
+		\item 
+		\item Strongly support
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{{\large Example: Thermometer}}
+	
+	\footnotesize
+	
+	We would like to get your feelings toward some of political policies. Please rate your support for the policy using something we call the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favourable and warm toward the policy. Ratings between 0 degrees and 50 degrees mean that you don't feel favourable toward the policy. You would rate the policy at the 50 degree mark if you don't feel particularly favourable or unfavourable toward.
+	
+	\vspace{1em}
+	Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item 0--100 slider
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{{\normalsize Example: Agree/Disagree (bipolar)}}
+	To what extent do you agree with the following statement: I support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item Strongly agree
+		\item Somewhat agree
+		\item Neither agree nor disagree
+		\item Somewhat disagree
+		\item Strongly disagree
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\normalsize Example: Agree/Disagree (unipolar)}}
+	To what extent do you agree with the following statement: I support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item Agree completely
+		\item Agree to a large extent
+		\item Agree to a moderate extent
+		\item Agree a little bit
+		\item Agree not at all
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Forced choice}}
+	When thinking about Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria, which of the following comes closer to your opinion:
+	\begin{itemize}
+		\item Great Britain should participate in air strikes
+		\item Great Britain should not participate in air strikes
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Open-ended}}
+	In your own words, how would you describe your opinion on Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+}
+
+
+\frame{
+	\frametitle{Additional Considerations}
+	\begin{itemize}\itemsep0.5em
+		\item How many response categories?
+		\item Middle category (presence and label)
+		\item ``no opinion'' and/or ``don't know'' options
+		\item Probe if ``no opinion'' or ``don't know''?
+		    \begin{itemize}
+                \item Encourage guessing?
+    		    \item Clarify/describe object of evaluation?
+		    \end{itemize}
+		\item Branching format?
+		\item Order of response categories
+		\item Changes based on survey mode
+	\end{itemize}
+}
+
+
+\subsection{Recall-type Questions}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{
+	\frametitle{Recall-type Questions}
+	\begin{itemize}\itemsep1em
+		\item Knowledge
+		\item Behaviour
+		\item Events
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Recalling Knowledge}
+	\begin{itemize}\itemsep1em
+		\item Factual items with ``true'' responses
+		\item Examples
+		    \begin{itemize}
+		        \item Political knowledge
+		        \item Knowledge about products/services
+		        \item General knowledge
+		    \end{itemize}
+		\item Knowledge varies widely across individuals
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Recalling Knowledge}
+	\begin{itemize}\itemsep1em
+		\item How do we deal with ``don't know'' responses?
+		    \begin{itemize}
+		        \item Genuine expression of lack of knowledge?
+		        \item Insufficient time to think?
+		        \item Question was unclear/ambiguous?
+		    \end{itemize}
+		\item<2-> Huge debate about this
+	\end{itemize}
+}
+
+
+
+\frame{
+	\frametitle{Recalling Behaviours}
+	\begin{itemize}\itemsep1em
+		\item Things respondent did in the past
+		\item Examples
+            \begin{itemize}
+                \item Media use
+                \item Eating/dietary habits
+                \item Past voting
+            \end{itemize}
+        \item Challenging to measure accurately
+        \item Can be easily validated
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Measuring Behaviours}
+	\begin{itemize}\itemsep1em
+		\item Provide counts for a given \textit{reference period}
+        \item Provide a rate within a reference period
+		\item List specific behavioural events
+		    \begin{itemize}
+    		    \item Allows follow-up questioning
+		    \end{itemize}
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Recalling Events}
+	\begin{itemize}\itemsep1em
+		\item Things that happened as specific points in time
+		\item Examples
+            \begin{itemize}
+                \item Events in the news
+                \item Crime victimization
+                \item Time when you felt angry
+            \end{itemize}
+		\item Same problems as with other types of recall
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\normalsize What affects responses to recall questions?}}
+	
+	\small
+	
+	\begin{itemize}\itemsep-0.25em
+        \item Question misunderstanding
+            \begin{itemize}
+                \item Vague concepts
+                \item Confusing or long wording
+            \end{itemize}
+        \item<2-> Forgetting
+        \item<3-> Recency/primacy biases among responses
+        \item<4-> Motivated misreporting
+        \item<5-> Reference period ambiguity
+        \item<6-> Rare events
+        \item<7-> True ``don't know'' responses
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Motivated misreporting}
+	\begin{itemize}\itemsep1em
+        \item Intentionally giving an incorrect response
+            \begin{itemize}
+                \item Applies to recall and evaluative questions
+            \end{itemize}
+        \item<2-> Examples?
+        \item<3-> Several common biases
+            \begin{itemize}
+                \item<3-> Social desirability bias
+                \item<3-> Positivity bias
+                \item<3-> Acquiescence bias
+                \item<3-> Demand characteristics
+            \end{itemize}
+	\end{itemize}
+}
+
+
+\frame{\frametitle{Questions about recall questions?}}
+
+
+
+
+\section{Sensitive Topics}
 \frame{\tableofcontents[currentsection]}
 
-
 \frame{
-
-\frametitle{Hypotheses}
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Definition: a theory-based statement about a relationship that we expect to observe.\footnote{Kellstedt and Whitten (p.4)}
-
-\item<3-> Features
-	\begin{itemize}
-	\item Derived from theory
-	\item Specific
-	\item Empirical/observable
+	\frametitle{Sensitive Questions}
+	\begin{itemize}\itemsep0.5em
+		\item Definition: Topics ``seen as intrusive or embarrassing''
+		\item<2-> Factors affecting topic sensitivity
+		    \begin{itemize}
+                \item<2-> Individual differences
+    		    \item<2-> Mode
+    		    \item<2-> Interviewer
+    		    \item<2-> Survey context
+    		    \item<2-> Survey sponsorship
+    		    \item<2-> Perceived privacy
+		    \end{itemize}
+		\item<3-> Why do we care?
 	\end{itemize}
-\end{itemize}
-
 }
 
-% we cannot test theory; we can only test observable implications of theory
-% hypotheses are statements about observable implications
-% finding support for a hypothesis is evidence in support of a theory
-% finding lack of support for a hypothesis is evidence against a theory
-
-
-
 \frame{
+	\frametitle{{\large Sensitive Questions Activity}}
 
-\frametitle{How do we generate hypotheses?}
-
-\begin{itemize}\itemsep0.5em
-\item Think about \textit{observable implications}
-\item What would evidence consistent with this theory be?
-\item What would evidence inconsistent with this theory be?
-	\begin{itemize}
-	\item<2-> This is \textit{falsifiability}
-	\end{itemize}
-\end{itemize}
-
+	\small 
+	
+	\begin{enumerate}\itemsep0.5em
+	\item<2-> To the nearest \textsterling 1,000, what is your parents' total household income?
+	\item<3-> Have you ever stolen anything from a current or former employer?
+	\item<4-> When was the last time you had unprotected sex?
+	\item<5-> During today's class session, how much time have you spent on your computer on things unrelated to class?
+	\end{enumerate}
 }
 
-% falsifiability
-	% typically talked about in descriptive terms (all swans are white)
-	% can be harder to think of non-falsifiable causal arguments
-		% theories without observable implications (homeopathy; remote viewing)
-		% ethics are non-falsifiable without a predetermined set of rules governing what is and is not ethical
-
-% Examples from Rosenbaum
-
-
 \frame{
-
-\frametitle{Example: Broad Street Cholera}
-
-\begin{itemize}\itemsep0.5em
-\item 1854 outbreak of cholera in London
-	\begin{itemize}
-	\item Around Broad Street (Soho)
-	\item 616 eventual deaths
+	\frametitle{Eliciting Answers to Sensitive Questions}
+	\begin{itemize}\itemsep0.5em
+		\item Ensure privacy, anonymity, or confidentiality
+		\item Change modes
+		\item Indirect measures
+		    \begin{itemize}
+    		    \item ``List experiment''
+		    \end{itemize}
+		\item Provide population rates
+		\item Placement in survey instrument
 	\end{itemize}
-\item<2-> What causes transmission of cholera?
-\item<3-> Dominant theory at time: ``miasma''
-\item<4-> Hypotheses:
-	\begin{itemize}
-	\item Clean up garbage $\rightarrow\hspace{1em} \downarrow$ cholera
-	\item Open windows $\rightarrow \hspace{1em} \downarrow$ cholera
-	\end{itemize}
-\end{itemize}
-
 }
 
-% miasmatic theory of disease (``bad air''); dominant since the bubonic plague
-
-
-\frame{
-
-\begin{center}
-\includegraphics[height=.98\textheight]{images/broadstreet}
-\end{center}
-
-{\footnotesize Image source: Public Domain from \href{https://en.wikipedia.org/wiki/File:Snow-cholera-map-1.jpg}{Wikipedia}}
-
-}
-
-% inductive process: map outbreak of cholera; identify pattern
-% new theory: cholera is spread by contaminated water
-% hypothesis: removing access to contaminated water reduces cholera infection
-% later used as an example of the ``Germ theory of disease'' (most closely associated with Louis Pasteur)
+\frame{}
 
 
 
-\frame{
-
-\frametitle{Observational Equivalence}
-
-\begin{itemize}\itemsep1em
-\item Definition: All hypotheses for two (or more) theories are identical
-\item What to do?
-	\begin{itemize}
-	\item Generate more specific expectations % maybe alternative DVs; more fine grained hypothesis; moderators; etc.
-	\item Move outside scope conditions
-	\item Settle for lack of explanation
-	\end{itemize}
-\end{itemize}
-
-}
 
 
-\begin{frame}
 
-\frametitle{Median Voter Theory of Legislatures}
-
-\begin{center}
-\begin{tikzpicture}
-\draw[<->, thick] (-5,2) -- (5,2);
-\node<2->[draw,shape=circle,fill=black,scale=0.5] (m) at (3,2) {};
-\node<2->[below] at (3,2) {$m$};
-\node<3->[draw,shape=circle,fill=black,scale=0.5] (q) at (0,2) {};
-\node<3->[below] at (0,2) {$q$};
-\draw<4->[->, thick, bend left=75] (q.north) to (m.north);
-\draw<5->[ultra thick] (-5,2) to (m);
-
-\end{tikzpicture}
-\end{center}
-
-\onslide<5->{If this is true, why do we sometimes see policies left of $m$ in the U.S. House?}
-
-\end{frame}
-
-\begin{frame}
-
-\frametitle{{\large Three Competing Theories}}
-
-\vspace{-2em}
-
-\begin{center}
-\begin{tikzpicture}
-% Committee power
-\node[anchor=west] at (-6,2.5) {{\footnotesize Committee Gatekeeping}};
-\draw[<->, thick] (-5,2) -- (5,2);
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,2) {};
-\node<1->[below] at (3,2) {$m$};
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,2) {};
-\node<1->[below] at (0,2) {$q$};
-\node<2->[draw,shape=circle,fill=black,scale=0.5] at (-2,2) {};
-\node<2->[below] at (-2,2) {$c$};
-
-% Majority party power
-\node[anchor=west] at (-6,0.5) {{\footnotesize Party Cartels}};
-\draw[<->, thick] (-5,0) -- (5,0);
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,0) {};
-\node<1->[below] at (3,0) {$m$};
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,0) {};
-\node<1-2>[below] at (0,0) {$q$};
-\node<3->[below] at (0,0) {$q=r$};
-\node<3->[draw,shape=circle,fill=black,scale=0.5] at (-2,0) {};
-\node<3->[below] at (-2,0) {$c$};
-
-% Pivotal Politics
-\node[anchor=west] at (-6,-1.5) {{\footnotesize Pivotal Politics}};
-\draw[<->, thick] (-5,-2) -- (5,-2);
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (3,-2) {};
-\node<1->[below] at (3,-2) {$m$};
-\node<1->[draw,shape=circle,fill=black,scale=0.5] at (0,-2) {};
-\node<1->[below] at (0,-2) {$q$};
-\node<4->[draw,shape=circle,fill=black,scale=0.5] at (-2,-2) {};
-\node<4->[below] at (-2,-2) {$p$};
-\node<4->[draw,shape=circle,fill=black,scale=0.5] at (4,-2) {};
-\node<4->[below] at (4,-2) {$s$};
-
-
-\end{tikzpicture}
-\end{center}
-
-{\tiny Adapted From: Krehbiel, Keith. 1999. ``Paradoxes of Parties in Congress.'' \textit{Legislative Studies Quarterly} 24(1): 31--64.\par}
-
-\end{frame}
-
-% how would we resolve these different theories?
-
-
-\section{Hypothesis Testing}
+\section[Elites]{Elite Interviewing}
 \frame{\tableofcontents[currentsection]}
 
-
 \frame{
-
-\frametitle{Hypothesis Testing}
-
+\frametitle{Elite Interviewing}
 \begin{itemize}\itemsep1em
-\item Multiple schools of thought
-\item History is conflictual and murky
-\item Two strands of literature
+\item Rules of questionnaire design style apply
+\item Unique challenges/opportunities:
 	\begin{itemize}
-	\item Philosophy of science  % not going to talk about this
-	\item Statistics % focus on this perspective, which we'll elaborate mathematically in LT
+	\item Time constraints
+	\item Guarantees of anonymity?
+	\item Public information may be available
+	\item Often exempt from research ethics review
 	\end{itemize}
-
 \end{itemize}
-
 }
 
-% what does it mean to "test" a hypothesis?
-
 \frame{
-\frametitle{{\large Principle of Hypothesis Testing}}
-
-\begin{enumerate}\itemsep0.5em
-\item Identify and collect data
-\item<2-> Data should include:
+	\frametitle{Structured versus Unstructured}
 	\begin{itemize}
-	\item Independent variable(s)
-	\item Dependent variable(s)
+	\item We've focused on ``structured'' interviews
+		\begin{itemize}
+		\item Strict order of questions
+		\item Questions are precisely worded
+		\item Often, closed set of response categories
+		\end{itemize}
+	\item<2-> Elite interviews are often ``semi-structured''
+		\begin{itemize}
+		\item Greater use of open-ended questions
+		\item More flexible ordering of questions
+		\item More respondent-driven
+		\end{itemize}
 	\end{itemize}
-\item<3-> Need variation on both % because we want to observe counterfactuals
-\item<4-> Test difference between outcomes when (possibly) causal variable differs
-\end{enumerate}
-
 }
 
-\frame{
 
-\frametitle{{\large Forms of Hypothesis Testing}}
-
-\footnotesize
-
-\begin{columns}[T] % align columns
-\begin{column}{.4\textwidth}
-\begin{block}{Null hypothesis}
-Begin with \textit{null hypothesis}\\
-
-\vspace{1em}
-
-Your hypothesis expects an alternative state of the world\\
-
-\vspace{2em}
-
-c/o Ronald Fisher
-\end{block}
-\end{column}
-
-\begin{column}{.4\textwidth}
-\begin{block}{Alternative hypotheses}
-Begin with 2(+) alternative hypotheses\\
-
-\vspace{1em}
-
-Accept hypothesis consistent with observation
-
-\vspace{1em}
-
-c/o Jerzy Neyman and Egon Pearson
-\end{block}
-\end{column}
-\end{columns}
-
-}
-
-% today we want to discuss principles of hypothesis testing as a way of thinking independent of statistics
-
-% You've probably previously been exposed to some blend of these ideas
-
-
+\section{Problem Set 5}
+\frame{\tableofcontents[currentsection]}
 
 \frame{
-
-\frametitle{Fearon's Counterfactuals}
-
-\begin{itemize}\itemsep0.5em
-\item Sometimes we cannot test our hypothesis with actual observations % reasons for this: confounding, no counterfactual case, multiple causality
-\item What does Fearon suggest we do?
+\frametitle{Problem Set 5}
+\begin{itemize}
+\item Work in pairs to conduct a ``pilot'' study
+\item Use a Eurobarometer survey of your choice
+\item Evaluate the process of collecting interview data
 \end{itemize}
-
-
 }
 
-% thinking counterfactually
-	% can we observe the counterfactual (in another case, in the same case at another time, in a collection of other cases)?
-	% if not, can we think about what that counterfactual might look like? 
-	% see Fearon's use of ``counterfactual method''; thought experiments; hypothetical reasoning
-
-
-
 \frame{
+\frametitle{{\normalsize Evaluating a questionnaire}}
 
-\frametitle{A Good Test}
+\vspace{-1em}
 
 \small
 
-\begin{itemize}\itemsep-0.1em
-\item Correct level of analysis
-\item Within scope conditions of theory
-\item Well-defined concepts
-\item Measures of high construct validity, accuracy, and precision
-\item Possible to observe any correlation between potential cause and outcome
-\item Consistent with or an improvement upon past methods
-\item Test using different data than data used to generate theory % distinguish between training set and test set
+\begin{itemize}\itemsep-0.25em
+	\item Is the question easy for respondents to understand?
+	\item Are the number and types of response options appropriate?
+	\item Are the categories sufficiently distinct from one another?
+	\item Is a ``no opinion,'' ``don't know,'' or ``neither support nor oppose'' response option available?
+	\item Is one survey item (i.e., one question) sufficient to measure this construct?
+	\item How long does it take to read and answer this question?
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{{\normalsize Cognitive interviewing methods}}
+
+\vspace{-1em}
+
+\small
+
+\begin{itemize}\itemsep-0.25em
+\item Retrospective think-alouds (in which respondents describe how they arrive at their answers either just after they provide them or at the end of the interview)
+\item Paraphrasing (in which respondents restate the question in their own words)
+\item Definitions (in which respondents provide definitions for the key terms in the question)
+\item Probes (in which respondents answer follow-up questions designed to reveal their response strategies)
 \end{itemize}
 
 }
 
-
-\frame{
-
-\frametitle{Some Testing Challenges}
-
-\begin{enumerate}\itemsep0.5em
-\item Deterministic and probabilistic causality
-\item Effect heterogeneity
-\item Multiple causation
-\item Equifinality
-\item Confirmation or disconfirmation bias
-\end{enumerate}
-
-}
-
-
-
-
-
-\section{Preview}
-\frame{\tableofcontents[currentsection]}
-
-
-% multiple specific forms of testing, which we'll be exposed to over the coming weeks
-	% case studies and comparisons
-	% process tracing
-	% tabular and visual comparisons
-	% regression
-	% experimentation
-
-% realizing that we will always be inductive and we may go into the field to test a theory and end up instead generating a new theory
-
-
-
-\frame{
-
-\frametitle{Preview of Next Week}
-
-\begin{itemize}\itemsep1em
-\item What is a case?
-\item What are case studies?
-\item How do we use case studies to test and/or build theories?
-\end{itemize}
-
-}
-
+\frame{}
 
 
 \appendix

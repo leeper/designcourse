@@ -1,13 +1,8 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-\usepackage[normalem]{ulem}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Translating Texts into Interpretations and Numbers}
-
-% Primary and secondary source documents provide a written record of politically relevant events and processes. Texts can be used in a number of ways in political science research. How do we draw meaning from texts in qualitative and quantitative ways? How does textual information become useful data for making political inferences?
-
-
+\title{Ethics and Research Integrity}
 
 \date[]{}
 
@@ -17,251 +12,320 @@
 
 \frame{\tableofcontents}
 
-\frame{
-
-\frametitle{Preview}
-
-\begin{itemize}\itemsep1em
-\item Three weeks on data collection
-	\begin{itemize}
-	\item Text analysis
-	\item Interviewing
-	\item Participant Observation
-	\end{itemize}
-\item Problem Set 4
-	\begin{itemize}
-	\item Due December 15
-	\item Team assignment
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\section{Texts as Sources}
+\section{Review ITS}
 \frame{\tableofcontents[currentsection]}
 
+% Interrupted time-series
 
-\frame{
-
-\frametitle{What counts as text?}
-
-\begin{itemize}\itemsep1em
-\item Tertiary sources
-\item Secondary sources
-\item Primary sources
-\end{itemize}
-
+\frame<1>[label=itshow]{
+	\frametitle{How ITS Works}
+	\begin{itemize}\itemsep0.5em
+		\item Identify an exogenous shock in $X$ that might affect $Y$
+		\item Look at $Y$ before ($t$) and after ($t+1$) the shock
+		\item We only observe one manifest outcome at each point in time
+		\item<2-> To make a causal inference, we need:
+			\begin{itemize}
+				\item $Y_{0,t}$ and $Y_{1,t}$, or
+				\item $Y_{0,t+1}$ and $Y_{1,t+1}$
+			\end{itemize}
+		\item<2-> Use pre-post comparisons to infer the value of unobserved potential outcomes		
+	\end{itemize}
 }
 
-% tertiary: compendia or indices of two other types of sources
-% secondary: interpretations of raw evidence
-% primary: raw evidence
+\frame<1-2>[label=its]{
+	\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+    \draw[->] (0,0) -- (11,0) node[right] (xaxis) {\small time};
+    \draw[->] (0,0) -- (0,11) node[left] (yaxis) {};
+    % x ticks
+    \foreach \x in {1,2,...,10}
+       	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+    % y ticks
+    \foreach \y in {0,...,10}
+         \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {};
+    % intervention
+    \draw (5.5,-0.25) node[below, scale=0.5] (IV) {Intervention};
+    \draw (5.5,0) -- (5.5,11);
 
-% brainstorm examples
+	\draw<1>[thick,blue] (5,10) -- (6,7);
+	\draw<2->[dashed,thick,blue] (5,10) -- (6,7);
+	\draw<2->[thick,blue] (1,4) -- (2,2) -- (3,5) -- (4,3) -- (5,10);
+	\draw<2->[thick,blue] (6,7) -- (7,6) -- (8,6) -- (9,4) -- (10,3);
+	
+	\draw<3->[thick,red] (1,8) -- (2,8.5) -- (3,7.5) -- (4,8.5) -- (5,8) -- (6,7.5) -- (7,8.5) -- (8,8) -- (9,8.5) -- (10,7.5);
+	\end{tikzpicture}
+	\end{center}
+}
+
+\againframe<1-2>{itshow}
 
 
 \frame{
+	\begin{center}
+	\begin{tikzpicture}[scale=1]
+    \draw[->] (0,0) -- (5,0) node[right] (xaxis) {\small time};
+    \draw[->] (0,0) -- (0,7) node[left] (yaxis) {};
+    % x ticks
+    \foreach \x in {0,...,4}
+       	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+    % y ticks
+    \foreach \y in {0,...,6}
+         \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {};
+    % intervention
+    \draw (2.5,-0.25) node[below, scale=0.5] (IV) {Intervention};
+    \draw (2.5,0) -- (2.5,7);
 
-\frametitle{How do you use texts?}
+	\draw[thick,blue] (2,5) -- (3,2);
+	\node<2-> [red] at (2,5) {\small \textbullet};
+	\node<2-> [red] at (3,2) {\small \textbullet};
+	
+	\draw<3-5>[red] (0,5) -- (5,5);
+	\draw<3-5>[red] (0,2) -- (5,2);
+	\draw<4-5>[right,decorate,decoration={brace, amplitude=15pt}] (5,5) -- (5,2) node[right, xshift=15pt, pos=0.5] (diff) {\small Effect?};
+	        
+	\draw<5->[thick,blue] (1,0) -- (2,5) -- (3,2) -- (4,1);
+	\draw<6->[red] (1,0) -- (2.5,7.5);
+	\draw<6->[red] (2.5,2.5) -- (5,0);
+	\draw<7->[right,decorate,decoration={brace, amplitude=15pt}] (2.5,7.5) -- (2.5,2.5) node[right, xshift=15pt, pos=0.5] (diff) {\small Effect?};
+	
+	\end{tikzpicture}
+	\end{center}
+}
 
-\small
+\frame{
+	\frametitle{Difference-In-Differences}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item How do we know change in $Y$ wasn't due to something else?
+			\begin{itemize}
+				\item How do we know $Y_{0,t}$ is a good stand-in for $Y_{0,t+1}$?
+			\end{itemize}
+		\item<2-> Use a comparison case (or cases)!
+		\item<3-> Instead of using the pre-post difference in $Y_i$ to estimate the causal effect, use the difference in pre-post differences for two units $i$ and $j$:
+		\begin{align*}
+		(Y_{i,t+1} - Y_{i,t}) - (Y_{j,t+1} - Y_{j,t})
+		\end{align*}
+	\end{itemize}
+}
 
-\begin{itemize}\itemsep0.75em
-\item Think about your own experience reading, interpreting, and interacting with textual sources for academic purposes (e.g, for writing a term paper).
-\item With the person sitting next to you, discuss:
+
+\frame{
+	\begin{center}
+	\begin{tikzpicture}[>=latex', scale=0.8]
+        \draw[->] (0,0) node (origin) {}  -- (8,0) node[right] (xaxis) {time};
+        \draw[->] (origin) -- (0,8) node[left] (yaxis) {y};
+        % x ticks
+        \foreach \x in {2,4,6}
+        	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+        \draw (2,0) node[below] (before) {$t$};
+        \draw (6,0) node[below] (after) {$t+1$};
+        \draw (4,-0.25) node[below, scale=0.5] (IV) {Intervention};
+        % y ticks
+        \foreach \y in {0,...,7}
+             \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
+        % intervention
+        \draw (4,0) -- (4,8);
+
+        % line
+        \draw<2-> (6,3.5) node (tr) {};
+        \draw<3-> (6,5) node (ctrl) {};
+        \draw<2-3>[blue] (8,3.5) node (trlab) {Treated};
+        \draw<3-3>[red] (8,5) node (ctrllab) {Control};        
+        \draw<2->[blue, line width=2pt] (2,3) -- (tr);
+        \draw<3->[red, line width=2pt] (2,7) -- (ctrl);
+        
+        % diffs
+        \draw<4-6>[right,decorate,decoration={brace,mirror}] 
+        	(6,3) -- (6,3.5) node[right, pos=0.5] (idiff) {\small $Y_{i,t+1} - Y_{i,t} = +0.5$};
+        \draw<4-6>[right,decorate,decoration={brace}] 
+            (6,7) -- (6,5) node[right, pos=0.5] (jdiff) {\small $Y_{j,t+1} - Y_{j,t} = -2.0$};
+        
+        % trends
+        \draw<5-6>[red,->] (1,7) -- (1,4);
+        \draw<5->[red, dashed] (0,8) -- (8,4);
+        \draw<5->[red, dashed] (0,4) -- (8,0);
+        \draw<6>[right,decorate,decoration={brace}] 
+            (6,3) -- (6,1) node[right, pos=0.5] (idiff2) {\small $2.0$};
+        \draw<7>[right,decorate,decoration={brace}] 
+            (6,3.5) -- (6,1) node[right, pos=0.5] (idiff2) {\small $DID = +2.5$};
+                        
+        
+    \end{tikzpicture}
+    \end{center}
+}
+
+\frame{
+
+	\frametitle{Threats to Validity}
 	\begin{enumerate}
-	\item The process by which you try to understand the meaning and content of texts
-	\item How you choose texts to read
+	\item History
+	\item Maturation
+	\item Testing
+	\item Instrumentation
+	\item Instability
+	\item Regression to the mean
 	\end{enumerate}
-\end{itemize}
-
 }
+% history: stimultaneous alterntive cause
+% maturation: time trends
+% testing: measurement changes behavior
+% instrumentation: operationalization changes over time
+% instability: measurement error
+% regression (to the mean):
+% - statistically: extreme cases will be less extreme on second measurement
+% - in policy terms: interventions are most likely when problems are extreme
 
-\frame{
-
-\frametitle{Use of Texts}
-
-\begin{itemize}\itemsep1em
-\item<1-> Text as desription
-	\begin{itemize}
-	\item Rely on text in lieu of direct observation
-	\item Possibly serve as basis of CPO
-	\end{itemize}
-\item<2-> Text as DSOs
-	\begin{itemize}
-	\item Treat texts as units
-	\end{itemize}
-\end{itemize}
+% one more not mentioned by Campbell and Ross: If the series is an aggregation, it's also possibly due to attrition or changing composition of the sample from which the data is aggregated
 
 
-}
-
-% texts in lieu of observation
-% we cannot see everything ourselves, so we rely on evidence
-
-% texts as CPOs vs. DSOs
-
-\frame{
-
-\frametitle{Challenges of Text}
-
-\begin{enumerate}\itemsep1em
-\item Subjectivity
-\item Historiography
-\item Selection bias
-\end{enumerate}
-
-}
+\frame{}
 
 
-% selection bias -> when do we stop looking for evidence?
-% -> how do we know that we have all of the evidence?
-% -> If we go looking for information about a case as something, do we miss evidence that sees that case as a case of something else?
-
-% define historiography
-
-% texts are subjective
-
-% what is this a case of 
-
-% research questions and text: 
-%% at one level, texts can be used to answer any research question
-%% there are, however, a lot of interesting research questions that are about text per se
-
-% unit of analysis???
-% text, paragraph, sentence
-% multiple texts that represent some larger unit (speaker/source, country, party)
-
-
-\section{Content Analysis}
+\section{Ethics}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
+\frametitle{History: Key Moments}
 
-\frametitle{Content Analysis}
-
-\begin{itemize}\itemsep0.5em
-\item Definition: ``systematic description of the contents of a communication''
-\item Treat texts as DSOs or a source of multiple DSOs
-	\begin{itemize}
-	\item Data set observation: score for a case on a variable
-	\end{itemize}
-\item Technique can be applied to any kind of document
-\end{itemize}
-
-}
-
-% can be applied to any kind of document (primary, secondary, tertiary)
-% need not be textual (we can content analyze images, videos, audio, actions/behaviors/expressions)
-% graph showing textual input of one or more strings of text into an output of numbers/scores
-
-
-\frame{
-
-\frametitle{Content Analysis Process}
+\small
 
 \begin{enumerate}
-\item<1-> Define a research question
-\item<2-> Define concepts
-\item<3-> Select texts
-\item<4-> Create a \textit{codebook} that describes how to operationalize concepts using text
-\item<5-> Assign scores to texts based on codebook
-\item<6-> Summarize results
+\item Tuskegee (1932-1972) and Guatemala (1946-1948) Studies
+\item Nuremberg Code (1947)
+\item Helsinki Declaration (1964)
+\item U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\item The Belmont Report (1979)
+\item EU Data Protection Directive (1995; 2012)
+	\begin{itemize}
+	\item UK Data Protection Act (1998)
+	\end{itemize}
 \end{enumerate}
-
 }
-
-% RQs and concepts are linked:
-% what is the sentiment of this text?
-% what is the ideology of this text?
-% what ideas/arguments/frames/discourses are presented in this text?
-% Tend to be descriptive RQs; causal inferences will come later once we've described the text fully
-% content analysis is almost always comparative (comparing sources, authors, time period, contexts, etc.)
-
-% what are the variables? what do we want to know about this text?
-
-% scoring: ideology, positivity/negativity (both rely on word associations)
-% dictionary methods (sentiment: lexicoder, ideology: wordfish)
-
 
 
 \frame{
-
-\frametitle{Example 1: Categorization}
-
-\begin{itemize}\itemsep0.5em
-\item Common RQ relates to categorization:\\ What is this text saying?
-\item Example RQs:
-
+	\frametitle{Helsinki Declaration}
+	
+	\small
 	\begin{itemize}
-	\item What arguments are raised in this text?
-	\item Are certain ideas more prevalent in some texts than others?
-	\item How is an issue discussed in politics?
+	\item Adopted by the World Medical Association in 1964\footnote{\url{http://www.bmj.com/content/2/5402/177}}
+	\item Narrowly focused on medical research
+	\item Expanded the Nuremberg Code
+		\begin{itemize}
+		\item Relaxed consent requirements
+		\item Risks should not exceed benefits
+		\item Institutionalization of ethics oversight
+		\end{itemize}
+	\item<2-> Do these rules apply to non-experimental research? To non-medical research?
 	\end{itemize}
 
-\end{itemize}
+}
+
+\frame{
+	\frametitle{Social Science Examples}
+	\begin{enumerate}\itemsep2em
+	\item \href{https://www.youtube.com/watch?v=yr5cjyokVUs}{Milgram Obedience Study (1961)}
+	\item \href{https://www.youtube.com/watch?v=760lwYmpXbc}{Stanford Prison Study (1971)}
+	\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{The Belmont Report}
+	
+	\small
+	\begin{itemize}
+	\item Commissioned by the U.S. Government in 1979\footnote{\url{http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.html}}
+	\item Three overarching principles:
+		\begin{enumerate}
+		\item Respect for persons
+		\item Beneficence
+		\item Justice
+		\end{enumerate}
+	\item Three policy implications:
+		\begin{itemize}
+		\item Informed consent
+		\item Assessment of risks/benefits
+		\item Care for vulnerable populations
+		\end{itemize}
+	\end{itemize}
 
 }
 
 
 \frame{
-
-\frametitle{{\large Example 1 (Frames/Discourses)}}
-
-If only all politicians could \textbf<2>{believe in Britain} as UKIP does. If only they could share our \textbf<2>{positive vision of Britain} as a \textbf<2>{proud}, \textbf<3-4>{independent sovereign nation}, a \textbf<4>{country respected on the world stage}, a \textbf<4>{major player in global trade}, with \textbf<4>{influence and authority} when it comes to tackling the pressing international issues of the day.
-
+	\frametitle{Informed Consent}
+	\begin{itemize}
+	\item Persons must consent to being a research subject
+	\item<2-> What this means in practice is complicated
+		\begin{itemize}
+		\item What is research?
+		\item What is consent?
+		\item What is ``informed'' consent?
+		\end{itemize}
+	\item<3-> Cross-national variations
+		\begin{itemize}
+		\item Consent forms required in U.S.
+		\item Not required in UK
+		\end{itemize}
+	\end{itemize}
 
 }
-% categorization: 
-% identification of frames, arguments, discourse
-
-% discourses/frames
-% 1: national pride/patriotism
-% 2: independence
-% 3: influential world power
-% maybe others
-
-% tabulating persons, issues, mentions
-% necessarily iterative --> develop a set of categories as they are identified; requires revisiting texts
-
 
 \frame{
-
-\frametitle{{\large Example 2 (Mentions)}}
-
-
-% persons
-If only all \textbf<2>{politicians} could believe in \textbf<2>{Britain} as \textbf<2>{UKIP} does. If only they could share our positive vision of \textbf<2>{Britain} as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
+\frametitle{Benefits and Harm}
+	\begin{itemize}\itemsep2em
+	\item What is a ``benefit''?
+	\item What is a ``harm''?
+	\item How do we balance the two?
+	\end{itemize}
 }
 
 
 \frame{
-
-\frametitle{{\large Example 3 (Issues/Priorities)}}
-
-% issue mentions
-\textcolor<2->{gray}{If only all politicians could believe in Britain as UKIP does.}
-\textcolor<3->{gray}{If only they could share our positive vision of Britain}
-\textcolor<4->{gray}{as a proud,} \textbf<4->{independent sovereign nation,}
-\textcolor<5->{gray}{a country respected on the world stage,}
-\textcolor<6->{gray}{a major player in} \textbf<6->{global trade}, 
-\textcolor<7->{gray}{with influence and authority}
-\textcolor<8->{gray}{when it comes to tackling the} \textbf<8>{pressing international issues} \textcolor<8->{gray}{of the day.}
-
+	\frametitle{Privacy}
+	\begin{itemize}
+	\item EU Data Protection Directive (1995) and UK Data Protection Act (1998)
+	\item Deals with ``personal data''
+	\item Data can be processed when:
+		\begin{itemize}
+		\item Consent is given
+		\item Data are used for a ``legitimate'' purpose
+		\item Anonymous or confidential
+		\end{itemize}
+	\item Data cannot leave the EU except under conditions
+	\end{itemize}
 }
 
 
 \frame{
+	\frametitle{{\normalsize Lots of Other Ethical Questions}}
+	\begin{enumerate}
+	\item<2-> Funding
+	\item<3-> Independence and Politicization
+	\item<4-> Vulnerable populations (e.g. children, sick)
+	\item<5-> Cross-national research
+	\item<6-> Participant-observation disclosures
+	\item<7-> End uses/users of research
+	\item<8-> Others?
+	\end{enumerate}
+}
 
-\frametitle{Developing Codebooks I}
+
+
+
+\frame{
+\frametitle{Research Ethics at LSE}
 
 \begin{itemize}
-\item Developed deductively
-	\begin{enumerate}\itemsep0.5em
-	\item Start with set of concepts
-	\item Describe how those concepts might be expressed in text
-	\item Create a ``coding scheme'' by which to score a case on a variable
+\item Ethics Code \footnote{\url{http://www.lse.ac.uk/intranet/LSEServices/ethics/home.aspx}}
+\item Research Ethics Policy \footnote{\url{http://www.lse.ac.uk/intranet/LSEServices/policies/pdfs/school/resEthPolPro.pdf}}
+\item Levels of review:
+	\begin{enumerate}
+	\item Staff: Self-certification
+	\item Students: Supervisor certification
+	\item LSE Research Ethics Committee
+	\item External review
 	\end{enumerate}
 \end{itemize}
 
@@ -269,321 +333,37 @@ If only all \textbf<2>{politicians} could believe in \textbf<2>{Britain} as \tex
 
 
 \frame{
-
-\frametitle{Developing Codebooks II}
-
-\begin{itemize}
-\item Developed inductively
-	\begin{enumerate}\itemsep0.5em
-	\item Examine texts for key ideas and expressions
-	\item Create a set of categories that summarize those expressions
-	\item Examine new texts for expressions of those categories
-	\item Expand and clarify the codebook as new concepts or expressions emerge
-	\end{enumerate}
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Codebook Examples}
-
-\footnotesize
-
-\begin{enumerate}
-\item<1-> Assign 1 if the text mentions ``Europe''
-\item<2-> Count times ``Europe'' is mentioned
-\item<3-> More complex example:
-	\begin{itemize}
-	\item Assign +1 if mentions ``Europe'' positively
-	\item Assign -1 if mentions ``Europe'' negatively
-	\item Assign 0 if text does not mention ``Europe''
-	\end{itemize}
-\item<4-> List all frames used in the text
-\item<5-> Count number of words (or characters) in sentence
-\end{enumerate}
-
-}
-
-% different types of variables: binary, categorical/qualitative, interval (sums, proportions)
-
-
-
-\begin{frame}
-
-\frametitle{Example Scoring Sheet}
-
-\normalsize
 
 \begin{center}
-\begin{tabular}{|l|r|r|r|r|} \hline
- & Mention & Count & Affect & Frame\\ \hline
-UKIP &  &  & & \\ \hline
-Conservative &  &  & & \\ \hline
-Labour &  &  & & \\ \hline
-LibDems &  &  & & \\ \hline
-SNP &  &  & & \\ \hline
-Greens &  &  & & \\ \hline
-\end{tabular}
+\href{http://www.lse.ac.uk/intranet/researchAndDevelopment/researchDivision/policyAndEthics/ethics-annexC.pdf}{\includegraphics[width=\textwidth]{images/lse_ethics_flowchart}}
 \end{center}
 
-\end{frame}
-
-
-
-
-\frame{
-
-\frametitle{{\large Example 2: Dictionary Methods}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item<1-> Rather than rely on subjective interpretation, dictionary methods create a ``dictionary'' of terms or expressions that operationalize a concept
-\item<1-> Score is based on word presence of words or their frequencies
-\item<1-> Often, goal is to categorize the text based on how it scores relative to other texts
-	\begin{itemize}
-	\item<2-> Sentiment (positivity/negativity)
-	\item<2-> Ideology (left/right)
-	\end{itemize}
-\end{itemize}
-
 }
 
-% sentiment
 \frame{
-
-\frametitle{Affect/Sentiment}
-
-If only all politicians could \textit<3->{believe} in Britain as UKIP does. If only they could \textit<3->{share} our \textbf<2->{positive} vision of Britain as a \textbf<2->{proud}, \textit<3->{independent} \textit<3->{sovereign} nation, a country \textbf<2->{respected} on the world stage, a \textit<3->{major} player in global trade, with \textbf<3->{influence} and \textit<3->{authority} when it comes to tackling the pressing international issues of the day.
-
-}
-
-% can create a dictionary for many ideas
-
-
-
-\frame{
-
-\frametitle{Unit of Analysis}
+\frametitle{Ethics at LSE}
 
 \begin{itemize}
-\item Can be difficult to decide what the correct unit of analysis is
-\item Possibilities:
-	\begin{itemize}
-	\item Author/Source
-	\item Text as a whole
-	\item Section
-	\item Page
-	\item Paragraph
-	\item Sentence
-	\item Sentence fragment
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Sentence}
-
-\small
-
-If only all politicians could believe in Britain as UKIP does.\\
-
-\vspace{1em}
-
-If only they could share our positive vision of Britain as a proud, independent sovereign nation, a country respected on the world stage, a major player in global trade, with influence and authority when it comes to tackling the pressing international issues of the day.
-
-}
-
-\frame{
-
-\frametitle{Sentence fragments}
-
-\small
-
-If only all politicians could believe in Britain as UKIP does.\\
-
-\vspace{0.5em}
-
-If only they could share our positive vision of Britain \\
-
-\vspace{0.5em}
-as a proud, independent sovereign nation, \\
-
-\vspace{0.5em}
-a country respected on the world stage, \\
-
-\vspace{0.5em}
-a major player in global trade, \\
-
-\vspace{0.5em}
-with influence and authority \\
-
-\vspace{0.5em}
-when it comes to tackling the pressing international issues of the day.
-
-}
-
-
-
-% "bag of words" methods
-
-\frame{
-
-\frametitle{{\large ``Bag of Words'' Approaches I}}
-
-\textcolor<2->{gray}{If} only all politicians could believe \textcolor<2->{gray}{in} Britain \textcolor<2->{gray}{as} UKIP does \textcolor<2->{gray}{.} \textcolor<2->{gray}{If} only they could share our positive vision \textcolor<2->{gray}{of} Britain \textcolor<2->{gray}{as} \textcolor<2->{gray}{a} proud\textcolor<2->{gray}{,} independent sovereign nation\textcolor<2->{gray}{,} \textcolor<2->{gray}{a} country respected \textcolor<2->{gray}{on} \textcolor<2->{gray}{the} world stage\textcolor<2->{gray}{,} \textcolor<2->{gray}{a} major player \textcolor<2->{gray}{in} global trade\textcolor<2->{gray}{,} \textcolor<2->{gray}{with} influence \textcolor<2->{gray}{and} authority \textcolor<2->{gray}{when} \textcolor<2->{gray}{it} comes \textcolor<2->{gray}{to} tackling \textcolor<2->{gray}{the} pressing international issues \textcolor<2->{gray}{of} \textcolor<2->{gray}{the} day\textcolor<2->{gray}{.}
-
-}
-
-
-\frame{
-
-\frametitle{{\large ``Bag of Words'' Approaches II}}
-
-only all politicians could believe Britain UKIP does only they could share our positive vision Britain proud independent sovereign nation country respected world stage major player global trade influence authority comes tackling pressing international issues day
-
-}
-
-
-\frame{
-
-\frametitle{{\large ``Bag of Words'' Approaches III}}
-
-\small
-
-independent sovereign nation country international world global
-
-\vspace{0.5em} 
-positive proud respected major influence authority 
-
-\vspace{0.5em} 
-politicians player Britain Britain UKIP 
-
-\vspace{0.5em} 
-believe share tackling pressing 
-
-\vspace{0.5em} 
-could could does comes 
-
-\vspace{0.5em} 
-vision stage day trade issues 
-
-\vspace{0.5em} 
-only only all they our 
-
-}
-
-% term-document matrix
-
-
-\frame{
-
-\frametitle{N-grams and ``words''}
-
-\small
-
-\begin{itemize}\itemsep0.75em
-\item<1-> ``Bag of words'' usually uses \textit{unigrams}
-\item<2-> Unigrams are often ``stemmed''
-	\begin{itemize}
-	\item family, families, familiarity, and familial all become \textit{famil}.
-	\end{itemize}
-\item<3-> Can also be bigrams, trigrams, \textit{n}-grams
-\item<4-> These allow for \textit{multi-word expressions}
-	\begin{itemize}
-	\item ``If only'' has a negative connotation even though ``if'' and ``only'' are basically neutral words on their own
-	\end{itemize}
-\end{itemize}
-
-
-}
-
-
-
-\frame{
-
-\frametitle{{\large Content Analysis in Practice}}
-
-\begin{itemize}\itemsep1em
-\item Inductive processes generally require a ``training set'' and ``test set''
-	\begin{itemize}
-	\item Establish coding scheme on ``training set''
-	\item Apply it to broader ``test set''
-	\end{itemize}
-\item<2-> Be cautious about scope conditions % codebook for news articles may not apply to speeches
-\item<3-> Develop a precise and reliable codebook
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Intercoder Reliability}
-
-\small
-
-\begin{itemize}\itemsep1em
-\item Definition: ``extent to which two (or more) coders agree on scores''
-\item<2-> Have multiple coders analyze same text using coding scheme
-\item<2-> Assess \% of time they assign same scores
-\item<2-> Increase specificity of codebook if reliability is low (<80\%)
+\item Complete an LSE Ethics form for your proposed research project
 \end{itemize}
 
 }
 
 
+\frame{}
 
 
-\section{Group Discussions}
+\section{Course Feedback and Redesign}
 \frame{\tableofcontents[currentsection]}
 
-
 \frame{
-
-\frametitle{Problem Set 4}
-
-\small
-
-\begin{enumerate}\itemsep0.5em
-\item You have been assigned teams
-\item Develop a research question that can be answered using the party manifestos from the UK 2015 General Election
-\item Develop a content analyze scheme or codebook and use it to analyze the manifestos
-\item Write up your results as a group
-\end{enumerate}
-
+	
+	\begin{itemize}\itemsep1em
+	\item What did you like about this course?
+	\item What would you change?
+	\end{itemize}
+	
 }
-
-
-\frame{
-
-\frametitle{Group Discussion Time}
-
-With remaining time, gather in your Problem Set 4 groups and discuss the assignment.\\
-
-\vspace{1em}
-
-Let me know via email or office hours if you have questions between now and the due date.
-
-}
-
-
-\frame{
-
-\vspace{3em}
-
-\begin{center}
-Enjoy your holiday break!
-\end{center}
-
-
-}
-
-
 
 \appendix
 \frame{}

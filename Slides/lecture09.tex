@@ -1,11 +1,8 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Causal Mechanisms and Process Tracing}
-
-% Aside from knowing that one thing (X) caused another thing (Y), we often want to know how that causal process worked. This is the study of ``causal mechanisms''. How do we study causal mechanisms to gain a deeper understanding of causal relationships in politics? How do we study the process by which a causal effect plays out?
-
+\title{Sampling and Representativeness}
 
 \date[]{}
 
@@ -15,437 +12,430 @@
 
 \frame{\tableofcontents}
 
-
-\section{Review}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-	\frametitle{Review Case Studies}
-	\begin{itemize}\itemsep0.5em
-	\item Many uses of case studies
-	\item In case comparisons (last week), we focused on scoring cases on variables to test theories \textit{between cases}
-	\item Now we focus on \textit{within-case} comparisons
-	\end{itemize}
-}
-
-
-\frame{
-\frametitle{{\large Causal Process Observations}}
-
-\normalsize
-
-\begin{itemize}\itemsep0.5em
-\item Definition: ``An insight or piece of data that provides information about the context, process, or mechanism, and that contributes distinctive leverage in causal inference''\footnote{Brady and Collier 2004, p.277}
-\item Might be used to:
-	\begin{itemize}
-	\item Inductively generate hypotheses
-	\item Deductively test a chain of causal relationships
-	\end{itemize}
-\end{itemize}
-}
-
-
-\frame{}
-
-\section{Mechanisms}
+\section[Review]{Simple Statistics}
 \frame{\tableofcontents[currentsection]}
 
 
-\frame<1>[label=causality]{
-\frametitle{{\normalsize Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}}
-\begin{enumerate}\itemsep0.5em
-\item Correlation
-\item Nonconfounding
-\item Direction (``temporal precedence'')
-\item \textbf<2->{Mechanism}
-\item (Appropriate level of analysis)
-\end{enumerate}
-}
-
-
-\frame<1-6>[label=causalgraph]{
-	\begin{center}
-	\tikzstyle{dot} = [minimum size=1pt]
-	\tikzstyle{arrow} = [->, very thick]
-	\begin{tikzpicture}
-        \node<1->[dot, label={[label distance=0.05cm]270:D}] at (0,0) (D) {};
-        \fill<1-> (D) circle [radius=3pt];
-        \node<1->[dot, label={[label distance=0.05cm]270:Y}] at (5,0) (Y) {};
-        \fill<1-> (Y) circle [radius=3pt];
-        \draw<1-6>[arrow] (D) -- (Y);
-        
-        \node<2->[dot, label={[label distance=0.05cm]90:A}] at (4,3) (A) {};
-        \fill<2-> (A) circle [radius=3pt];
-        \draw<2->[arrow] (A) -- (Y);
-        \node<3->[dot, label={[label distance=0.05cm]270:B}] at (-2,-1) (B) {};
-        \fill<3-> (B) circle [radius=3pt];
-		\draw<3->[arrow] (B) -- (D);
-        
-        \node<4->[dot, label={[label distance=0.05cm]90:Z}] at (-3,4) (Z) {};
-        \fill<4-> (Z) circle [radius=3pt];
-		\draw<4->[arrow] (Z) -- (D);
-        \draw<4->[arrow] (Z) -- (Y);
-        % confounding
-        \node<5>[dot, label={[label distance=0.05cm]90:Z}] at (-3,4) (Z) {};
-        \fill<5> (Z) circle [radius=3pt, fill=blue];
-        \draw<5>[arrow, color=red] (Z) -- (D);
-        \draw<5>[arrow, color=red] (Z) -- (Y);
-        \node<5> at (1,4) (conf) {{\color{red} Confounding}};
-        
-        \node<7->[dot, label={[label distance=0.05cm]270:M}] at (2.5,0) (M) {};
-        \fill<7-> (M) circle [radius=3pt];
-        \draw<7->[arrow] (D) -- (M);
-        \draw<7->[arrow] (M) -- (Y);
-        
-        \node<8-9>[dot, label={[label distance=0.05cm]270:M}] at (2.5,0) (M) {};
-        \fill<8-9> (M) circle [radius=3pt, fill=blue];
-        \draw<9>[arrow, color=red] (D) -- (M);
-        \draw<9>[arrow, color=red] (M) -- (Y);
-    \end{tikzpicture}
-    \end{center}
-}
-
-% causality is complicated; graphs allow us to represet theories visually
-% it helps us to identify factors that may be causally relevant
-
-
-
-\againframe{causality}
-
 \frame{
-\frametitle{Mediators/Mechanisms}
-
-\small
-
-\begin{itemize}
-\item Definition: ``the generative mechanism through which the focal independent variable is able to influence the dependent variable of interest'' \footnote{p. 1173 from Baron, R.M., and Kenny, D.A. 1986. ``The Moderator-Mediator Variable Distinction in Social Psychological Research: Conceptual, Strategic, and Statistical Considerations.'' \textit{Journal of Personality and Social Psychology} 51(6): 1173--1182.}
-\item Dropping the tautology, ``the pathway(s) or process(es) by which an effect is produced''
-\item Allows us to distinguish:
-	\begin{itemize}
-	\item \textit{Direct} effects
-	\item \textit{Indirect} effects
-	\end{itemize}
-\end{itemize}
-}
-% define mechanism
-% synonyms: mediator, causal pathway, ``how'' of a causal effect
-% thinking about mechanisms allow us to talk about direct and ``mediated'' effects
-% that is to say: how are cause and outcome linked causally?
-
-\againframe<6-10>{causalgraph}
-
-
-\frame{
-\frametitle{Two Uses of Studying Mechanisms}
-\begin{enumerate}\itemsep1em
-\item Determine \textit{how} a causal effect comes about
-\item Establish seemingly disconnected cause and outcome through a chain of smaller causal effects
-\end{enumerate}
-}
-
-\frame{
-
-\frametitle{1. The \textit{how} of the \textit{why}}
-
-\begin{itemize}
-\item A causal effect is an explanation of \textit{why} something occurs
-\item Mechanisms explain \textit{how} that effect occurs
-\end{itemize}
-
-}
-
-% a mechanism may not be obvious
-% there may also be multiple mechanisms
-
-\frame{
-
-\frametitle{Example: Smoking}
-
-\begin{columns}
-  \begin{column}{0.4\textwidth}
-    We know that smoking kills.\\
-    
-    \vspace{1em}
-    
-    \textit{How} does this effect occur?
-    
-  \end{column}
-  \begin{column}{0.4\textwidth}
-    \includegraphics[width=1.2\columnwidth]{images/smoking}\\    
-    {\tiny Source: \copyright{} \href{http://wellcomeimages.org/indexplus/image/L0074423.html}{Wellcome Trust}}
-  \end{column}
-\end{columns}
-
-
-}
-
-% draw a causal graph on the board
-
-% smoking -- ? -- death
-% smoking -- lung cancer -- death
-% smoking -- intake of toxins -- lung cacer -- death
-% smoking -- intake of toxins -- dna mutation -- lung cancer -- death
-
-% smoking -- heart disease -- death
-% smoking -- oxidants -- inflammation -- reduced blood flow -- heart disease -- heart attack -- death
-% smoking -- nicotine uptake -- increase heart rate -- oxygen demand
-% smoking -- nicotine update -- hypertension -- heart attack -- death
-
-\frame{
-
-\frametitle{2. Sum of small effects}
-
-\begin{itemize}\itemsep0.5em
-\item We may be able to establish a number of small linkages
-\item The product (multiplication) of these effects is the \textit{total effect}
-\item<2-> Two ways to conceptualize this:
-	\begin{itemize}
-	\item Deterministic causality
-	\item Probabilistic causality
-	\end{itemize}
-\end{itemize}
-
-}
-
-% link back to cancer example
-% Morgan and winship are especially interested in situations where we don't know if X causes Y (e.g., smoking and cancer)
-% but where we can observe pieces of that causal chain that might allow us to add up to a link between smoking and cancer
-
-
-% talk about deterministic causality: each step being necessary for the next step to be possible
-% versus probabilistic causality (or deterministic but heterogeneous causal effects): each step increases the value of the next step
-
-
-
-
-\frame<1-5>{
-
-\frametitle{{\large Pearl's Front Door Criterion}}
-
-% Pearl's ``front door criterion'' we can learn how X affects Y if we have an exhaustive and isolated set of mechanisms
-
-% add a graph
-
-
-\begin{columns}
-  \begin{column}{0.55\textwidth}
-    
-    \small
-    
-    \begin{itemize}
-    \item Same rules for understanding mechanisms as causes generally
-    \item Mechanisms must be:
-	    \begin{itemize}
-	    \item \textbf<3>{exhaustive}
-	    \item \textbf<4>{isolated}
-	    \end{itemize}
-    \end{itemize}
-    
-  \end{column}
-  \begin{column}{0.4\textwidth}
-  
-  	\tikzstyle{arrow} = [->, very thick]
-  	\begin{tikzpicture}
-        \node<1->[label={[label distance=0.05cm]270:{\footnotesize D}}] at (0,0) (D) {};
-        \fill<1-> (D) circle [radius=2pt];
-        \node<1->[label={[label distance=0.05cm]0:{\footnotesize Y}}] at (3,0) (Y) {};
-        \fill<1-> (Y) circle [radius=2pt];
-          
-        \node<1>[label={[label distance=0.05cm]270:{\footnotesize M}}] at (1.5,0) (M) {};
-        \fill<1> (M) circle [radius=2pt];
-        \draw<1>[arrow] (D) -- (M);
-        \draw<1>[arrow] (M) -- (Y);
-
-		% two mechanisms
-		\node<2,4>[label={[label distance=0.05cm]270:{\footnotesize M1}}] at (1.5,-0.5) (M1) {};
-		\node<3>[label={[label distance=0.01cm]90:{\footnotesize M1}}] at (1.5,-0.5) (M1) {};
-		\fill<2-> (M1) circle [radius=2pt];
-        \node<2->[label={[label distance=0.05cm]90:{\footnotesize M2}}] at (1.5,0.5) (M2) {};
-        \fill<2-> (M2) circle [radius=2pt];
-        \draw<2->[arrow] (D) -- (M1);
-        \draw<2->[arrow] (M1) -- (Y);
-        \draw<2->[arrow] (D) -- (M2);
-        \draw<2->[arrow] (M2) -- (Y);	
-          
-        % non-exhaustive
-        \node<3>[draw, circle, inner sep=0pt, minimum size=6pt, label={[label distance=0.05cm]270:{\footnotesize M3}}] at (1.5,-2) (M3) {};
-        %\fill<3> (M3) circle [radius=3pt];
-        \draw<3>[arrow] (D) -- (M3);
-        \draw<3>[arrow] (M3) -- (Y);
-        \draw<3>[arrow] (M3) -- (M1);
-          
-        % mechanism confound
-        \node<4>[draw, circle, inner sep=0pt, minimum size=6pt, label={[label distance=0.05cm]180:{\footnotesize Z}}] at (0,2) (Z) {};
-        %\fill<4> (Z) circle [fill=white, radius=2pt];
-        \draw<4>[arrow] (Z) -- (D);
-        \draw<4>[arrow] (Z) -- (M2);
-
-      \end{tikzpicture}
-    
-  \end{column}
-\end{columns}
-}
-
-\frame{}
-
-
-\frame{
-\frametitle{Do We Care About Mechanisms?}
-
-Write for two minutes
-
-\begin{itemize}\itemsep0.5em
-\item Is understanding a mechanism necessary for causal inference?
-\item When should we be satisfied that we have ``bottomed out'' a causal process?
-\end{itemize}
-}
-
-% do we care about mechanisms? how deep do we want to go into a mechanism?
-% when are we satisfied that we have ``bottomed out'' a mechanism?
-
-% if concepts have many parts and we theorize that it is one part of that concept that transmits a causal effect, should we ever study causality at the level of concepts or should we only study causality at the level of the constitutive attribute that is thought to be causally relevant?
-
-
-
-\section{Process Tracing}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-
-\frametitle{Process Tracing}
-
-\begin{itemize}\itemsep0.5em
-\item Definition: ``analysis of processes of change that seeks to uncover causal mechanisms and causal sequences''\footnote{p.300 from Brady, H.E., and Collier, D. 2004. \textit{Rethinking Social Inquiry}. Rowman \& Littlefield.}
-\item Single-case method
-\item Focused on gathering CPOs
-\item Sequence of counterfactuals
-\end{itemize}
-
-}
-
-
-% at its most basic level, it answers ``what happened?'' (i.e., it is descriptive history)
-% the difference, however, is that it is about causal inference, which is implicitly about within-case counterfactuals
-% generally, these are treated with a deterministic perspective on causality (if this hadn't happened, what would have happened instead?)
-
-% application of logic and ``counterfactual'' method
-% update beliefs about counterfactuals in sequence
-
-% inductive versus deductive approach
-% process tracing as a standalone method versus as a supplement to other methods
-	% for example, often use very aggregated data to establish a relationship and process tracing to document how it comes about
-
-\frame{
-\frametitle{Inductive Process Tracing}
-
-\begin{columns}
-  \begin{column}{0.55\textwidth}
-
-	\begin{itemize}\itemsep0.5em
-	\item Broad search for sequential steps necessary for an event to occur
-	\item No \textit{a priori} expectations to test
-	\item Analogous to detective work
-	\end{itemize}
-	
-    
-  \end{column}
-  \begin{column}{0.4\textwidth}
-    \includegraphics[width=\columnwidth]{images/sherlockholmes}
-    
-    {\tiny Source: Public Domain}
-  \end{column}
-\end{columns}
-
-
-}
-
-% class examples: Sherlock Holmes stories are process-tracing tests of how murders (or other crimes) that link a potential cause (a murderer) to an outcome (a death) via a series of causal steps that leave behind pieces of evidence
-
-
-
-\frame{
-\frametitle{Deductive Process Tracing}
+\frametitle{Relationship}
 
 \begin{itemize}\itemsep1em
-\item Sequence of within-case hypothesis tests
-\item Theory or extant evidence guide chosen comparisons
-	\begin{itemize}
-	\item May iterate if there is no or very weak evidence for one's hypothesis(es)
-	\end{itemize}
+\item<1-> Covariance:\\
+	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
+\item<2-> Correlation:\\
+	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
 \end{itemize}
 }
 
-% Example: smoking and cancer
-
 
 \frame{
-\frametitle{{\large Four Process Tracing Tests\footnote{Note: I am not a fan of this typology.}}}
 
-Broadly consistent with Neyman-Pearson hypothesis testing.
+\frametitle{Correlation is linear!}
 
-\begin{enumerate}
-\item Straw-in-the-wind test
-\item Hoop test
-\item Smoking gun test
-\item Doubly decisive test
-\end{enumerate}
+\includegraphics[width=\textwidth]{images/correlation}
+
+\vspace{1em}
+{\footnotesize Source: \href{https://commons.wikimedia.org/wiki/File:Correlation_examples2.svg}{Wikimedia}}
+}
+
+\frame{
+	\frametitle{Guess the Correlation!}
+	\begin{enumerate}\itemsep0.5em
+	\item Go to: {\small \url{http://guessthecorrelation.com/}}
+	\item Play a few rounds
+	\end{enumerate}
 
 }
-% reason I do not like it is that it is difficult to specify a priori whether something is one of these types of tests
-% part of process-tracing is not knowing what you're looking for, let alone whethere that evidence will or will not be consistent with expectations
 
+\section{Research Design Proposal}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+	\frametitle{{\normalsize Rubric for Research Design Proposal}}
+
+	\footnotesize
+
+	\begin{itemize}
+	\item Politically interesting and important topic and research question
+	\item Research question, theory, and methods situated in relevant political science literature
+	\item Thorough discussion of theory and explicitly stated, empirically testable hypotheses
+	\item Appropriate, well-designed research methodology
+		\begin{itemize}\footnotesize
+		\item Strengths and weaknesses
+		\item Trade-offs discussed against alternative designs
+		\item Able to generate data that will allow a test of hypotheses
+		\end{itemize}
+	\item Well-written, coherent, well-structured
+	\end{itemize}
+
+}
+
+
+\section{Representativeness}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+	\frametitle{Case selection}
+	\begin{itemize}
+	\item Earlier in the course we talked about case selection
+	\item What did we discuss?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Discuss in Pairs!}
+	
+	\Large
+	\begin{center}
+	What does it mean for a sample to be representative of a population?
+	\end{center}
+}
+
+\frame{
+	\frametitle{{\large Different conceptualizations\\ of representativeness}}
+	
+	\small
+	
+	\begin{itemize}\itemsep0.5em
+		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
+		\item \textbf{Demographic-based}: A sample is representative because it resembles in the population some way (e.g., same proportion of women in sample and population, etc.)
+		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Obtaining Representativeness}
+	\begin{itemize}\itemsep0.5em
+		\item<2-> Census
+		\item<3-> Convenience/Purposive samples
+		\item<4-> Quota sampling (common before 1940s)
+		\item<5-> \textbf<7>{Simple random sampling}
+		\item<6-> Complex survey designs
+	\end{itemize}
+}
+
+
+
+
+\section{Sampling}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+	\frametitle{Inference from Sample to Population}
+	\begin{itemize}\itemsep0.5em
+	\item We want to know population parameter $\theta$
+	\item We only observe sample estimate $\hat{\theta}$
+	\item We have a guess but are also uncertain
+	\vspace{1em}
+	\item<2-> What range of values for $\theta$ does our $\hat{\theta}$ imply?
+	\end{itemize}
+}
+
+\frame[label=srs]{
+	\frametitle{Simple Random Sampling}
+	\begin{enumerate}\itemsep0.5em
+		\item Define target population
+		\item Create ``sampling frame''
+		\item Each unit in frame has equal probability of selection
+		\item Collect data on each unit
+		\item Calculate sample \textit{statistic}
+		\item Draw an inference to the population
+	\end{enumerate}
+}
+
+
+\begin{frame}[fragile]
+\begin{center}
+\begin{tikzpicture}
+    \fill<1->[red!60,opacity=0.75] (0,0) circle (4cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<1-> (pop) at (-3,2) {\textbf{Population}};
+    \fill<2->[blue!80,opacity=0.5] (2,0) circle (3.8cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
+    \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\againframe{srs}
+
+\frame{
+	\frametitle{Statistical Inference I}
+
+	To calculate a sample mean (or proportion):
+
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	{\small
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	}
+	\vspace{0.5em}
+	
+	%This is a \textit{statistic} (the sample mean) that \textit{estimates} the population \textit{parameter} (the population mean)
+	
+}
+
+
+\frame{
+	\frametitle{Statistical Inference II}
+	\begin{itemize}\itemsep1em
+	\item If we calculate $\bar{y}$ in our \textit{sample}, what does this tell us about the $\bar{Y}$ in the \textit{population}?
+	\item<2-> The sample \textit{estimate} is our guess at the value of the population \textit{parameter} within some degree of uncertainty
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Law of Large Numbers}
+	\begin{itemize}
+	\item Definition: The \textit{mean} of the $\hat{\theta}$ from each of a number of samples will converge on the population $\theta$, as the number of samples increases
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Sampling Variance}
+	\begin{itemize}\itemsep1em
+	\item The $\hat{\theta}$ in any particular sample can differ from the population value $\theta$
+	\item This variation is calling ``sampling variance'' or ``sampling error''
+	\item The standard error describes the average amount of variation of the $\hat{\theta}$'s around $\theta$
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{How Uncertain Are We?}
+	\begin{itemize}\itemsep1em
+	\item Our uncertainty depends on sampling procedures
+	\item Most importantly, \textit{sample size}
+		\begin{itemize}
+		\item As $n \rightarrow \infty$, uncertainty $\rightarrow 0$
+		\end{itemize}
+	\item We typically summarize our uncertainty as the \textit{standard error}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Standard Errors (SEs)}
+	\begin{itemize}\itemsep1em
+	\item Definition: ``The standard error of a sample estimate is the average distance that a sample estimate ($\hat{\theta}$) would be from the population parameter ($\theta$) if we drew many separate random samples and applied our estimator to each.''
+	\item<2-> Square root of the sampling variance
+\end{itemize}
+}
 
 
 
 \frame{
-\frametitle{Major Caveat: Uncertainty}
+	\frametitle{Sample mean}
+	
+	\small
+	
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	
+	\begin{equation}
+	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
+	\end{equation}
+	where $f = $ proportion of population sampled,\\
+	$s^2 = $ sample (element) variance, and\\
+	$n = $ sample size
+}
 
-\begin{itemize}\itemsep0.5em
-\item Our certainty about a causal relationship is a direct function of sample size
-\item Case studies methods have small sample sizes
-\item Process-tracing is generally a single-case design
-	\begin{itemize}
-	\item Reduce uncertainty by finding within-case variation
-	\item Accept only high certainty about specific case % but high uncertainty about the general class of cases of which this case is a member
+\frame{
+	\frametitle{Sample proportion}
+	
+	\small
+	
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	
+	\begin{equation}
+	SE_{\bar{y}} = \sqrt{\frac{(1-f)}{n}p(1-p)}
+	\end{equation}
+	where $f = $ proportion of population sampled,\\
+	$p = $ sample proportion, and\\
+	$n = $ sample size
+}
+
+
+\frame<1>[label=moe]{
+
+	\frametitle{Margin of Error}
+
+	\begin{itemize}\itemsep0.5em
+	\item Common to express SE as a ``margin of error''
+	\item MoE is twice the Standard Error
+	\item For estimated proportions, expressed as:\\
+		``+/- MoE percentage points''
+	\item<2-> So for an SE of 0.01, how can we describe this?
 	\end{itemize}
-\end{itemize}
+}
+
+\frame{
+	\only<1>{\includegraphics[height=.9\textheight]{images/ukpoll1}}
+	\only<2>{\includegraphics[height=.9\textheight]{images/ukpoll2}}
+	
+	{\tiny Source: \url{http://www.abc.net.au/news/2016-01-17/new-poll-show-widening-support-for-uk-to-leave-eu/7093730}\par}
+}
+
+
+\frame{
+
+\LARGE
+
+\begin{center}
+Questions?
+\end{center}
+
+}
+
+\frame{
+\frametitle{Activity!}
+\includegraphics[width=\textwidth]{images/haribo}
+
+{\footnotesize Source: \href{https://www.flickr.com/people/34415916@N07}{ganeshaisis} on \href{https://commons.wikimedia.org/wiki/File:I_love_haribo_(5573044236).jpg}{Wikimedia}}
+
+}
+
+\frame[label=activity1]{
+
+What proportion of all Haribo Starmix gummies are $\heartsuit$s?
+
+	\begin{enumerate}
+	\item<2-> Everyone collect a random sample
+	\item<3-> Calculate $\hat{p} = \frac{\heartsuit}{n}$
+	\item<4-> Report $\hat{p}$
+	\item<5-> Calculate element variance: $p(1-p)$
+	\item<6-> What is your margin of error?
+	\end{enumerate}
 
 }
 
 \frame{}
 
-\section{Preview}
-\frame{\tableofcontents[currentsection]}
 
 
 \frame{
-\frametitle{Research Design Proposal}
+	\frametitle{{\normalsize How large of a sample do we need?}}
+	\begin{itemize}\itemsep1em
+	\item<2-> Uncertainty is influenced by:
+		\begin{itemize}
+		\item Sample size
+		\item \textit{Element} variance
+		\item Population size?
+		\end{itemize}
+	\item<3-> So what do we do?
+		\begin{itemize}
+		\item Decide on desired uncertainty
+		\item Guess at element variance
+		\item<4-> Adjust sample size based on feasibility
+		\end{itemize}
+	\end{itemize}
+}
 
-\begin{itemize}\itemsep0.5em
-\item Instructions posted on Moodle
-\item Use class sessions to discuss topics
-\item Don't worry about design now
-\item Focus instead on topics, questions, and theories
-\item Should not be same as dissertation topic
-\end{itemize}
+\frame{
+	\frametitle{Estimating sample size}
+    Determining sample size requires:
+    	\begin{itemize}
+    		\item A possible value of $p$
+    		\item A desired precision (SE)
+    	\end{itemize}
+	\vspace{1em}
+	So:
+	\begin{equation}
+	n = \frac{p(1-p)}{SE^2} = \frac{0.5(1-0.5)}{SE^2} = \frac{0.25}{SE^2}
+	\end{equation}
+	\vspace{1em}
+	{\footnotesize Note: Element variance is highest when $p = 0.5$ .}
+}
+
+\frame{
+	\frametitle{Estimating sample size}
+	What precision (margin of error) do we want?
+	\begin{itemize}\small
+		\item +/- 2 percentage points: $SE = 0.01$
+			\begin{equation}
+			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
+			\end{equation}
+		\item<2-> +/- 5 percentage points: $SE = 0.025$
+			\begin{equation}
+			n = \frac{0.25}{0.000625} = 400
+			\end{equation}
+		\item<3-> +/- 0.5 percentage points: $SE = 0.0025$
+			\begin{equation}
+			n = \frac{0.25}{0.00000625} = 40,000
+			\end{equation}
+	\end{itemize}
+}
+
+\frame{
+
+	\frametitle{{\normalsize How do we reduce uncertainty?}}
+	\begin{itemize}\itemsep1em
+	\item<2-> Increase sample size
+	\item<3-> Reduce element variance
+	\item<4-> Change sampling design
+		\begin{itemize}
+		\item Stratified sampling\\(tends to decrease SEs)
+		\item Cluster sampling\\(tends to increase SEs)
+		\end{itemize}
+	\end{itemize}
+
 }
 
 
 \frame{
-\frametitle{{\large Coming weeks (MT and LT})}
-
-\begin{itemize}\itemsep0.5em
-\item Methods of data collection
-	\begin{enumerate}
-	\item Text
-	\item Interviews/Surveys
-	\item Observation
-	\end{enumerate}
-\item Problem Set 4 (due in December)
-\item Shift to methods of quantitative data analysis
-\end{itemize}
+	\frametitle{Big Caveat!}
+	\begin{itemize}\itemsep1em
+	\item Calculations from today assume SRS
+	\item Lots of data comes from other kinds of samples
+	\item Think of SRS as a baseline
+	\end{itemize}
 }
 
+
+\section*{Preview}
+
+\frame{
+\frametitle{Preview}
+
+	\begin{itemize}\itemsep1em
+	\item Feedback on PS5 this week
+	\item PS6 due Feb. 23
+	\item Next week we'll discuss hypothesis testing
+	\item Remember Reading Week assignment!
+	\end{itemize}
+
+}
 
 \appendix
 \frame{}

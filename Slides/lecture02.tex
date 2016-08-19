@@ -1,10 +1,10 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,positioning}
 
-\title{Causality: Explanation versus Prediction}
+\title{Concepts\\{\small ``I'll know it when I see it''}}
 
-% Political science is generally concerned with questions of causality. To do that we need to learn to think counterfactually. How do we know that something causes something else? How do we separate ``correlation'' from ``causation''?
+% Before we can study something we need to know what that ``something'' is. This is concept definition. How do we define concepts and how do we separate different concepts from one another?
 
 \date[]{}
 
@@ -14,291 +14,343 @@
 
 \frame{\tableofcontents}
 
-
-\frame{
-\frametitle{Who am I?}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-
-\item Thomas Leeper
-
-\item Assistant Professor in Political Behaviour
-
-\item Originally from Minnesota (USA); worked in Denmark for past 2.5 years
-
-\item Interested in public opinion and psychology
-
-\item Office hours:\\
-Tuesday 9--11 CON 3.21\\
-Sign-up on LSE for You\\
-Otherwise, email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
-
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Who are you?}
-
-\begin{itemize}\itemsep1em
-
-\item Where are you from?
-
-\item What interests you about government or politics?
-
-\item What do you hope to learn from the course?
-
-\end{itemize}
-
-}
-
-
-
-\section{Brief Review of Last Week}
-\frame{\tableofcontents[currentsection]}
-
-\frame{\huge\vskip20pt\textbf{What did we learn about last week?}}
-
-% research questions
-% what makes questions interesting
-% causal versus descriptive questions
-% reverse versus forward causal inference
-
-
-\frame{
-\frametitle{Continuing that theme\dots}
-
-By the end of today you should be able to:
-
-\begin{itemize}\itemsep1em
-\item Identify what makes for a causal relationship
-\item Distinguish causation from correlation/association
-\item Begin to analyze research problems using counterfactual thinking
-\end{itemize}
-
-}
-
-% Today: focusing on what it means for something to be a ``cause''
-
-% Goal is to develop ways of thinking about how to distinguish causation from association/correlation
-
-% examples of associations (tempurature/pirates; crime/ice cream; )
-
-
-% where do we look for counterfactuals? backward or forward in time? across similar cases?
-
-
-\section{Causality}
+\section{Concepts}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-\frametitle{Write for 1 minute}
-
-\huge\centering\vskip10pt\textbf{What makes something a \textit{cause}?}
-}
-
-
-\frame{
-\frametitle{Physical causality}
-
-\begin{itemize}\itemsep1em
-\item Action and reaction
-\item Features: Observable and deterministic
-\item Example:
-	\begin{itemize}
-	\item Picture a ball resting on top of a hill
-	\item What happens if I push the ball?
-	\end{itemize}
-\item Physical causality is easy to see
-\end{itemize}
-}
-
-\frame{
-\frametitle{Correlation I}
-\begin{itemize}\itemsep1em
-\item Correlation is the non-independence of two variables for a set of observations
-\end{itemize}
-}
-
-\frame{
-\frametitle{Correlation II}
-\begin{itemize}
-\item \textit{Observation}: A case or unit (e.g., person, country)
-\item \textit{Variable}: A dimension that describes an obseration (e.g., income)
-\item \textit{Independence}: Variables are unrelated to one another
-	\begin{itemize}
-	\item Independent: Height and value on a fair dice roll
-	\item Non-independent: Height and weight
-	\end{itemize}
-\end{itemize}
-}
-
-
-\frame{
-\frametitle{Correlation III}
-
-\begin{itemize}\itemsep1em
-\item Synonyms: correlation, covariation, relationship, association
-	\begin{itemize}
-	\item ``Effect'' is frequently used to mean correlation
-	\item We'll reserve that term for a \textit{causal effect}
-	\end{itemize}
-\item Any correlation is a potential cause
-	\begin{itemize}
-	\item X might cause Y
-	\item Y might cause X
-	\item X and Y might be caused by Z
-	\item X and Y might cause Z
-	\item There may be no causal relationship
-	\end{itemize}
-\end{itemize}
-}
-
-\frame<1>[label=mill]{
-
-\frametitle{Mill's methods\footnote{Discussed in Holland}}
+\frametitle{Concepts}
 
 \begin{itemize}
-\item Agreement
-\item \textbf<2>{Difference}
-\item Agreement and Difference
-\item Residue
-\item Concomitant variations
+\item Definition: The words and ideas that we use to describe the world
+
+\vspace{1em}
+\item<2-> Why do we care?
+	\begin{itemize}\itemsep0.5em
+	\item<3-> We cannot theorize or study a phenomenon until we know what it is
+	\item<4-> Problem Set 1 is due on October 27.
+	\end{itemize}
+
 \end{itemize}
 }
 
-\frame{
-\frametitle{Difference}
+% we can look to literature or we can develop our own concepts, but as we'll talk about in a few minutes we don't want to create new concepts unless they are useful and meaningful
 
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+
+\frame{
+\frametitle{Quick Brainstorm}
+
+\vskip20pt
+
+What are some important political science concepts?
 }
 
+
+\begin{frame}[fragile]
+\frametitle{{\large Ogden \& Richard's Triangle\footnote{Richards, I.A., and Ogden, C.K. 1923 \textit{The Meaning of Meaning}.}}}
+
+\begin{tikzpicture}
+\node[align=center, text width=3.5cm] at (0,0) (label) {Label};
+\node[align=center, text width=3.5cm] at (3,3) (meaning) {Meaning};
+\node[align=center, text width=3.5cm] at (6,0) (cases) {Cases};
+
+\draw[<->,very thick] (label) to (meaning);
+\draw[<->,very thick] (cases) to (meaning);
+
+\end{tikzpicture}
+% meaning (set of ideas we associate with a concept; the essential constitutive elements)
+% label (word used to designate a concept)
+% cases (entities that are instances or cases of a concept)
+
+\end{frame}
+
+
+% distinguish concept definition from causal theorizing
+
+
+
 \frame{
 
-\frametitle{Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}
+Concepts are useful because they distinguish things from other things.
+
+\vspace{1em}
+
+In particular, they:
+
+\begin{itemize}
+\item Resolve ambiguity
+% label connected to multiple meanings
+% meaning connected to multiple labels
+
+\item Avoid vagueness % lack of a good definition
+\end{itemize}
+
+}
+
+% For example, if we want to build an understanding of the concept ``democracy'' (such as its effects on economic outcomes, or the processes that cause democracies to form) then we need to be clear about what we mean by democracy. We need to distinguish it from other concepts that might be related but that are different (autocracy, oligarchy, anarchy, state, nation-state, liberal society, etc.).
+
+\frame{
+\frametitle{{\normalsize Approaches to Concept Definition}}
 
 \begin{enumerate}
-\item Correlation
-\item Nonconfounding
-\item Direction (``temporal precedence'')
-\item Mechanism
-\item (Appropriate level of analysis)
+\item Classical Approach
+\item Family Resemblence
 \end{enumerate}
+
+\vspace{1em}
+
+\begin{itemize}
+\item Gerring's 7 criteria\footnote{Gerring also offers ``minimal,'' ``maximal,'' and ``cumulative'' formulations as ways to develop concepts}
+\end{itemize}
+}
+
+% Gerring distinguishes between minimal (classical approach); maximal (ideal types; Think Dahl and democracy as an ideal type); cumulative (more or less of a concept)
+% the last of these will be particularly helpful when we start thinking about operationalization or measurement next week
+
+
+\section[Classical Approach]{Concepts: Classical Approach}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\frametitle{Classical Approach}
+
+
+\begin{itemize}\itemsep0.5em
+\item Specify a set of ``constitutive dimensions'' that \textit{are} the concept
+	\begin{itemize}
+	\item Fundamental characteristics of the concept
+	\item Not causes or effects
+	\item Not measures of the concept
+	\end{itemize}
+\item<2-> Dimensions are \textit{necessary and jointly sufficient}
+
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Boolean Logic}
+
+\begin{itemize}\itemsep0.5em
+\item \textbf{AND}: necessary
+	\begin{itemize}
+	\item Implies attributes required to be a case of the concept
+	\end{itemize}
+\item \textbf{OR}: sufficient
+	\begin{itemize}
+	\item Implies multiple ways to be a case of the concept
+	\end{itemize}
+\end{itemize}
+
+Attributes may be \textit{individually} or \textit{jointly} necessary and/or sufficient
+}
+
+
+
+\frame{
+\frametitle{{\large Dahl's Definition of Democracy}}
+
+\begin{itemize}
+\item Two dimensions
+	\begin{itemize}
+	\item<2-> Liberalization (Public contestation)
+	\item<2-> Inclusiveness (Participation)
+	\end{itemize}
+\item Both necessary and jointly sufficient
+\item<3-> Without liberalization: ``inclusive hegemony''
+\item<4-> Without inclusiveness: ``competitive oligarchy''
+\end{itemize}
+
+}
+
+% discuss joint necessity and sufficiency
+
+
+\frame{
+\frametitle{Minimal and Maximal}
+
+\begin{itemize}\itemsep0.5em
+\item Gerring uses three types of concept definitions:
+	\begin{itemize}
+	\item Minimal
+	\item Maximal
+	\item Cumulative
+	\end{itemize}
+\item All three of these are within the classical approach
+	\begin{itemize}
+	\item All focus attribute \textit{necessity}
+	\end{itemize}
+\end{itemize}
 }
 
 
 \frame{\huge\vskip20pt\textbf{Questions?}}
 
+\frame[label=chairexample]{
 
+\title{Example}
 
-\frame[label=counterfactuals]{
-\frametitle{Counterfactual Thinking}
+Define the concept of ``\hyperlink{chairs}{chair}''
 
-\begin{itemize}\itemsep1em
-\item \textit{Counterfactual}: relating to what has not happened or is not the case
-\vspace{0.5em}
-\item Causal inference involves inferring \textit{what would have happened} in a counterfactual reality \textit{where the potential cause took on a different value}
-\end{itemize}
+\begin{center}
+\includegraphics[height=0.7\textheight]{images/chair}
+\end{center}
 
+{\tiny \href{https://commons.wikimedia.org/wiki/File:Chair_5709.jpg}{Image Source: Wikimedia} by \href{https://commons.wikimedia.org/wiki/User:Dori}{User:Dori}}
 }
 
-% Has anyone read or seen *A Christmas Carol*?
+
+\section[Family Resemblence]{Concepts: Family Resemblence}
+\frame{\tableofcontents[currentsection]}
 
 \frame{
-\frametitle{``A Christmas Carol''}
+\frametitle{Family Resemblence}
 
-\small 
 \begin{itemize}
-\item 1843 novel by Charles Dickens
-\item Ebenezer Scrooge is shown his own future by the ``Ghost of Christmas Yet to Come''
-\item Has the choice to either:
-	\begin{itemize}
-	\item stay on current path (one counterfactual), or 
-	\item change his ways (take a different counterfactual)
-	\end{itemize}
+\item Classical approach focuses on \textit{necessary} elements
+\item Some concepts have no necessary elements but are still meaningful % Game
+\item<2-> We might also think about elements that are \textit{sufficient} to establish membership
 \end{itemize}
 }
 
-\frame{
-\frametitle{Causation}
 
-\begin{itemize}\itemsep1em
-\item \textit{Causal effect}: The difference between two ``potential outcomes''
-	\begin{itemize}
-	\item The outcome that occurs if $X = x_1$
-	\item The outcome that occurs if $X = x_2$
-	\end{itemize}
-\item The causal effect of Scrooge's lifestyle is seen in the differences between two potential futures
+\begin{frame}[label=game, fragile]
+
+\frametitle{Example: Define ``game''}
+
+\vspace{-2.2em}
+
+\begin{center}
+\resizebox{\textwidth}{0.75\textheight}{%
+\begin{tikzpicture}
+  \node (img1) {\includegraphics[height=3cm]{images/rugby}};
+  \node (img2) [below right=-1cm and -1.5cm of img1] {\includegraphics[height=3cm]{images/chess}};
+  \node (img3) [below=-0.5cm of img1] {\includegraphics[height=3cm]{images/gameboy}};
+  \node (img4) [above right=-2.5cm and -0.25cm of img1]  {\includegraphics[height=3cm]{images/cribbage}};
+  \node (img5) [below right=0.5cm and -2cm of img4]  {\includegraphics[height=3cm]{images/tugofwar}};
+  \node (img6) [above right=-1cm and 0.5cm of img2]  {\includegraphics[height=3cm]{images/cards}};
+\end{tikzpicture}
+}
+\end{center}
+
+\vspace{-1em}
+
+\hyperlink{gamesources}{\beamergotobutton{Image Sources}}
+
+\end{frame}
+
+
+\frame{
+\frametitle{Complex Boolean Logic}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+
+\item Jointly necessary and sufficient:\\
+\hspace{1em} {\footnotesize $\text{Rule of Law} \land \text{Equality}$}
+
+\item Jointly necessary w/ insufficient attributes\\
+\hspace{1em} {\footnotesize $\text{Rule of Law} \land (\text{Equality} \lor \text{Elections}) $}
+
+\item Simple family resemblance logic:\\
+\hspace{1em} {\footnotesize $(\text{Equality} \lor \text{Elections})$}
+
+\item Complex family resemblance logic:\\
+\hspace{1em} {\footnotesize $(\text{Rule of Law} \land \text{Participation}) \lor (\text{Equality} \land \text{Elections}) $}
+
 \end{itemize}
 
 }
 
+
+
+\begin{frame}[fragile]
+
+\frametitle{Trade-offs}
+
+\vspace{-2em}
+
+\begin{center}
+\begin{tikzpicture}
+	% x-axis
+    \draw[->] (0,0) node[below] (origin) {} -- (5,0) node[right] (xaxis) {};
+    \node[below] at (2.5,-0.75) {\small Intension (More attributes)};
+	\node[below] at (0.5,0) {\footnotesize Low};
+	\node[below] at (5,0) {\footnotesize High};
+	
+	% y-axis
+    \draw[->] (origin) -- (0,5) node[left] (yaxis) {};
+	\node[left, text width=5cm, align=center] at (0,2.5) {\small Extension\\(More cases)};
+	\node[left] at (0,0.5) {\footnotesize Low};
+	\node[left] at (0,5) {\footnotesize High};
+
+    \draw[<->, solid] (0.5,4.5) -- (4.5,0.5);
+    \node[above, rotate=45] at (4,4) {\tiny Sufficient};
+    
+    \draw[<->, dashed] (0.5,0.5) -- (4.5,4.5);
+    \node[rotate=-45] at (4,1.25) {\tiny Necessary};
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+% Need to balance specificity against abstraction/generality
+% In classical approach, intension and extension are inversely related (Gerring Fig. 5.1)
+% In family resemblence approach, intension and extension are positively related
+% If we increase necessary attributes, we have fewer cases of that concept and it is more specific
+% If we increase sufficient attributes, we have more cases of that concept and it is more general
+
+
+
+\frame{\huge\vskip20pt\textbf{Questions?}}
+
+
+\section{Gerring's Criteria}
+\frame{\tableofcontents[currentsection]}
+
 \frame{
-\frametitle{Fundamental problem of causal inference}
+\frametitle{Gerring's Criteria}
 
-\Large We can only observe any given unit in one reality!
-
-}
-
-\frame{
-\frametitle{Two solutions!\footnote{From Holland}}
-
-\begin{enumerate}\itemsep1em
-\item Scientific Solution
-	\begin{itemize}
-	\item All units are identical
-	\item Each can provide a perfect counterfactual
-	\item Common in, e.g., agriculture, biology
-	\end{itemize}
-\item<2-> Statistical Solution
-	\begin{itemize}
-	\item Units are not identical
-	\item Random exposure to a potential cause
-	\item Effects measured on average across units
-	\item Known as the ``Experimental ideal''
-	\end{itemize}
+\begin{enumerate}
+\item Resonance
+\item Domain/scope % ladder of generality
+\item Consistency
+\item Fecundity
+\item Differentiation
+\item Causal utility
+\item Operationalization (next week)
 \end{enumerate}
-
 }
 
-\frame{
-\frametitle{In Political Science}
+% divide these up and have someone present each one
 
-\small
+
+% Resonance: Is the concept intuitive? Avoid neologism (Gerring p.118); we don't need new terms for the sake of having new terms
+
+% Domain: The contexts in which this concept resonates and applies. Example: "vouchers". What does this mean? This has a clear meaning in the United States, in debates about education policy, but that is a narrow domain. Contrast this with democracy or terrorism, which are concepts with broad domains.
+
+% Consistency: We can change the definition of a concept by adding, removing, or modifying attributes; Contrast with "slippage" or "stretching"
+
+% Fecundity: Fertility or fruitfulness; Neologisms are prone to lacking fecundity
+
+% Differentiation: How does this concept contrast or help create distinctions between existing sets of phenomena? Example: *Opinion* is a summary evaluation of a particular object; *Value* is a belief about a desired end-state of the world
+
+% Causal Utility: Concept has to be useful for making a causal argument; this may require a concept to be more specific or have higher intensity than we would prefer because we need to *use* the concept
+
+% Operationalization: concepts have to be measurable; we'll talk about this next week
+
+
+\section*{}
+
+\frame{
+
+\frametitle{In Sum}
 
 \begin{itemize}\itemsep0.5em
-\item Causal inference is about searching for appropriate counterfactuals
-	\begin{itemize}
-	\item<2-> \textit{Causal effect}: Difference in an outcome variable between two counterfactuals
-	\item<3-> \textit{Causal inference}: A belief that an event or variable exerts a causal effect on an outcome
-	\end{itemize}
-\item<4-> Where can we look for counterfactuals?
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{An Example}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item For example, if we think smoking might cause lung cancer, how would we know?
-\vspace{0.5em}
-\item How would we know if smoking caused lung cancer for an individual who smoked?
-	\begin{itemize}
-	\item What's the relevant counterfactual?
-	\end{itemize}
-\item How would we know if smoking causes lung cancer on average across many individuals?
-	\begin{itemize}
-	\item What's the relevant counterfactual?
-	\end{itemize}
+\item We need to know what we're talking about before we can theorize causal relationships or study something empirically
+\item Concept vary in their usefulness and are contestable
+\item Many ways to define and evaluate concepts
 \end{itemize}
 
 }
@@ -308,37 +360,58 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \appendix
 \frame{}
 
-\frame{\frametitle{Mill's Methods}}
+\frame[label=gamesources]{
 
-\frame{
-\frametitle{Agreement}
+\tiny
 
-If two or more instances of the phenomenon under investigation have only one circumstance in common, the circumstance in which alone all the instances agree, is the cause (or effect) of the given phenomenon.
+\begin{itemize}
+\item Rugby: flickr user Paddy-K \url{https://commons.wikimedia.org/wiki/File:Jonny_Wilkinson_2009_08_england_training_2.jpg}
+\item Chess: Wikimedia user MichaelMaggs \url{https://commons.wikimedia.org/wiki/File\%3AOpening_chess_position_from_black_side.jpg}
+\item Gameboy: Public domain \url{https://commons.wikimedia.org/wiki/File\%3AGameboy.jpg}
+\item Cribbage: Wikimedia user Aerion \url{https://commons.wikimedia.org/wiki/File:120-hole_cribbage_board.jpg}
+\item Cards: Public domain \url{https://commons.wikimedia.org/wiki/File\%3AEuchre.jpg}
+\item Tug of war: Wikimedia user Johnmoore6 \url{https://en.wikipedia.org/wiki/File:Irish_600kg_euro_chap_2009.JPG}
+\end{itemize}
+
+\hyperlink{game}{\beamergotobutton{Return to Images}}
+
 }
 
-\frame{
-\frametitle{Difference}
+\frame[label=chairsources]{
 
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+\tiny
+
+\begin{itemize}
+\item images/chair: Wikimedia user Dori \url{https://commons.wikimedia.org/wiki/File:Chair_5709.jpg}
+\item images/throne: Wikimedia user Badseed  \url{https://commons.wikimedia.org/wiki/File:Ottoman_throne.jpg}
+\item images/beanbag: Wikimedia user Pava  \url{https://commons.wikimedia.org/wiki/File:\%22_12_-_ITALY_-_Pouf_Tuffet_Sacco_di_Zanotta_red_armchair_Triennale_Design_Museum.jpg}
+\item images/kneelingchair: Wikimedia user TonyTheTiger  \url{https://commons.wikimedia.org/wiki/File:Deluxe_kneeling_chair.jpg}
+\item images/bench: Wikimedia user 4028mdk09  \url{https://commons.wikimedia.org/wiki/File:Holzbank_mit_schmiedeeisener_R\%C3\%BCckenlehne.JPG}
+\item images/trainseat: Wikimedia user Lover Of Romance \url{https://commons.wikimedia.org/wiki/File:Green-Car\%27s_Seat_of_JR_215.JPG}
+\item images/hermanmiller: Wikimedia user Luiscarlosrubino \url{https://commons.wikimedia.org/wiki/File:Mirra_Chair_by_Studio_7.5_-_Herman_Miller.jpg}
+\item images/wc: Public Domain \url{https://commons.wikimedia.org/wiki/File:Wc1.jpg}
+\item images/stool: Wikimedia user Chatsam \url{https://commons.wikimedia.org/wiki/File:Pied_d\%27\%C3\%A9l\%C3\%A9phant_marche_pied.jpg}
+
+\end{itemize}
+
+\hyperlink{chairs}{\beamergotobutton{Return to Images}}
+
 }
 
-\frame{
-\frametitle{Agreement and Difference}
+\frame[label=chairs]{
 
-If two or more instances in which the phenomenon occurs have only one circumstance in common, while two or more instances in which it does not occur have nothing in common save the absence of that circumstance; the circumstance in which alone the two sets of instances differ, is the effect, or cause, or a necessary part of the cause, of the phenomenon.
+\includegraphics[width=2.25cm]{images/chair}
+\includegraphics[width=1.75cm]{images/throne}
+\includegraphics[width=2.25cm]{images/hermanmiller}
+\includegraphics[width=1.75cm]{images/wc}
+\includegraphics[width=2.7cm]{images/beanbag}
+
+\includegraphics[width=2.5cm]{images/stool}
+\includegraphics[width=5cm]{images/bench}
+\includegraphics[width=2.8cm]{images/trainseat}
+
+\hyperlink{chairexample}{\beamergotobutton{Return to Slides}} \hyperlink{chairsources}{\beamergotobutton{Image Sources}}
+
 }
-
-\frame{
-\frametitle{Residue}
-
-Subduct from any phenomenon such part as is known by previous inductions to be the effect of certain antecedents, and the residue of the phenomenon is the effect of the remaining antecedents.
-}
-
-\frame{
-\frametitle{Concomitant variations}
-
-Whatever phenomenon varies in any manner whenever another phenomenon varies in some particular manner, is either a cause or an effect of that phenomenon, or is connected with it through some fact of causation.
-}
-
 
 \end{document}
