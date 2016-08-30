@@ -21,15 +21,15 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  3. [Measurement: Concepts in Practice (Oct. 14)](Slides/lecture03.pdf)
  4. [Tabulation and Visualization (Oct. 21)](Slides/lecture04.pdf) - [Lab Activity](Assignments/Lab1.pdf)
      - You may find [this quick start guide for R](http://thomasleeper.com/Rcourse/Intro2R/Intro2R.pdf) useful
- 5. [Translating Texts into Interpretations and Numbers (Oct. 28)](Slides/lecture05.pdf)
- 6. [Interviewing, Structured and Unstructured (Nov. 11)](Slides/lecture06.pdf)
- 7. [Actually Talking to People: Participant Observation (Nov. 18)](Slides/lecture07.pdf)
+ 5. [Description and Evidence Gathering (Oct. 28)](Slides/lecture05.pdf)
+ 6. [Translating Texts into Interpretations and Numbers (Nov. 11)](Slides/lecture06.pdf)
+ 7. [Actually Talking to People (Nov. 18)](Slides/lecture07.pdf)
  8. [Case Studies (Nov. 25)](Slides/lecture08.pdf)
  9. [Sampling and Representativeness (Dec. 2)](Slides/lecture09.pdf)
  10. [Ethics and Research Integrity (Dec. 9)](Slides/lecture10.pdf) - [Lab Activity](Assignments/EthicsScenarios.pdf)
  11. [Causality: Explanation versus Prediction (Jan. 11)](Slides/lecture11.pdf)
- 12. [Theory Development and Hypothesis Generation (Jan. 20)](Slides/lecture12.pdf)
- 13. [Literature Review (Jan. 27)](Slides/lecture13.pdf)
+ 12. [Literature Review (Jan. 20)](Slides/lecture12.pdf)
+ 13. [Theory Development and Hypothesis Generation (Jan. 27)](Slides/lecture13.pdf)
  14. [Case Comparisons (Feb. 3)](Slides/lecture14.pdf)
  15. [Causal Mechanisms (Feb. 10)](Slides/lecture15.pdf)
  16. [Statistical Inference (Feb. 24)](Assignments/Lab2.pdf) - [Lab Activity](Assignments/Lab2.pdf)
@@ -55,7 +55,7 @@ There are eight problem sets for the course (four in each term).
 | [Data Collection I](Assignments/) | Tuesday Nov. 22 |
 | [Data Collection II](Assignments/) | Tuesday Dec. 13 |
 | [Causality](Assignments/) | Tuesday Jan. 24 |
-| [Theory Evaluation](Assignments/) | Tuesday Feb. 7 |
+| [Theory Evaluation](Assignments/) | Tuesday Feb. 21 |
 | [Article Critique](Assignments/) | Tuesday Feb. 21 |
 | [Statistical analysis](Assignments/) | Tuesday Mar. 21 |
 
