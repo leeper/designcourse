@@ -54,10 +54,10 @@ There are eight problem sets for the course (four in each term).
 | [Concepts and Measurement](Assignments/) | Tuesday Nov. 8 |
 | [Data Collection I](Assignments/) | Tuesday Nov. 22 |
 | [Data Collection II](Assignments/) | Tuesday Dec. 13 |
-| [Causality](Assignments/) | Tuesday Jan. 24 |
-| [Theory Evaluation](Assignments/) | Tuesday Feb. 21 |
-| [Article Critique](Assignments/) | Tuesday Feb. 21 |
-| [Statistical analysis](Assignments/) | Tuesday Mar. 21 |
+| [Causality](Assignments/) | Tuesday Jan. 17 |
+| [Theory Evaluation](Assignments/) | Tuesday Feb. 14 |
+| [Article Critique](Assignments/) | Tuesday Feb. 28 |
+| [Statistical analysis](Assignments/) | Tuesday Mar. 14 |
 
 ## LT Reading Week Study Guide Assignment ##
 
@@ -67,7 +67,7 @@ We will use LT reading week to prepare for the exam. As part of this, students w
 
 ### Research Design Proposal ###
 
-*Due: Tuesday, March XXXX, 2017*
+*Due: Tuesday, 21 March 2017 at 5:00pm*
 
 The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student's choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
 
