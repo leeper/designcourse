@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Home
-description: "Research Design in Political Science" introduce students to the fundamentals of research design in political science, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques
+description: "'Research Design in Political Science' introduce students to the fundamentals of research design in political science, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques."
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Research Design in Political Science #
+# Research Design in Political Science
 
 These are course materials for [GV249: Research Design in Political Science](http://www.lse.ac.uk/resources/calendar/courseGuides/GV/2015_GV249.htm) lecture series at the London School of Economics and Political Science. The course is taught for the full Academic Year 2016-2017. 
 
@@ -14,7 +14,7 @@ The course will introduce students to the fundamentals of research design in pol
 A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently available. LSE Students can view the course on [Moodle](https://moodle.lse.ac.uk/course/view.php?id=4889). Slides and other materials will be posted as they become available.
 
 
-## Slides ##
+## Slides
 
  1. [Welcome and First Lecture (Sep. 30)](Slides/lecture01.pdf)
  2. [Concepts: "I'll know it when I see it" (Oct. 7)](Slides/lecture02.pdf)
@@ -44,7 +44,7 @@ Notes:
  - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 31 - Nov.5; Feb. 15 – Feb. 19).
 
  
-## Problem Sets ##
+## Problem Sets
 
 There are eight problem sets for the course (four in each term).
 
@@ -59,13 +59,13 @@ There are eight problem sets for the course (four in each term).
 | [Article Critique](Assignments/) | Tuesday Feb. 28 |
 | [Statistical analysis](Assignments/) | Tuesday Mar. 14 |
 
-## LT Reading Week Study Guide Assignment ##
+## LT Reading Week Study Guide Assignment
 
 We will use LT reading week to prepare for the exam. As part of this, students will draft a "study guide" for the course and provide peer and self-assessments that evaluate and reflect on learning thus far. [Details of the assignment are available here](Assignments/StudyGuideAssignment.html).
 
-## Assessment ##
+## Assessment
 
-### Research Design Proposal ###
+### Research Design Proposal
 
 *Due: Tuesday, 21 March 2017 at 5:00pm*
 
@@ -73,7 +73,7 @@ The 3000-word research design paper should outline the basic elements of a novel
 
 [Click here](Assignments/ResearchDesignProposal.html) for a more detailed assignment specification.
 
-### Written Exam ###
+### Written Exam
 
 *Summer Term, 2016*
 
@@ -84,6 +84,6 @@ The exam will consist of three parts: Part A, Part B, and Part C. Part A contain
 [A sample paper for the exam is available here](Syllabus/SamplePaper.pdf).
 
 ---
-## Why GitHub? ##
+## Why GitHub?
 
 Read more about why this course is on GitHub [here](fork.html).
