@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	    <meta name="twitter:card" content="{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.cardtype }}{% endif %}" />
+	    <meta name="twitter:card" content='{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.cardtype }}{% endif %}' />
     <meta name="twitter:site" content="@thosjleeper" />
     <meta name="twitter:creator" content="@thosjleeper" />
-    <meta property="twitter:image" content="{% if page.twitterimage == nil or page.twitterimage == "" %}http://thomasleeper.com/images/thomas2016.jpg{% else %}{{ page.twitterimage }}{% endif %}" />
-    <meta property="twitter:image:alt" content="{% if page.twitterimagealt == nil or page.twitterimagealt == "" %}Headshot of Thomas J. Leeper, PhD{% else %}{{ page.twitterimagealt }}{% endif %}" />
+    <meta property="twitter:image" content='{% if page.twitterimage == nil or page.twitterimage == "" %}http://thomasleeper.com/images/thomas2016.jpg{% else %}{{ page.twitterimage }}{% endif %}' />
+    <meta property="twitter:image:alt" content='{% if page.twitterimagealt == nil or page.twitterimagealt == "" %}Headshot of Thomas J. Leeper, PhD{% else %}{{ page.twitterimagealt }}{% endif %}' />
     <meta property="og:url" content="http://thomasleeper.com{{ page.url }}" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{% if page.description == nil or page.description == "" %}{{ page.title }}{% else %}{{ page.description }}{% endif %}" />
+    <meta property="og:description" content='{% if page.description == nil or page.description == "" %}{{ page.title }}{% else %}{{ page.description }}{% endif %}' />
     <meta property="og:image" content="http://thomasleeper.com/images/thomas2016.jpg" />
 	<title>Thomas J. Leeper</title>
 	<link rel="stylesheet" type="text/css" href="http://thomasleeper.com/assets/css/style.css" />
