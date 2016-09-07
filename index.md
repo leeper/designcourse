@@ -84,6 +84,7 @@ The exam will consist of three parts: Part A, Part B, and Part C. Part A contain
 [A sample paper for the exam is available here](Syllabus/SamplePaper.pdf).
 
 ---
+
 ## Why GitHub?
 
 Read more about why this course is on GitHub [here](fork.html).
