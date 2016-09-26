@@ -34,5 +34,5 @@ You are being asked to develop a research design proposal that demonstrates your
 
 Your assignment must be no more than 3000 words and comply with the Government Department's "Word Count Policy" regarding the formatting and length requirements.
 
-The paper must be submitted by Tuesday March 22nd, XXXX.
+The paper must be submitted by Tuesday, 21 March 2017 at 5:00pm.
 
