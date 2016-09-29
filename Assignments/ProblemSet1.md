@@ -4,32 +4,34 @@ title: Problem Set 1
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 1: Concepts and measurement #
+# Problem Set 1: Identifying and Evaluating Claims
 
-## Purpose ##
-The purpose of this assignment is to assess your ability to define and measure political science concepts.
+## Purpose
 
-## Overview ##
+The purpose of this assignment is to assess your ability to identify and evaluate claims made about political and social life.
+
+## Overview
 
 You are being given a concept to think about. For this concept, you need to define the concept, operationalize it, and consider cases that fall inside and outside the conceptual definition.
 
-## Your Task ##
+## Your Task
 
- 1. Consider the concept of ``terrorism''. Using the classical approach to concept definition, provide a dictionary definition of this concept. Are there any (approximate) synonyms or antonyms for this concept? If so, list them and briefly describe why they those labels are (or are not) appropriate labels for this concept.
+ 1. Identify a claim made about politics (broadly defined) in recent news coverage. 
 
- 2. Using the family resemblance approach, list the essential, constitutive dimensions of this concept. These should be necessary and/or sufficient features.
+ 2. Describe the source of the claim, the contents of the claim, and the evidence used to support to the claim.
 
- 3. Operationalize this concept. How would you measure it? How would you score an observation on this variable? Is the variable binary ("terrorism" or "not-terrorism") or is it categorical or continuous? Justify your operationalization.
+ 3. Analyze the credibility of the claim, given the evidence and the evaluation of that evidence.
 
- 4. Identify two observable instances (cases) of this concept and two instances that do not fit this concept but may be closely related to the concept. Briefly explain and justify why each case falls within or outside the scope of the concept.
+ 4. Analyze the strengths and weaknesses of the evidence presented and the methods used. How might these be improved?
 
- 5. In a few sentences, briefly reflect on what was easy or difficult about this assignment and provide any feedback on the assignment for the instructor.
+ 5. Write a 2-3 sentence self-evaluation reflecting on the assignment (e.g., what were the most and least useful parts of this exercise?) and on your own learning (e.g., what aspects of this were difficult for me? what aspects helped me develop new knowledge?)
 
-## Submission Instructions ##
 
-Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, October 27.
+## Submission Instructions
 
-## Feedback ##
+Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, October 11.
+
+## Feedback
 
 You will receive feedback within two weeks.
 
