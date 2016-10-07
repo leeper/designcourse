@@ -50,8 +50,8 @@ There are eight problem sets for the course (four in each term).
 
 | *Assignment* | *Due Date* |
 | ---------- | -------- |
-| [Identifying and Evaluating Claims](Assignments/) | Tuesday Oct. 11 |
-| [Concepts and Measurement](Assignments/) | Tuesday Nov. 8 |
+| [Identifying and Evaluating Claims](Assignments/ProblemSet1.html) | Tuesday Oct. 11 |
+| [Concepts and Measurement](Assignments/ProblemSet2.html) | Tuesday Nov. 8 |
 | [Data Collection I](Assignments/) | Tuesday Nov. 22 |
 | [Data Collection II](Assignments/) | Tuesday Dec. 13 |
 | [Causality](Assignments/) | Tuesday Jan. 17 |
