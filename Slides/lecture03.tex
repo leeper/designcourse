@@ -52,13 +52,8 @@
 
 \frametitle{Concept Definition}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em 
 \item Classical approach
-	\begin{itemize}
-	\item Minimal
-	\item Maximal
-	\item Ordinal
-	\end{itemize}
 \item Family resemblance approach
 \end{itemize}
 
@@ -146,15 +141,31 @@
 
 \begin{itemize}\itemsep0.75em
 \item To study concepts, we need to be able to observe those concepts
-\item<2-> \textit{Operationalization} is the process of creating measures for concepts
-\item<3-> Recall the definition of \textit{variable}:
+\item<2-> Recall the definition of \textit{variable}:
 	\begin{itemize}
 	\item A dimension that describes an observation
-	\item<4-> The operationalization of a concept
+	\item<3-> The operationalization of a concept
 	\end{itemize}
 \end{itemize}
 
 }
+
+\frame{
+
+\frametitle{Some definitions!}
+
+\begin{itemize}\itemsep1em
+\item Variable: A dimension that describes an observation
+\item Operationalization: the process of deciding on measures for concepts
+\item Coding: Assigning a score for a variable to an observation
+	\begin{itemize}
+	\item<2-> Manual or hand coding
+	\item<2-> Automated coding
+	\end{itemize}
+\end{itemize}
+
+}
+
 
 
 \frame{
@@ -214,6 +225,9 @@ Definition\\
 }
 
 
+% think about cases: given your measures of ``free and fair elections'', how does Britain score on each of those?
+
+
 \frame{
 
 \frametitle{Example: Democracy}
@@ -230,7 +244,29 @@ How do we operationalize this concept?
 }
 
 
+
+
+
 \frame{\huge\vskip20pt\textbf{Questions?}}
+
+
+\frame{
+
+Once we have an operationalization, \textit{coding} turns observations of attributes into \textbf{data set observations} (DSOs)
+
+\begin{center}
+\begin{tabular}{lccc}
+Case & Measure1 & Measure2 & Measure3 \\ \hline
+UK & ? & ? & ? \\
+France & ? & ? & ? \\
+Germany & ? & ? & ? \\
+Spain & ? & ? & ? \\
+\dots \\ \hline
+\end{tabular}
+\end{center}
+
+
+}
 
 
 \frame{
@@ -250,7 +286,7 @@ How do we operationalize this concept?
 
 \vspace{0.5em}
 
-{\small Note: \textit{Ratio} scale measures are interval measures with a non-arbitrary zero value}
+{\footnotesize Note: \textit{Ratio} scale measures are interval measures with a non-arbitrary zero value}
 
 }
 
@@ -259,7 +295,6 @@ How do we operationalize this concept?
 % quantitative is assigning a numerical value
 
 % describe the three types
-
 
 
 \frame{
@@ -282,44 +317,62 @@ How do we operationalize this concept?
 
 \frame{
 
-\frametitle{Coding}
+\frametitle{Why do we care?}
 
-\begin{itemize}\itemsep1em
-\item Variable: A dimension that describes an observation
-\item Coding: Assigning a score for a variable to an observation\\
-	\begin{itemize}
-	\item<2-> Manual or hand coding
-	\item<2-> Automated coding
-	\end{itemize}
-\end{itemize}
+\begin{center}
+
+Once we have measured \textit{variables} for \textit{observations}, we can conduct \textit{analysis}!
+
+\vspace{1em}
+
+\only<2>{And once we have analysis, we can \textit{draw inferences} and \textit{make evidence-based claims}.}
+
+\end{center}
 
 }
-
-% think about cases: given your measures of ``free and fair elections'', how does Britain score on each of those?
-
 
 
 \frame{
+\frametitle{Preview: Analysis}
 
-\frametitle{{\large Using Multiple Indicators}}
+Analysis is the ``systematic and detailed examination of data.''
 
-\begin{itemize}\itemsep1em
+\vspace{1em}
 
-\item Choose the ``best'' one
+Two broad categories of analytic strategies:
 
-\item Apply an AND operator
+\begin{enumerate}
+\item Quantitative analysis
+\item Qualitative analysis
+\end{enumerate}
+
+
+}
+
+\frame{
+\frametitle{Preview: Analysis}
+
+\begin{itemize}\itemsep0.5em
+\item \textit{Quantitative analysis} involves calculation of statistic(s)
 	\begin{itemize}
-	\item Must have all indicators to be coded 1
-	\item Treat indicators as ``ordinal'' in Gerring's sense
+	\item Statistic: ``a quantitative summary of a variable for a set of units''
 	\end{itemize}
-
-\item Scale the indicators (e.g., sum or mean)
-
+\item<2-> Examples
+	\begin{itemize}
+	\item Count/sum
+	\item Mean, median, mode
+	\item Variance, standard deviation
+	\end{itemize}
+\item<3-> \textit{Qualitative analysis} is more general and fluidic
 \end{itemize}
 
 }
 
-% do you add? do you average? do you count some indicators more than others?
+
+
+
+
+
 
 
 
@@ -366,13 +419,29 @@ How do we operationalize this concept?
 \frametitle{Assessing Measures II}
 
 \begin{itemize}\itemsep0.5em
-\item Construct validity is the degree to which a variable measures a concept\footnote{Note: Kellstedt and Whitten call this ``content validity''. They use ``construct validity'' to mean whether a measure has predictive validity (i.e., that the measure is related to measures of other concepts that are theorized to be related).}
+\item Construct validity is the degree to which a variable measures a concept
 \item<2-> Construct validity is \textbf{high} if a variable is a measure of the concept we care about
 \item<3-> Construct validity is \textbf{low} if a variable is actually a measure of something else
 \end{itemize}
 }
 
 % sources: bad concept definition; totally inappropriate measures (using income to measure weight); measure becomes the concept (actual income is replaced by self-reported income)
+
+
+\frame{
+\frametitle{Example: Polity IV\footnote{http://www3.nd.edu/~mcoppedg/crd/PolityIVUsersManualv2002.pdf}}
+
+\footnotesize
+
+Institutionalized Democracy: \textit<2->{Democracy is conceived as three essential, interdependent elements}. One is the \textbf<3->{presence of institutions and procedures through which citizens can express effective preferences about alternative policies and leaders}. Second is the existence of \textbf<4->{institutionalized constraints on the exercise of power by the executive}. Third is the \textbf<5->{guarantee of civil liberties to all citizens in their daily lives and in acts of political participation}. Other aspects of plural democracy, such as the rule of law, systems of checks and balances, freedom of the press, and so on are means to, or specific manifestations of, these general principles. We do not include coded data on civil liberties.
+
+}
+
+\frame{
+\centering
+\includegraphics[height=.9\textheight]{images/polity}
+}
+
 
 \frame{
 
@@ -394,6 +463,29 @@ How do we operationalize this concept?
 % Measures of distinct concepts may be correlated if they are causally related to one another, so simple correlations do not mean two measures are necessarily of the same concept
 
 % mention predictive validity (what Kellstedt and Whitten call construct validity)
+
+
+\frame{
+
+\frametitle{{\large Using Multiple Indicators}}
+
+\begin{itemize}\itemsep1em
+
+\item Choose the ``best'' one
+
+\item Apply an AND operator
+	\begin{itemize}
+	\item Must have all indicators to be coded 1
+	\item Treat indicators as ``ordinal'' in Gerring's sense
+	\end{itemize}
+
+\item Scale the indicators (e.g., sum or mean)
+
+\end{itemize}
+
+}
+
+% do you add? do you average? do you count some indicators more than others?
 
 
 
@@ -467,12 +559,12 @@ Typically used in the context of:
 \frametitle{Key Points}
 
 \begin{enumerate}\itemsep1em
-\item Theory is about concepts
-\item Analysis is about measured variables
+\item We want to make claims about \textit{concepts}
+\item But we only observe and can only analyse observed, measured \textit{variables}
 \item So our task as scientists is to:
 	\begin{itemize}
-	\item Find observable implications of theory
-	\item Draw theoretical implications from measures
+	\item Link the concepts we care about to observable phenomena
+	\item Draw out theoretical implications from measures
 	\end{itemize}
 \end{enumerate}
 }
