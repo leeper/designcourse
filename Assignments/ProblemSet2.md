@@ -16,7 +16,7 @@ You are being given a concept to think about. For this concept, you need to defi
 
 ## Your Task
 
- 1. Consider the concept of ``terrorism''. Using the classical approach to concept definition, provide a dictionary definition of this concept. Are there any (approximate) synonyms or antonyms for this concept? If so, list them and briefly describe why they those labels are (or are not) appropriate labels for this concept.
+ 1. Consider the concept of "terrorism". Using the classical approach to concept definition, provide a dictionary definition of this concept. Are there any (approximate) synonyms or antonyms for this concept? If so, list them and briefly describe why they those labels are (or are not) appropriate labels for this concept.
 
  2. Using the family resemblance approach, list the essential, constitutive dimensions of this concept. These should be necessary and/or sufficient features.
 
@@ -28,7 +28,7 @@ You are being given a concept to think about. For this concept, you need to defi
 
 ## Submission Instructions
 
-Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, October 27.
+Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, November 8.
 
 ## Feedback
 
