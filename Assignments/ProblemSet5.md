@@ -4,33 +4,33 @@ title: Problem Set 5
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 5: Interviewing #
+# Problem Set 5: Causality #
 
 ## Purpose ##
 
-The purpose of this assignment is to provide you with experience conducting interview-based data collection.
+The purpose of this assignment is to assess your ability to identify and select cases for study, make comparisons between cases, analyze case study data, and evaluate the utility of case study methods?
 
 ## Overview ##
 
-You will select a questionnaire from the ["Flash" Eurobarometer survey series](http://www.gesis.org/eurobarometer-data-service/survey-series/flash-eb/study-overview/). Working with a partner, you will then pilot the instrument by interviewing at least six individuals (at least 3 each) and then describe and evaluate your experiences. The goal here is to learn about and reflect on the task of interviewing rather than to analyze the resulting data.
+You are being given a published article to read and evaluate. You need to identify features of the article's analysis and evaluate the quality of that analysis based on what you know about case studies.
 
 ## Your Task ##
 
- 1. Look at the set of ["Flash" Eurobarometer surveys](http://www.gesis.org/eurobarometer-data-service/survey-series/flash-eb/study-overview/), which are collected as part of a long, ongoing data collection by the European Commission. Select a topic that you would like to study from those available and use the questionnaire provided. In your essay, briefly describe what you see as the research question and/or goals of your selected questionnaire. Also list the "ZA Number" for the study (e.g., ZA6586) and include a link to the questionnaire.
+ 1. Read the article "China and India" by Jean Dreze and Amartya Sen (available on the course Reading List). In 2-3 sentences, summarize the article. Your summary should include what the article aims to explain, what kinds of comparisons are made, and what conclusion(s) the authors reach. In 1-2 further sentences, argue why you are or are not convinced by their analysis.
  
- 2. Using what you know about interviewing and asking questions, review the questionnaire you have selected and discuss strengths and weaknesses of the questionnaire (such as question wordings, ordering of questions, the "mode" of data collection, etc.). Write up these discussions in up to one page of your essay.
+ 2. Thinking of the different kinds of cases and the different uses of cases studies (as discussed in readings and the lecture), what kind of case study (or case studies) are discussed in this article? How do the authors use case studies to achieve their analytic goals?
  
- 3. With your questionnaire, collect a pilot data collection in which you interview at least three individuals each (for a total of six individuals). For the purposes of this assignment, it does not matter who you select to interview (friends, family, random individuals). Each interview should comprise two parts: (a) a realistic survey interview in which you ask the questions on the questionnaire and record the answers; and (b) a reflective section where you ask the respondent about what was difficult, confusing, or unclear about the questions being asked. Take notes on the respondents' behaviors, the ease with which they answered the questions, and any comments they made in the reflective portion of the interview.
+ 3. The article focuses on India and China. Why? Is this case selection sensible? What are China and India (during this period) *cases of*?
  
- 4. With your partner, discuss the experience of interviewing. Then, in about three pages, describe and evaluate the experience of interviewing. You might consider the following prompts: What did you learn? How successful was your questionnaire at obtaining appropriate and useful responses? How well did respondents understand the questions? How well did they answer the questions? How well do you think this questionnaire and your interviewing would serve the goal of the Eurobarometer study were you to actually conduct the study? What would you change about the questionnaire to improve this data collection? How much should we trust data generated from responses to survey interviews?
+ 4. Identify what you see as the most important within-case or between-case comparisons made in the article. Why are these important and what do they demonstrate (do they provide description, do they clarify a concept, do they test a theory, etc.)?
  
- 5. Write up your reflections on the exercise, including identifying the most difficult and most enjoyable aspects.
+ 5. Rather than comparing two actual cases, the authors could have adopted Fearon's "counterfactual" method of comparison. How would that have been useful here or wouldn't it have been useful? Justify your answer in a few sentences.
+ 
+ 6. In a few sentences, briefly reflect on what was easy or difficult about this assignment and provide any feedback on the assignment for the instructor.
 
 ## Submission Instructions ##
 
-Your assignment should be no more than four (4) pages of double-spaced A4, Times New Roman font size 12. In addition to these pages, you should submit an appendix containing the full text of your questionnaire or interview script. Submit the assignment via Moodle by Tuesday, January 26.
-
-Each partner should submit an individual copy of the assignment (this facilitates marking the assignments).
+Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, November 24.
 
 ## Feedback ##
 

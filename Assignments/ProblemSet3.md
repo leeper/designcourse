@@ -4,35 +4,34 @@ title: Problem Set 3
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 3: Case Selection #
+# Problem Set 3: Data Collection I (Quantitative Data) #
 
 ## Purpose ##
 
-The purpose of this assignment is to assess your ability to identify and select cases for study, make comparisons between cases, analyze case study data, and evaluate the utility of case study methods?
+The purpose of this problem set is to assess your ability to identify and use existing quantitative data.
 
 ## Overview ##
 
-You are being given a published article to read and evaluate. You need to identify features of the article's analysis and evaluate the quality of that analysis based on what you know about case studies.
+You will identify 2 concepts that can be translated into observable variables that describe countries. Using those concepts you will identify and discuss operationalizations of those concepts in an existing quantitative dataset, describe the data quantitatively, and then produce a visualization that allows for one or more descriptive inferences about the variables.
 
 ## Your Task ##
 
- 1. Read the article "China and India" by Jean Dreze and Amartya Sen (available on the course Reading List). In 2-3 sentences, summarize the article. Your summary should include what the article aims to explain, what kinds of comparisons are made, and what conclusion(s) the authors reach. In 1-2 further sentences, argue why you are or are not convinced by their analysis.
+ 1. Obtain a copy of the Quality of Government Cross-Section data from http://qog.pol.gu.se/data/datadownloads/qogstandarddata and download the "Codebook" that describes the available data.
  
- 2. Thinking of the different kinds of cases and the different uses of cases studies (as discussed in readings and the lecture), what kind of case study (or case studies) are discussed in this article? How do the authors use case studies to achieve their analytic goals?
+ 2. With reference to the available variables, identify and describe two important political science *concepts* that can be measured using the QoG dataset. Define each concept using any appropriate method of concept definition, explicitly identifying constituent attributes.
  
- 3. The article focuses on India and China. Why? Is this case selection sensible? What are China and India (during this period) *cases of*?
+ 3. Identify and discuss the operationalization of each concept in the QoG dataset. (Note: some concepts will allow for many possible operationalizations. Choose only one operationalization per concept.) Identify any strengths or weaknesses of the operationalization (in absolute terms or relative to other possible operationalizations), as they relate to your concept definitions and the criteria discussed in the course (precision, accuracy, construct validity, Gerring's criteria, etc.).
  
- 4. Identify what you see as the most important within-case or between-case comparisons made in the article. Why are these important and what do they demonstrate (do they provide description, do they clarify a concept, do they test a theory, etc.)?
+ 4. Provide a quantitative summary of each variable. Try to state this summary in natural English prose in order to *describe* the data.
  
- 5. Rather than comparing two actual cases, the authors could have adopted Fearon's "counterfactual" method of comparison. How would that have been useful here or wouldn't it have been useful? Justify your answer in a few sentences.
+ 5. Using ggplot2, create three distinct types of visualizations showing different patterns or relationships in your data. For each plot, create a "worse" version and "better" version of the visualization and discuss why the "better" version communicates the pattern or relationship better, either in substantive terms or in purely aesthetic ones.
  
- 6. In a few sentences, briefly reflect on what was easy or difficult about this assignment and provide any feedback on the assignment for the instructor.
+ 6. Write up your reflections on the exercise, including identifying the most difficult and most enjoyable aspects.
 
 ## Submission Instructions ##
 
-Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, November 24.
+Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12 (graphics should be one additional page). Submit the assignment via Moodle by Tuesday, November 22. 
 
 ## Feedback ##
 
 You will receive feedback within two weeks.
-
