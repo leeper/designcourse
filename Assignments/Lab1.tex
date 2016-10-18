@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[margin=0.5in]{geometry}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 \title{Tabulation and Visualization}
 \author{}
@@ -16,13 +16,341 @@
 
 \section{Purpose}
 
-The purpose of this activity is to provide you with an understanding of basic quantitative data handling and both tabular and visual data summarization in the R statistical programming environment.
+The purpose of this activity is to provide you with an understanding of basic quantitative data handling and both tabular and visual data summarization in the R statistical programming environment. The goal is that you develop hands-on experience quantitatively describing data. These skills will be invaluable to you in your future careers and will set a foundation for all of the further course content.
 
 \section{Overview}
 
 This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week.
 
 \section{Your Task}
+
+\begin{enumerate}\itemsep2em
+\item Open the R console or R studio. Install the ``gapminder'' package, which contains a simple dataset of country-level variables, using \texttt{install.packages("gapminder")}. Assuming you encountered no issues, the ``gapminder'' package is now installed on your machine but not loaded.
+
+\item Load the gapminder package using \texttt{library("gapminder")} . The package is now loaded and attached, so that you can use the data therein. Type \texttt{? gapminder} to open the documentation of the dataset.
+
+\item Using the documentation and the Rconsole, answer the following:
+
+	\begin{itemize}
+	\item How many variables are contained in the dataset? Confirm this in R using \texttt{ncol(gapminder)} .
+	\item How many ``observations'' or cases are contained in the dataset? Confirm this in R using \texttt{nrow(gapminder)} .
+	\item What is the ``unit of analysis'' of these data? Is an observation a country, a year, a country-year, or something else?
+	\end{itemize}
+
+\item Use some R functions to obtain glances at the data. 
+
+\begin{verbatim}
+> head(gapminder) # first few rows of the data
+      country continent year lifeExp      pop gdpPercap
+1 Afghanistan      Asia 1952  28.801  8425333  779.4453
+2 Afghanistan      Asia 1957  30.332  9240934  820.8530
+3 Afghanistan      Asia 1962  31.997 10267083  853.1007
+4 Afghanistan      Asia 1967  34.020 11537966  836.1971
+5 Afghanistan      Asia 1972  36.088 13079460  739.9811
+6 Afghanistan      Asia 1977  38.438 14880372  786.1134
+
+> str(gapminder) # a detailed summary of the 'str'ucture of the data
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':       1704 obs. of  6 variables:
+ $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+ $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+ $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+ $ gdpPercap: num  779 821 853 836 740 ...
+
+> summary(gapminder) # a quantitative summary of the data
+        country        continent        year         lifeExp           pop              gdpPercap       
+ Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :23.60   Min.   :6.001e+04   Min.   :   241.2  
+ Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:48.20   1st Qu.:2.794e+06   1st Qu.:  1202.1  
+ Algeria    :  12   Asia    :396   Median :1980   Median :60.71   Median :7.024e+06   Median :  3531.8  
+ Angola     :  12   Europe  :360   Mean   :1980   Mean   :59.47   Mean   :2.960e+07   Mean   :  7215.3  
+ Argentina  :  12   Oceania : 24   3rd Qu.:1993   3rd Qu.:70.85   3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
+ Australia  :  12                  Max.   :2007   Max.   :82.60   Max.   :1.319e+09   Max.   :113523.1  
+ (Other)    :1632
+\end{verbatim}
+ 
+\item How many countries are represented in the dataset? There are many ways to answer this. Two possibilities are:
+
+\begin{itemize}
+\item \texttt{length(table(gapminder[["country"]]))}
+\item \texttt{length(unique(gapminder[["country"]]))}
+\end{itemize}
+
+You should get 142.
+
+\item In the above code, what is the \texttt{table()} function doing? Using the help documentation \texttt{? table} to find out.
+
+\item In the above code, what is the \texttt{length()} function doing? Using the help documentation \texttt{? length} to find out.
+
+\item How many \textit{years} are represented in the dataset? Modify the above code examples to find the answer. The correct answer is 12.
+
+\item What is the life expectancy at birth in years for Algeria in 1967? You can find this out visually by printing the entire dataset by just typing \texttt{gapminder} at the console, or by typing \texttt{fix(gapminder)} to view the data in a spreadsheet format.
+
+But if we want to find the answer \textit{computationally}, we need to \textit{subset} the data. We already did some subsetting above with \texttt{gapminder[["country"]]}, which uses \texttt{[[} bracket notation to extract one variable from the dataset. There are other ways to extract one variable from a dataset:
+
+\begin{enumerate}
+\item \texttt{gapminder[["country"]]}
+\item \texttt{gapminder\$country}
+\item \texttt{gapminder[, "country"]}
+\end{enumerate}
+ 
+All of these are (basically) equivalent. We can also subset so that we only see certain rows of a dataset. To do that, we'll use the third form of subsetting to find out the answer to our question about life expectancy in Algeria in 1967. We'll do this in several steps to see what is going on but only the last step is needed to find the answer:
+
+\begin{enumerate}
+\item Extract only data for Algeria:\\ \texttt{gapminder[gapminder[["country"]] == "Algeria", ]} 
+\item Extract only the \texttt{lifeExp} variable:\\ \texttt{gapminder[, "lifeExp"]} 
+\item Extract all life expectancy data for Algeria:\\ \texttt{gapminder[gapminder[["country"]] == "Algeria", "lifeExp", drop = FALSE]} \footnote{Note: the use of \texttt{drop = FALSE} means that our code returns a ``data frame'' rather than a ``vector.'' If you set \texttt{drop = TRUE} (or just leave that part of the code out), you will get a vector of data instead.}
+\item Subset data to only Algeria for only 1967:\\ \texttt{gapminder[gapminder[["country"]] == "Algeria" \& gapminder[["year"]] == 1967, ]}
+\item Extract life expectancy data for Algeria for only 1967:\\ \texttt{gapminder[gapminder[["country"]] == "Algeria" \& gapminder[["year"]] == 1967,\\ "lifeExp"]}
+\end{enumerate}
+
+You should find that the answer is 51.407.
+
+\item Now modify the above code to find the GDP per capita for Somalia in 1992. The correct answer should be 926.9603.
+
+\item Now let's calculate some \textit{statistics} about these data. For example, to find the mean (average) life expectancy across all countries in 1992, we can extract the vector of life expectancy data for that year:\\
+\texttt{gapminder[gapminder[["year"]] == 1992, "lifeExp"]}
+
+Then we can use the \texttt{mean()} function to take the mean of this vector:\\
+\texttt{mean(gapminder[gapminder[["year"]] == 1992, "lifeExp"])}
+
+The answer should be 64.16034.
+
+\item R provides many other functions to calculate basic statistics. Try the following functions on the life expectancy variable and see what you find:
+
+\begin{itemize}
+\item Median: \texttt{median()}
+\item Variance: \texttt{variance()}
+\item Standard deviation: \texttt{sd()}
+\end{itemize}
+
+\item Another useful way of understanding \textit{categorical} or \textit{ordinal} data is to tabulate it. This means to count how many observations in the data take a particular value of the categorical variable. For example, to see how many countries there are in the dataset that exist on each continent, we can use:
+
+\begin{verbatim}
+> table(gapminder[gapminder[["year"]] == 1992, "continent"])
+
+  Africa Americas     Asia   Europe  Oceania 
+      52       25       33       30        2
+\end{verbatim}
+
+Note how we are using the \texttt{table()} function on a subset of data. Test your knowledge: how many European countries are represented in the data in 1967?
+
+\item The previous exercise demonstrated a ``one-way'' tabulation. But we may also want to produce ``two-way'' or ``multi-way'' tabulations, which we will typically call a \textit{crosstabulation} or \textit{crosstab} for short. To do that, we will use the \texttt{ftable()} function. For example, to see how many cases we have on each continent for each year, we can do:\\
+
+\texttt{ftable(gapminder[["year"]], gapminder[["continent"]])}
+
+Crosstabs are only useful for categorical data. Why is this? What happens when you try to tabulate a numerical/interval variable:\\
+\texttt{ftable(gapminder[["year"]], gapminder[["lifeExp"]])}
+
+\item Tabulations only provide us with one statistic: a \textit{count} (or ``subgroup total''). If we want to describe the data in other ways --- for example to know what the mean life expectancy was in each year --- we need to transform our data through an \textit{aggregation}. An aggregation is:
+
+\begin{quote}
+a new dataset created from the data where observations (rows) are combined by a function applied to subsets of the data defined by a ``grouping factor'' such that the new dataset has one observation per group.
+\end{quote}
+
+For example, a simple aggregation would create a new dataset by applying a count function (\texttt{length()} in R notation) where country is the grouping factor:\\
+\texttt{aggregate(. \~{} country, data = gapminder, length)}
+
+This code uses the \texttt{aggregate()} function to produce an aggregation. The \texttt{. \textasciitilde country} portion of the code indicates that we want to aggregate every variable in our dataset (indicated by \texttt{.}) by \texttt{country} for the dataset \texttt{gapminder} using the aggregating function \texttt{length}. If we replace \texttt{.} with a variable name, we will only aggregate that variable as opposed to every variable in the dataset.
+
+Modifying this code, answer our original question: what is the mean life expectancy (across all countries) by year? You should find, among other things, that the mean life expectancy in 2002 was 65.69492.
+
+\item We can generalize this code further by aggregating not just by one variable but by many. For example, if we wanted to know the mean life expectancy by year \textit{by continent}, we could say:\\
+\texttt{aggregate(lifeExp \~{} continent + year, data = gapminder, mean)}
+
+Using that information, can you confirm that average life expectancy in African countries in 2007 was 54.80604 years?
+
+\item Now modify the above code to create an aggregated dataset that expresses the variability of life expectancy across countries by continent and year. Which continent had the most between-country variability in life expectancies in 2007? What about in 1952?
+
+\item Now let's try graphing. R provides several different graphing libraries. Among the easiest to use is ``ggplot2''. You will need to install it using \texttt{install.packages("ggplot2")} and load it using \texttt{library("ggplot2")}. The article you read for this week by Hadley Wickham describes the theory or philosophy underlying the package and there is a useful cheatsheet available on Moodle. The package is very powerful, so we will only learn the basics at this point.
+
+\item Every graph made with ggplot2 starts with the \texttt{ggplot()} function. This function expresses \textit{what} data we want to visualize and then we add graphing elements to describe \textit{how} we want to visualize those data.
+
+To begin, you can specify that we want to visualize the life expectancy variable:\\
+\texttt{ggplot(gapminder, aes(x = lifeExp))}
+
+You will get a plot but it will be blank because we haven't specified how we want those data visualized. For example, if we just want to see the general distribution of the data, we request a histogram:\\
+
+\texttt{ggplot(gapminder, aes(x = lifeExp)) + geom\_histogram()}
+
+What is the most prevalent life expectancy? What is the general shape of the distribution? Now try drawing a histogram for the \texttt{gdpPercap} variable. How does this distribution compare to the last one?
+
+\item ggplot2 is most useful for visualizing multivariate relationships. For example, if we want to visualize the relationship between GDP per capita and life expectancy for all country--years, we can do:
+
+\texttt{ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + geom\_point()}
+
+What is the general shape of the relationship? Are the two variables closely related (correlated)? Calculate a Pearson's correlation coefficient for the relationship using:\\
+\texttt{cor(gapminder[["gdpPercap"]], gapminder[["lifeExp"]])}
+
+Recalling that the correlation coefficient ranges from -1 (perfectly negatively correlated) to 0 (linearly unrelated) to +1 (perfectly positively correlated), how strong is the relationship?
+
+\item A common procedure in describing data is to transform it. Data that are highly \textit{skewed}, as is GDP per capita, are often ``log transformed'' or ``logged'' by applying the logarithm function to the data in order to make them more easily interpretable. Try logging the GDP per capita variable and seeing how this changes the relationship between it and life expectancy:
+
+\texttt{ggplot(gapminder, aes(x = log(gdpPercap))) + geom\_histogram()}\\
+\texttt{ggplot(gapminder, aes(x = log(gdpPercap), y = lifeExp)) + geom\_point()}\\
+\texttt{cor(log(gapminder[["gdpPercap"]]), gapminder[["lifeExp"]])}\\
+
+How does your understanding of the relationship between the variables change?
+
+\item Now let's try to look at even more complex relationships. Recall above that calculated mean life expectancy by country. Let's try to plot those results so that they are more easily understandable. Draw a scatterplot showing the relationship between year and life expectancy:
+
+\texttt{ggplot(gapminder, aes(x = year, y = lifeExp)) + geom\_point()}
+
+How does the relationship here compare to the results we saw above from aggregating the data? One thing that can help clarify this relationship is to use a different ``geom'' to visualize the data. Try:
+
+\texttt{ggplot(gapminder, aes(x = year, y = lifeExp)) + geom\_smooth()}
+
+What's the trend in life expectancy over time? Now practice a little more sophisticated ggplot2 skill by combining the scatterplot and smoothed trend line:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = year, y = lifeExp)) + 
+  geom_point() + geom_smooth()}
+\end{verbatim}
+
+\item This visualization is helpful for describing a time trend, but we haven't yet expressed the between-continent variation that was perhaps the most interesting part of work so far. To do that, we have to instruct the \texttt{ggplot()} function to account for the continent variable. To do that, let's add a grouping factor:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = year, y = lifeExp, color = continent)) + 
+  geom_point() + geom_smooth()
+\end{verbatim}
+
+What's going on here? How would you describe or characterize the continent-specific time trends?  How much has life expectancy changed over the period of our data? Is the trend the same in all continents?
+
+\item If you look closely at this last visualization, you should see that it is displaying an aggregation. The \texttt{geom\_smooth()} component of our visualization code is aggregating our data by continent and year and then visualizing that pattern. To check that this is in fact what is happening, create an aggregation of this relationship and then visualize it.
+
+In case you're not sure how to do that, try the following:
+
+\begin{verbatim}
+newdat <- aggregate(lifeExp ~ continent + year, data = gapminder, mean)
+ggplot(newdat, aes(x = year, y = lifeExp)) + geom_line(aes(color = continent))
+\end{verbatim}
+
+How do the two graphs compare?\footnote{Note: If you want to compare graphs, it can be useful to save them to your computer's hard drive. To do this, plot the graph, then use the \texttt{ggsave()} function and specify a filename, like \texttt{ggsave("graph1.png")}. Note that graphs will be saved, by default, in your working directory, which you can identify by typing \texttt{getwd()} at the console}
+
+\item One of the interesting things about the data so far has been that the variance of life expectancy across countries within a continent seemed to change over time. To get a visual sense of the distribution of the data, let's use a boxplot (or ``box and whiskers'') visualization:\\
+
+\texttt{ggplot(gapminder, aes(x = factor(year), y = lifeExp)) + geom\_boxplot()}
+
+This graph shows the ``five number summary'' (minimum, first quartile, median, third quartile, and maximum) of the data. Compare the visualization against a tabular representation of the same:\\
+
+\texttt{aggregate(lifeExp \~{} year, data = gapminder, fivenum)}
+
+Do they match?
+
+\item This interesting part of that relationship, though, was between-continent differences. To show them, we can try a couple of different things. one is to group the results by continent using colour:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = factor(year), y = lifeExp)) +     
+    geom_boxplot(aes(color = continent))
+\end{verbatim}
+
+That's kind of ugly and unreadable though. Colour here is just like an axis, we're adding a dimension to the visualization captured by colour. Rather than using colour, we could show that dimension in another way. For example, we could swap the use of year and continent:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +     
+    geom_boxplot(aes(color = factor(year)))
+\end{verbatim}
+
+In that visualization, we see the separate trends for each continent, with year treated as a colour. This is better because it shows the continent-specific trends more clearly and it also shows how much between-country variation there is in Africa and Asia and how little there is in Asia.
+
+What's going on there? Why is the variation in Oceania so small? Create an subset of just the data by extracting just the observations for countries in Oceania. How many are there and which countries are they?
+
+\item The last visualization used colour as a grouping factor. Another approach is to do ``faceting'' where several smaller graphs are made, and each group represents a subset of the data. To do that, we will add a \texttt{facet\_wrap()} feature to the visualization:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = factor(year), y = lifeExp)) +     
+    geom_boxplot() + facet_wrap(~continent)
+\end{verbatim}
+
+If you don't like the look, you can customize it, for example, the following might be better:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = factor(year), y = lifeExp)) +     
+    geom_boxplot() + facet_wrap(~continent, nrow = 1)
+\end{verbatim}
+
+Substantively, this is the same data as shown above but instead of using colours to represent year or continent, we are using facets. In this way, it should be clear that an axis, a colour, and a facet are at the most basic level just an axis --- that is, a way to add dimensionality to a visualization.
+
+\item We can add even more dimensions when we draw scatterplots. Let's go back to the relationship between GDP per capita and life expectancy. We can colour the graph to show continent-specific data:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) + 
+  geom_point()
+\end{verbatim}
+
+But we could also show that dimensionality using facets:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point() + facet_wrap(~continent)
+\end{verbatim}
+
+Or we could convey years as facets:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point() + facet_wrap(~year)
+\end{verbatim}
+
+Or see all of our data by facetting by year and continent:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point() + facet_wrap(~year+continent)
+\end{verbatim}
+
+That basically becomes unreadable, though. So we might be better of displaying one of those dimensions through colour and maybe log transform for clarity:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = log(gdpPercap), y = lifeExp)) + 
+  geom_point(aes(colour = continent)) + facet_wrap(~year)
+\end{verbatim}
+
+We can add further dimensions, such as population size, as well. Now not only axes, colour, and facet are used as dimensions, but so is the size of the points representing each country:
+
+\begin{verbatim}
+ggplot(gapminder, aes(x = log(gdpPercap), y = lifeExp)) + 
+  geom_point(aes(colour = continent, size = pop)) + 
+  facet_wrap(~year)
+\end{verbatim}
+
+What are the large outlier countries in Asia?
+
+\item Finally, it is worth noting that ggplot2 visualizations are highly customizable. One of the simplest ways to customize them is to use ``themes''. These change the colours and other features of graphs in ways that may be attractive. To show how they work, we will save our graph as an object called \texttt{g} and then change the theme associated with it to see various options:
+
+\begin{verbatim}
+g <- ggplot(gapminder, aes(x = log(gdpPercap), y = lifeExp)) + 
+  geom_point(aes(colour = continent, size = pop)) + 
+  facet_wrap(~year)
+
+g + theme_bw()
+g + theme_gray()
+g + theme_minimal()
+\end{verbatim}
+
+See \texttt{? theme\_bw} for options. There is an another package called ``ggthemes'' that adds additional options. Install and load it to use these themes, such as:
+
+\begin{verbatim}
+library("ggthemes")
+g + theme_economist()
+g + theme_solarized(light = FALSE)
+\end{verbatim}
+
+It is also possible to modify other features such as:
+
+\begin{itemize}
+\item Title, using \texttt{ggtitle()}
+\item x-axis and y-axis labels, using \texttt{xlab()} and \texttt{ylab()}
+\item x-axis and y-axis labels and dimensions, using \texttt{scale\_x\_continuous()}, \texttt{scale\_x\_continuous()}, etc.
+\end{itemize}
+
+See the documentation and the ggplot2 cheatsheet for guidance on these modifications.
+
+\end{enumerate}
+
+\section{Feedback and Assistance}
+
+There is no explicit feedback on this activity, but please attend office hours if you have questions about using R or about any of the substantive material in this lab activity.
 
 
 \end{document}
