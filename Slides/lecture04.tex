@@ -41,6 +41,53 @@
 
 \frame{\tableofcontents}
 
+\section{Problem Set 1}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Problem Set 1}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Generally good, but some aspects could be improved across the board
+
+	\begin{itemize}\footnotesize
+	\item Academic style and format
+	\item Precision in language
+	\item Focus less on who is making the claim and how, and more on what the claim precisely is (what concepts are at stake? is it descriptive, causal, predictive, normative?)
+	\item Reflection is key
+	\end{itemize}
+
+\item Administrative points
+	
+	\begin{itemize}\footnotesize
+	\item Submit anonymously
+	\item Follow guidance on formatting
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Looking Ahead}
+
+\begin{itemize}\itemsep0.25em
+\item PS 2 covers material on concepts and operationalization (Nov 8)
+\item PS 3 covers today's material (Nov 22)
+\item PS 4 will involve group work (Dec 13)
+
+\vspace{0.5em}
+
+\item Start thinking about topics in political science that interest you (Nov/Dec)
+\end{itemize}
+
+}
+
+
+
 \section{Getting a grip on data}
 \frame{\tableofcontents[currentsection]}
 
@@ -399,7 +446,7 @@ $Corr(X,Y) = 08.16$
 
 \frame{
 \begin{center}
-\includegraphics[height=\textheight]{images/tufteboxplot.png}
+\includegraphics[width=\textwidth]{images/tufteboxplot.png}
 \end{center}
 
 {\footnotesize Source: \href{http://stackoverflow.com/questions/24152177/controlling-spacing-in-custom-ggplot2-geoms}{StackOverflow}}
@@ -464,6 +511,24 @@ A visualization should be a display of quantitative (and/or qualitative) data th
 
 }
 
+\frame{
+\frametitle{Homework}
+
+\begin{enumerate}
+\item Find a visualization anywhere on the internet.
+\item Post a link to the visualization to the Moodle forum.
+\item Include the visualization as an image.
+\item Describe:
+	\begin{itemize}
+	\item What is being visualized
+	\item Strengths of the visualization
+	\item Weaknesses of the visualization
+	\end{itemize}
+
+\end{enumerate}
+
+
+}
 
 
 \frame{}
@@ -518,41 +583,6 @@ R has 5+ graphics ``systems''
 
 
 
-\begin{frame}[fragile]
-
-\tiny
-
-\begin{verbatim}
-library("rio")
-d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan15.dta")
-
-summary(d$wef_lifexp) # life expectancy
-summary(d$fh_polity2) # Polity scores
-summary(d$gle_cgdpc)  # GDP
-summary(d$dpi_finter) # executive term limits
-summary(d$bti_cr)     # civil rights index
-
-library("ggplot2")
-p <- ggplot(d)
-p + aes(x = fh_polity2) + geom_density()
-p + aes(x = fh_polity2) + geom_histogram()
-
-p + aes(x = bti_cr) + geom_bar()
-
-p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point() + 
-    scale_x_log10() + scale_y_log10()
-
-p + aes(1, fh_polity2) + geom_boxplot()
-p + aes(factor(bti_cr), fh_polity2) + geom_boxplot()
-
-p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point(aes(color = fh_polity2))
-p + aes(x = fh_polity2, y = wef_lifexp) + geom_point(aes(size = gle_cgdpc))
-
-p + aes(x = fh_polity2, y = wef_lifexp) + geom_point() + theme_bw()
-\end{verbatim}
-
-\end{frame}
-
 \frame{
 \frametitle{{\normalsize Ways to display a variable}}
 
@@ -567,9 +597,6 @@ In a scatterplot, \texttt{geom\_point()} allows us to display a variable as:
 \item Alpha (via \texttt{aes(alpha=)})
 \item Size (via \texttt{aes(size=)})
 \item Shape (via \texttt{aes(shape=)})
-
-\vspace{0.5em}
-
 \item Facets (via \texttt{facet\_wrap()})
 \item Animation (e.g., \url{http://www.gapminder.org/world})
 \end{itemize}
@@ -625,6 +652,40 @@ In a scatterplot, \texttt{geom\_point()} allows us to display a variable as:
 
 }
 
+\begin{frame}[fragile]
+
+\tiny
+
+\begin{verbatim}
+library("rio")
+d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan15.dta")
+
+summary(d$wef_lifexp) # life expectancy
+summary(d$fh_polity2) # Polity scores
+summary(d$gle_cgdpc)  # GDP
+summary(d$dpi_finter) # executive term limits
+summary(d$bti_cr)     # civil rights index
+
+library("ggplot2")
+p <- ggplot(d)
+p + aes(x = fh_polity2) + geom_density()
+p + aes(x = fh_polity2) + geom_histogram()
+
+p + aes(x = bti_cr) + geom_bar()
+
+p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point() + 
+    scale_x_log10() + scale_y_log10()
+
+p + aes(1, fh_polity2) + geom_boxplot()
+p + aes(factor(bti_cr), fh_polity2) + geom_boxplot()
+
+p + aes(x = gle_cgdpc, y = wef_lifexp) + geom_point(aes(color = fh_polity2))
+p + aes(x = fh_polity2, y = wef_lifexp) + geom_point(aes(size = gle_cgdpc))
+
+p + aes(x = fh_polity2, y = wef_lifexp) + geom_point() + theme_bw()
+\end{verbatim}
+
+\end{frame}
 
 
 
