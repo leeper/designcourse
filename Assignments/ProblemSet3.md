@@ -4,17 +4,17 @@ title: Problem Set 3
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 3: Data Collection I (Quantitative Data) #
+# Problem Set 3: Data Collection I (Quantitative Data)
 
-## Purpose ##
+## Purpose
 
 The purpose of this problem set is to assess your ability to identify and use existing quantitative data.
 
-## Overview ##
+## Overview
 
 You will identify 2 concepts that can be translated into observable variables that describe countries. Using those concepts you will identify and discuss operationalizations of those concepts in an existing quantitative dataset, describe the data quantitatively, and then produce a visualization that allows for one or more descriptive inferences about the variables.
 
-## Your Task ##
+## Your Task
 
  1. Obtain a copy of the Quality of Government Cross-Section data from http://qog.pol.gu.se/data/datadownloads/qogstandarddata and download the "Codebook" that describes the available data.
  
@@ -33,10 +33,10 @@ You will identify 2 concepts that can be translated into observable variables th
  
  6. Write up your reflections on the exercise, including identifying the most difficult and most enjoyable aspects.
 
-## Submission Instructions ##
+## Submission Instructions
 
 Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12 (graphics should be one additional page). Submit the assignment via Moodle by Tuesday, November 22. 
 
-## Feedback ##
+## Feedback
 
 You will receive feedback within two weeks.
