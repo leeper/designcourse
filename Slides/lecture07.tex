@@ -1,7 +1,8 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing}
 \usepackage[normalem]{ulem}
+\setbeamertemplate{mini frames}{}
 
 \title{Interviewing, Structured and Unstructured}
 
@@ -13,17 +14,256 @@
 
 \frame{\tableofcontents}
 
-\section{Questionnaire Design}
+
+\section{Formative Work}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Problem Set 4}
+	\frametitle{Problem Set 2}
 	\begin{itemize}\itemsep1em
-	\item PS 4 was the first time we tried to obtain data from raw materials
+	\item Seems like there were some issues with concept definition
 	\item How did that go? What was challenging about it?
-	\item<2-> Interviewing may seem easier than text analysis, but it poses unique challenges
 	\end{itemize}
 }
+
+
+\frame{
+\frametitle{Classical Approach}
+
+
+\begin{itemize}\itemsep0.5em
+\item Specify a set of ``constitutive dimensions'' that \textit{are} the concept
+	\begin{itemize}
+	\item Fundamental characteristics of the concept
+	\item Not causes or effects
+	\item Not measures of the concept
+	\end{itemize}
+\item<2-> Dimensions are \textit{necessary and jointly sufficient}
+
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Family Resemblence}
+
+\begin{itemize}
+\item Classical approach focuses on \textit{necessary} elements
+\item Some concepts have no necessary elements but are still meaningful % Game
+\item<2-> We might also think about elements that are \textit{sufficient} to establish membership
+\end{itemize}
+}
+
+\begin{frame}[fragile]
+
+\frametitle{Trade-offs}
+
+\vspace{-2em}
+
+\begin{center}
+\begin{tikzpicture}
+	% x-axis
+    \draw[->] (0,0) node[below] (origin) {} -- (5,0) node[right] (xaxis) {};
+    \node[below] at (2.5,-0.75) {\small Intension (More attributes)};
+	\node[below] at (0.5,0) {\footnotesize Low};
+	\node[below] at (5,0) {\footnotesize High};
+	
+	% y-axis
+    \draw[->] (origin) -- (0,5) node[left] (yaxis) {};
+	\node[left, text width=5cm, align=center] at (0,2.5) {\small Extension\\(More cases)};
+	\node[left] at (0,0.5) {\footnotesize Low};
+	\node[left] at (0,5) {\footnotesize High};
+
+    \draw[<->, solid] (0.5,4.5) -- (4.5,0.5);
+    \node[above, rotate=45] at (4,4) {\tiny Sufficient};
+    
+    \draw[<->, dashed] (0.5,0.5) -- (4.5,4.5);
+    \node[rotate=-45] at (4,1.25) {\tiny Necessary};
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+% Need to balance specificity against abstraction/generality
+% In classical approach, intension and extension are inversely related (Gerring Fig. 5.1)
+% In family resemblence approach, intension and extension are positively related
+% If we increase necessary attributes, we have fewer cases of that concept and it is more specific
+% If we increase sufficient attributes, we have more cases of that concept and it is more general
+
+
+\frame{
+	\frametitle{Problem Set 3}
+	\begin{itemize}\itemsep1em
+	\item Any challenges with this so far?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Research Proposal}
+	\begin{itemize}\itemsep1em
+	\item<1-> This is a \textit{prospectus}
+		\begin{itemize}
+		\item Introduction
+		\item Theoretical literature review
+		\item Plan of data collection
+		\item Planned analysis
+		\item Reflective, critical conclusion
+		\end{itemize}
+	\item<2-> Presentations are meant for very early feedback
+		\begin{itemize}
+		\item You can change your topic later
+		\item Please also use office hours
+		\end{itemize}
+	\end{itemize}
+}
+
+
+\section{Participant Observation}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{``Field work''}
+\begin{itemize}\itemsep0.5em
+\item Any research activity outside the university setting % soaking and poking
+	\begin{itemize}\footnotesize
+	\item Textual or archival searches
+	\item Interviews (structured or unstructured)
+	\item Focus groups
+	\item Participant observation
+	\item Some mix of these
+	\end{itemize}
+\item Term is agnostic about approach, theory, and method
+\item Might be one-off, sporadic, or long-term
+\end{itemize}
+}
+
+% continuum between observing processes directly and gathering secondary source evidence about processes that cannot be directly observed
+
+\frame{
+\frametitle{Participant Observation}
+
+\small
+\begin{itemize}
+\item Definition: ``Participant observation is a research strategy whereby the researcher becomes involved in a social situation for the purpose of understanding the behaviour of those engaged in the setting\dots The outcome of the research is a detailed account of the activities and behaviour of those involved.''\footnote{p.265 from Burnham et al. 2008. \textit{Research Methods in Politics}. 2nd Edition. Palgrave.}
+\item<2-> Intentionally subjective/reflective; no belief in possible observational objectivity
+\item<3-> Generally inductive in nature
+\end{itemize}
+}
+
+% A common approach in case study research
+% Breakdown of objectivity is this desirable or not?
+
+
+
+\frame{
+\frametitle{Assorted Examples}
+
+\small
+
+\begin{enumerate}
+\item Fenno, R. 1978. \textit{Home Style: U.S. House Members in their Districts}. Pearson.
+\item<2-> Goffman, A. 2014. \textit{On the Run: Fugitive Life in an American City}. Chicago.
+\item<3-> Cramer, K. 2016. \textit{The Politics of Resentment}. Chicago.
+\item<4-> Nielsen, R.K. 2012. \textit{Ground Wars}. Princeton.
+\item<5-> Festinger, Riecken, and Schachter. 1956. \textit{When Prophecy Fails}. Harper.
+\end{enumerate}
+
+}
+
+
+
+
+
+\frame{
+
+\frametitle{Four Ideal Types\footnote{Gold, R. 1958. ``Roles in Sociological Field Observation.'' \textit{Social Forces} 36(3): 217--23.}}
+
+\begin{enumerate}\itemsep1em
+\item Complete participant
+\item Participant as observer
+\item Observer as participant
+\item Complete observer
+\end{enumerate}
+
+}
+
+\frame{
+\frametitle{Complete participant}
+\begin{itemize}\itemsep1em
+\item Participate without disclosing observer/researcher role
+\item Essentially covert (``being undercover'')
+\item May be useful in sensitive domains
+\item Raises ethical concerns
+\end{itemize}
+}
+
+\frame{
+\frametitle{Participant as observer}
+\begin{itemize}\itemsep1em
+\item Participate, but not fully
+\item Retain explicit observer role
+\item Negotiate exact role in the situation and access to group members and information
+\end{itemize}
+}
+
+\frame{
+\frametitle{Observer as participant}
+\begin{itemize}\itemsep1em
+\item Essentially interviews
+\item Limited time frames
+\item Note: Sometimes seen as indistinguishable from ``complete observer''
+\end{itemize}
+}
+
+\frame{
+\frametitle{Complete observer}
+\begin{itemize}\itemsep1em
+\item Purely observer role; no participation
+\item Still requires negotiated access in many cases, but may not require the same types of consent as participant roles
+\item Easier to keep a distance and avoid ``rapport'' with group members
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Participant vs. Observer}
+
+\begin{itemize}
+\item Not always a choice
+	\begin{itemize}\footnotesize
+	\item Access might be limited
+	\item Ethical obligations
+	\end{itemize}
+\item<2-> Is situation public vs. private?
+\item<3-> How does your presence change the situation?
+\item<4-> How does being a participant change your interpretations of events?
+\item<5-> How does being an observer change your interpretation of events?
+\end{itemize}
+}
+
+% Where is Fenno on the continuum between participant and observer?
+% Where is Goffman?
+
+
+\frame{
+\frametitle{{\large Ethnography vs. Journalism}}
+
+\begin{center}
+\Large What's the difference?
+\end{center}
+
+}
+
+
+\frame{}
+
+\section{Questionnaire Methods}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{}
+
 
 
 \frame{
@@ -34,6 +274,46 @@
 		\item Important concepts may require multiple measures
 	\end{itemize}
 }
+
+\frame{
+\frametitle{Operationalization}
+
+\vspace{-2em}
+
+\begin{center}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20!white, text width=5em, text centered, rounded corners, minimum height=1em, node distance=7em]
+\begin{tikzpicture}[scale=0.5]
+\draw<1-> [block] node at (0,0) (concept) {{\Large Concept}};
+\draw<1-> [block] node at (-5, -3) (a1) {Attribute};
+\draw<1-> [block] node at (0, -3) (a2) {Attribute};
+\draw<1-> [block] node at (5, -3) (a3) {Attribute};
+\draw<1-> [->, very thick] (concept) -- (a1);
+\draw<1-> [->, very thick] (concept) -- (a2);
+\draw<1-> [->, very thick] (concept) -- (a3);
+
+\draw<1-> [block, align=center] node at (-11.5, -1.5) (def) {Concept Definition};
+\draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
+(-7.5,-3.4) -- (-7.5,0.5);
+
+\draw<1-> [block] node at (-5, -8) (m1) {{\small Measure(s)}};
+\draw<1-> [block] node at (0, -8) (m2) {{\small Measure(s)}};
+\draw<1-> [block] node at (5, -8) (m3) {{\small Measure(s)}};
+
+\draw<1-> [->, very thick] (a1) -- (m1);
+\draw<1-> [->, very thick] (a2) -- (m2);
+\draw<1-> [->, very thick] (a3) -- (m3);
+
+\draw<1-> [block, align=center] node at (-11.5, -6.5) (def) {Operation-alization};
+\draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
+(-7.5,-8.5) -- (-7.5,-3.6);
+
+
+\end{tikzpicture}
+\end{center}
+
+
+}
+
 
 \frame{
 	\frametitle{Construct Validity, Accuracy, and Precision}
@@ -283,6 +563,8 @@
 }
 
 
+\frame{}
+
 \subsection{Recall-type Questions}
 \frame{\tableofcontents[currentsubsection]}
 
@@ -412,7 +694,7 @@
 
 
 
-\section{Sensitive Topics}
+\subsection{Sensitive Topics}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
@@ -502,13 +784,13 @@
 }
 
 
-\section{Problem Set 5}
+\section{Problem Set 4}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-\frametitle{Problem Set 5}
+\frametitle{Problem Set 4}
 \begin{itemize}
-\item Work in pairs to conduct a ``pilot'' study
+\item Work as class groups to conduct a ``pilot'' study
 \item Use a Eurobarometer survey of your choice
 \item Evaluate the process of collecting interview data
 \end{itemize}
@@ -548,11 +830,10 @@
 
 }
 
+
+
+\appendix
 \frame{}
-
-\section{Participant Observation}
-\frame{\tableofcontents[currentsection]}
-
 
 
 \frame{
@@ -570,194 +851,5 @@
 \end{itemize}
 }
 
-
-\frame{
-\frametitle{``Field work''}
-\begin{itemize}\itemsep0.5em
-\item Any research activity outside the university setting % soaking and poking
-	\begin{itemize}\footnotesize
-	\item Textual or archival searches
-	\item Interviews (structured or unstructured)
-	\item Focus groups
-	\item Participant observation
-	\item Some mix of these
-	\end{itemize}
-\item Term is agnostic about approach, theory, and method
-\item Might be one-off, sporadic, or long-term
-\end{itemize}
-}
-
-
-\frame{
-\frametitle{Participant Observation}
-
-\small
-\begin{itemize}
-\item Definition: ``Participant observation is a research strategy whereby the researcher becomes involved in a social situation for the purpose of understanding the behaviour of those engaged in the setting\dots The outcome of the research is a detailed account of the activities and behaviour of those involved.''\footnote{p.265 from Burnham et al. 2008. \textit{Research Methods in Politics}. 2nd Edition. Palgrave.}
-\item<2-> Intentionally subjective/reflective; no belief in possible observational objectivity
-\item<3-> Generally inductive in nature
-\end{itemize}
-}
-
-% A common approach in case study research
-% Breakdown of objectivity is this desirable or not?
-
-
-
-\frame{
-\frametitle{Assorted Examples}
-
-\small
-
-\begin{enumerate}
-\item Fenno, R. 1978. \textit{Home Style: U.S. House Members in their Districts}. Pearson.
-\item<2-> Goffman, A. 2014. \textit{On the Run: Fugitive Life in an American City}. Chicago.
-\item<3-> Cramer, K. 2016. \textit{The Politics of Resentment}. Chicago.
-\item<4-> Nielsen, R.K. 2012. \textit{Ground Wars}. Princeton.
-\item<5-> Festinger, Riecken, and Schachter. 1956. \textit{When Prophecy Fails}. Harper.
-\end{enumerate}
-
-}
-
-
-\frame{
-\frametitle{Operationalization}
-
-\vspace{-2em}
-
-\begin{center}
-\tikzstyle{block} = [rectangle, draw, fill=blue!20!white, text width=5em, text centered, rounded corners, minimum height=1em, node distance=7em]
-\begin{tikzpicture}[scale=0.5]
-\draw<1-> [block] node at (0,0) (concept) {{\Large Concept}};
-\draw<1-> [block] node at (-5, -3) (a1) {Attribute};
-\draw<1-> [block] node at (0, -3) (a2) {Attribute};
-\draw<1-> [block] node at (5, -3) (a3) {Attribute};
-\draw<1-> [->, very thick] (concept) -- (a1);
-\draw<1-> [->, very thick] (concept) -- (a2);
-\draw<1-> [->, very thick] (concept) -- (a3);
-
-\draw<1-> [block, align=center] node at (-11.5, -1.5) (def) {Concept Definition};
-\draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
-(-7.5,-3.4) -- (-7.5,0.5);
-
-\draw<1-> [block] node at (-5, -8) (m1) {{\small Measure(s)}};
-\draw<1-> [block] node at (0, -8) (m2) {{\small Measure(s)}};
-\draw<1-> [block] node at (5, -8) (m3) {{\small Measure(s)}};
-
-\draw<1-> [->, very thick] (a1) -- (m1);
-\draw<1-> [->, very thick] (a2) -- (m2);
-\draw<1-> [->, very thick] (a3) -- (m3);
-
-\draw<1-> [block, align=center] node at (-11.5, -6.5) (def) {Operation-alization};
-\draw<1-> [decorate,very thick, decoration={brace,amplitude=10pt},xshift=-10pt,yshift=0pt]
-(-7.5,-8.5) -- (-7.5,-3.6);
-
-
-\end{tikzpicture}
-\end{center}
-
-
-}
-
-
-\frame{
-\frametitle{Measurement}
-
-\begin{itemize}\itemsep1em
-\item<2-> What kind of observations do these authors make?
-\item<3-> What is their unit of analysis?
-\item<4-> Does participant observation generate DSOs or CPOs?
-\end{itemize}
-
-}
-
-
-
-
-\frame{
-
-\frametitle{Four Ideal Types\footnote{Gold, R. 1958. ``Roles in Sociological Field Observation.'' \textit{Social Forces} 36(3): 217--23.}}
-
-\begin{enumerate}\itemsep1em
-\item Complete participant
-\item Participant as observer
-\item Observer as participant
-\item Complete observer
-\end{enumerate}
-
-}
-
-\frame{
-\frametitle{Complete participant}
-\begin{itemize}\itemsep1em
-\item Participate without disclosing observer/researcher role
-\item Essentially covert (``being undercover'')
-\item May be useful in sensitive domains
-\item Raises ethical concerns
-\end{itemize}
-}
-
-\frame{
-\frametitle{Participant as observer}
-\begin{itemize}\itemsep1em
-\item Participate, but not fully
-\item Retain explicit observer role
-\item Negotiate exact role in the situation and access to group members and information
-\end{itemize}
-}
-
-\frame{
-\frametitle{Observer as participant}
-\begin{itemize}\itemsep1em
-\item Essentially interviews
-\item Limited time frames
-\item Note: Sometimes seen as indistinguishable from ``complete observer''
-\end{itemize}
-}
-
-\frame{
-\frametitle{Complete observer}
-\begin{itemize}\itemsep1em
-\item Purely observer role; no participation
-\item Still requires negotiated access in many cases, but may not require the same types of consent as participant roles
-\item Easier to keep a distance and avoid ``rapport'' with group members
-\end{itemize}
-}
-
-
-\frame{
-\frametitle{Participant vs. Observer}
-
-\begin{itemize}
-\item Not always a choice
-	\begin{itemize}\footnotesize
-	\item Access might be limited
-	\item Ethical obligations
-	\end{itemize}
-\item<2-> Is situation public vs. private?
-\item<3-> How does your presence change the situation?
-\item<4-> How does being a participant change your interpretations of events?
-\item<5-> How does being an observer change your interpretation of events?
-\end{itemize}
-}
-
-% Where is Fenno on the continuum between participant and observer?
-% Where is Goffman?
-
-
-\frame{
-\frametitle{{\large Ethnography vs. Journalism}}
-
-\begin{center}
-\Large What's the difference?
-\end{center}
-
-}
-
-
-
-
-\appendix
-\frame{}
 
 \end{document}
