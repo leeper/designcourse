@@ -13,5 +13,41 @@
 
 \frame{\tableofcontents}
 
+\section[Review]{Simple Statistics}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\frametitle{Relationship}
+
+\begin{itemize}\itemsep1em
+\item<1-> Covariance:\\
+	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
+\item<2-> Correlation:\\
+	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Correlation is linear!}
+
+\includegraphics[width=\textwidth]{images/correlation}
+
+\vspace{1em}
+{\footnotesize Source: \href{https://commons.wikimedia.org/wiki/File:Correlation_examples2.svg}{Wikimedia}}
+}
+
+\frame{
+	\frametitle{Guess the Correlation!}
+	\begin{enumerate}\itemsep0.5em
+	\item Go to: {\small \url{http://guessthecorrelation.com/}}
+	\item Play a few rounds
+	\end{enumerate}
+
+}
+
+
 
 \end{document}
