@@ -18,12 +18,16 @@
 
 \frame{
 	\frametitle{Case selection}
-	\begin{itemize}
-	\item Purposive
-	\item Comparative
-	\item Representative
+	
+	Our ambitions about what kind of inferences we want to derive from our descriptions influence how we select cases.
+	
+	
+	\begin{itemize}\itemsep1em
+	\item<2-> Purposive
+	\item<3-> Comparative
+	\item<4-> Representative
 		\begin{itemize}
-		\item Unrepresentative
+		\item<5-> Unrepresentative
 		\end{itemize}
 	\end{itemize}
 }
@@ -34,18 +38,18 @@
 	
 	\Large
 	\begin{center}
-	What does it mean for a sample to be representative of a population?
+	What does it mean for a ``sample'' (set of cases) to be representative of a population?
 	\end{center}
 }
 
 \frame{
-	\frametitle{{\large Different conceptualizations\\ of representativeness}}
+	\frametitle{{\large Different conceptualizations}}
 	
 	\small
 	
 	\begin{itemize}\itemsep0.5em
 		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
-		\item \textbf{Demographic-based}: A sample is representative because it resembles in the population some way (e.g., same proportion of women in sample and population, etc.)
+		\item \textbf{Model-based}: A sample is representative because it resembles in the population with respect to certain variables (e.g., same proportion of women in sample and population, etc.)
 		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
 	\end{itemize}
 }
@@ -62,23 +66,14 @@
 	\end{itemize}
 }
 
-\section{Model-based Selection}
-\frame{\tableofcontents[currentsection]}
-
-
-
-
-
-
-
 
 \section{Design-based (Statistical) Sampling}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Inference from Sample to Population}
+	\frametitle{{\normalsize Inference from Sample to Population}}
 	\begin{itemize}\itemsep0.5em
-	\item We want to know population parameter $\theta$
+	\item We want to know pop. parameter $\theta$
 	\item We only observe sample estimate $\hat{\theta}$
 	\item We have a guess but are also uncertain
 	\vspace{1em}
@@ -231,7 +226,7 @@
 	$n = $ sample size
 	
 	\begin{equation}
-	SE_{\bar{y}} = \sqrt{\frac{(1-f)}{n}p(1-p)}
+	SE_{p} = \sqrt{(1-f)\frac{p(1-p)}{n}}
 	\end{equation}
 	where $f = $ proportion of population sampled,\\
 	$p = $ sample proportion, and\\
@@ -244,10 +239,10 @@
 	\frametitle{Margin of Error}
 
 	\begin{itemize}\itemsep0.5em
-	\item Common to express SE as a ``margin of error''
-	\item MoE is twice the Standard Error
+	\item Uncertainty often stated in terms of a ``margin of error''
+	\item Standard MoE is twice the SE
 	\item For estimated proportions, expressed as:\\
-		``+/- MoE percentage points''
+		``p $\pm$ MoE percentage points''
 	\item<2-> So for an SE of 0.01, how can we describe this?
 	\end{itemize}
 }
@@ -262,11 +257,21 @@
 
 \frame{
 
-\LARGE
+{\LARGE
 
 \begin{center}
 Questions?
 \end{center}
+}
+
+\vspace{2em}
+
+{\normalsize
+
+\only<2->{(There is an R lab activity about this.)}
+
+}
+
 
 }
 
@@ -280,14 +285,15 @@ Questions?
 
 \frame[label=activity1]{
 
+\begin{center}
 What proportion of all Haribo Starmix gummies are $\heartsuit$s?
+\end{center}
 
 	\begin{enumerate}
 	\item<2-> Everyone collect a random sample
-	\item<3-> Calculate $\hat{p} = \frac{\heartsuit}{n}$
-	\item<4-> Report $\hat{p}$
-	\item<5-> Calculate element variance: $p(1-p)$
-	\item<6-> What is your margin of error?
+	\item<3-> Calculate $\hat{p} = \dfrac{\sum\heartsuit}{n}$
+	\item<4-> Calculate element variance: $Var(x) = p(1-p)$
+	\item<5-> Calculate MoE: $\hat{p} \pm \left(2*\sqrt{\dfrac{Var(x)}{n}} \right)$
 	\end{enumerate}
 
 }
@@ -302,7 +308,7 @@ What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 	\item<2-> Uncertainty is influenced by:
 		\begin{itemize}
 		\item Sample size
-		\item \textit{Element} variance
+		\item \textit{Element} variance\footnote{Population element variance is estimated by sample element variance.}
 		\item Population size?
 		\end{itemize}
 	\item<3-> So what do we do?
@@ -316,54 +322,22 @@ What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 
 \frame{
 	\frametitle{Estimating sample size}
-    Determining sample size requires:
-    	\begin{itemize}
-    		\item A possible value of $p$
-    		\item A desired precision (SE)
-    	\end{itemize}
-	\vspace{1em}
-	So:
-	\begin{equation}
-	n = \frac{p(1-p)}{SE^2} = \frac{0.5(1-0.5)}{SE^2} = \frac{0.25}{SE^2}
-	\end{equation}
-	\vspace{1em}
-	{\footnotesize Note: Element variance is highest when $p = 0.5$ .}
-}
-
-\frame{
-	\frametitle{Estimating sample size}
-	What precision (margin of error) do we want?
+	{\small What precision (margin of error) do we want?}\\
 	\begin{itemize}\small
-		\item +/- 2 percentage points: $SE = 0.01$
+		\item $\pm 2$ percentage points: $SE = 0.01$
 			\begin{equation}
 			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
 			\end{equation}
-		\item<2-> +/- 5 percentage points: $SE = 0.025$
+		\item<2-> $\pm 5$ percentage points: $SE = 0.025$
 			\begin{equation}
 			n = \frac{0.25}{0.000625} = 400
 			\end{equation}
-		\item<3-> +/- 0.5 percentage points: $SE = 0.0025$
+		\item<3-> $\pm 0.5$ percentage points: $SE = 0.0025$
 			\begin{equation}
 			n = \frac{0.25}{0.00000625} = 40,000
 			\end{equation}
 	\end{itemize}
 }
-
-\frame{
-
-	\frametitle{{\normalsize How do we reduce uncertainty?}}
-	\begin{itemize}\itemsep1em
-	\item<2-> Increase sample size
-	\item<3-> Reduce element variance
-	\item<4-> Change sampling design
-		\begin{itemize}
-		\item Stratified sampling\\(tends to decrease SEs)
-		\item Cluster sampling\\(tends to increase SEs)
-		\end{itemize}
-	\end{itemize}
-
-}
-
 
 
 
@@ -373,12 +347,13 @@ What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 \frametitle{Preview}
 
 	\begin{itemize}\itemsep1em
+	\item Continue with statistics in middle of LT
 	\item Next week we'll discuss ethics
 		\begin{itemize}
 		\item Read Activity on Moodle before lecture
 		\end{itemize}
 	\item PS4 due December 13
-	\item Sample Exam on Moodle
+	\item Sample Exam on Moodle (soon!)
 	\end{itemize}
 
 }
