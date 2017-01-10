@@ -59,7 +59,7 @@ There are eight problem sets for the course (four in each term).
 | [Concepts and Measurement](Assignments/ProblemSet2.html) | Tuesday Nov. 8 |
 | [Data Collection I](Assignments/ProblemSet3.html) | Tuesday Nov. 22 |
 | [Data Collection II](Assignments/ProblemSet4.html) | Tuesday Dec. 13 |
-| [Causality](Assignments/) | Tuesday Jan. 17 |
+| [Causality](Assignments/ProblemSet5.html) | Tuesday Jan. 17 |
 | [Theory Evaluation](Assignments/) | Tuesday Feb. 14 |
 | [Article Critique](Assignments/) | Tuesday Feb. 28 |
 | [Statistical analysis](Assignments/) | Tuesday Mar. 14 |
