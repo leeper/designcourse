@@ -19,29 +19,56 @@
 
 
 
-\section{Brief Review of Last Week}
+\section[MT]{Brief Review of MT Material}
 \frame{\tableofcontents[currentsection]}
 
-\frame{\huge\vskip20pt\textbf{What did we learn about last week?}}
+\frame{\huge\vskip20pt\textbf{What did we learn about during MT?}}
 
-% research questions
-% what makes questions interesting
-% causal versus descriptive questions
-% reverse versus forward causal inference
+% research questions; what makes questions interesting
+% concept definition
+% operationalization
+% what does it mean to describe?
+% texts as data
+% interviews as data
+% what are ``cases''?
+% representativeness
+% ethics
 
 
 \frame{
-\frametitle{Continuing that theme\dots}
+\frametitle{New territory\dots}
 
 By the end of today you should be able to:
 
-\begin{itemize}\itemsep1em
+\begin{itemize}
 \item Identify what makes for a causal relationship
 \item Distinguish causation from correlation/association
-\item Begin to analyze research problems using counterfactual thinking
+\item Begin to analyse research problems using counterfactual thinking
 \end{itemize}
 
 }
+
+\frame{
+\frametitle{The broad story arc for LT}
+
+\begin{itemize}\itemsep1em
+\item<1-> Causal inference!
+	\begin{itemize}
+	\item Generating causal theories and expectations
+	\item Making comparisons
+	\item Statistical methods useful for causal inference
+	\item (Quasi-)Experimentation
+	\end{itemize}
+\item<2-> Developing your research proposals
+	\begin{itemize}
+	\item One-on-ones w/ Thomas
+	\item Literature review
+	\item Due: 21 March at 5:00pm
+	\end{itemize}
+\end{itemize}
+
+}
+
 
 % Today: focusing on what it means for something to be a ``cause''
 
@@ -62,6 +89,10 @@ By the end of today you should be able to:
 \huge\centering\vskip10pt\textbf{What makes something a \textit{cause}?}
 }
 
+
+% distinction between causation and prediction
+% distinction between causation and explanation (none!)
+% distinction between correlation and explanation (e.g., medical correlates of disease)
 
 \frame{
 \frametitle{Physical causality}
@@ -119,28 +150,31 @@ By the end of today you should be able to:
 \end{itemize}
 }
 
-\frame<1>[label=mill]{
 
-\frametitle{Mill's methods\footnote{Discussed in Holland}}
 
-\begin{itemize}
-\item Agreement
-\item \textbf<2>{Difference}
-\item Agreement and Difference
-\item Residue
-\item Concomitant variations
-\end{itemize}
-}
+% Causal graphs
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
+    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
 
 \frame{
-\frametitle{Difference}
 
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
-}
-
-\frame{
-
-\frametitle{Four (or five) principles of causality\footnote{From Kellstedt and Whitten}}
+\frametitle{Four (or five) principles of causality}
 
 \begin{enumerate}
 \item Correlation
@@ -154,6 +188,10 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \frame{\huge\vskip20pt\textbf{Questions?}}
 
+
+
+\section[Counterfactuals]{Fundamental Problem of Causal Inference}
+\frame{\tableofcontents[currentsection]}
 
 
 \frame[label=counterfactuals]{
@@ -226,6 +264,152 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 }
 
+
+\frame<1>[label=mill]{
+
+\frametitle{Mill's methods\footnote{Discussed in Holland}}
+
+\begin{itemize}
+\item Agreement
+\item \textbf<2>{Difference}
+\item Agreement and Difference
+\item Residue
+\item Concomitant variations
+\end{itemize}
+}
+
+\frame{
+\frametitle{{\normalsize Mill's Method of Difference}}
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+}
+
+
+
+\section{Randomized Experiments}
+\frame{\tableofcontents[currentsection]}
+
+
+
+
+
+% Individual-level effects versus ATEs
+
+
+\frame{
+	\frametitle{The Experimental Ideal}
+	\small
+	A randomized experiment, or randomized control trial is:
+ 		\begin{quote}\small
+ 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+ 		\end{quote}
+ 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
+}
+
+\frame{
+	\frametitle{Random Assignment}
+
+\small
+\begin{itemize}\itemsep0.5em
+\item A physical process of randomization
+\item Breaks the ``selection process''
+	\begin{itemize}\small
+	\item Units only take value of $X$ because of assignment
+	\end{itemize}
+\item This means:
+	\begin{itemize}\small
+	\item All covariates are balanced between groups
+	\item Potential outcomes are balanced between groups
+	\item In sum: No confounding
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+	\frametitle{``The Experimental Ideal''}
+	\begin{itemize}\itemsep0.5em
+    	\item It solves both the \textit{temporal ordering} and \textit{confounding} problems
+		\item Treatment (X) is applied by the researcher before outcome (Y)
+        \item Randomization means there are no confounding (Z) variables
+        \item The effect is defined as the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
+	\end{itemize}
+}
+
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+% design-based experimental inference
+\frame{
+	\frametitle{Experimental Inference I}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> Causal inference is a comparison of two \textit{potential outcomes}
+    	\item<2-> A potential outcome is the value of the outcome (Y) for a given unit (i) after receiving a particular version of the treatment (X)
+    	\item<3-> Each unit has multiple \textit{potential} outcomes ($Y_{0i}$, $Y_{1i}$), but we only observe one of them
+    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference II}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> We cannot see individual-level causal effects
+			\begin{itemize}
+			\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+			\end{itemize}
+    	\item<2-> We can see \textit{average causal effects}
+    		\begin{itemize}
+        		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
+        		\item<2-> $ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    		\end{itemize}
+    	\item<3-> Is this what we want to know?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Experimental Inference III}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item This holds in experiments because of randomization\\
+    		\begin{itemize}
+        		\item Units differ only in what side of coin was up
+        		\item Experiments randomly reveal potential outcomes
+    		\end{itemize}
+	\end{itemize}
+}
+
+
+\frame{}
+
+
+
+
+
+
+
 \frame{
 \frametitle{In Political Science}
 
@@ -234,7 +418,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \begin{itemize}\itemsep0.5em
 \item Causal inference is about searching for appropriate counterfactuals
 	\begin{itemize}
-	\item<2-> \textit{Causal effect}: Difference in an outcome variable between two counterfactuals
+	\item<2-> \textit{Causal effect}: Difference in an outcome variable between two (or more) counterfactuals
 	\item<3-> \textit{Causal inference}: A belief that an event or variable exerts a causal effect on an outcome
 	\end{itemize}
 \item<4-> Where can we look for counterfactuals?
@@ -263,6 +447,20 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 }
 
+
+\frame{}
+
+
+\frame{
+
+\frametitle{Preview of next week}
+
+\begin{itemize}\itemsep1em
+\item What is a ``scientific literature''?
+\item How do we accumulate scientific evidence?
+\end{itemize}
+
+}
 
 
 \appendix
