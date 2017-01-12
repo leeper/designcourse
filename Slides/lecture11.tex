@@ -94,6 +94,14 @@ By the end of today you should be able to:
 % distinction between causation and explanation (none!)
 % distinction between correlation and explanation (e.g., medical correlates of disease)
 
+\frame{}
+
+
+\frame{
+	\includegraphics[width=\textwidth]{images/xkcdcorrelation.png}
+}
+
+
 \frame{
 \frametitle{Physical causality}
 
@@ -105,7 +113,7 @@ By the end of today you should be able to:
 	\item Picture a ball resting on top of a hill
 	\item What happens if I push the ball?
 	\end{itemize}
-\item Physical causality is easy to see
+\item<2-> Physical causality is easy to see
 \end{itemize}
 }
 
@@ -154,35 +162,77 @@ By the end of today you should be able to:
 
 % Causal graphs
 
-\begin{frame}
+\begin{frame}<1-3>[label=smoking-graph]
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
+    \draw (0,0) node[left] (X) {Smoking};
     \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw<2->[->, dashed, very thick] (E) -- (X);
+    \draw<2->[->] (-3,3) node[above] (Z) {Sex} -- (Y);
+    \draw<2->[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw<2->[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw<2->[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (Y);
+    \draw<3->[->] (Z) -- (X);
+    \draw<3->[->] (W) -- (X);
+    \draw<4->[->, very thick] (E) -- (X);
 \end{tikzpicture}
 \end{center}
 \end{frame}
 
 
 
-\frame{
+\begin{frame}
 
-\frametitle{Four (or five) principles of causality}
+\frametitle{{\large Causal Graphs I}}
 
-\begin{enumerate}
-\item Correlation
-\item Nonconfounding
-\item Direction (``temporal precedence'')
-\item Mechanism
-\item (Appropriate level of analysis)
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Visual representation of (possible) causal relationships
+	\begin{itemize}
+	\item Called ``directed, acyclic graph'' (DAG)
+	\end{itemize}
+\item<2-> Causality flows between variables, which are represented as ``nodes''
+\item<3-> Variables are causally linked by arrows
+\item<4-> Causality only flows \textit{forward}
+\item<5-> Nodes creating a ``backdoor path'' from $X$ to $Y$ are confounds
+\end{itemize}
+
+\end{frame}
+
+
+\againframe<3>{smoking-graph}
+
+
+\frame<1-2>[label=causality]{
+
+\frametitle{{\large 4 (or 5) principles of causality}}
+
+\begin{enumerate}\itemsep1em
+\item<2-> Correlation
+\item<3-> Nonconfounding
+\item<4-> Direction (``temporal precedence'')
+\item<5-> Mechanism
+\item<6-> (Appropriate level of analysis)
 \end{enumerate}
+}
+
+\againframe<3>{smoking-graph}
+
+\againframe<3-4>{causality}
+
+\againframe<3-4>{smoking-graph}
+
+\againframe<4-5>{causality}
+
+\againframe<3>{smoking-graph}
+
+\againframe<5-6>{causality}
+
+\frame{
+	\centering
+	\includegraphics[width=.9\textwidth]{images/brexit-vote-by-age.png}
+	
+	{\tiny Source: \textit{The Telegraph}. 27 June 2016. \url{http://www.telegraph.co.uk/news/2016/06/24/eu-referendum-how-the-results-compare-to-the-uks-educated-old-an/}\par }
 }
 
 
@@ -197,10 +247,9 @@ By the end of today you should be able to:
 \frame[label=counterfactuals]{
 \frametitle{Counterfactual Thinking}
 
-\begin{itemize}\itemsep1em
-\item \textit{Counterfactual}: relating to what has not happened or is not the case
-\vspace{0.5em}
+\begin{itemize}\itemsep1.5em
 \item Causal inference involves inferring \textit{what would have happened} in a counterfactual reality \textit{where the potential cause took on a different value}
+\item \textit{Counterfactual}: relating to what has not happened or is not the case
 \end{itemize}
 
 }
@@ -223,7 +272,7 @@ By the end of today you should be able to:
 }
 
 \frame{
-\frametitle{Causation}
+\frametitle{{\large Dickensian Causal Inference}}
 
 \begin{itemize}\itemsep1em
 \item \textit{Causal effect}: The difference between two ``potential outcomes''
@@ -231,7 +280,7 @@ By the end of today you should be able to:
 	\item The outcome that occurs if $X = x_1$
 	\item The outcome that occurs if $X = x_2$
 	\end{itemize}
-\item The causal effect of Scrooge's lifestyle is seen in the differences between two potential futures
+\item The causal effect of Scrooge's lifestyle is seen in the \textit{difference(s)} between two potential futures
 \end{itemize}
 
 }
@@ -239,7 +288,7 @@ By the end of today you should be able to:
 \frame{
 \frametitle{Fundamental problem of causal inference}
 
-\Large We can only observe any given unit in one reality!
+\only<2->{\Large We can only observe any given unit in one reality!}
 
 }
 
@@ -285,6 +334,34 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 }
 
 
+\frame{
+
+\frametitle{{\large ``Rerum cognoscere causas''}}
+
+\begin{itemize}
+\item<1-> Causal inference is meant to help ``explain'' the world
+	\begin{itemize}
+	\item<2-> Other notions of explain (e.g., description)
+	\item<3-> Explanation may or may not involve mechanistic claims (see LT Week 5)
+	\end{itemize}
+\item<4-> Causation is deterministic at the unit level!
+\item<5-> Counterfactual approaches to causal inference are ``forward'' in nature
+\end{itemize}
+
+}
+
+\frame{
+\centering
+Prediction is not causation.\\ Causation is not prediction.
+
+\vspace{2em}
+
+\only<2->{Why are these distinct?}
+
+}
+
+
+
 
 \section{Randomized Experiments}
 \frame{\tableofcontents[currentsection]}
@@ -312,31 +389,18 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \small
 \begin{itemize}\itemsep0.5em
 \item A physical process of randomization
-\item Breaks the ``selection process''
 	\begin{itemize}\small
-	\item Units only take value of $X$ because of assignment
+	\item Breaks the ``selection process''
+	\item Units only take value of $X = x$ because of assignment
 	\end{itemize}
-\item This means:
+\item<2-> This means:
 	\begin{itemize}\small
-	\item All covariates are balanced between groups
-	\item Potential outcomes are balanced between groups
-	\item In sum: No confounding
+	\item Treatment groups, on average, provide in sight into counterfactual ``potential'' outcomes
+	\item Randomization means potential outcomes are balanced between groups, so no confounding
 	\end{itemize}
 \end{itemize}
 
 }
-
-
-\frame{
-	\frametitle{``The Experimental Ideal''}
-	\begin{itemize}\itemsep0.5em
-    	\item It solves both the \textit{temporal ordering} and \textit{confounding} problems
-		\item Treatment (X) is applied by the researcher before outcome (Y)
-        \item Randomization means there are no confounding (Z) variables
-        \item The effect is defined as the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
-	\end{itemize}
-}
-
 
 \begin{frame}
 \small 
@@ -385,18 +449,9 @@ If an instance in which the phenomenon under investigation occurs, and an instan
         		\item<2-> $ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
     		\end{itemize}
     	\item<3-> Is this what we want to know?
-	\end{itemize}
-}
-
-
-\frame{
-	\frametitle{Experimental Inference III}
-	\small
-	\begin{itemize}\itemsep0.5em
-    	\item This holds in experiments because of randomization\\
     		\begin{itemize}
-        		\item Units differ only in what side of coin was up
-        		\item Experiments randomly reveal potential outcomes
+    		\item<4-> Yes, if $X$ randomized
+    		\item<5-> Yes, if all confounds controlled
     		\end{itemize}
 	\end{itemize}
 }
@@ -405,50 +460,6 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \frame{}
 
 
-
-
-
-
-
-\frame{
-\frametitle{In Political Science}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Causal inference is about searching for appropriate counterfactuals
-	\begin{itemize}
-	\item<2-> \textit{Causal effect}: Difference in an outcome variable between two (or more) counterfactuals
-	\item<3-> \textit{Causal inference}: A belief that an event or variable exerts a causal effect on an outcome
-	\end{itemize}
-\item<4-> Where can we look for counterfactuals?
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{An Example}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item For example, if we think smoking might cause lung cancer, how would we know?
-\vspace{0.5em}
-\item How would we know if smoking caused lung cancer for an individual who smoked?
-	\begin{itemize}
-	\item What's the relevant counterfactual?
-	\end{itemize}
-\item How would we know if smoking causes lung cancer on average across many individuals?
-	\begin{itemize}
-	\item What's the relevant counterfactual?
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{}
 
 
 \frame{
