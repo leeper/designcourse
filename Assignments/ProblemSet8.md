@@ -4,17 +4,17 @@ title: Problem Set 8
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 6: Basic Statistics #
+# Problem Set 8: Basic Statistics
 
-## Purpose ##
+## Purpose
 
 The purpose of this problem set is to assess your understanding of basic methods of quantitative data description and summarization, and the statistical assumptions underlying those methods.
 
-## Overview ##
+## Overview
 
 You will use the [Quality of Government](http://www.qogdata.pol.gu.se/) dataset to provide a quantitative description of the quality of democratic institutions across the world. Note: You may use the "Standard" dataset (which is based on a single cross-section of data) or the "Time Series" dataset (which has country-year observations).
 
-## Your Task ##
+## Your Task
 
  1. Consider the following research question: ``How healthy are democratic countries compared to less democratic countries?'' Thinking descriptively, develop a hypothesis or expectation about the correlational relationship between democracy and health.
  
@@ -30,7 +30,7 @@ You will use the [Quality of Government](http://www.qogdata.pol.gu.se/) dataset 
  
  7. In a few sentences, reflect on the most challenging and most rewarding aspects of this assignment. State any uncertainties you currently have about the material covered by this assignment and reflect on what you will do to address those uncertainties.
 
-## Submission Instructions ##
+## Submission Instructions
 
 Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12.
 
@@ -42,7 +42,7 @@ You should submit individual assignments on this task.
 
 Submit the assignment via Moodle by Tuesday, February 23.
 
-## Feedback ##
+## Feedback
 
 You will receive feedback within two weeks.
 
