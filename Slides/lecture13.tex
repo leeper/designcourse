@@ -40,12 +40,78 @@
 
 }
 
+
 \frame{
-\frametitle{{\large Key Points from MT}}
+
+\frametitle{{\large What is a theory?}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Definition: A tentative conjecture about the \textit{causes} of some phenomenon of interest\footnote{Kellstedt and Whitten, p.3}
+	\begin{itemize}\footnotesize
+	\item<2-> Another way of saying this: An \alert<3>{argument} that attempts to \alert<3>{explain} how concepts are \textit{causally} related
+	\end{itemize}
+\item<4-> Theories contain:
+	\begin{itemize}\footnotesize
+	\item<4-> Outcome or dependent variable, to be explained
+	\item<5-> Explanatory, independent, or causal variable(s) thought to affect the outcome
+	\item<6-> A mechanism (``how'') that links the two
+	\end{itemize}
+\end{itemize}
+
+}
+
+% theories are arguments and they are (potential) explanations
+% concepts may also be hierarchical - some are grand, macro theories; others are small micro theories and it may be that the micro theories build on macro theories
+
+% there are also descriptive theories, e.g., typologies (Presidential character, welfare states, )
+
+\begin{frame}<10>[label=smoking-graph]
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left] (X) {Smoking};
+    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
+    \draw<2->[->] (-3,3) node[above] (Z) {Sex} -- (Y);
+    \draw<2->[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw<2->[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw<2->[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (Y);
+    \draw<3->[->] (Z) -- (X);
+    \draw<3->[->] (W) -- (X);
+    \draw<4->[->, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+\frame{
+
+\frametitle{Theory vs. Framework}
+
+\begin{itemize}\itemsep0.5em
+\item Theories are general statements about causal relationships
+\item \textit{Testing} a theory involves:
+	\begin{itemize}
+	\item Stating observable implications of theory (and rival theory/ies)
+	\item Examining whether evidence is consistent or inconsistent with expectations
+	\end{itemize}
+\item<2-> Applying an interpretive framework involves merely focusing on particular features of an empirical phenomenon
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{{\large Key Points!}}
 
 \begin{enumerate}\itemsep1em
 \item Theory is about concepts
 \item Analysis is about measured variables
+	\begin{itemize}
+	\item Everything from MT
+	\end{itemize}
 \item So our task as scientists is to:
 	\begin{itemize}
 	\item Find observable implications of theory
@@ -79,25 +145,8 @@
 }
 
 
+
 \frame{}
-
-\frame{
-
-\frametitle{{\large What is a theory?}}
-
-\begin{itemize}\itemsep1em
-\item Kellstedt and Whitten's definition:\footnote{Kellstedt and Whitten, p.3}\\
-A tentative conjecture about the causes of some phenomenon of interest
-\item<2-> Another way of saying this:\\
-An \alert<3>{argument} that attempts to \alert<3>{explain} how concepts are causally related
-\end{itemize}
-
-}
-
-% theories are arguments and they are (potential) explanations
-% concepts may also be hierarchical - some are grand, macro theories; others are small micro theories and it may be that the micro theories build on macro theories
-
-% there are also descriptive theories, e.g., typologies (Presidential character, welfare states, )
 
 
 
@@ -205,7 +254,7 @@ Theory: Voting is explained by \only<1>{3}\only<2>{4} factors\\
 \frametitle{Aside: Assumptions}
 
 \begin{center}
-If a theory require assumptions, is that theory credible?
+If a theory requires assumptions, is that theory credible?
 \end{center}
 
 }
@@ -303,9 +352,10 @@ As you theorize an explanation for some phenomenon, you will draw on:
 
 \begin{itemize}
 \item Truth
-\item Falsifiability
 \item Relevance
 \item Coherence
+\item Falsifiability
+\item Precision
 \item Generality
 \item Parsimony
 \end{itemize}
@@ -340,14 +390,20 @@ Are these principles defensible?\\ Are they any good?
 
 \frametitle{Hypotheses}
 
-\begin{itemize}\itemsep0.5em
-\item<2-> Definition: a theory-based statement about a relationship that we expect to observe.\footnote{Kellstedt and Whitten (p.4)}
+\small
 
+\begin{itemize}\itemsep0.5em
+\item<2-> Definitions:
+	\begin{itemize}\footnotesize
+	\item observable implications; testable propositions entailed by the logic of the theory\footnote{Toshkov p.64}
+	\item a theory-based statement about a relationship that we expect to observe\footnote{Kellstedt and Whitten (p.4)}
+	\end{itemize}
 \item<3-> Features
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Derived from theory
 	\item Specific
 	\item Empirical/observable
+	\item Causal (``if-then'' logic)
 	\end{itemize}
 \end{itemize}
 
@@ -386,7 +442,7 @@ Are these principles defensible?\\ Are they any good?
 
 \frame{
 
-\frametitle{Example: Broad Street Cholera}
+\frametitle{Ex.: Broad Street Cholera}
 
 \begin{itemize}\itemsep0.5em
 \item 1854 outbreak of cholera in London
@@ -411,7 +467,7 @@ Are these principles defensible?\\ Are they any good?
 \frame{
 
 \begin{center}
-\includegraphics[height=.98\textheight]{images/broadstreet}
+\includegraphics[height=.98\textheight]{images/broadstreet-6}
 \end{center}
 
 {\footnotesize Image source: Public Domain from \href{https://en.wikipedia.org/wiki/File:Snow-cholera-map-1.jpg}{Wikipedia}}
@@ -434,7 +490,7 @@ Are these principles defensible?\\ Are they any good?
 \item What to do?
 	\begin{itemize}
 	\item Generate more specific expectations % maybe alternative DVs; more fine grained hypothesis; moderators; etc.
-	\item Move outside scope conditions
+	\item Move outside \textit{scope conditions}
 	\item Settle for lack of explanation
 	\end{itemize}
 \end{itemize}
@@ -459,7 +515,7 @@ Are these principles defensible?\\ Are they any good?
 \end{tikzpicture}
 \end{center}
 
-\onslide<5->{If this is true, why do we sometimes see policies left of $m$ in the U.S. House?}
+\onslide<5->{If this is true, why do we sometimes see policies left of $m$ in a legislature?}
 
 \end{frame}
 
@@ -545,10 +601,11 @@ Are these principles defensible?\\ Are they any good?
 \item Identify and collect data
 \item<2-> Data should include:
 	\begin{itemize}
-	\item Independent variable(s)
-	\item Dependent variable(s)
+	\item Outcome variable(s), $X$
+	\item Explanatory variable(s), $Y$
+	\item Covariates (theoretically unimportant explanations of the outcome)
 	\end{itemize}
-\item<3-> Need variation on both % because we want to observe counterfactuals
+\item<3-> Need variation on both $X$ and $Y$ % because we want to observe counterfactuals
 \item<4-> Test difference between outcomes when (possibly) causal variable differs
 \end{enumerate}
 
@@ -667,18 +724,45 @@ c/o Jerzy Neyman and Egon Pearson
 
 % realizing that we will always be inductive and we may go into the field to test a theory and end up instead generating a new theory
 
+\frame{
+
+Theory testing involves:
+
+\begin{itemize}
+\item Between-case comparisons, or 
+\item Across-time comparisons, or 
+\item Between-case \& across-time comparisons
+\item Within-case comparisons at a lower level of analysis
+\end{itemize}
+
+}
+
+\frame{
+
+Methods of theory testing include:
+
+\begin{itemize}
+\item Case comparisons
+\item Process-tracing
+\item Observational statistical comparisons
+	\begin{itemize}
+	\item Tabulation/visualization
+	\item Bivariate statistical inference (e.g., t-tests)
+	\item Multivariate analysis (e.g., regression)
+	\end{itemize}
+\item Experimentation
+\end{itemize}
+
+}
+
 
 
 \frame{
 
 \frametitle{Preview of Next Week}
 
-\begin{itemize}\itemsep1em
-\item What is a case?
-\item What are case studies?
-\item How do we use case studies to test and/or build theories?
-\end{itemize}
-
+\centering
+How do we make between-case comparisons to test theories?
 }
 
 
