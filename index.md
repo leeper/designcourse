@@ -66,7 +66,7 @@ There are eight problem sets for the course (four in each term).
 
 ## LT Reading Week Study Guide Assignment
 
-We will use LT reading week to prepare for the exam. As part of this, students will draft a "study guide" for the course and provide peer and self-assessments that evaluate and reflect on learning thus far. [Details of the assignment are available here](Assignments/StudyGuideAssignment.html).
+We will use LT reading week to prepare for the exam. As part of this, students will draft a "study guide" for the course and provide peer and self-assessments that evaluate and reflect on learning thus far. [Details of the assignment are available here](Assignments/LiteratureReviewAssignment.html).
 
 ## Assessment
 
