@@ -20,7 +20,7 @@ The purpose of this activity is to provide you with an understanding of statisti
 
 \section{Overview}
 
-This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week.
+This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week. The final quantitative problem set in LT relates to, roughly, the first half and second half of the material covered in this lab (this document containing the first half) and builds on our previous work with data summaries and visualizations in R.
 
 \section{Your Task}
 
@@ -62,7 +62,7 @@ Each of these statistics can be calculated on a sample of cases in order to make
 
 
 
-\item To figure that out, we have to describe --- in Fisher's language --- a a ``null hypothesis.'' This is a value that we think the parameter might have in the population. Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional. We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
+\item To figure that out, we have to describe --- in Fisher's language --- a ``null hypothesis.'' This is a value that we think the parameter might have in the population. Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional. We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
 
 \item But how do we know if our statistic differs from the null hypothesis value? We are worried that a difference between our sample statistic and the null hypothesis value might be erroneous. For example, we have a small sample so our data appear to differ from the null hypothesis but if we collected more observations the sample statistic on this larger sample might be closer to our null hypothesis for the population parameter. Statistical hypothesis testing therefore asserts that we only consider a sample statistic to differ from a null hypothesis value when it is quite far from the null hypothesis value. But how far exactly is ``quite far''?
 
@@ -141,8 +141,6 @@ Were we to repeat our procedure of sampling, analyzing the sample to produce a s
 \end{quote}
         
 \noindent This does not say for sure whether the estimated confidence interval \textit{this time} actually includes that true population parameter.
-
-\clearpage 
 
 \item To get at the notion of the confidence interval, we are going back to our population data \texttt{x} and repeatedly drawing new samples. This time, however, we are going to store our results in a data.frame and we are going to save not only how far the sample mean deviates from the population mean, but we are also going to save the standard error calculated from each sample:
 

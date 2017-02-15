@@ -24,7 +24,7 @@ The purpose of this activity is to provide you with an understanding of regressi
 
 \section{Overview}
 
-This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week. The two quantitative problem sets in LT relate to, roughly, the first half and second half of the material covered in this lab (this document containing the second half).
+This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week. The final quantitative problem set in LT relates to, roughly, the first half and second half of the material covered in this lab (this document containing the second half).
 
 \section{Your Task}
 
@@ -345,7 +345,7 @@ sum(boot < 0)/length(boot) # p-value
 
 \end{enumerate}
 
-\subsection{Multivariate Regression}
+\subsection{Multiple/Multivariate Regression}
 
 Note: Material in this section is relevant to LT Week 8 and Problem Set 7.
 
@@ -375,7 +375,7 @@ To think about this possibility, it can be useful to draw a ``causal diagram'' i
 \end{figure}
 
 
-\item Once you have a reasonable DAG showing possibly causal relationships, think about whether you can observe any of the variables in your DAG. Are all of the potentially confounding variables you named available in the ESS dataset? You can find a complete listing of variables in: \texttt{attributes(d)\$var.labels} or in the complete documentation of the ESS questionnaire here: \url{http://www.europeansocialsurvey.org/docs/round6/fieldwork/united_kingdom/ESS6_questionnaires_GB.pdf}.
+\item Once you have a reasonable DAG showing possibly causal relationships, think about whether you can observe any of the variables in your DAG. Are all of the potentially confounding variables you named available in the ESS dataset? You can find a complete listing of variables in: \texttt{attributes(d)\$var.labels} or in the complete documentation of the ESS questionnaire.\footnote{\url{http://www.europeansocialsurvey.org/docs/round6/fieldwork/united_kingdom/ESS6_questionnaires_GB.pdf}}
 
 \item If you have access to potentially confounding variables, then we can use an elaboration of the bivariate regression models we just discussed to help to control for this confounding. If potentially confounding variables in your DAG are unobserved (either because they are not included in the ESS or because they are perhaps ``unobservable'' factors), there is nothing we can do to rule out the potential for confounding. We are, in that situation, completely unable to draw a causal inference from the observational data in front of us. We would need more data!
 
@@ -416,7 +416,7 @@ round(cor(cbind(p1$residuals, new2$religiosity, new2$pinterest)), 3)
 round(cor(cbind(p2$residuals, new2$religiosity, new2$pinterest)), 3)
 \end{verbatim}
 
-\item We can see that the excluded variables appear to still be associated with the outcome (i.e., there is some residual some of squares that is still associated with the excluded RHS variables). If we include these, as in the multivariate model \texttt{m2}, we can account for the independent influences of each of these factors. But how does this work?\footnote{Kellsted and Whitten provide a generic explanation in Section 9.3.} To understand multiple regression we have to understand a simpler concept: the \textit{partial correlation}.
+\item We can see that the excluded variables appear to still be associated with the outcome (i.e., there is some residual some of squares that is still associated with the excluded RHS variables). If we include these, as in the multivariate model \texttt{m2}, we can account for the independent influences of each of these factors. But how does this work? To understand multiple regression we have to understand a simpler concept: the \textit{partial correlation}.
 
 A partial correlation is the correlation between two variables controlling for the influence of a third variable. If we want to know the partial correlation between \texttt{happy} and \texttt{religiosity}, controlling for \texttt{pinterest}, we regress each variable on \texttt{pinterest} and correlate their residuals:
 
