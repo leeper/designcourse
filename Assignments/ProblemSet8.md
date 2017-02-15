@@ -4,11 +4,11 @@ title: Problem Set 8
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
 
-# Problem Set 8: Basic Statistics
+# Problem Set 8: Statistics and Regression
 
 ## Purpose
 
-The purpose of this problem set is to assess your understanding of basic methods of quantitative data description and summarization, and the statistical assumptions underlying those methods.
+The purpose of this problem set is to assess your understanding of methods of quantitative data analysis, especially regression, and the statistical assumptions underlying those methods.
 
 ## Overview
 
@@ -16,31 +16,27 @@ You will use the [Quality of Government](http://www.qogdata.pol.gu.se/) dataset 
 
 ## Your Task
 
- 1. Consider the following research question: ``How healthy are democratic countries compared to less democratic countries?'' Thinking descriptively, develop a hypothesis or expectation about the correlational relationship between democracy and health.
+ 1. Consider the following research question: ``How healthy are democratic countries compared to less democratic countries?'' Thinking descriptively, develop a hypothesis or expectation about the causal relationship between democracy and health (i.e., decide which precedes which and assert an expected size and direction of the relationship).
  
- 2. Define the concepts of democracy and health and select one or more appropriate indicators of each concept from the Quality of Government dataset.
+ 2. Define the concepts of democracy and health and select one or more appropriate indicators of each concept from the Quality of Government dataset, justifying your choice of each.
  
- 3. Create 3 distinct types of visualizations showing different patterns or relationships in your data that are relevant to your hypothesis. For each plot, create a "worse" version and "better" version of the visualization and discuss why the "better" version communicates the pattern or relationship better, either in substantive terms or in purely aesthetic ones.
+ 3. Using an appropriate statistical test (such as regression), evaluate the size of the relationship between democracy and health, assess whether that relationship appears to statistically different from no relationship, and interpret the resulting measures of uncertainty for the test. Are the data consistent with your expectations?
  
- 4. Provide one or more quantitative summaries of your data using tables, cross-tabulations, and/or other statistics. Interpret these summaries and your visualizations in terms of your research question and hypothesis. Are the data consistent with your expectations?
+ 4. Consider the issue of causality. Are the relationships observed in these data reflective of a causal relationship? What criteria would have to be satisfied for any relationship between democracy and health to be causal? What potential sources of confounding would need to be controlled for?
  
- 5. Using an appropriate statistical test, evaluate the size of the relationship between democracy and health, assess whether that relationship appears to statistically differ from no relationship, and interpret the resulting measures of uncertainty for the test.
+ 5. Using any appropriate means of data visualization, describe the relationship between democracy and health in a way that demonstrates whether a third variable might be a source of confounding. Include the visualization in your paper.
  
- 6. Consider the issue of causality. Are the relationships observed in these data reflective of a causal relationship? What criteria would have to be satisfied for any relationship between democracy and health to be causal?
+ 6. Using multiple regression, control for any identified sources of confounding in order to re-estimate the relationship between democracy and health. Is this effect substantively large? Statistically significantly different from zero?
  
  7. In a few sentences, reflect on the most challenging and most rewarding aspects of this assignment. State any uncertainties you currently have about the material covered by this assignment and reflect on what you will do to address those uncertainties.
 
 ## Submission Instructions
 
-Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12.
-
-Your visualizations **do not** count against the page total.
+Your assignment should be no more than 4 pages of double-spaced A4, Times New Roman font size 12, including any visualization.
 
 As an appendix to your submission, include all relevant R code used to generate your results and figures. This should be typed in Courier New font size 10.
 
-You should submit individual assignments on this task.
-
-Submit the assignment via Moodle by Tuesday, February 23.
+Submit the assignment via Moodle by Tuesday, March 14.
 
 ## Feedback
 

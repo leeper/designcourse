@@ -35,10 +35,10 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  13. [Theory Development and Hypothesis Generation (Jan. 27)](Slides/lecture13.pdf)
  14. [Case Comparisons (Feb. 3)](Slides/lecture14.pdf)
  15. [Causal Mechanisms (Feb. 10)](Slides/lecture15.pdf)
- 16. [Statistical Inference (Feb. 24)](Assignments/Lab2.pdf)
-     - [Lab Activity](Assignments/Lab3.pdf)
+ 16. Statistical Inference (Feb. 24)
+     - [Lab Activity: Statistics](Assignments/Lab3.pdf)
+     - [Lab Activity: Regression](Assignments/Lab4.pdf)
  17. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Mar. 3)](Slides/lecture17.pdf)
-     - [Lab Activity](Assignments/Lab4.pdf)
  18. [Matching and Regression: Accounting for Rival Explanations (Mar. 10)](Slides/lecture18.pdf)
  19. [Experimental Design and the Search for Quasi-Experiments (Mar. 17)](Slides/lecture19.pdf)
  20. [Conclusion, Synthesis, and Exam Prep (Mar. 24)](Slides/lecture20.pdf)
@@ -60,9 +60,9 @@ There are eight problem sets for the course (four in each term).
 | [Data Collection I](Assignments/ProblemSet3.html) | Tuesday Nov. 22 |
 | [Data Collection II](Assignments/ProblemSet4.html) | Tuesday Dec. 13 |
 | [Causality](Assignments/ProblemSet5.html) | Tuesday Jan. 17 |
-| [Theory Evaluation](Assignments/) | Tuesday Feb. 14 |
-| [Article Critique](Assignments/) | Tuesday Feb. 28 |
-| [Statistical analysis](Assignments/) | Tuesday Mar. 14 |
+| [Theory Evaluation](Assignments/ProblemSet6.html) | Tuesday Feb. 14 |
+| [Article Critique](Assignments/ProblemSet7.html) | Tuesday Feb. 28 |
+| [Statistics and Regression](Assignments/ProblemSet8.html) | Tuesday Mar. 14 |
 
 ## LT Reading Week Study Guide Assignment
 

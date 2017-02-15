@@ -30,7 +30,7 @@ Using R as instructed, complete the following activities.
 
 \begin{enumerate}
 
-\item For the final activity, we will examine the idea of ``statistical significance.'' Statistical significance is a concept related to \textit{statistical} hypothesis testing. If you recall from much earlier in the course (MT Week 6), we discussed two different ``flavours'' of hypothesis testing --- one associated with Fisher and one associated with Neyman and Pearson. We will see how both kinds of hypothesis testing manifest and how current statistical practice is a blend of these two perspectives. That practice most closely approximates Fisher's ideas (the calculation of a $p$-value) but differs in other ways (the estimation of a ``confidence interval'').
+\item For this activity, we will examine the idea of ``statistical significance.'' Statistical significance is a concept related to \textit{statistical} hypothesis testing. If you recall from much earlier in the course (LT Week 3), we discussed two different ``flavours'' of hypothesis testing --- one associated with Fisher and one associated with Neyman and Pearson. We will see how both kinds of hypothesis testing manifest and how current statistical practice is a blend of these two perspectives. That practice most closely approximates Fisher's ideas (the calculation of a $p$-value) but differs in other ways (the estimation of a ``confidence interval'').
 
 \item To develop an initial understanding of the idea of statistical hypothesis testing, we will think about the idea of ``outliers.'' Outliers are unusual values in a variable (or set of variables). For example, consider the following variable:
 
@@ -41,12 +41,28 @@ v <- c(1,1,1,1,2,2,2,2,2,3,3,3,3,10)
 \noindent It should be clear that the value 10 here is an outlier. If we draw a boxplot of this variable, it becomes even more clear:
 
 \begin{verbatim}
+library("ggplot2")
 ggplot(, aes(x = 1, y = v)) + geom_boxplot() + scale_y_continuous(limits = c(0,12))
 \end{verbatim}
 
 \item If we expected all the values of \texttt{v} to be relatively similar, we could point out that the value 10 is more than 3 standard deviations away from the mean of the variable: \texttt{(10-mean(v))/sd(v)}. This idea that a value is an outlier relative to some assumed central tendency is the basic logic of statistical hypothesis testing.
 
-\item In statistical hypothesis testing, however, we are instead interested to know how unusual a \textit{statistic} is relative to our baseline expectation of what the value of the statistic should be. Thus instead of looking at the values of each observation in a variable and looking for how unusual they are, we want to know how unlikely we are to see a given statistic in our sample of values. But how do we determine whether a statistic is unusual? To figure that out, we have to describe --- in Fisher's language --- a a ``null hypothesis.'' This is a value that we think the parameter might have in the population. Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional. We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
+\item In statistical hypothesis testing, however, we are instead interested to know how unusual a \textit{statistic} is relative to our baseline expectation of what the value of the statistic should be. Commonly we are interested in statistics that describe a sample of cases:
+
+\begin{itemize}
+\item Mean years of education
+\item Proportion of university graduates
+\item The male--female mean difference in annual income
+\item The correlations between education, sex, and income
+\item The causal effect of education on annual income
+\end{itemize}
+
+Each of these statistics can be calculated on a sample of cases in order to make descriptive (or causal) inferences about the population of cases as a whole. But, given what we know about sampling (from MT Week 10), these inferences
+ Thus instead of looking at the values of each observation in a variable and looking for how unusual they are, we want to know how unlikely we are to see a given statistic in our sample of values. But how do we determine whether a statistic is unusual? Think for a few minutes about how we would decide
+
+
+
+\item To figure that out, we have to describe --- in Fisher's language --- a a ``null hypothesis.'' This is a value that we think the parameter might have in the population. Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional. We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
 
 \item But how do we know if our statistic differs from the null hypothesis value? We are worried that a difference between our sample statistic and the null hypothesis value might be erroneous. For example, we have a small sample so our data appear to differ from the null hypothesis but if we collected more observations the sample statistic on this larger sample might be closer to our null hypothesis for the population parameter. Statistical hypothesis testing therefore asserts that we only consider a sample statistic to differ from a null hypothesis value when it is quite far from the null hypothesis value. But how far exactly is ``quite far''?
 
