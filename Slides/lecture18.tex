@@ -27,49 +27,6 @@
 }
 
 \frame{
-	\frametitle{Descriptive Inference}
-	\begin{enumerate}\itemsep1em
-	\item We want to understand a \textit{population} of cases
-	\item We cannot observe them all, so:
-		\begin{enumerate}
-    		\item Draw a \textit{representative} sample
-    		\item Perform mathematical procedures on sample data
-    		\item Use assumptions to make inferences about population
-    		\item Express uncertainty about those inferences based on assumptions
-		\end{enumerate}
-	\end{enumerate}
-}
-
-\frame{
-	\frametitle{Parameter Estimation}
-	\begin{itemize}\itemsep1em
-    	\item We want to observe population \textit{parameter} $\beta$
-    	\item If we obtain a representative sample of population units:\\
-    		\begin{itemize}\itemsep1em
-        		\item Our sample statistic $\hat{\beta}$ is an unbiased estimate of $\beta$
-        		\item Our sampling procedure dictates how uncertain we are about the value of $\beta$
-    		\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-
-	\frametitle{Three Equations}
-	\begin{enumerate}\itemsep1em
-	\item Population:\\
-		$Y = \beta_0 + \beta_1 X \hspace{0.5em} (+ \epsilon)$
-	\item Sample estimate:\\
-		$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$
-	\item Unit:
-		
-		$y_i = \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i$\\
-		$y_i = \bar{y}_{0i} + (y_{1i} - y_{0i}) x_i + (y_{0i} - \bar{y}_{0i})$
-	\end{enumerate}
-}
-
-
-
-\frame{
 
 \frametitle{{\normalsize Mathematically, regression\dots}}
 
@@ -91,6 +48,8 @@
 
 \frame{
 	Causal inference is about comparing an observed outcome to a counterfactual, ``potential outcome'' for the same cases
+
+\vspace{1em}
 
 	Regression provides a ``statistical solution'' to the fundamental problem of causal inference (Holland)
 }
@@ -122,7 +81,7 @@
 \frame{
 \frametitle{Confounding}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item A source of ``endogeneity''
 \item Synonyms: selection bias, omitted variable bias
 \item In lay terms: the (non)correlation between $X$ and $Y$ does not reflect a causal relationship between $X$ and $Y$ are related for other reasons
@@ -318,6 +277,17 @@ Note that matching is just a version of Mill's method of difference used for a l
 }
 
 
+\frame{
+
+	\frametitle{Common Conditioning Strategies}
+	\begin{enumerate}\itemsep1em
+    	\item<2-> Condition on nothing (``naive effect'')
+    	\item<3-> Condition on some variables
+    	\item<4-> Condition on all observables
+	\end{enumerate}
+	\vspace{1em}
+	\onslide<5->{Which of these are good strategies?}
+}
 
 \frame{
 
@@ -331,35 +301,6 @@ Note that matching is just a version of Mill's method of difference used for a l
 	\end{itemize}
 \end{itemize}
 
-}
-
-\begin{frame}
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw<2->[->, dashed, very thick] (E) -- (X);
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-
-\frame{
-
-	\frametitle{Common Conditioning Strategies}
-	\begin{enumerate}\itemsep1em
-    	\item<2-> Condition on nothing (``naive effect'')
-    	\item<3-> Condition on some variables
-    	\item<4-> Condition on all observables
-	\end{enumerate}
-	\vspace{1em}
-	\onslide<5->{Which of these are good strategies?}
 }
 
 
@@ -447,11 +388,11 @@ $D$ (Tar) & $X$ & $Y$ (Cancer) \\
 		\begin{itemize}
 		\item Estimate average causal of a variable conditional on other variables
 		\end{itemize}
-	\item Requires a \textit{linear} relationship between all RHS ($X$ variables) and $Y$
+	\item<2-> Requires a \textit{linear} relationship between all RHS ($X$ variables) and $Y$
 		\begin{itemize}
 		\item Can be a set of binary indicator variables
 		\end{itemize}
-	\item We interpret coefficient estimates as \textit{marginal} average treatment effects
+	\item<3-> We interpret coefficient estimates as \textit{marginal} average treatment effects
 	\end{itemize}
 
 }
@@ -663,7 +604,12 @@ F Statistic & 35.673$^{***}$ (df = 4; 8) & 32.084$^{***}$ (df = 4; 7) \\
 
 \frame{
 
-So the effect found by Rokkan and Boix was confounded by business--labour coordination. What was happening when they omitted the coordination variable?
+So the effect found by Rokkan and Boix was confounded by business--labour coordination.
+
+\vspace{1em}
+
+
+What was happening when they omitted the coordination variable?
 
 }
 
@@ -808,7 +754,7 @@ PR & = \beta_0 + \beta_1 Threat + \beta_2 Coord + \epsilon \\
 
 \vspace{-1em}
 
-\item<4-> Kellstedt and Whitten cover more in-depth mathematical requirements
+\item<4-> RHS variables must be \textit{collinear}
 
 \end{enumerate}
 }
@@ -827,13 +773,9 @@ PR & = \beta_0 + \beta_1 Threat + \beta_2 Coord + \epsilon \\
 
 	\begin{itemize}\itemsep1em
 	\item Next week: Experiments and Quasi-Experiments
-	\item Following week: Research ethics
-	\item Last week (Mar. 22):
-		\begin{itemize}
-		\item Research Design Proposal Due!
-		\item Wrap-up course
-		\end{itemize}
-	\item I am on leave for 2 weeks from April 21
+	\item Research Design Proposal Due Mar. 21!
+	\item Last week (Mar. 24): Wrap-up course!
+	\item Revision Session in ST Week 1
 	\end{itemize}
 }
 

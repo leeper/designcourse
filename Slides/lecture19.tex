@@ -106,7 +106,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
         		\item Treatment (X) is applied by the researcher before outcome (Y)
         		\item Randomization means there are no confounding (Z) variables
     		\end{itemize}
-    	\item Thus experiments are a ``gold standard'' that always provides causal inference
+    	\item Thus experiments are sometimes called a ``gold standard'' of causal inference
 	\end{itemize}
 }
 
@@ -134,7 +134,8 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \small 
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw<1>[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw<2>[->] (0,0) node[left, color=red] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
     \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
     \draw[->] (Z) -- (Y);
     \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
@@ -143,7 +144,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
     \draw[->] (W) -- (Y);
     \draw[->, dashed] (E) -- (X);
     
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Coin Toss} -- (X);
     \draw<2->[->, very thick, color=red] (X) -- (Y);
 \end{tikzpicture}
 \end{center}
@@ -156,17 +157,6 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 	\frametitle{Experimental Inference I}
 	\small
 	\begin{itemize}\itemsep0.5em
-    	\item<1-> Causal inference is a comparison of two \textit{potential outcomes}
-    	\item<2-> A potential outcome is the value of the outcome (Y) for a given unit (i) after receiving a particular version of the treatment (X)
-    	\item<3-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them
-    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Experimental Inference II}
-	\small
-	\begin{itemize}\itemsep0.5em
     	\item<1-> We cannot see individual-level causal effects
     	\item<2-> We can see \textit{average causal effects}
     		\begin{itemize}
@@ -177,7 +167,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 }
 
 \frame{
-	\frametitle{Experimental Inference III}
+	\frametitle{Experimental Inference II}
 	\small
 	\begin{itemize}\itemsep0.5em
 		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
@@ -374,7 +364,8 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 \small 
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
+    \draw<1>[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
+    \draw<2->[->] (0,0) node[left, color=red] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
     \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
     \draw[->] (Z) -- (Y);
     \draw[->] (3.5,2) node[above] (A) {Environment} -- (Y);
@@ -383,10 +374,10 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
     \draw[->] (W) -- (Y);
     \draw[->, dashed] (E) -- (X);
     
-    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Coin Toss} -- (X);
     \draw[->, very thick, color=red] (X) -- (Y);
-    \draw<2->[->, very thick, color=blue] (-3,-0.5) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (X);
-    \draw<2->[->, very thick, color=blue] (X2) -- (Tr);
+    \draw<2->[->, very thick, color=blue] (-3,-1) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (Y);
+    \draw<2->[->, very thick, color=blue] (X2) -- (X);
 \end{tikzpicture}
 \end{center}
 \end{frame}
@@ -414,7 +405,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 		\item We are interested in the effect of $X \rightarrow Y$
 		\item How can we identify the effect $X \rightarrow Y$?
 		\item<2-> Relationship is confounded by unobservables
-		\item<2-> We cannot manipulate $X$ (i.e., no experiments)
+		\item<2-> We cannot manipulate $X$
 	\end{itemize}
 }
 
@@ -494,7 +485,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
     \draw[->] (W) -- (Y);
     \draw[->, dashed] (E) -- (X);
     
-    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Instr. (W)} -- (X);
     \draw[->, very thick, color=red] (X) -- (Y);
 \end{tikzpicture}
 \end{center}
