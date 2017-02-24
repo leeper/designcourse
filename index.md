@@ -35,10 +35,10 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  13. [Theory Development and Hypothesis Generation (Jan. 27)](Slides/lecture13.pdf)
  14. [Case Comparisons (Feb. 3)](Slides/lecture14.pdf)
  15. [Causal Mechanisms (Feb. 10)](Slides/lecture15.pdf)
- 16. Statistical Inference (Feb. 24)
+ 16. Statistical Inference (Feb. 24) -- No Slides
      - [Lab Activity: Statistics](Assignments/Lab3.pdf)
-     - [Lab Activity: Regression](Assignments/Lab4.pdf)
  17. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Mar. 3)](Slides/lecture17.pdf)
+     - [Lab Activity: Regression](Assignments/Lab4.pdf)
  18. [Matching and Regression: Accounting for Rival Explanations (Mar. 10)](Slides/lecture18.pdf)
  19. [Experimental Design and the Search for Quasi-Experiments (Mar. 17)](Slides/lecture19.pdf)
  20. [Conclusion, Synthesis, and Exam Prep (Mar. 24)](Slides/lecture20.pdf)
