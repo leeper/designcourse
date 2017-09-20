@@ -1,11 +1,8 @@
 \input{preamble}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Case Studies}
-
-% Case studies are in-depth examinations of a single manifestation of a political phenomenon and are one of the most common methods of inquiry in political science. What can we do with case studies? How do they help us to understand politics?
-
+\title{Sampling and Representativeness}
 
 \date[]{}
 
@@ -15,412 +12,351 @@
 
 \frame{\tableofcontents}
 
-\section[PS3]{Problem Set 3}
+\section{Representativeness}
 \frame{\tableofcontents[currentsection]}
 
-\frame{
-\frametitle{Problem Set 3}
-
-\begin{center}
-How did this go? What was challenging?
-\end{center}
-
-}
 
 \frame{
-\frametitle{Problem Set 3}
-
-\begin{itemize}\itemsep1em
-\item Please, use my office hours!
-\item Use Moodle to ask questions (esp. about R)!
-\end{itemize}
-
-}
-
-\frame{}
-
-
-\section[Elites]{Elite Interviewing}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-\frametitle{Elite Interviewing}
-\begin{itemize}\itemsep1em
-\item Rules of questionnaire design style apply
-\item Unique challenges/opportunities:
-	\begin{itemize}
-	\item Time constraints
-	\item Guarantees of anonymity?
-	\item Public information may be available
-	\item Often exempt from research ethics review
-	\end{itemize}
-\end{itemize}
-}
-
-\frame{
-	\frametitle{{\large Structured versus Unstructured}}
-	\begin{itemize}\itemsep0.75em
-	\item ``Structured'' interviews
+	\frametitle{Case selection}
+	
+	Our ambitions about what kind of inferences we want to derive from our descriptions influence how we select cases.
+	
+	
+	\begin{itemize}\itemsep1em
+	\item<2-> Purposive
+	\item<3-> Comparative
+	\item<4-> Representative
 		\begin{itemize}
-		\item Strict order of questions
-		\item Questions are precisely worded
-		\item Often, closed set of response categories
-		\end{itemize}
-	\item<2-> Elite interviews often ``semi-structured''
-		\begin{itemize}
-		\item Greater use of open-ended questions
-		\item More flexible ordering of questions
-		\item More respondent-driven
+		\item<5-> Unrepresentative
 		\end{itemize}
 	\end{itemize}
 }
 
 
-\frame{}
+\frame{
+	\frametitle{Discuss in Pairs!}
+	
+	\Large
+	\begin{center}
+	What does it mean for a ``sample'' (set of cases) to be representative of a population?
+	\end{center}
+}
 
-\section{Case Studies}
+\frame{
+	\frametitle{{\large Different conceptualizations}}
+	
+	\small
+	
+	\begin{itemize}\itemsep0.5em
+		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
+		\item \textbf{Model-based}: A sample is representative because it resembles in the population with respect to certain variables (e.g., same proportion of women in sample and population, etc.)
+		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Obtaining Representativeness}
+	\begin{itemize}\itemsep0.5em
+		\item<2-> Census
+		\item<3-> Convenience/Purposive samples
+		\item<4-> Quota sampling (common before 1940s)
+		\item<5-> \textbf<7>{Simple random sampling}
+		\item<6-> Complex survey designs
+	\end{itemize}
+}
+
+
+\section{Design-based (Statistical) Sampling}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-
-\frametitle{Overview}
-
-\begin{itemize}\itemsep0.5em
-\item Consistently the most dominant method of social research
-\item Often poorly executed (and poorly understood)
-\item Four weeks (partially) on this topic
-	\begin{itemize}
-	\item Today: What is a case study?
-	\item MT10: Representative sampling
-	\item LT4: Case comparisons
-	\item LT5: Process-tracing methods
+	\frametitle{{\normalsize Inference from Sample to Population}}
+	\begin{itemize}\itemsep0.5em
+	\item We want to know pop. parameter $\theta$
+	\item We only observe sample estimate $\hat{\theta}$
+	\item We have a guess but are also uncertain
+	\vspace{1em}
+	\item<2-> What range of values for $\theta$ does our $\hat{\theta}$ imply?
 	\end{itemize}
-\end{itemize}
-
 }
 
-\frame{
-
-\frametitle{What is a case study?}
-
-\begin{itemize}\itemsep1em
-\item Definition: ``an intensive study of a single unit for the purpose of understanding a larger class of (similar) units'' (Gerring 2004, 342)
-\item<2-> Different ways to choose cases:
-	\begin{itemize}
-	\item Purposive
-	\item Representative (MT10)
-	\item Matched (next term)
-	\end{itemize}
-\end{itemize}
-
+\frame[label=srs]{
+	\frametitle{Simple Random Sampling}
+	\begin{enumerate}\itemsep0.5em
+		\item Define target population
+		\item Create ``sampling frame''
+		\item Each unit in frame has equal probability of selection
+		\item Collect data on each unit
+		\item Calculate sample \textit{statistic}
+		\item Draw an inference to the population
+	\end{enumerate}
 }
 
 
-% not simply attempting to score a case on a variable but attempting to understand it at a very deep level
+\begin{frame}[fragile]
+\begin{center}
+\begin{tikzpicture}
+    \fill<1->[red!60,opacity=0.75] (0,0) circle (4cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<1-> (pop) at (-3,2) {\textbf{Population}};
+    \fill<2->[blue!80,opacity=0.5] (2,0) circle (3.8cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
+    \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+\end{tikzpicture}
+\end{center}
+\end{frame}
 
+
+\againframe{srs}
+
+\frame{
+	\frametitle{Statistical Inference I}
+
+	To calculate a sample mean (or proportion):
+
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	{\small
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	}
+	\vspace{0.5em}
+	
+	%This is a \textit{statistic} (the sample mean) that \textit{estimates} the population \textit{parameter} (the population mean)
+	
+}
 
 
 \frame{
-
-\frametitle{What kinds of evidence?}
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Non-DSOs
-	\begin{itemize}
-	\item<3-> Direction observation
-	\item<3-> Focus groups
-	\item<3-> Interviews
-	\item<3-> Archival/documentary analysis
+	\frametitle{Statistical Inference II}
+	\begin{itemize}\itemsep1em
+	\item If we calculate $\bar{y}$ in our \textit{sample}, what does this tell us about the $\bar{Y}$ in the \textit{population}?
+	\item<2-> The sample \textit{estimate} is our guess at the value of the population \textit{parameter} within some degree of uncertainty
 	\end{itemize}
-\item<2-> DSOs
-	\begin{itemize}
-	\item<4-> Surveys
-	\item<4-> Statistical methods
-	\item<4-> Data mining (e.g., ``big data'')
-	\item<4-> Content analysis
-	\item<4-> Experiments
-	\end{itemize}
-\end{itemize}
+}
 
+
+\frame{
+	\frametitle{Law of Large Numbers}
+	\begin{itemize}
+	\item Definition: The \textit{mean} of the $\hat{\theta}$ from each of a number of samples will converge on the population $\theta$, as the number of samples increases
+	\end{itemize}
 }
 
 \frame{
-
-\frametitle{Why do case studies?}
-
-A case study can serve as any of the following:
-
-\begin{itemize}\small
-\item<2-> An in-depth investigation of a single case that stands alone
-\item<3-> An in-depth investigation of a case that is compared with other case studies
-\item<4-> An in-depth investigation of a case that precedes a ``large-N'' study of many cases
-\item<5-> An in-depth investigation of a case that follows from a ``large-N'' study of many cases
+	\frametitle{Sampling Variance}
+	\begin{itemize}\itemsep1em
+	\item The $\hat{\theta}$ in any particular sample can differ from the population value $\theta$
+	\item This variation is calling ``sampling variance'' or ``sampling error''
+	\item The standard error describes the average amount of variation of the $\hat{\theta}$'s around $\theta$
 \end{itemize}
-
 }
 
 
-% why do case studies?
-%% variable identification
-%% sequencing - what happened?
-%% DSOs within case (different unit of analysis; or DSOs across time)
-%% measurement - what is the score for this case on a variable?
-%% search for confounders
-
-
-% Wedeen - what is this? what is going on?
-% Mershon - DSOs, lots of DSOs. what units of analysis?
-
-
-% exploring a case as a DSO (already know what it is a case of)
-% exploring a case to score a DSO (don't know what it's score is)
-% exploring a case to decide what it is a case of (don't know the population or necessarily the variables)
+\frame{
+	\frametitle{How Uncertain Are We?}
+	\begin{itemize}\itemsep1em
+	\item Our uncertainty depends on sampling procedures
+	\item Most importantly, \textit{sample size}
+		\begin{itemize}
+		\item As $n \rightarrow \infty$, uncertainty $\rightarrow 0$
+		\end{itemize}
+	\item We typically summarize our uncertainty as the \textit{standard error}
+	\end{itemize}
+}
 
 \frame{
-\frametitle{Case as DSO}
+	\frametitle{Standard Errors (SEs)}
+	\begin{itemize}\itemsep1em
+	\item Definition: ``The standard error of a sample estimate is the average distance that a sample estimate ($\hat{\theta}$) would be from the population parameter ($\theta$) if we drew many separate random samples and applied our estimator to each.''
+	\item<2-> Square root of the sampling variance
+\end{itemize}
+}
 
-What is the score for this case for a variable?\\
-How can we best measure this variable?
+
+
+\frame{
+	\frametitle{Sample mean}
+	
+	\small
+	
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	
+	\begin{equation}
+	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
+	\end{equation}
+	where $f = $ proportion of population sampled,\\
+	$s^2 = $ sample (element) variance, and\\
+	$n = $ sample size
+}
+
+\frame{
+	\frametitle{Sample proportion}
+	
+	\small
+	
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	
+	\begin{equation}
+	SE_{p} = \sqrt{(1-f)\frac{p(1-p)}{n}}
+	\end{equation}
+	where $f = $ proportion of population sampled,\\
+	$p = $ sample proportion, and\\
+	$n = $ sample size
+}
+
+
+\frame<1>[label=moe]{
+
+	\frametitle{Margin of Error}
+
+	\begin{itemize}\itemsep0.5em
+	\item Uncertainty often stated in terms of a ``margin of error''
+	\item Standard MoE is twice the SE
+	\item For estimated proportions, expressed as:\\
+		``p $\pm$ MoE percentage points''
+	\item<2-> So for an SE of 0.01, how can we describe this?
+	\end{itemize}
+}
+
+\frame{
+	\only<1>{\includegraphics[height=.9\textheight]{images/ukpoll1}}
+	\only<2>{\includegraphics[height=.9\textheight]{images/ukpoll2}}
+	
+	{\tiny Source: \url{http://www.abc.net.au/news/2016-01-17/new-poll-show-widening-support-for-uk-to-leave-eu/7093730}\par}
+}
+
+
+\frame{
+
+{\LARGE
 
 \begin{center}
-\begin{tabular}{lccc}
-Case & Measure1 & Measure2 & Measure3 \\ \hline
-UK & 1 & 10 & 2 \\
-France & \fbox{\parbox{0.6em}{\textbf{?}}} & 5 & 2 \\
-Germany & 0 & 4 & 2 \\
-Spain & 1 & 7 & 2 \\
-\dots \\ \hline
-\end{tabular}
+Questions?
 \end{center}
 }
 
-\frame{
-\frametitle{Case to observe DSO}
+\vspace{2em}
 
-What does the score on this case \textit{mean}?
+{\normalsize
+
+\only<2->{(There is an R lab activity about this.)}
+
+}
+
+
+}
+
+\frame{
+\frametitle{Activity!}
+\includegraphics[width=\textwidth]{images/haribo}
+
+{\footnotesize Source: \href{https://www.flickr.com/people/34415916@N07}{ganeshaisis} on \href{https://commons.wikimedia.org/wiki/File:I_love_haribo_(5573044236).jpg}{Wikimedia}}
+
+}
+
+\frame[label=activity1]{
 
 \begin{center}
-\begin{tabular}{lccc}
-Case & Measure1 & Measure2 & Measure3 \\ \hline
-UK & 1 & 10 & 2 \\
-France & \fbox{\parbox{0.6em}{\textbf{1}}} & 5 & 2 \\
-Germany & 0 & 4 & 2 \\
-Spain & 1 & 7 & 2 \\
-\dots \\ \hline
-\end{tabular}
-\end{center}
-}
-
-\frame{
-\frametitle{Case as induction}
-
-\textit{Why} does this case have this score?\\
-\textit{What} effects does that score have?
-
-\begin{center}
-\begin{tabular}{lccc}
-Case & Measure1 & Measure2 & Measure3 \\ \hline
-UK & 1 & 10 & 2 \\
-France & \fbox{\parbox{0.6em}{\textbf{1}}} & 5 & 2 \\
-Germany & 0 & 4 & 2 \\
-Spain & 1 & 7 & 2 \\
-\dots \\ \hline
-\end{tabular}
-\end{center}
-}
-
-
-\frame{
-\frametitle{Case as induction}
-
-What is this a \textit{case of}?\\
-What are the variables that matter?
-
-\begin{center}
-\begin{tabular}{lccc}
-Case & Measure1 & Measure2 & Measure3 \\ \hline
-? & ? & ? & ? \\
-\fbox{\parbox{4.5em}{\textbf{``France''}}} & ? & ? & ? \\
-? & ? & ? & ? \\
-? & ? & ? & ? \\
-\dots \\ \hline
-\end{tabular}
-\end{center}
-}
-
-
-\frame{
-
-\frametitle{What counts as a \textit{case}?} % activity
-
-\begin{itemize}\itemsep0.5em
-\item<2-> The more important question is what is something a \textit{case of}
-\item<2-> Cases are instances of a concept or phenomenon
-	\begin{itemize}
-	\item<3-> What is the Brexit referendum a case of?
-	\item<4-> What is Islamic State a case of?
-	\item<5-> What is Angela Merkel a case of?
-	\item<6-> What is Sep. 11th a case of?
-	\item<7-> What is Wales a case of?
-	\end{itemize}
-\end{itemize}
-
-}
-
-% common cases: countries, subnational units, persons, political parties, events (e.g., acts of terrorism), revolutions, transitions to democracy, wars, policies, legislatures, elections
-
-
-% an instance or observation can be a case of many different things
-% September 11th might be a case of terrorism, of structural deficiencies in buildings, of airplane hijacking, of airport security, of intelligence failure, of presidential leadership, of the onset of war, of "rallying around the flag", etc.
-% to study something as a case, you need to know what it is a case *of*
-
-
-\frame{
-
-\frametitle{Case Studies Have Different Functions}
-
-\begin{enumerate}
-\item Description
-\item Concept definition and measurement
-\item Induction/Theory development
-\item Theory testing
-\end{enumerate}
-
-\small
-What kinds of evidence do we gather for each?
-
-}
-
-\frame{
-
-\frametitle{Gerring's Typology}
-
-
-\begin{center}
-\begin{tabular}{llcc} \cline{3-4}
- & & \multicolumn{2}{c}{\textbf{Temporal Variation}} \\
- & & \textit{No} & \textit{Yes} \\ \hline
-\textbf{Spatial} & \textit{No} & ? & Type I \\
-\textbf{Variation} & \textit{Yes} & Type II & Type III \\ \hline
-\end{tabular}
+What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 \end{center}
 
-\small
-\begin{itemize}
-\item<2-> Type I: sequence
-\item<3-> Type II: lower unit of analysis
-\item<4-> Type III: ``panel'' of lower-level units
-\end{itemize}
-
-
-}
-
-
-
-
-\frame{
-\frametitle{1: Description}
-\begin{itemize}\itemsep1em
-\item Case study might be descriptive
-\item Historical or interpretive
-\item Think ``biography''
-\item Gerring: Type I--III case studies
-\end{itemize}
-}
-
-% what happened; when did events happen; who was involved; etc.
-
-\frame{
-\frametitle{2: Concept Definition}
-\begin{itemize}\itemsep0.5em
-\item Sometimes you don't know what you are studying
-\item Case studies can clarify what something is a \textit{case of}
-\item This helps you to:
-	\begin{itemize}
-	\item Refine your concept definition
-	\item Improve measurement
-	\end{itemize}
-\end{itemize}
-}
-
-
-\frame{
-\frametitle{3: Theory development}
-\begin{itemize}\itemsep0.5em
-\item Case is an instance of a phenomenon
-\item There is some outcome to be \textit{explained}
-	\begin{itemize}
-	\item Outcome is case itself
-	\item Outcome of a case
-	\item Outcome as part of case
-	\end{itemize}
-\item Look for ``Causal Process Observations''
-\item Attempt to identify generalizable explanations
-\end{itemize}
-}
-
-\frame{
-\frametitle{{\large Causal Process Observations}}
-
-\normalsize
-
-\begin{itemize}\itemsep0.5em
-\item Definition: ``An insight or piece of data that provides information about the context, process, or mechanism, and that contributes distinctive leverage in causal inference''\footnote{Brady and Collier 2004, p.277}
-\item Pieces of evidence that help you inductively generate hypotheses about potential causal relationships
-\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{4: Theory testing}
-
-\begin{itemize}\itemsep1em
-\item Descriptive theories/frameworks
-\item<2-> Causal theories
-	\begin{itemize}
-	\item ``Actual case'' comparisons
-	\item Fearon's ``Counterfactual method''
-	\item Process tracing
-	\end{itemize}
-\end{itemize}
+	\begin{enumerate}
+	\item<2-> Everyone collect a random sample
+	\item<3-> Calculate $\hat{p} = \dfrac{\sum\heartsuit}{n}$
+	\item<4-> Calculate element variance: $Var(x) = p(1-p)$
+	\item<5-> Calculate MoE: $\hat{p} \pm \left(2*\sqrt{\dfrac{Var(x)}{n}} \right)$
+	\end{enumerate}
 
 }
-
-
 
 \frame{}
 
-% Questions?
 
-\section[Activity]{Group Activity}
-\frame{\tableofcontents[currentsection]}
 
 \frame{
-
-\frametitle{Activity}
-
-\small
-
-Think of the June 2016 British Referendum on EU Membership and discuss the following:
-
-\begin{enumerate}
-\item What kinds of DSOs could you collect about the referendum?
-	\begin{itemize}
-	\item What unit of analysis?
-	\item What variable(s)?
-	\item What kinds of evidence can you use?
+	\frametitle{{\normalsize How large of a sample do we need?}}
+	\begin{itemize}\itemsep1em
+	\item<2-> Uncertainty is influenced by:
+		\begin{itemize}
+		\item Sample size
+		\item \textit{Element} variance\footnote{Population element variance is estimated by sample element variance.}
+		\item Population size?
+		\end{itemize}
+	\item<3-> So what do we do?
+		\begin{itemize}
+		\item Decide on desired uncertainty
+		\item Guess at element variance
+		\item<4-> Adjust sample size based on feasibility
+		\end{itemize}
 	\end{itemize}
-\item What other kinds of non-DSO descriptions could you make?
-\item What is the referendum \textit{a case of}?
-\end{enumerate}
+}
 
+\frame{
+	\frametitle{Estimating sample size}
+	{\small What precision (margin of error) do we want?}\\
+	\begin{itemize}\small
+		\item $\pm 2$ percentage points: $SE = 0.01$
+			\begin{equation}
+			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
+			\end{equation}
+		\item<2-> $\pm 5$ percentage points: $SE = 0.025$
+			\begin{equation}
+			n = \frac{0.25}{0.000625} = 400
+			\end{equation}
+		\item<3-> $\pm 0.5$ percentage points: $SE = 0.0025$
+			\begin{equation}
+			n = \frac{0.25}{0.00000625} = 40,000
+			\end{equation}
+	\end{itemize}
 }
 
 
 
+\section*{Preview}
 
+\frame{
+\frametitle{Preview}
 
+	\begin{itemize}\itemsep1em
+	\item Continue with statistics in middle of LT
+	\item Next week we'll discuss ethics
+		\begin{itemize}
+		\item Read Activity on Moodle before lecture
+		\end{itemize}
+	\item PS4 due December 13
+	\item Sample Exam on Moodle (soon!)
+	\end{itemize}
+
+}
 
 \appendix
 \frame{}

@@ -2,7 +2,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
 
-\title{Sampling and Representativeness}
+\title{Ethics and Research Integrity}
 
 \date[]{}
 
@@ -12,351 +12,204 @@
 
 \frame{\tableofcontents}
 
-\section{Representativeness}
+\section{Ethics}
 \frame{\tableofcontents[currentsection]}
 
-
 \frame{
-	\frametitle{Case selection}
-	
-	Our ambitions about what kind of inferences we want to derive from our descriptions influence how we select cases.
-	
-	
-	\begin{itemize}\itemsep1em
-	\item<2-> Purposive
-	\item<3-> Comparative
-	\item<4-> Representative
-		\begin{itemize}
-		\item<5-> Unrepresentative
-		\end{itemize}
+\frametitle{History: Key Moments}
+
+\small
+
+\begin{enumerate}
+\item Tuskegee (1932-1972) and Guatemala (1946-1948) Studies
+\item Nuremberg Code (1947)
+\item Helsinki Declaration (1964)
+\item U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\item The Belmont Report (1979)
+\item EU Data Protection Directive (1995; 2012)
+	\begin{itemize}
+	\item UK Data Protection Act (1998)
 	\end{itemize}
+\end{enumerate}
 }
 
 
 \frame{
-	\frametitle{Discuss in Pairs!}
-	
-	\Large
-	\begin{center}
-	What does it mean for a ``sample'' (set of cases) to be representative of a population?
-	\end{center}
-}
-
-\frame{
-	\frametitle{{\large Different conceptualizations}}
+	\frametitle{Helsinki Declaration}
 	
 	\small
-	
-	\begin{itemize}\itemsep0.5em
-		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
-		\item \textbf{Model-based}: A sample is representative because it resembles in the population with respect to certain variables (e.g., same proportion of women in sample and population, etc.)
-		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
+	\begin{itemize}
+	\item Adopted by the World Medical Association in 1964\footnote{\url{http://www.bmj.com/content/2/5402/177}}
+	\item Narrowly focused on medical research
+	\item Expanded the Nuremberg Code
+		\begin{itemize}
+		\item Relaxed consent requirements
+		\item Risks should not exceed benefits
+		\item Institutionalization of ethics oversight
+		\end{itemize}
+	\item<2-> Do these rules apply to non-experimental research? To non-medical research?
 	\end{itemize}
-}
 
+}
 
 \frame{
-	\frametitle{Obtaining Representativeness}
-	\begin{itemize}\itemsep0.5em
-		\item<2-> Census
-		\item<3-> Convenience/Purposive samples
-		\item<4-> Quota sampling (common before 1940s)
-		\item<5-> \textbf<7>{Simple random sampling}
-		\item<6-> Complex survey designs
-	\end{itemize}
-}
-
-
-\section{Design-based (Statistical) Sampling}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-	\frametitle{{\normalsize Inference from Sample to Population}}
-	\begin{itemize}\itemsep0.5em
-	\item We want to know pop. parameter $\theta$
-	\item We only observe sample estimate $\hat{\theta}$
-	\item We have a guess but are also uncertain
-	\vspace{1em}
-	\item<2-> What range of values for $\theta$ does our $\hat{\theta}$ imply?
-	\end{itemize}
-}
-
-\frame[label=srs]{
-	\frametitle{Simple Random Sampling}
-	\begin{enumerate}\itemsep0.5em
-		\item Define target population
-		\item Create ``sampling frame''
-		\item Each unit in frame has equal probability of selection
-		\item Collect data on each unit
-		\item Calculate sample \textit{statistic}
-		\item Draw an inference to the population
+	\frametitle{Social Science Examples}
+	\begin{enumerate}\itemsep2em
+	\item \href{https://www.youtube.com/watch?v=yr5cjyokVUs}{Milgram Obedience Study (1961)}
+	\item \href{https://www.youtube.com/watch?v=760lwYmpXbc}{Stanford Prison Study (1971)}
 	\end{enumerate}
 }
 
 
-\begin{frame}[fragile]
-\begin{center}
-\begin{tikzpicture}
-    \fill<1->[red!60,opacity=0.75] (0,0) circle (4cm) 
-        node[text=white, align=center, text width=3cm] {};
-    \node<1-> (pop) at (-3,2) {\textbf{Population}};
-    \fill<2->[blue!80,opacity=0.5] (2,0) circle (3.8cm) 
-        node[text=white, align=center, text width=3cm] {};
-    \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
-    \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
-        node[text=white, align=center, text width=3cm] {Sample};
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-\againframe{srs}
-
 \frame{
-	\frametitle{Statistical Inference I}
-
-	To calculate a sample mean (or proportion):
-
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	{\small
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	}
-	\vspace{0.5em}
+	\frametitle{The Belmont Report}
 	
-	%This is a \textit{statistic} (the sample mean) that \textit{estimates} the population \textit{parameter} (the population mean)
-	
-}
-
-
-\frame{
-	\frametitle{Statistical Inference II}
-	\begin{itemize}\itemsep1em
-	\item If we calculate $\bar{y}$ in our \textit{sample}, what does this tell us about the $\bar{Y}$ in the \textit{population}?
-	\item<2-> The sample \textit{estimate} is our guess at the value of the population \textit{parameter} within some degree of uncertainty
-	\end{itemize}
-}
-
-
-\frame{
-	\frametitle{Law of Large Numbers}
+	\small
 	\begin{itemize}
-	\item Definition: The \textit{mean} of the $\hat{\theta}$ from each of a number of samples will converge on the population $\theta$, as the number of samples increases
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Sampling Variance}
-	\begin{itemize}\itemsep1em
-	\item The $\hat{\theta}$ in any particular sample can differ from the population value $\theta$
-	\item This variation is calling ``sampling variance'' or ``sampling error''
-	\item The standard error describes the average amount of variation of the $\hat{\theta}$'s around $\theta$
-\end{itemize}
-}
-
-
-\frame{
-	\frametitle{How Uncertain Are We?}
-	\begin{itemize}\itemsep1em
-	\item Our uncertainty depends on sampling procedures
-	\item Most importantly, \textit{sample size}
+	\item Commissioned by the U.S. Government in 1979\footnote{\url{http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.html}}
+	\item Three overarching principles:
+		\begin{enumerate}
+		\item Respect for persons
+		\item Beneficence
+		\item Justice
+		\end{enumerate}
+	\item Three policy implications:
 		\begin{itemize}
-		\item As $n \rightarrow \infty$, uncertainty $\rightarrow 0$
+		\item Informed consent
+		\item Assessment of risks/benefits
+		\item Care for vulnerable populations
 		\end{itemize}
-	\item We typically summarize our uncertainty as the \textit{standard error}
+	\end{itemize}
+
+}
+
+
+\frame{
+	\frametitle{Informed Consent}
+	\begin{itemize}
+	\item Persons must consent to being a research subject
+	\item<2-> What this means in practice is complicated
+		\begin{itemize}
+		\item What is research?
+		\item What is consent?
+		\item What is ``informed'' consent?
+		\end{itemize}
+	\item<3-> Cross-national variations
+		\begin{itemize}
+		\item Consent forms required in U.S.
+		\item Not required in UK
+		\end{itemize}
+	\end{itemize}
+
+}
+
+\frame{
+\frametitle{Benefits and Harm}
+	\begin{itemize}\itemsep2em
+	\item What is a ``benefit''?
+	\item What is a ``harm''?
+	\item How do we balance the two?
 	\end{itemize}
 }
 
-\frame{
-	\frametitle{Standard Errors (SEs)}
-	\begin{itemize}\itemsep1em
-	\item Definition: ``The standard error of a sample estimate is the average distance that a sample estimate ($\hat{\theta}$) would be from the population parameter ($\theta$) if we drew many separate random samples and applied our estimator to each.''
-	\item<2-> Square root of the sampling variance
-\end{itemize}
-}
-
-
 
 \frame{
-	\frametitle{Sample mean}
-	
-	\small
-	
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	
-	\begin{equation}
-	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
-	\end{equation}
-	where $f = $ proportion of population sampled,\\
-	$s^2 = $ sample (element) variance, and\\
-	$n = $ sample size
-}
-
-\frame{
-	\frametitle{Sample proportion}
-	
-	\small
-	
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	
-	\begin{equation}
-	SE_{p} = \sqrt{(1-f)\frac{p(1-p)}{n}}
-	\end{equation}
-	where $f = $ proportion of population sampled,\\
-	$p = $ sample proportion, and\\
-	$n = $ sample size
-}
-
-
-\frame<1>[label=moe]{
-
-	\frametitle{Margin of Error}
-
-	\begin{itemize}\itemsep0.5em
-	\item Uncertainty often stated in terms of a ``margin of error''
-	\item Standard MoE is twice the SE
-	\item For estimated proportions, expressed as:\\
-		``p $\pm$ MoE percentage points''
-	\item<2-> So for an SE of 0.01, how can we describe this?
+	\frametitle{Privacy}
+	\begin{itemize}
+	\item EU Data Protection Directive (1995) and UK Data Protection Act (1998)
+	\item Deals with ``personal data''
+	\item Data can be processed when:
+		\begin{itemize}
+		\item Consent is given
+		\item Data are used for a ``legitimate'' purpose
+		\item Anonymous or confidential
+		\end{itemize}
+	\item Data cannot leave the EU except under conditions
 	\end{itemize}
 }
 
+
 \frame{
-	\only<1>{\includegraphics[height=.9\textheight]{images/ukpoll1}}
-	\only<2>{\includegraphics[height=.9\textheight]{images/ukpoll2}}
-	
-	{\tiny Source: \url{http://www.abc.net.au/news/2016-01-17/new-poll-show-widening-support-for-uk-to-leave-eu/7093730}\par}
+	\frametitle{{\normalsize Lots of Other Ethical Questions}}
+	\begin{enumerate}
+	\item<2-> Funding
+	\item<3-> Independence and Politicization
+	\item<4-> Vulnerable populations (e.g. children, sick)
+	\item<5-> Cross-national research
+	\item<6-> Participant-observation disclosures
+	\item<7-> End uses/users of research
+	\item<8-> Others?
+	\end{enumerate}
 }
 
 
 \frame{
 
-{\LARGE
+\Large 
 
 \begin{center}
 Questions?
 \end{center}
-}
-
-\vspace{2em}
-
-{\normalsize
-
-\only<2->{(There is an R lab activity about this.)}
 
 }
 
+
+\frame{
+
+\frametitle{Activity!}
+
+\begin{itemize}\itemsep1em
+\item Read each ethical scenarios
+\item Decide what ethical issues are raised by the scenario (if any)
+\item Decide what modifications are necessary for the project to be ethically acceptable
+\end{itemize}
+
+}
+
+
+
+
+\frame{}
+
+\section{Ethics at LSE}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\frametitle{Research Ethics at LSE}
+
+\begin{itemize}
+\item Ethics Code \footnote{\url{http://www.lse.ac.uk/intranet/LSEServices/ethics/home.aspx}}
+\item Research Ethics Policy \footnote{\url{http://www.lse.ac.uk/intranet/LSEServices/policies/pdfs/school/resEthPolPro.pdf}}
+\item Levels of review:
+	\begin{enumerate}
+	\item Staff: Self-certification
+	\item Students: Supervisor certification
+	\item LSE Research Ethics Committee
+	\item External review
+	\end{enumerate}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{center}
+\href{http://www.lse.ac.uk/intranet/researchAndDevelopment/researchDivision/policyAndEthics/ethics-annexC.pdf}{\includegraphics[width=\textwidth]{images/lse_ethics_flowchart}}
+\end{center}
 
 }
 
 \frame{
 \frametitle{Activity!}
-\includegraphics[width=\textwidth]{images/haribo}
 
-{\footnotesize Source: \href{https://www.flickr.com/people/34415916@N07}{ganeshaisis} on \href{https://commons.wikimedia.org/wiki/File:I_love_haribo_(5573044236).jpg}{Wikimedia}}
-
-}
-
-\frame[label=activity1]{
-
-\begin{center}
-What proportion of all Haribo Starmix gummies are $\heartsuit$s?
-\end{center}
-
-	\begin{enumerate}
-	\item<2-> Everyone collect a random sample
-	\item<3-> Calculate $\hat{p} = \dfrac{\sum\heartsuit}{n}$
-	\item<4-> Calculate element variance: $Var(x) = p(1-p)$
-	\item<5-> Calculate MoE: $\hat{p} \pm \left(2*\sqrt{\dfrac{Var(x)}{n}} \right)$
-	\end{enumerate}
+\begin{itemize}
+\item Complete an LSE Ethics form for your proposed research project
+\end{itemize}
 
 }
 
-\frame{}
-
-
-
-\frame{
-	\frametitle{{\normalsize How large of a sample do we need?}}
-	\begin{itemize}\itemsep1em
-	\item<2-> Uncertainty is influenced by:
-		\begin{itemize}
-		\item Sample size
-		\item \textit{Element} variance\footnote{Population element variance is estimated by sample element variance.}
-		\item Population size?
-		\end{itemize}
-	\item<3-> So what do we do?
-		\begin{itemize}
-		\item Decide on desired uncertainty
-		\item Guess at element variance
-		\item<4-> Adjust sample size based on feasibility
-		\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Estimating sample size}
-	{\small What precision (margin of error) do we want?}\\
-	\begin{itemize}\small
-		\item $\pm 2$ percentage points: $SE = 0.01$
-			\begin{equation}
-			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
-			\end{equation}
-		\item<2-> $\pm 5$ percentage points: $SE = 0.025$
-			\begin{equation}
-			n = \frac{0.25}{0.000625} = 400
-			\end{equation}
-		\item<3-> $\pm 0.5$ percentage points: $SE = 0.0025$
-			\begin{equation}
-			n = \frac{0.25}{0.00000625} = 40,000
-			\end{equation}
-	\end{itemize}
-}
-
-
-
-\section*{Preview}
-
-\frame{
-\frametitle{Preview}
-
-	\begin{itemize}\itemsep1em
-	\item Continue with statistics in middle of LT
-	\item Next week we'll discuss ethics
-		\begin{itemize}
-		\item Read Activity on Moodle before lecture
-		\end{itemize}
-	\item PS4 due December 13
-	\item Sample Exam on Moodle (soon!)
-	\end{itemize}
-
-}
 
 \appendix
 \frame{}

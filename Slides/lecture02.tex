@@ -302,6 +302,62 @@ Define the concept of ``\hyperlink{chairs}{chair}''
 % If we increase sufficient attributes, we have more cases of that concept and it is more general
 
 
+\frame{
+\frametitle{Classical Approach}
+
+
+\begin{itemize}\itemsep0.5em
+\item Specify a set of ``constitutive dimensions'' that \textit{are} the concept
+	\begin{itemize}
+	\item Fundamental characteristics of the concept
+	\item Not causes or effects
+	\item Not measures of the concept
+	\end{itemize}
+\item<2-> Dimensions are \textit{necessary and jointly sufficient}
+
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Family Resemblence}
+
+\begin{itemize}
+\item Classical approach focuses on \textit{necessary} elements
+\item Some concepts have no necessary elements but are still meaningful % Game
+\item<2-> We might also think about elements that are \textit{sufficient} to establish membership
+\end{itemize}
+}
+
+\begin{frame}[fragile]
+
+\frametitle{Trade-offs}
+
+\vspace{-2em}
+
+\begin{center}
+\begin{tikzpicture}
+	% x-axis
+    \draw[->] (0,0) node[below] (origin) {} -- (5,0) node[right] (xaxis) {};
+    \node[below] at (2.5,-0.75) {\small Intension (More attributes)};
+	\node[below] at (0.5,0) {\footnotesize Low};
+	\node[below] at (5,0) {\footnotesize High};
+	
+	% y-axis
+    \draw[->] (origin) -- (0,5) node[left] (yaxis) {};
+	\node[left, text width=5cm, align=center] at (0,2.5) {\small Extension\\(More cases)};
+	\node[left] at (0,0.5) {\footnotesize Low};
+	\node[left] at (0,5) {\footnotesize High};
+
+    \draw[<->, solid] (0.5,4.5) -- (4.5,0.5);
+    \node[above, rotate=45] at (4,4) {\tiny Sufficient};
+    
+    \draw[<->, dashed] (0.5,0.5) -- (4.5,4.5);
+    \node[rotate=-45] at (4,1.25) {\tiny Necessary};
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
 
 \frame{\huge\vskip20pt\textbf{Questions?}}
 

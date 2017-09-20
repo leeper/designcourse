@@ -16,32 +16,32 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 
 ## Slides
 
- 1. [Welcome and First Lecture (Sep. 30)](Slides/lecture01.pdf)
- 2. [Concepts: "I'll know it when I see it" (Oct. 7)](Slides/lecture02.pdf)
- 3. [Measurement: Concepts in Practice (Oct. 14)](Slides/lecture03.pdf)
- 4. [Tabulation and Visualization (Oct. 21)](Slides/lecture04.pdf)
+ 1. [Welcome and First Lecture (Sep. 29)](Slides/lecture01.pdf)
+ 2. [Concepts: "I'll know it when I see it" (Oct. 6)](Slides/lecture02.pdf)
+ 3. [Measurement: Concepts in Practice (Oct. 13)](Slides/lecture03.pdf)
+ 4. [Tabulation and Visualization (Oct. 20)](Slides/lecture04.pdf)
      - [Lab Activity](Assignments/Lab1.pdf)
      - You may find [this quick start guide for R](http://thomasleeper.com/Rcourse/Intro2R/Intro2R.pdf) useful
- 5. [Description and Evidence Gathering (Oct. 28)](Slides/lecture05.pdf)
- 6. [Translating Texts into Interpretations and Numbers (Nov. 11)](Slides/lecture06.pdf)
- 7. [Actually Talking to People (Nov. 18)](Slides/lecture07.pdf)
- 8. [Case Studies (Nov. 25)](Slides/lecture08.pdf)
- 9. [Sampling and Representativeness (Dec. 2)](Slides/lecture09.pdf)
+ 5. [Description and Evidence Gathering (Oct. 27)](Slides/lecture05.pdf)
+ 6. [Translating Texts into Interpretations and Numbers (Nov. 10)](Slides/lecture06.pdf)
+ 7. [Actually Talking to People (Nov. 17)](Slides/lecture07.pdf)
+ 8. [Sampling and Representativeness (Nove. 24)](Slides/lecture09.pdf)
      - [Lab Activity](Assignments/Lab2.pdf)
- 10. [Ethics and Research Integrity (Dec. 9)](Slides/lecture10.pdf)
+ 9. [Ethics and Research Integrity (Dec. 1)](Slides/lecture10.pdf)
      - [Lab Activity](Assignments/EthicsScenarios.pdf)
- 11. [Causality: Explanation versus Prediction (Jan. 11)](Slides/lecture11.pdf)
- 12. [Literature Review (Jan. 20)](Slides/lecture12.pdf)
- 13. [Theory Development and Hypothesis Generation (Jan. 27)](Slides/lecture13.pdf)
- 14. [Case Comparisons (Feb. 3)](Slides/lecture14.pdf)
- 15. [Causal Mechanisms (Feb. 10)](Slides/lecture15.pdf)
- 16. Statistical Inference (Feb. 24) -- No Slides
+ 10. From Description to Causation (Dec. 8)
+ 11. [Causality: Explanation versus Prediction (Jan. 10)](Slides/lecture11.pdf)
+ 12. [Literature Review (Jan. 19)](Slides/lecture12.pdf)
+ 13. [Theory Development and Hypothesis Generation (Jan. 26)](Slides/lecture13.pdf)
+ 14. [Case Comparisons (Feb. 2)](Slides/lecture14.pdf)
+ 15. [Causal Mechanisms (Feb. 9)](Slides/lecture15.pdf)
+ 16. Statistical Inference (Feb. 23) -- No Slides
      - [Lab Activity: Statistics](Assignments/Lab3.pdf)
- 17. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Mar. 3)](Slides/lecture17.pdf)
+ 17. [Getting to Regression: The Workhorse of Quantitative Political Analysis (Mar. 2)](Slides/lecture17.pdf)
      - [Lab Activity: Regression](Assignments/Lab4.pdf)
- 18. [Matching and Regression: Accounting for Rival Explanations (Mar. 10)](Slides/lecture18.pdf)
- 19. [Experimental Design and the Search for Quasi-Experiments (Mar. 17)](Slides/lecture19.pdf)
- 20. [Conclusion, Synthesis, and Exam Prep (Mar. 24)](Slides/lecture20.pdf)
+ 18. [Matching and Regression: Accounting for Rival Explanations (Mar. 9)](Slides/lecture18.pdf)
+ 19. [Experimental Design and the Search for Quasi-Experiments (Mar. 16)](Slides/lecture19.pdf)
+ 20. [Conclusion, Synthesis, and Exam Prep (Mar. 23)](Slides/lecture20.pdf)
 
 Notes:
 
@@ -55,14 +55,14 @@ There are eight problem sets for the course (four in each term).
 
 | *Assignment* | *Due Date* |
 | ---------- | -------- |
-| [Identifying and Evaluating Claims](Assignments/ProblemSet1.html) | Tuesday Oct. 11 |
-| [Concepts and Measurement](Assignments/ProblemSet2.html) | Tuesday Nov. 8 |
-| [Data Collection I](Assignments/ProblemSet3.html) | Tuesday Nov. 22 |
-| [Data Collection II](Assignments/ProblemSet4.html) | Tuesday Dec. 13 |
-| [Causality](Assignments/ProblemSet5.html) | Tuesday Jan. 17 |
-| [Theory Evaluation](Assignments/ProblemSet6.html) | Tuesday Feb. 14 |
-| [Article Critique](Assignments/ProblemSet7.html) | Tuesday Feb. 28 |
-| [Statistics and Regression](Assignments/ProblemSet8.html) | Tuesday Mar. 14 |
+| [Identifying and Evaluating Claims](Assignments/ProblemSet1.html) | Tuesday Oct. 10 |
+| [Concepts and Measurement](Assignments/ProblemSet2.html) | Tuesday Nov. 7 |
+| [Data Collection I](Assignments/ProblemSet3.html) | Tuesday Nov. 21 |
+| [Data Collection II](Assignments/ProblemSet4.html) | Tuesday Dec. 5 |
+| [Causality](Assignments/ProblemSet5.html) | Tuesday Jan. 16 |
+| [Theory Evaluation](Assignments/ProblemSet6.html) | Tuesday Feb. 13 |
+| [Article Critique](Assignments/ProblemSet7.html) | Tuesday Feb. 27 |
+| [Statistics and Regression](Assignments/ProblemSet8.html) | Tuesday Mar. 13 |
 
 ## LT Reading Week Study Guide Assignment
 
