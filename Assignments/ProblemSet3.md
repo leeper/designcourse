@@ -35,7 +35,7 @@ You will identify 2 concepts that can be translated into observable variables th
 
 ## Submission Instructions
 
-Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12 (graphics should be one additional page). Submit the assignment via Moodle by Tuesday, November 22. 
+Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12 (graphics should be one additional page). Submit the assignment via Moodle by Tuesday, November 21. 
 
 ## Feedback
 

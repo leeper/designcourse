@@ -1,6 +1,6 @@
 # Research Design in Political Science #
 
-Some course materials for the Research Design in Political Science lecture series in Government at the London School of Economics and Political Science. The repo is currently being updated with materials for Academic Year 2015-2016.
+Some course materials for the Research Design in Political Science lecture series in Government at the London School of Economics and Political Science. The repo is currently being updated with materials for Academic Year 2016-2017.
 
 These materials can be found at: http://www.thomasleeper.com/designcourse
 

@@ -7,7 +7,7 @@ ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 
 # Research Design in Political Science
 
-These are course materials for [GV249: Research Design in Political Science](http://www.lse.ac.uk/resources/calendar/courseGuides/GV/2015_GV249.htm) lecture series at the London School of Economics and Political Science. The course is taught for the full Academic Year 2016-2017. 
+These are course materials for [GV249: Research Design in Political Science](http://www.lse.ac.uk/resources/calendar/courseGuides/GV/2015_GV249.htm) lecture series at the London School of Economics and Political Science. The course is taught for the full Academic Year 2017-2018. 
 
 The course will introduce students to the fundamentals of research design in political science. The course will cover a range of topics, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques. The course will address a variety of approaches to empirical political science research including experimental and quasi-experimental designs, large-n survey research, small-n case selection, and comparative/historical comparisons. As a result, topics covered in the course will be varied and span all areas of political science including political behaviour, institutions, comparative politics, international relations, and public administration.
 
@@ -46,7 +46,7 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
 Notes:
 
  - Sessions 1-10 meet during Michaelmas Term and Sessions 11-20 meet during Lent Term.
- - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 31 - Nov.5; Feb. 15 – Feb. 19).
+ - There will be no lecture or class during Michaelmas and Lent Term reading weeks (Week 6 in each term; Oct. 30 - Nov.4; Feb. 14 – Feb. 18).
 
  
 ## Problem Sets
@@ -72,7 +72,7 @@ We will use LT reading week to prepare for the exam. As part of this, students w
 
 ### Research Design Proposal
 
-*Due: Tuesday, 21 March 2017 at 5:00pm*
+*Due: Tuesday, 20 March 2017 at 5:00pm*
 
 The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student's choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
 
@@ -80,7 +80,7 @@ The 3000-word research design paper should outline the basic elements of a novel
 
 ### Written Exam
 
-*Summer Term, 2016*
+*Summer Term, 2017*
 
 The 2-hour written exam covers the full breadth of material from the course and will test students' knowledge of course content, including concept definition, the appraisal of political science theories, the generation of hypotheses, and — most importantly — the appropriateness of different research designs for answering specific research questions. This will count for 50% of the final mark.
 

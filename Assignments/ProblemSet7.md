@@ -33,7 +33,7 @@ You are being asked to choose an empirical research article (or book chapter/sec
 
 ## Submission Instructions
 
-Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, February 28.
+Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, February 27.
 
 ## Feedback
 

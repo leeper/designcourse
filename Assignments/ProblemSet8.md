@@ -36,7 +36,7 @@ Your assignment should be no more than 4 pages of double-spaced A4, Times New Ro
 
 As an appendix to your submission, include all relevant R code used to generate your results and figures. This should be typed in Courier New font size 10.
 
-Submit the assignment via Moodle by Tuesday, March 14.
+Submit the assignment via Moodle by Tuesday, March 13.
 
 ## Feedback
 

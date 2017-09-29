@@ -28,7 +28,7 @@ You are being asked to think about causality in general terms and with reference
 
 ## Submission Instructions
 
-Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, January 17.
+Your assignment should be no more than 3 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, January 16.
 
 ## Feedback
 

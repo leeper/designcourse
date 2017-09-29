@@ -28,7 +28,7 @@ As a class, you will select a questionnaire from the ["Flash" Eurobarometer surv
 
 ## Submission Instructions
 
-Your assignment should be no more than three pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday December 13.
+Your assignment should be no more than three pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday December 5.
 
 ## Feedback
 

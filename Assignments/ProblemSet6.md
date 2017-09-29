@@ -28,7 +28,7 @@ You are being given a published article to read and evaluate. For this assignmen
 
 ## Submission Instructions
 
-Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, February 14.
+Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, February 13.
 
 ## Feedback
 

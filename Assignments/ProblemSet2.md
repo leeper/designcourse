@@ -28,7 +28,7 @@ You are being given a concept to think about. For this concept, you need to defi
 
 ## Submission Instructions
 
-Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, November 8.
+Your assignment should be no more than 2 pages of double-spaced A4, Times New Roman font size 12. Submit the assignment via Moodle by Tuesday, November 7.
 
 ## Feedback
 
