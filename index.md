@@ -30,7 +30,7 @@ A [complete syllabus for the course](Syllabus/Syllabus.pdf) is currently availab
  9. [Ethics and Research Integrity (Dec. 1)](Slides/lecture10.pdf)
      - [Lab Activity](Assignments/EthicsScenarios.pdf)
  10. From Description to Causation (Dec. 8)
- 11. [Causality: Explanation versus Prediction (Jan. 10)](Slides/lecture11.pdf)
+ 11. [Causality: Developing Explanations (Jan. 10)](Slides/lecture11.pdf)
  12. [Literature Review (Jan. 19)](Slides/lecture12.pdf)
  13. [Theory Development and Hypothesis Generation (Jan. 26)](Slides/lecture13.pdf)
  14. [Case Comparisons (Feb. 2)](Slides/lecture14.pdf)
