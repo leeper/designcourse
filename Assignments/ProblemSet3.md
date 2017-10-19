@@ -26,7 +26,7 @@ You will identify 2 concepts that can be translated into observable variables th
  
      ```r
      library("rio")
-     govdat <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan16.dta")
+     govdat <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan17.dta")
      ```
  
  5. Using ggplot2, create three distinct types of visualizations showing different patterns or relationships in your data. For each plot, create a "worse" version and "better" version of the visualization and discuss why the "better" version communicates the pattern or relationship better, either in substantive terms or in purely aesthetic ones.
