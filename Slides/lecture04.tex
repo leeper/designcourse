@@ -93,59 +93,11 @@ Two broad categories of analytic strategies:
 	\item Accounts or interpretations
 	\end{itemize}
 \item<3-> \textit{Qualitative analysis} is more general and fluidic than quantitative
-\item<4-> Often complementary rather than strict alternatives
 \end{itemize}
 
 }
 
 
-
-
-
-\section{Problem Set 1}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-
-\frametitle{Problem Set 1}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Generally good, but some aspects could be improved across the board
-
-	\begin{itemize}\footnotesize
-	\item Academic style and format
-	\item Precision in language
-	\item Focus less on who is making the claim and how, and more on what the claim precisely is (what concepts are at stake? is it descriptive, causal, predictive, normative?)
-	\item Reflection is key
-	\end{itemize}
-
-\item Administrative points
-	
-	\begin{itemize}\footnotesize
-	\item Submit anonymously
-	\item Follow guidance on formatting
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Looking Ahead}
-
-\begin{itemize}\itemsep0.25em
-\item PS 2 covers material on concepts and operationalization (Nov 8)
-\item PS 3 covers today's material (Nov 22)
-\item PS 4 will involve group work (Dec 13)
-
-\vspace{0.5em}
-
-\item Start thinking about topics in political science that interest you (Nov/Dec)
-\end{itemize}
-
-}
 
 
 
@@ -183,39 +135,156 @@ Two broad categories of analytic strategies:
 \end{itemize}
 }
 
+% library("gapminder")
+% x <- gapminder[gapminder$year == 2007, c("country", "continent", "lifeExp", "pop"),]
+% set.seed(123)
+% x[sample.int(nrow(x), 10),]
 
 
-
+\begin{frame}[fragile]
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+\end{frame}
 
 % central tendency
 
-\frame{
+\frame<1>[label=centraltendency]{
 \frametitle{Central Tendency}
 
-\begin{itemize}\itemsep1em
-\item Mean (average): $\bar{Y} = \frac{1}{n}\sum_{i=1}^{n} Y_i$
-	\begin{itemize}
-	\item<2-> Trimmed mean
-	\end{itemize}
+\begin{itemize}\itemsep2em
+\item<2-> Mean (average): $\bar{x} = \frac{1}{n}\sum\limits_{i=1}^{n} x_i$
 \item<3-> Median: Middle value
 \item<4-> Mode: Most common value
 	\begin{itemize}
-	\item<5-> Unimodal, bimodal, multimodal
+	\item Range
+	\item Minimum
+	\item Maximum
+	\item Percentiles
 	\end{itemize}
 \end{itemize}
 
 }
 
+\begin{frame}[fragile]
+\frametitle{Mean/average}
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+
+\begin{align*}
+Sum &= 79 + 51 + 81 + 70 + 77 + 42 + 74 + 58 + 80 + 69 = 681\\
+Mean &= \frac{681/10} = 68.1\\
+\end{align*}
+
+
+\end{frame}
+
+
+\againframe<2-3>{centraltendency}
+
+\begin{frame}[fragile]
+\frametitle{Median}
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Median}
+\begin{verbatim}
+            country continent lifeExp      pop
+            Lesotho    Africa     42   2012649
+  Equatorial Guinea    Africa     51    551201
+              Sudan    Africa     58  42292929
+Trinidad and Tobago  Americas     69   1056608
+               Iran      Asia     70  69453570
+             Serbia    Europe     74  10150265
+             Kuwait      Asia     77   2505559
+            Austria    Europe     79   8199783
+             Sweden    Europe     80   9031088
+            Iceland    Europe     81    301931
+\end{verbatim}
+\end{frame}
+
+
+\againframe<3-4>{centraltendency}
+
+\begin{frame}[fragile]
+\frametitle{Mode}
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Mode}
+\begin{verbatim}
+            country continent lifeExp      pop
+  Equatorial Guinea    Africa     51    551201
+            Lesotho    Africa     42   2012649
+              Sudan    Africa     58  42292929
+Trinidad and Tobago  Americas     69   1056608
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Austria    Europe     79   8199783
+            Iceland    Europe     81    301931
+             Serbia    Europe     74  10150265
+             Sweden    Europe     80   9031088
+\end{verbatim}
+\end{frame}
+
+\againframe<4->{centraltendency}
+
 \frame{
 \frametitle{Dispersion/variation}
 
-\begin{itemize}\itemsep1em
-\item (Element) Variance:\\
-	$Var(Y) = s_Y^2 = \sum_{i=1}^{n} \dfrac{(Y_i - \bar{Y})^2}{n-1}$
+\begin{itemize}\itemsep2em
+\item Variance:\\
+	$Var(x) = s_x^2 = \sum\limits_{i=1}^{n} \frac{(x_i - \bar{x})^2}{n-1}$
+
 \item<2-> Standard Deviation:\\ 
-	$sd(Y) = s_Y = \sqrt{Var(Y)}$
-\item<3-> Median absolute deviation (MAD):\\ 
-	$MAD = median(|Y_i - median(Y)|) $
+	$sd(x) = s_x = \sqrt{Var(x)}$
 \end{itemize}
 
 }
@@ -250,11 +319,11 @@ Two broad categories of analytic strategies:
 \frame{
 \frametitle{Relationship}
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep2em
 \item<1-> Covariation:\\
-	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
+	$Cov(x,y) = \sum_{i=1}^{n} \frac{(x_i - \bar{x})(y_i - \bar{y})}{n-1}$
 \item<2-> Correlation:\\
-	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
+	{\small $Corr(x,y) = r_{x,y} = \sum\limits_{i=1}^{n} \frac{(x_i - \bar{x})(y_i - \bar{y})}{(n-1)s_x s_y}$}
 \end{itemize}
 }
 
@@ -278,7 +347,7 @@ Two broad categories of analytic strategies:
 
 \frame{
 \frametitle{Table}
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item Definition: ``an arrangement of information into rows and columns''
 \item Tables can show:
 	\begin{itemize}
@@ -290,6 +359,51 @@ Two broad categories of analytic strategies:
 \end{itemize}
 
 }
+
+\begin{frame}[fragile]
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tabulation (Counts/Totals)}
+\begin{center}
+\begin{tabular}{lr} \hrule
+Continent & Count \\ \hrule
+Asia & 2 \\
+Africa & 3 \\
+Americas & 1 \\
+Europe & 4 \\ \hrule
+Total & 10 \hrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tabulation (Counts/Totals)}
+\begin{center}
+\begin{tabular}{lr} \hrule
+Continent & Mean Population \\ \hrule
+Asia &  \\
+Africa &  \\
+Americas &  \\
+Europe &  \\ \hrule
+Total &  \hrule
+\end{tabular}
+\end{center}
+\end{frame}
+
 
 \frame{
 \frametitle{In R\dots}
@@ -363,7 +477,7 @@ Bad visualizations\dots
 \frame{
 \frametitle{Visualizations}
 \begin{itemize}
-\item Definition: ``Data graphics visually display measured quanitittes by means of the combined use of points, lines, a coordinate system, numbers, symbols, words, shading, and color.'' (Tufte, 2001)
+\item Definition: ``Data graphics visually display measured quantities by means of the combined use of points, lines, a coordinate system, numbers, symbols, words, shading, and color.'' (Tufte, 2001)
 \end{itemize}
 
 \vspace{1em}
@@ -602,8 +716,8 @@ R has 5+ graphics ``systems''
 
 \begin{itemize}
 \item Base graphics
-\item The \textbf{lattice} package
 \item The \textbf{ggplot2} package
+\item The \textbf{lattice} package
 \item The \textbf{plotrix} package
 \item The \textbf{htmlwidgets} package + JavaScript's \href{https://cran.r-project.org/web/packages/plotrix/index.html}{d3 library}
 \end{itemize}
@@ -719,7 +833,7 @@ In a scatterplot, \texttt{geom\_point()} allows us to display a variable as:
 
 \begin{verbatim}
 library("rio")
-d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan15.dta")
+d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan17.dta")
 
 summary(d$wef_lifexp) # life expectancy
 summary(d$fh_polity2) # Polity scores
