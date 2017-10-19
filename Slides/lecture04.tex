@@ -130,18 +130,25 @@ Two broad categories of analytic strategies:
 
 \frame{
 \frametitle{Definitions}
-\begin{itemize}
+\begin{itemize}\itemsep1.5em
 \item Statistic: ``a quantitative summary of a variable for a set of units''
+\item Three parts:
+	\begin{itemize}
+	\item A set of units
+	\item A variable measured for those units
+	\item An estimator (i.e., aggregation procedure)
+	\end{itemize}
 \end{itemize}
 }
 
 % library("gapminder")
 % x <- gapminder[gapminder$year == 2007, c("country", "continent", "lifeExp", "pop"),]
 % set.seed(123)
-% x[sample.int(nrow(x), 10),]
+% (z <- x[sample.int(nrow(x), 10),])
 
 
 \begin{frame}[fragile]
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Austria    Europe     79   8199783
@@ -159,25 +166,27 @@ Trinidad and Tobago  Americas     69   1056608
 
 % central tendency
 
-\frame<1>[label=centraltendency]{
+\frame<1-2>[label=centraltendency]{
 \frametitle{Central Tendency}
 
-\begin{itemize}\itemsep2em
+\begin{itemize}\itemsep1.5em
 \item<2-> Mean (average): $\bar{x} = \frac{1}{n}\sum\limits_{i=1}^{n} x_i$
-\item<3-> Median: Middle value
-\item<4-> Mode: Most common value
+\item<3-> Sort-based statistics:
 	\begin{itemize}
 	\item Range
 	\item Minimum
+	\item Median (middle value)
 	\item Maximum
 	\item Percentiles
 	\end{itemize}
+\item<4-> Mode: Most common value
 \end{itemize}
 
 }
 
 \begin{frame}[fragile]
-\frametitle{Mean/average}
+\frametitle{{\normalsize Mean/average}}
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Austria    Europe     79   8199783
@@ -192,11 +201,11 @@ Trinidad and Tobago  Americas     69   1056608
 Trinidad and Tobago  Americas     69   1056608
 \end{verbatim}
 
+\vspace{-1.5em}
 \begin{align*}
 Sum &= 79 + 51 + 81 + 70 + 77 + 42 + 74 + 58 + 80 + 69 = 681\\
-Mean &= \frac{681/10} = 68.1\\
+Mean &= 681/10 = 68.1\\
 \end{align*}
-
 
 \end{frame}
 
@@ -204,7 +213,8 @@ Mean &= \frac{681/10} = 68.1\\
 \againframe<2-3>{centraltendency}
 
 \begin{frame}[fragile]
-\frametitle{Median}
+\frametitle{\normalsize{Median, Min, Max, etc.}}
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Austria    Europe     79   8199783
@@ -221,7 +231,8 @@ Trinidad and Tobago  Americas     69   1056608
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Median}
+\frametitle{Median, Min, Max, etc.}
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Lesotho    Africa     42   2012649
@@ -242,6 +253,7 @@ Trinidad and Tobago  Americas     69   1056608
 
 \begin{frame}[fragile]
 \frametitle{Mode}
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Austria    Europe     79   8199783
@@ -259,6 +271,7 @@ Trinidad and Tobago  Americas     69   1056608
 
 \begin{frame}[fragile]
 \frametitle{Mode}
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
   Equatorial Guinea    Africa     51    551201
@@ -279,7 +292,7 @@ Trinidad and Tobago  Americas     69   1056608
 \frame{
 \frametitle{Dispersion/variation}
 
-\begin{itemize}\itemsep2em
+\begin{itemize}\itemsep1.5em
 \item Variance:\\
 	$Var(x) = s_x^2 = \sum\limits_{i=1}^{n} \frac{(x_i - \bar{x})^2}{n-1}$
 
@@ -288,6 +301,32 @@ Trinidad and Tobago  Americas     69   1056608
 \end{itemize}
 
 }
+
+\begin{frame}[fragile]
+\footnotesize
+\begin{verbatim}
+            country continent lifeExp      pop
+            Austria    Europe     79   8199783
+  Equatorial Guinea    Africa     51    551201
+            Iceland    Europe     81    301931
+               Iran      Asia     70  69453570
+             Kuwait      Asia     77   2505559
+            Lesotho    Africa     42   2012649
+             Serbia    Europe     74  10150265
+              Sudan    Africa     58  42292929
+             Sweden    Europe     80   9031088
+Trinidad and Tobago  Americas     69   1056608
+\end{verbatim}
+
+\vspace{-1.5em}
+\begin{align*}
+Mean &= 68.1\\
+Variance &= \sum\limits_{i=1}^{n} \frac{(x_i - \bar{x})^2}{n-1} &= \dfrac{1620.9}{10-1} &= 180.1 \\
+SD &= \sqrt{Var(x)} & &= 13.42 \\
+\end{align*}
+
+
+\end{frame}
 
 
 \frame{
@@ -327,13 +366,24 @@ Trinidad and Tobago  Americas     69   1056608
 \end{itemize}
 }
 
+% ggplot(z, aes(x = pop, y = lifeExp, colour = continent)) + geom_point(size = 3) + theme_bw() + theme(legend.position = c(0.9,0.2)) + geom_hline(yintercept = mean(z$lifeExp)) + geom_vline(xintercept = mean(z$pop))
+
+
+\frame{
+\begin{center}
+\includegraphics[height=.9\textheight]{images/gapminder-mini.png}
+\end{center}
+}
+
 
 \frame{
 \frametitle{In R\dots}
 
+\small
+
 \begin{itemize}
 \item \texttt{mean()}
-\item \texttt{median()}
+\item \texttt{median()}, \texttt{min()}, \texttt{max()}, \texttt{quantile()}
 \item \texttt{var()}
 \item \texttt{sd()}
 \item \texttt{cov()}
@@ -361,6 +411,7 @@ Trinidad and Tobago  Americas     69   1056608
 }
 
 \begin{frame}[fragile]
+\footnotesize
 \begin{verbatim}
             country continent lifeExp      pop
             Austria    Europe     79   8199783
@@ -376,30 +427,50 @@ Trinidad and Tobago  Americas     69   1056608
 \end{verbatim}
 \end{frame}
 
+% table(z$continent)
+
 \begin{frame}[fragile]
-\frametitle{Tabulation (Counts/Totals)}
+\frametitle{\normalsize Tabulation (Counts/Totals)}
 \begin{center}
-\begin{tabular}{lr} \hrule
-Continent & Count \\ \hrule
-Asia & 2 \\
+\begin{tabular}{lr} \midrule
+Continent & Count \\ \midrule
 Africa & 3 \\
 Americas & 1 \\
-Europe & 4 \\ \hrule
-Total & 10 \hrule
+Asia & 2 \\
+Europe & 4 \\ \midrule
+Total & 10 \\ \midrule
 \end{tabular}
 \end{center}
 \end{frame}
 
+% prop.table(table(z$continent))
+
 \begin{frame}[fragile]
-\frametitle{Tabulation (Counts/Totals)}
+\frametitle{\normalsize Tabulation (Proportions)}
 \begin{center}
-\begin{tabular}{lr} \hrule
-Continent & Mean Population \\ \hrule
-Asia &  \\
-Africa &  \\
-Americas &  \\
-Europe &  \\ \hrule
-Total &  \hrule
+\begin{tabular}{lr} \midrule
+Continent & Count \\ \midrule
+Africa & 0.3 (30\%) \\
+Americas & 0.1 (10\%) \\
+Asia & 0.2 (20\%) \\
+Europe & 0.4 (40\%) \\ \midrule
+Total & 1.0 (100\%) \\ \midrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+% aggregate(pop ~ continent, data = z, FUN = mean)
+
+\begin{frame}[fragile]
+\frametitle{\normalsize Tabulation (Aggregations)}
+\begin{center}
+\begin{tabular}{lr} \midrule
+Continent & Mean Population \\ \midrule
+Africa & 14952260 \\
+Americas & 1056608 \\
+Asia & 35979565 \\
+Europe & 6920767 \\ \midrule
+Grand Mean & 14555558 \\ \midrule
 \end{tabular}
 \end{center}
 \end{frame}
@@ -411,8 +482,8 @@ Total &  \hrule
 \begin{itemize}
 \item \texttt{table()}
 \item \texttt{prop.table()}
-\item \texttt{ftable()}
 \item \texttt{aggregate()}
+\item \texttt{dplyr::summarize()}
 \end{itemize}
 
 }
@@ -511,9 +582,9 @@ Bad visualizations\dots
 
 \vspace{0.5em}
 
-$\bar{X}=9$, $Var(X)=11$,\\
-$\bar{Y} = 7.5$, $Var(Y)=4.12$,\\
-$Corr(X,Y) = 08.16$
+$\bar{x}=9$, $Var(x)=11$,\\
+$\bar{y} = 7.5$, $Var(y)=4.12$,\\
+$Corr(x,y) = 08.16$
 }
 
 \frame{
@@ -529,7 +600,7 @@ $Corr(X,Y) = 08.16$
 \frame{
 \frametitle{{\normalsize Simpson's Paradox}}
 \begin{center}
-\only<2->{\includegraphics[height=.65\textheight]{images/simpsons.png}}
+\includegraphics[height=.65\textheight]{images/simpsons.png}
 \end{center}
 \vspace{0.5em}
 {\tiny Source: \href{https://commons.wikimedia.org/wiki/File:Simpson\%27s_paradox_continuous.svg}{Wikimedia}}
@@ -573,6 +644,8 @@ $Corr(X,Y) = 08.16$
 
 
 \frame<1>[label=principles]{
+
+\frametitle{Some Basic Principles}
 \begin{enumerate}
 \item<1-> Be honest
 \item<2-> Data-Ink Ratio
@@ -747,11 +820,11 @@ R has 5+ graphics ``systems''
 \begin{itemize}\itemsep0.25em
 \item \texttt{ggplot()} creates a plot object
 \item \texttt{aes} describes a mapping of data to a visual element (e.g., color, shape, etc.)
-\item \texttt{geom\_()} displays a particular graphical representation
-\item \texttt{scale\_()} modifies the axes
-\item \texttt{coord\_()} modifies the coordinate system
-\item \texttt{theme\_()} modifies the overall look
-\item \texttt{facet\_()} creates small multiples
+\item \texttt{geom\_*()} displays a particular graphical representation
+\item \texttt{scale\_*()} modifies the axes
+\item \texttt{coord\_*()} modifies the coordinate system
+\item \texttt{theme\_*()} modifies the overall look
+\item \texttt{facet\_*()} creates small multiples
 \end{itemize}	
 
 }
@@ -778,54 +851,10 @@ In a scatterplot, \texttt{geom\_point()} allows us to display a variable as:
 }
 
 
-
-\frame{
-\frametitle{Tools Beyond R}
-\begin{itemize}
-\item GUI-based tools:
-	\begin{itemize}
-	\item \href{https://inkscape.org/en/}{Inkscape}
-	\item \href{https://www.gimp.org}{GIMP}
-	\end{itemize}
-\item Command line tools:
-	\begin{itemize}
-	\item \href{http://www.imagemagick.org/script/index.php}{ImageMagick}
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-\frametitle{ggplot2 Resources}
-
-\small
-\begin{itemize}
-\item \url{http://docs.ggplot2.org/current/}
-\item \url{https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf}
-\item \url{https://github.com/jennybc/ggplot2-tutorial}
-\item \url{http://inundata.org/2013/04/10/a-quick-introduction-to-ggplot2/}
-\item \url{http://www.cookbook-r.com/Graphs/}
-\end{itemize}
-
-}
+\frame{}
 
 
-\frame{
-\frametitle{General Resources}
-
-\small
-
-\begin{itemize}
-\item \url{http://www.edwardtufte.com/tufte/}
-\item \url{http://www.informationisbeautiful.net/}
-\item \url{http://flowingdata.com/}
-\item \url{http://ourworldindata.org/}
-\item \url{http://www.thefunctionalart.com/}
-\item \url{http://www.visualisingdata.com/}
-\item \url{http://www.braumoeller.info/dataviz/}
-\end{itemize}
-
-}
+\appendix
 
 \begin{frame}[fragile]
 
@@ -863,11 +892,36 @@ p + aes(x = fh_polity2, y = wef_lifexp) + geom_point() + theme_bw()
 \end{frame}
 
 
+\frame{
+\frametitle{ggplot2 Resources}
+
+\small
+\begin{itemize}
+\item \url{http://docs.ggplot2.org/current/}
+\item \url{https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf}
+\item \url{https://github.com/jennybc/ggplot2-tutorial}
+\item \url{http://inundata.org/2013/04/10/a-quick-introduction-to-ggplot2/}
+\item \url{http://www.cookbook-r.com/Graphs/}
+\end{itemize}
+
+}
 
 
+\frame{
+\frametitle{General Resources}
 
+\small
 
-\appendix
-\frame{}
+\begin{itemize}
+\item \url{http://www.edwardtufte.com/tufte/}
+\item \url{http://www.informationisbeautiful.net/}
+\item \url{http://flowingdata.com/}
+\item \url{http://ourworldindata.org/}
+\item \url{http://www.thefunctionalart.com/}
+\item \url{http://www.visualisingdata.com/}
+\item \url{http://www.braumoeller.info/dataviz/}
+\end{itemize}
+
+}
 
 \end{document}
