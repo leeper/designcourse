@@ -34,6 +34,19 @@
 	\end{itemize}
 }
 
+\frame{
+
+\frametitle{Population}
+
+``The complete population of units (observations) we want to understand.''
+
+\begin{itemize}\itemsep0.5em
+\item<2-> We rarely observe all population units
+\item<3-> A ``sample'' is a set of units we actually observe
+\item<4-> Sometimes we aim to \textit{generalize} from the sample to the population
+\end{itemize}
+
+}
 
 \frame{
 	\frametitle{Discuss in Pairs!}
@@ -62,7 +75,7 @@
 	\begin{itemize}\itemsep0.5em
 		\item<2-> Census
 		\item<3-> Convenience/Purposive samples
-		\item<4-> Quota sampling (common before 1940s)
+		\item<4-> Quota sampling (pre-1940s, post-2000s)
 		\item<5-> \textbf<7>{Simple random sampling}
 		\item<6-> Complex survey designs
 	\end{itemize}
@@ -107,21 +120,23 @@
     \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
     \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
+    \fill<4->[blue,opacity=0.75] (2.5,1) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
+    \fill<4->[blue,opacity=0.75] (1.8,-1) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
     \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
+    \fill<4->[blue,opacity=0.75] (0,.5) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
     \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
+    \fill<4->[blue,opacity=0.75] (1/8,2) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
     \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
-    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
+    \fill<4->[blue,opacity=0.75] (2,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<5->[red,opacity=0.75] (4,-1) circle (1cm) 
         node[text=white, align=center, text width=3cm] {Sample};
 \end{tikzpicture}
 \end{center}
@@ -222,7 +237,7 @@
 	\small
 	
 	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	Pr(y=1) = \frac{1}{n}\sum_{i=1}^{n}y_i
 	\end{equation}
 	where $y_i = $ value for a unit, and\\
 	$n = $ sample size
@@ -242,7 +257,7 @@
 
 	\begin{itemize}\itemsep0.5em
 	\item Uncertainty often stated in terms of a ``margin of error''
-	\item Standard MoE is twice the SE
+	\item Standard MoE is twice the SE (x1.96)
 	\item For estimated proportions, expressed as:\\
 		``p $\pm$ MoE percentage points''
 	\item<2-> So for an SE of 0.01, how can we describe this?
@@ -342,21 +357,15 @@ What proportion of all Haribo Starmix gummies are $\heartsuit$s?
 }
 
 
-
-\section*{Preview}
-
 \frame{
-\frametitle{Preview}
 
-	\begin{itemize}\itemsep1em
-	\item Continue with statistics in middle of LT
-	\item Next week we'll discuss ethics
-		\begin{itemize}
-		\item Read Activity on Moodle before lecture
-		\end{itemize}
-	\item PS4 due December 13
-	\item Sample Exam on Moodle (soon!)
-	\end{itemize}
+\frametitle{Summary}
+
+\begin{itemize}\itemsep1em
+\item Various ways to select cases
+\item Various notions of representativeness
+\item Case selection is one way of addressing questions of ``external validity'' but there are others, too
+\end{itemize}
 
 }
 

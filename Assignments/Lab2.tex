@@ -3,7 +3,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
 
-\title{Statistical Analysis in R}
+\title{Sampling and Data Analysis in R}
 \author{}
 \date{}
 
@@ -17,7 +17,7 @@
 
 \section{Purpose}
 
-The purpose of this activity is to provide you with an understanding of statistical inference and to both develop and apply that knowledge to the use of the R statistical programming environment. The activity will be focused on random sampling methods, with some discussion of model-based notions of ``representativeness''. At the end, there are some exercises for further practice with R using the Quality of Government dataset from Problem Set 3.
+The purpose of this activity is to provide you with an understanding of statistical inference and to both develop and apply that knowledge to the use of the R statistical programming environment. The activity will be focused on random sampling methods, with some discussion of model-based notions of ``representativeness''.
 
 \section{Overview}
 
@@ -239,7 +239,7 @@ As some additional practice working with data in R, we will look at some real da
 \begin{verbatim}
 # install.packages("rio")
 library("rio")
-d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan16.dta")
+d <- import("http://www.qogdata.pol.gu.se/data/qog_std_cs_jan17.dta")
 dim(d)
 nrow(d)
 ncol(d)
