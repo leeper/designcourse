@@ -17,7 +17,9 @@
 \frame{\tableofcontents}
 
 
+% talk about "identification"
 
+% constants can't be used to understand causality because we don't get to see counterfactuals
 
 
 
@@ -64,8 +66,7 @@ By the end of today you should be able to:
 \item<2-> Developing your research proposals
 	\begin{itemize}
 	\item One-on-ones w/ Thomas
-	\item Literature review
-	\item Due: 21 March at 5:00pm
+	\item Literature review (Reading Week)
 	\end{itemize}
 \end{itemize}
 
@@ -76,138 +77,60 @@ By the end of today you should be able to:
 
 % Goal is to develop ways of thinking about how to distinguish causation from association/correlation
 
-% examples of associations (tempurature/pirates; crime/ice cream; )
-
-
 % where do we look for counterfactuals? backward or forward in time? across similar cases?
 
 
 \section{Causality}
 \frame{\tableofcontents[currentsection]}
 
-\frame{
-\frametitle{Write for 1 minute}
-
-\huge\centering\vskip10pt\textbf{What makes something a \textit{cause}?}
-}
-
-
-% distinction between causation and prediction
-% distinction between causation and explanation (none!)
-% distinction between correlation and explanation (e.g., medical correlates of disease)
-
-\frame{}
-
-
-\frame{
-	\includegraphics[width=\textwidth]{images/xkcdcorrelation.png}
-}
-
-
-\frame{
-\frametitle{Physical causality}
-
-\begin{itemize}\itemsep1em
-\item Action and reaction
-\item Features: Observable and deterministic
-\item Example:
-	\begin{itemize}
-	\item Picture a ball resting on top of a hill
-	\item What happens if I push the ball?
-	\end{itemize}
-\item<2-> Physical causality is easy to see
-\end{itemize}
-}
-
-\frame{
-\frametitle{Correlation I}
-\begin{itemize}\itemsep1em
-\item Correlation is the non-independence of two variables for a set of observations
-\end{itemize}
-}
-
-\frame{
-\frametitle{Correlation II}
-\begin{itemize}
-\item \textit{Observation}: A case or unit (e.g., person, country)
-\item \textit{Variable}: A dimension that describes an obseration (e.g., income)
-\item \textit{Independence}: Variables are unrelated to one another
-	\begin{itemize}
-	\item Independent: Height and value on a fair dice roll
-	\item Non-independent: Height and weight
-	\end{itemize}
-\end{itemize}
-}
-
-
-\frame{
-\frametitle{Correlation III}
-
-\begin{itemize}\itemsep1em
-\item Synonyms: correlation, covariation, relationship, association
-	\begin{itemize}
-	\item ``Effect'' is frequently used to mean correlation
-	\item We'll reserve that term for a \textit{causal effect}
-	\end{itemize}
-\item Any correlation is a potential cause
-	\begin{itemize}
-	\item X might cause Y
-	\item Y might cause X
-	\item X and Y might be caused by Z
-	\item X and Y might cause Z
-	\item There may be no causal relationship
-	\end{itemize}
-\end{itemize}
-}
-
-
-
 % Causal graphs
 
-\begin{frame}<1-3>[label=smoking-graph]
+\frame{
+
+\frametitle{{\large Directed Acyclic Graphs}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Causal graphs (DAGs) provide a visual representation of (possible) causal relationships
+\item<2-> Causality flows between variables, which are represented as ``nodes''
+	\begin{itemize}
+	\item Variables are causally linked by arrows
+	\item Causality only flows \textit{forward} in time
+	\end{itemize}
+\item<3-> Nodes opening a ``backdoor path'' from $X \rightarrow Y$ are confounds
+	\begin{itemize}
+	\item ``Selection bias'' or ``Confounding''
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\begin{frame}[label=smoking-graph]
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
     \draw (0,0) node[left] (X) {Smoking};
     \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
-    \draw<2->[->] (-3,3) node[above] (Z) {Sex} -- (Y);
+    \draw<2->[->] (-3,3) node[above] (Z) {Age} -- (Y);
     \draw<2->[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw<2->[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw<2->[->] (4,-2) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
     \draw<2->[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (Y);
-    \draw<3->[->] (Z) -- (X);
-    \draw<3->[->] (W) -- (X);
-    \draw<4->[->, very thick] (E) -- (X);
+    \draw<3->[->] (Z.south) -- (X);
+    \draw<3->[->] (W.north) -- (X);
+    \draw<4->[->, dashed] (E.north) -- (X);
+    %\draw<4->[<->, dashed] (W.west) -- (X.west);
+
+    \draw<5->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=1cm, align=center] (Tr) {\small Coin\\ Flip} -- (X);
+    \draw<5->[->, very thick, color=red] (X) -- (Y);
 \end{tikzpicture}
 \end{center}
 \end{frame}
 
 
-
-\begin{frame}
-
-\frametitle{{\large Causal Graphs I}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Visual representation of (possible) causal relationships
-	\begin{itemize}
-	\item Called ``directed, acyclic graph'' (DAG)
-	\end{itemize}
-\item<2-> Causality flows between variables, which are represented as ``nodes''
-\item<3-> Variables are causally linked by arrows
-\item<4-> Causality only flows \textit{forward}
-\item<5-> Nodes creating a ``backdoor path'' from $X$ to $Y$ are confounds
-\end{itemize}
-
-\end{frame}
-
-
-\againframe<3>{smoking-graph}
-
-
 \frame<1-2>[label=causality]{
 
-\frametitle{{\large 4 (or 5) principles of causality}}
+\frametitle{{\large The 3 or 4 or 5 principles}}
 
 \begin{enumerate}\itemsep1em
 \item<2-> Correlation
@@ -218,17 +141,17 @@ By the end of today you should be able to:
 \end{enumerate}
 }
 
-\againframe<3>{smoking-graph}
+\againframe<2>{smoking-graph}
+
+\againframe<2-3>{causality}
+
+\againframe<2-4>{smoking-graph}
 
 \againframe<3-4>{causality}
 
-\againframe<3-4>{smoking-graph}
+\againframe<4>{smoking-graph}
 
-\againframe<4-5>{causality}
-
-\againframe<3>{smoking-graph}
-
-\againframe<5-6>{causality}
+\againframe<4->{causality}
 
 \frame{
 	\centering
@@ -245,6 +168,24 @@ By the end of today you should be able to:
 \section[Counterfactuals]{Fundamental Problem of Causal Inference}
 \frame{\tableofcontents[currentsection]}
 
+\frame{
+
+\frametitle{Causal Inference}
+
+\centering
+
+Causal inference (typically) involves gathering data in a systematic fashion in order to assess the size and form of correlation between nodes $X$ and $Y$ in such a way that there are no backdoor paths between $X$ and $Y$ by \textit{controlling for} (i.e., \textit{conditioning on}, \textit{holding constant}) any confounding variables, $\mathbf{Z}$.
+
+}
+
+
+\frame{
+
+\large\centering
+
+In essence, this means finding or creating \textit{counterfactuals}.
+
+}
 
 \frame[label=counterfactuals]{
 \frametitle{Counterfactual Thinking}
@@ -288,9 +229,13 @@ By the end of today you should be able to:
 }
 
 \frame{
-\frametitle{Fundamental problem of causal inference}
+\frametitle{Fundamental problem of causal inference!}
 
-\only<2->{\Large We can only observe any given unit in one reality!}
+\large\centering We can only observe any given unit in one reality! So any counterfactual for a given unit is unobservable!!!
+
+\vspace{1em}
+
+\only<2->{OH NO!}
 
 }
 
@@ -300,7 +245,7 @@ By the end of today you should be able to:
 \begin{enumerate}\itemsep1em
 \item Scientific Solution
 	\begin{itemize}
-	\item All units are identical
+	\item (Assume) units are all identical
 	\item Each can provide a perfect counterfactual
 	\item Common in, e.g., agriculture, biology
 	\end{itemize}
@@ -332,7 +277,7 @@ By the end of today you should be able to:
 \frame{
 \frametitle{{\normalsize Mill's Method of Difference}}
 
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
+``If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.''
 }
 
 
@@ -404,25 +349,8 @@ Prediction is not causation.\\ Causation is not prediction.
 
 }
 
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
-    \draw<2->[->, very thick, color=red] (X) -- (Y);
-\end{tikzpicture}
-\end{center}
-\end{frame}
 
+\againframe<5->{smoking-graph}
 
 
 % design-based experimental inference
@@ -431,9 +359,9 @@ Prediction is not causation.\\ Causation is not prediction.
 	\small
 	\begin{itemize}\itemsep0.5em
     	\item<1-> Causal inference is a comparison of two \textit{potential outcomes}
-    	\item<2-> A potential outcome is the value of the outcome (Y) for a given unit (i) after receiving a particular version of the treatment (X)
-    	\item<3-> Each unit has multiple \textit{potential} outcomes ($Y_{0i}$, $Y_{1i}$), but we only observe one of them
-    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
+    	\item<2-> A potential outcome is the value of the outcome ($Y$) for a given unit (i) after receiving a particular version of the treatment ($X$)
+    	\item<3-> Each unit has multiple \textit{potential} outcomes ($y_{0i}$, $y_{1i}$), but we only observe one of them
+    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $y_{x=1} - y_{x=0}$), all else constant
 	\end{itemize}
 }
 
@@ -443,12 +371,12 @@ Prediction is not causation.\\ Causation is not prediction.
 	\begin{itemize}\itemsep0.5em
     	\item<1-> We cannot see individual-level causal effects
 			\begin{itemize}
-			\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+			\item<1-> We want to know: $TE_i = y_{1i} - y_{0i}$
 			\end{itemize}
     	\item<2-> We can see \textit{average causal effects}
     		\begin{itemize}
         		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
-        		\item<2-> $ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+        		\item<2-> $ATE_{naive} = E[y_{1i} | x_{i} = 1] - E[y_{0i} | x_{i} = 0]$
     		\end{itemize}
     	\item<3-> Is this what we want to know?
     		\begin{itemize}
