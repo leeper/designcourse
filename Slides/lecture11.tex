@@ -4,7 +4,7 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
 
-\title{Causality: Explanation versus Prediction}
+\title{\large{Causality:\\Explanation versus Prediction}}
 
 % Political science is generally concerned with questions of causality. To do that we need to learn to think counterfactually. How do we know that something causes something else? How do we separate ``correlation'' from ``causation''?
 
@@ -82,6 +82,40 @@ By the end of today you should be able to:
 
 \section{Causality}
 \frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Pre-Post Change Heuristic}
+
+\begin{itemize}\itemsep1em
+\item Our intuition about causation relies too heavily on simple comparisons of \textit{pre-post change} in outcomes before and after something happens
+
+	\begin{itemize}
+	\item No change: no causation
+	\item Increase in outcome: positive effect
+	\item Decrease in outcome: negative effect
+	\end{itemize}
+
+\item Several reasons why this is inadequate!
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Flaws in causal inference from pre-post comparisons}
+
+\begin{enumerate}
+\item Maturation or trends
+\item Regression to the mean
+\item Selection
+\item Simultaneous historical changes
+\item Instrumentation changes
+\item Monitoring changes behaviour
+\end{enumerate}
+
+}
+
 
 % Causal graphs
 
@@ -207,12 +241,13 @@ In essence, this means finding or creating \textit{counterfactuals}.
 \item 1843 novel by Charles Dickens
 \item Ebenezer Scrooge is shown his own future by the ``Ghost of Christmas Yet to Come''
 \item Has the choice to either:
-	\begin{itemize}
+	\begin{enumerate}\footnotesize
 	\item stay on current path (one counterfactual), or 
 	\item change his ways (take a different counterfactual)
-	\end{itemize}
+	\end{enumerate}
 \end{itemize}
 }
+
 
 \frame{
 \frametitle{{\large Dickensian Causal Inference}}
@@ -229,6 +264,22 @@ In essence, this means finding or creating \textit{counterfactuals}.
 }
 
 \frame{
+
+\frametitle{Other Counterfactuals\\ in TV \& Film}
+
+
+\begin{itemize}
+\item \textit{Groundhog Day}
+\item \textit{Run Lola Run}
+\item \textit{Minority Report}
+\item \textit{Source Code}
+\item \textit{X-Men: Days of Future Past}
+\end{itemize}
+
+}
+
+
+\frame{
 \frametitle{Fundamental problem of causal inference!}
 
 \large\centering We can only observe any given unit in one reality! So any counterfactual for a given unit is unobservable!!!
@@ -240,16 +291,16 @@ In essence, this means finding or creating \textit{counterfactuals}.
 }
 
 \frame{
-\frametitle{Two solutions!\footnote{From Holland}}
+\frametitle{Two solutions!}
 
 \begin{enumerate}\itemsep1em
-\item Scientific Solution
+\item ``Scientific'' Solution\footnote{From Holland}
 	\begin{itemize}
 	\item (Assume) units are all identical
 	\item Each can provide a perfect counterfactual
 	\item Common in, e.g., agriculture, biology
 	\end{itemize}
-\item<2-> Statistical Solution
+\item<2-> ``Statistical'' Solution
 	\begin{itemize}
 	\item Units are not identical
 	\item Random exposure to a potential cause
@@ -286,9 +337,13 @@ In essence, this means finding or creating \textit{counterfactuals}.
 \frametitle{{\large ``Rerum cognoscere causas''}}
 
 \begin{itemize}
-\item<1-> Causal inference is meant to help ``explain'' the world
+\item<1-> Causal inference is meant to help ``explain'' the social world
 	\begin{itemize}
-	\item<2-> Other notions of explain (e.g., description)
+	\item<2-> Other notions of \textit{explain}
+		\begin{itemize}
+		\item Concept generation and labelling
+		\item Descriptive typologies
+		\end{itemize}
 	\item<3-> Explanation may or may not involve mechanistic claims (see LT Week 5)
 	\end{itemize}
 \item<4-> Causation is deterministic at the unit level!
