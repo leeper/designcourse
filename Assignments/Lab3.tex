@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{hyperref}
+\usepackage{booktabs}
 
 \title{Statistical Analysis in R}
 \author{}
@@ -22,7 +23,7 @@ The purpose of this activity is to provide you with an understanding of statisti
 
 This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week. The final quantitative problem set in LT relates to, roughly, the first half and second half of the material covered in this lab (this document containing the first half) and builds on our previous work with data summaries and visualizations in R.
 
-For this activity, we focus on the idea of ``statistical significance.'' Statistical significance is a concept related to \textit{statistical} hypothesis testing. If you recall from earlier in the course (LT Week 3), we discussed two different ``flavours'' of hypothesis testing --- one associated with Fisher and one associated with Neyman and Pearson. We will see how both kinds of hypothesis testing manifest and how current statistical practice is a blend of these two perspectives. That practice most closely approximates Fisher's ideas (the calculation of a $p$-value) but differs in other ways (the estimation of a ``confidence interval'').
+For this activity, we focus on the idea of ``statistical significance.'' Statistical significance is a concept related to \textit{statistical} hypothesis testing. If you recall from earlier in the course, we discussed two different ``flavours'' of hypothesis testing --- one associated with Fisher and one associated with Neyman and Pearson. We will see how both kinds of hypothesis testing manifest and how current statistical practice is a blend of these two perspectives. That practice most closely approximates Fisher's ideas (the calculation of a $p$-value) but differs in other ways (the estimation of a ``confidence interval'').
 
 \section{Your Task}
 
@@ -51,40 +52,56 @@ ggplot(, aes(x = 1, y = v)) + geom_boxplot() + scale_y_continuous(limits = c(0,1
 
 \item If we expected all the values of \texttt{v} to be relatively similar, we could point out that the value 10 is more than 3 standard deviations away from the mean of the variable: \texttt{(10-mean(v))/sd(v)}. This idea that a value is an outlier relative to some assumed central tendency is the basic logic of statistical hypothesis testing.
 
-\item In statistical hypothesis testing, however, we are instead interested to know how unusual a \textit{statistic} is relative to our baseline expectation of what the value of the statistic should be. Commonly we are interested in statistics that describe a sample of cases:
+\item In statistical hypothesis testing, however, we are instead interested to know how unusual a \textit{statistic} is relative to our baseline expectation of what the value of the statistic should be. Commonly we are interested in statistics that describe a sample of cases, such as:
 
-\begin{itemize}
-\item Mean years of education for working-age adults
-\item Proportion of university graduates
-\item The male--female mean difference in annual income
-\item The correlations between education, sex, and income
-\item The causal effect of a university degree on annual income
-\end{itemize}
+\begin{tabular}{p{2in} p{1.3in} p{1.3in} p{1.5in}}\toprule
+\textbf{Example} & \textbf{Statistic} & \textbf{Unit of Analysis} & \textbf{Concepts/Variables} \\ \midrule
+Mean years of education for working-age adults &  &  \\ \midrule
+Proportion of university graduates &  &  \\ \midrule
+The male--female mean difference in annual income &  &  \\ \midrule
+The correlations between education, sex, and income &  &  \\ \midrule
+The causal effect of a university degree on annual income &  &  \\ \bottomrule
+\end{tabular}
 
 For each of the above examples, what are the \textit{statistic}, \textit{unit of analysis}, and \textit{variables}/\textit{concepts} involved in the analysis?
 
-\item Each of the above statistics can be calculated on a sample of cases in order to make descriptive (or causal) inferences about the population of cases as a whole. But, given what we know about sampling (from MT Week 10), these inferences carry with them a degree of uncertainty that is a function of the size of the sample of cases selected from that population. A sample statistic provides an estimate of the population \textit{parameter}. Given what we learned previously, how does sample size affect the amount of uncertainty that we have about the parameter?
+\item Each of the above statistics can be calculated on a sample of cases in order to make descriptive (or causal) inferences about the population of cases as a whole. But, given what we know about sampling (from MT), these inferences carry with them a degree of uncertainty that is a function of the size of the sample of cases selected from that population.
+
+	\begin{enumerate}
+	\item A sample statistic provides an estimate of the population \textit{parameter}. As sample size increases, what happens to the amount of uncertainty we have about the precise value of the population parameter?
+	\item Is this change in amount of uncertainty linear?
+	\end{enumerate}
 
 \vspace{4em}
 
-\item Carrying forward this basic logic of \textit{sampling variability} (or \textit{sampling error}, \textit{sampling uncertainty}), we may want to characterize a sample statistic as \textit{statistically significant}. That is, we may want to say that a sample estimate appears unusual in light of some prior expectation about the population parameter value ought to or is thought to be. To figure that out, we have to describe --- in Fisher's language --- a ``null hypothesis.'' This is a value that we think the parameter might have in the population.\footnote{Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional.} We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
+\item Carrying forward this basic logic of \textit{sampling variability} (or \textit{sampling error}, \textit{sampling uncertainty}), we may want to characterize a sample statistic as \textit{statistically significant}. That is, we may want to say that a sample estimate appears unusual in light of some prior expectation about the population parameter value ought to or is thought to be. To figure that out, we have to describe --- in R.A. Fisher's language --- a ``null hypothesis.'' This is a value that we think the parameter might have in the population.\footnote{Often, the null hypothesis is set to something that would be theoretically uninteresting: a proportion is 0.5, a difference between two means is 0, a correlation between two variables is 0, the mean of a variable is 0, etc. We can pick any value, but these theoretically uninteresting values are conventional.} We are therefore trying to see whether the statistic in our sample data differs from this (hypothetical) null population parameter.
 
 Based upon what you know or your own intuition, how might we determine whether a statistic is unusual? What process would we use to assert that?
 
 \vspace{4em}
 
-\item At its core, statistical significance testing attempts to wrestle with the fact that an observed sample statistic that \textit{appears} unusual may still be possible (or even highly probable because of sampling variability) to see from a population whose parameter is equal to the null hypothesis value. In other words, an apparently large difference between our sample statistic and the null hypothesis parameter value might be erroneous. Statistical hypothesis testing therefore asserts that we only consider a sample statistic to differ from a null hypothesis value when it is quite far from the null hypothesis value. But how far exactly is ``quite far''?
+\item At its core, statistical significance testing attempts to wrestle with the fact that an observed sample statistic that \textit{appears} unusual may still be possible (or even highly probable because of sampling variability) to see from a population whose parameter is equal to the null hypothesis value. In other words, an apparently large difference between our sample statistic and the null hypothesis parameter value might be erroneous. Statistical hypothesis testing therefore asserts that we only consider a \textit{sample} statistic to indicate that its popular parameter differs from the null hypothesis value --- and is thus ``statistically significant'' --- when it is quite far from the null hypothesis value. But how far exactly is ``quite far''?
 
-To decide that, we return to the idea of repeated sampling that we examined in MT when we discussed notions of \textit{representativeness}. We consider a statistic ``statistically significant'' when it differs more from our null expectation than the variation in sample statistics we would expected to observe across repeated samples were our null hypothesis true (in this case, that there were actually no difference between the groups). For a mean (like the one we looked at earlier), this would be stated as a null expectation that the mean level of education in a country is 12 years. If we collect a sample of data and find that the mean is different from 12, we would consider that mean to be statistically significantly different from our null expectation of 12 years if the sample mean was further from 12 (i.e., much larger or much smaller) than the variation in sample means we could to estimate from same-sized samples drawn from a population where the true mean was 12.\footnote{If we were talking about a different statistic, the logic would be the same. For a proportion, we might have a null expectation that the proportion is 0.5. An observed proportion in our data would be considered statistically significantly different from 0.5 if the proportion were larger than the variation in estimated proportions we would see across multiple same-sized samples from a population where the parameter was 0.5.} Revisit the exercises from Lab 2 if you remain unclear about the underlying dynamics of sampling.
+To decide that, we return to the idea of repeated sampling that we examined in MT when we discussed notions of \textit{representativeness}. We consider a statistic ``statistically significant'' when it differs more from our null expectation of the population parameter (i.e., the null hypothesis) than the vast majority of the variation in sample statistics we could observe across repeated samples from a population where that null hypothesis was true.
 
-\item Now let's create a vector of education values, \texttt{x}, which contains a population of education levels:
+In your own words, try restating that definition of statistical significance.
+
+\vspace{6em}
+
+
+
+
+\item For a mean (like the one we looked at earlier), this would be stated as a null expectation that the mean level of education in a country is 12 years. If we collect a sample of data and find that the mean is different from 12, we would consider that mean to be statistically significantly different from our null expectation of 12 years if the sample mean was further from 12 (i.e., much larger or much smaller) than the variation in sample means we could expect to observe from same-sized samples drawn from a population where the true mean was 12.\footnote{If we were talking about a different statistic, the logic would be the same. For a proportion, we might have a null expectation that the proportion is 0.5. An observed proportion in our data would be considered statistically significantly different from 0.5 if the proportion were larger than the variation in estimated proportions we would see across multiple same-sized samples from a population where the parameter was 0.5.} Revisit the exercises from Lab 2 if you remain unclear about the underlying dynamics of sampling.
+
+\item Now let's put this into practice using R. First, create a vector of education values, \texttt{x}, which contains a population of education levels (think of these numbers as years of education for individuals from a population of 1,000,000 people):
 
 \begin{verbatim}
 set.seed(1)      # this makes sure we all get the same answer
 x <- sample(0:20, 1e7, TRUE, c(1,2,3,4,5,6,7,8,9,10,11,12,13,12,11,10,9,8,7,6,5))
+# ^^ don't worry about the details of what's happening in this line of code
 \end{verbatim}
 
-\item Use the \texttt{length()} to verify how many people there are in our population.
+\item Use the \texttt{length()} function to verify how many people there are in our population.
 
 \item Use \texttt{mean()} to calculate the ``true'' population mean of this population. How many years of education, on average, does this population have?
 
@@ -141,8 +158,8 @@ dist100 <- replicate(100, mean(sample(x, 100, FALSE)))
 \item To ensure you are comfortable with these ideas, try repeating all of the above but for a different kind of variable. Rather than using an ordinal or interval measure (as above), try using a binary variable. You can create one using \texttt{rbinom()}:
 
 \begin{verbatim}
-# the `prob` argument controls the ratio of 1s and 0s
 y <- rbinom(1000000, 1, prob = .5) 
+# ^^ the `prob` argument controls the ratio of 1s and 0s
 \end{verbatim}
 
 \item Now, let's focus in on our samples of size $n=100$. What is the standard deviation of the sampling distribution \texttt{dist100} (i.e., what is the standard error of the sample mean)?
@@ -162,11 +179,11 @@ dist100[dist100 < (mean(x) - 1*sd(dist100))]
 
 \vspace{4em}
 
-\item Now here is where a short moment of consideration is required before we proceed. In statistical hypothesis testing, we are declaring a null hypothesis value as a \textit{known} population and seeing how likely different sample estimates are when we draw repeated random samples from that population. We declare a sample statistic ``statistically significant'' when the sample statistic is an outlier in that \textit{sampling distribution} because it would seem to suggest that the sample is drawn from a population with a different population parameter value than one with a population parameter equal to the null hypothesis value. In other words, the sample statistic is so unusual for the population from which we --- under the null hypothesis --- believe that the data are drawn from, that we decide that the data are actually drawn from a population with a different population mean. That's the essence of statistical hypothesis testing. Restate these ideas in your own words:
+\item Now here is where a short moment of consideration is required before we proceed. In statistical hypothesis testing, we are declaring a null hypothesis value as a \textit{known} population and seeing how likely different sample estimates are when we draw repeated random samples from that population. We declare a sample statistic ``statistically significant'' when the sample statistic is unusually far from the null hypothesis value in that \textit{sampling distribution} because it would seem to suggest that the sample is drawn from a population with a different population parameter value than one with a population parameter equal to the null hypothesis value. In other words, the sample statistic is so unusual for the population from which we --- under the null hypothesis --- believe that the data are drawn from, that we decide that the data are actually drawn from a population with a different population mean. That's the essence of statistical hypothesis testing. Restate these ideas in your own words:
 
-\vspace{4em}
+\vspace{6em}
 
-\noindent Hopefully, you've caught on that there's a leap being made here: in practice we don't generally have population data in front of us (indeed, that's the whole point of why we're analyzing a sample in the first place --- to learn something about the population that we haven't fully observed). We don't actually know the population mean (or any population parameter), so we can't draw repeated random samples from the population to create a sampling distribution. We just have the data in front of us. So, if we set a null expectation of the population parameter value and find that our sample statistic differs from that considerably, we are inclined to ``reject the null hypothesis'' and believe the population parameter value is different from our null expectation. But, this judgment is based upon seeing a sample statistic that is apparently \textit{unusual}, not \textit{impossible}, under the null hypothesis. We might therefore reject the null hypothesis sometimes when the population parameter actually is equal to the null hypothesis value but where this particular sample (due to the inherent limitations of sampling) just happens to be unusual. 
+\item Hopefully, you've caught on that there's a leap being made here: in practice we don't generally have population data in front of us (indeed, that's the whole point of why we're analyzing a sample in the first place --- to learn something about the population that we haven't fully observed). We don't actually know the population mean (or any population parameter), so we can't draw repeated random samples from the population to create a sampling distribution. We just have the data in front of us. So, if we set a null expectation of the population parameter value and find that our sample statistic differs from that considerably, we are inclined to ``reject the null hypothesis'' and believe the population parameter value is different from our null expectation. But, this judgment is based upon seeing a sample statistic that is apparently \textit{unusual}, not \textit{impossible}, under the null hypothesis. We might therefore reject the null hypothesis sometimes when the population parameter actually is equal to the null hypothesis value but where this particular sample (due to the inherent limitations of sampling) just happens to be unusual. 
 
 \item To avoid doing this too often, we have to define an ``error rate'' or ``significance level'' that only allows us to make these kind of ``false positive'' judgments quite rarely. We'll call this significance level $\alpha$ in order to explore different possible values and what consequences that has for the probability of obtaining a ``false positive.'' A commonly used value of $\alpha$ is 0.05. This means that we will only declare a sample statistic to be ``statistically significant'' when it is as far or farther from the null hypothesis value as 5\% of the possible sample statistics generated from random samples from a population with a parameter equal to the null hypothesis value. In essence, we're looking for an outlier statistic that is farther than the 2.5\% percentile or 97.5\% percentile of the sampling distribution. If we look at our sampling distribution, we can see how far a sample statistic would have to be in order for us declare it statistically significantly different from the population mean:
 
@@ -176,9 +193,15 @@ quantile(dist100, c(0.025, 0.975))
 
 \noindent Check your understanding by assessing why these particular quantiles are used when $\alpha = 0.05$. Those quantiles reflect a ``two-tailed'' hypothesis test in which we look to see whether a sample statistic is an outlier in either direction. What quantiles would we consider if we were doing a ``one-tailed'' hypothesis to see if the sample statistic was an outlier only on the upper end of the distribution? only on the lower end of the distribution?
 
+\vspace{4em}
+
 \item Different values of $\alpha$ are possible. Small values mean we want a lower chance of a ``false positive'' judgment, at the expense of making many more ``false negatives'' (judgments where we say a sample statistic is consistent with the null hypothesis when in fact it is drawn from a different population). Try some different values. Why are these two rates (false positives and false negatives) trade-offs?
 
-\item But recall, we rarely have access to the population mean and we rarely have the ability to repeatedly sample from a population in order to create a sampling distribution. We therefore rely on ``distributional'' (or ``parametric'') assumptions. Rather than generating a sampling distribution from repeatedly sampling, we instead rely upon a mathematical theorem --- the central limit theorem --- that shows that the sampling distribution of the mean is normally distributed. You can get a sense of this by repeating our repeated sampling exercise above by collecting more samples. The more samples we draw from the population, the more and more the shape of the sampling distribution will resemble the normal distribution's bell curve:
+\vspace{4em}
+
+\item But recall, we rarely have access to the population mean and we rarely have the ability to repeatedly sample from a population in order to create a sampling distribution. We therefore rely on ``distributional'' (or ``parametric'') assumptions. Rather than generating a sampling distribution from repeatedly sampling (because we only have one sample), we instead rely upon a mathematical theorem --- the central limit theorem --- that shows that the sampling distribution of the mean is normally distributed. You can get a sense of this by repeating our repeated sampling exercise above by collecting more samples.
+
+The more samples we draw from the population (even if they are all size $n=10$), the more and more the shape of the sampling distribution will resemble the normal distribution's bell curve:
 
 \begin{verbatim}
 ggplot(, aes(x = replicate(100, mean(sample(x, 10, FALSE))))) +
@@ -189,15 +212,15 @@ ggplot(, aes(x = replicate(2500, mean(sample(x, 10, FALSE))))) +
     geom_histogram(bins = 21) + xlim(0,20)
 \end{verbatim}
 
-\noindent This property enables us to calculate how unusual a sample estimate is against a null hypothesis by simply calculating the probability of seeing different statistic values given the normal distribution (which has a well-defined formula). In R we can calculate these probabilities using the \texttt{pt()} function. If we are thinking about sample means, we can calculate the probability of different sample means against any particular null hypothesis parameter value. To do so, however, requires that we express the mean as a difference from the null hypothesis value and rescale to the scale of standard errors. In our example, we have to convert the sample mean to number of years different from the population mean and then rescale to units in number of standard errors: i.e., from \texttt{mean(s2)} to 
+\noindent This property enables us to calculate how unusual a sample estimate is against a null hypothesis by simply calculating the probability of seeing different statistic values given the normal distribution (which has a well-defined formula). In R we can calculate these probabilities using the \texttt{pnorm()} function. If we are thinking about sample means, we can calculate the probability of different sample means against any particular null hypothesis parameter value. To do so, however, requires that we express the mean as a difference from the null hypothesis value and rescale to the scale of standard errors. In our example, we have to convert the sample mean to number of years different from the population mean and then rescale to units in number of standard errors: i.e., from \texttt{mean(s2)} to 
 
 \begin{verbatim}
-tstat <- (mean(s2) - 12) / ( sd(s2)/sqrt(length(s2)) )
+zstat <- (mean(s2) - 12) / ( sd(s2)/sqrt(length(s2)) )
 \end{verbatim}
 
-\noindent This value is called a $t$-statistic. If we had a different null hypothesis value (e.g., that the population mean was 3), we would use that instead of \texttt{12} in the above calculation.
+\noindent This value is called a $z$-statistic. If we had a different null hypothesis value (e.g., that the population mean was 3), we would use that instead of \texttt{12} in the above calculation.
 
-\item To see how unusual this $t$-statistic is, we plug it into the \texttt{pnorm()} function: \texttt{pt(tstat, length(s2) -1)}. The output is called a $p$-value and can be understood as the probability of seeing a test statistic this far or farther from the null hypothesis value. Formally, it is ``the probability of a $t$-statistic as extreme as the one we observed, if the null hypothesis was true.'' When this p-value is smaller than $\alpha$ level, we judge the sample mean to be ``statistically significantly different from zero.'' When the $p$-value is larger than $\alpha$, we declare that the test statistic is not statistically significantly different from the null hypothesis value. However, it is important to remember when reading this that a $p-value$ is not:
+\item To see how unusual this $z$-statistic is, we plug it into the \texttt{pnorm()} function: \texttt{pnorm(zstat)}. The output is called a $p$-value and can be understood as the probability of seeing a test statistic this far or farther from the null hypothesis value. Formally, it is ``the probability of a $t$-statistic as extreme as the one we observed, if the null hypothesis was true.'' When this $p$-value is smaller than $\alpha$ level, we judge the sample mean to be ``statistically significantly different from zero.'' When the $p$-value is larger than $\alpha$, we declare that the test statistic is not statistically significantly different from the null hypothesis value. However, it is important to remember when reading this that a $p-value$ is not:
 
 \begin{itemize}
 \item the probability that a hypothesis is true or false
@@ -208,16 +231,16 @@ tstat <- (mean(s2) - 12) / ( sd(s2)/sqrt(length(s2)) )
 
 \noindent Those are all common misconceptions of how to interpret a $p$-value.
 
-\item To see how large a $t$-statistic has to be to cross different $\alpha$ levels, you can explore the \texttt{qt()} function, which takes a $p$-value as input and returns the corresponding $t$-statistic.
+\item To see how large a $z$-statistic has to be to cross different $\alpha$ levels, you can explore the \texttt{qnorm()} function, which takes a $p$-value as input and returns the corresponding $z$-statistic.
 
 \begin{verbatim}
-qt(0.025, length(s2)-1)  # 5% significance level
-qt(0.050, length(s2)-1)  # 10% significance level
-qt(0.330, length(s2)-1)  # 33% significance level
-qt(0.250, length(s2)-1)  # 50% significance level
+qnorm(0.0251)  # 5% significance level
+qnorm(0.050)  # 10% significance level
+qnorm(0.330)  # 33% significance level
+qnorm(0.250)  # 50% significance level
 \end{verbatim}
 
-\item We now come to the idea of a ``confidence interval,'' which is an interval estimate like the interval created by calculating a margin of error as in the first part of this lab activity. A confidence interval (or ``CI'') is simply a range, centered on our sample estimate that tells us about the likely location of the population parameter within a stated range of uncertainty.\footnote{Because it is just a transformation of the margin of error, it is based on the variability of the data, sampling procedures, and --- most importantly --- sample size.} To formalize this, a confidence interval tells us:
+\item We now return to the idea from MT of a ``confidence interval,'' which is an interval estimate like the interval created by calculating a margin of error back when we discussed sampling. A confidence interval (or ``CI'') is simply a range, centered on our sample estimate that tells us about the likely location of the population parameter within a stated range of uncertainty.\footnote{Because it is just a transformation of the margin of error, it is based on the variability of the data, sampling procedures, and --- most importantly --- sample size.} To formalize this, a confidence interval tells us:
 
 \begin{quote}
 Were we to repeat our procedure of sampling, analyzing the sample to produce a sample estimate and standard error, and transforming those estimates into a confidence interval \textit{repeatedly} from the population, a fixed percentage of the resulting intervals would include the true population-level parameter.
@@ -225,7 +248,7 @@ Were we to repeat our procedure of sampling, analyzing the sample to produce a s
         
 \noindent This does not say for sure whether the particular estimated confidence interval \textit{this time} actually includes that true population parameter. We never know that. Why?
 
-\vspace{4em}
+\vspace{6em}
 
 \item To get at the notion of the confidence interval, we are going back to our population data \texttt{x} and repeatedly drawing new samples. This time, however, we are going to store our results in a data frame and we are going to save not only how far the sample mean deviates from the population mean, but we are also going to save the standard error calculated from each sample:
 
@@ -249,9 +272,15 @@ for (i in seq_len(k)){                     # Take 100 samples from our distribut
 
 \item What we have generated here is a data.frame of ``centered'' sample means: we are expressing how far our sample mean is from the population mean. This allows us to calculate a so-called ``confidence'' interval. A confidence interval is an interval --- recall how we have already encountered it in the form of a margin of error --- that attempts to provide information about the location of the true population value. The confidence interval is sized based upon the variability of our data, the size of the sample we draw, and $\alpha$. The choice of $\alpha$, as in the rest of statistical hypothesis testing, is important because it dictates our error rate. 
 
-When we set the width of the confidence level as $1-\alpha$, we are saying we will allow $\alpha$ proportion of our confidence (where we to sample an infinite number of times) to not include the true population parameter. If $\alpha = 0.05$, then we are drawing 95\% confidence intervals. Thus only 5\% of the intervals we draw from this sample are likely to ``miss'' the true population parameter. If we therefore find in our particular sample that the interval differs from our null expectation (e.g., the sample mean does not equal zero and the 95\% confidence interval based upon our sample data does not cover 0), then we would say the sample mean difference is statistically significantly different from zero. (The $p$-value in this case would be less than 0.05.) So this either indicates that the population parameter is truly not equal to zero or that our particular sample happens to have produced one of the 5\% of confidence intervals that are expected (given our sampling procedure, sample size, and $\alpha$ level) to not cover the true population parameter, simply due to chance. We cannot know with certainty which interval we have.
+When we set the width of the confidence level as $1-\alpha$, we are saying we will allow $\alpha$ proportion of our confidence intervals (were we to sample an infinite number of times) to not include the true population parameter. If $\alpha = 0.05$, then we are drawing 95\% confidence intervals. Thus only 5\% of the intervals we draw from this population are likely to ``miss'' the true population parameter. If we therefore find in our particular sample that the interval differs from our null expectation (e.g., the sample mean does not equal zero and the 95\% confidence interval based upon our sample data does not include 0), then we would say the sample mean difference is statistically significantly different from zero. (The $p$-value in this case would be less than 0.05.) So this either indicates that the population parameter is truly not equal to zero or that our particular sample happens to have produced one of the 5\% of confidence intervals that are expected (given our sampling procedure, sample size, and $\alpha$ level) to not cover the true population parameter, simply due to chance. 
 
-How many of our confidence intervals do not cover the population mean? (Recall we have rescaled the mean to be a different from the true value.):
+\begin{itemize}
+\item Can we know with certainty which interval --- either (a) an interval from a population different from the one characterized by our null hypothesis value, or (b) a false positive --- we observe in a given situation? Why or why not?
+\end{itemize}
+
+\vspace{4em}
+
+\item How many of our confidence intervals do not cover the population mean? (Recall we have rescaled the mean to be a different from the true value.):
 
 \begin{verbatim}
 ci$off <- ((ci$means-(abs(alpha)*ci$se)) > 0 & (ci$means+(abs(alpha)*ci$se)) > 0) | 
@@ -279,15 +308,14 @@ Check your intuition this discussion:
 \item Consider, again, increasing the sample size from $n=100$ to $n=500$ and drawing a 95\% confidence interval for each. For which sample size is the 95\% confidence interval more likely to include the true population value?
 \end{itemize}
 
-\item Try to repeat the above sampling and graphing procedure but tweak the values of $\alpha$ and sample size. As $\alpha$ increases, fewer of the confidence intervals drawn from the population with cover the true population parameter. That means that we are more likely to make ``false positive'' judgments and to have incorrect beliefs about the location of the population parameter.
-
-\item We can also see, in the above data, the equivalence of a confidence interval, a $t$-statistic, and a $p$-value. When our confidence interval does not overlap the null hypothesis value, we describe it as statistically significant. In such cases, the $t$-statistic is larger than the cut-off threshold for our chosen $\alpha$ level and the p-value will be less than $\alpha$. For a sample mean, the $t$ statistic is simply the sample mean divided by the standard error; when this test statistic exceeds the critical value, $\alpha$, then the statistic is deemed statistically significantly different from the null hypothesis value. If these --- test statistic, p-value, confidence interval --- are all equivalent, why would we display one versus another?
-
 \vspace{4em}
 
-\noindent To reiterate, the critical value is simply based on a hypothetical distribution, in this case the $t$-distribution (which, in large samples, is identical to the normal or Gaussian distribution noted earlier). When we earlier selected a value of $\alpha$ we were in essence setting the critical value of our $t$-statistic. Recall for our 95\% confidence interval, we selected an $\alpha$ value of \texttt{qnorm(0.025)} (approximately 1.96). Thus, when our sample $t$-statistic exceeds this value, then we have a statistically significant result because our test statistic is very far from the null hypothesis value of 0. Our null hypothesis implies a distribution of test statistics that follows the $t$ distribution and, given that expected distribution of possible test statistics, a sample test statistic larger than 1.96\% would be quite rare (less than 5\% of test statistics observed for samples from a population of mean 0 would have test statistics that large or larger).
 
-\vspace{2em}
+\item Try to repeat the above sampling and graphing procedure but tweak the values of $\alpha$ and sample size. As $\alpha$ increases, fewer of the confidence intervals drawn from the population with cover the true population parameter. That means that we are more likely to make ``false positive'' judgments and to have incorrect beliefs about the location of the population parameter.
+
+\item We can also see, in the above data, the equivalence of a confidence interval, a $z$-statistic, and a $p$-value. When our confidence interval does not overlap the null hypothesis value, we describe it as statistically significant. In such cases, the $z$-statistic is larger than the cut-off threshold for our chosen $\alpha$ level and the p-value will be less than $\alpha$. For a sample mean, the $z$ statistic is simply the sample mean divided by the standard error; when this test statistic exceeds the critical value, $\alpha$, then the statistic is deemed statistically significantly different from the null hypothesis value. If these --- test statistic, p-value, confidence interval --- are all equivalent, why would we display one versus another?
+
+\vspace{4em}
 
 \subsection{Application to ``Real'' Data}
 
