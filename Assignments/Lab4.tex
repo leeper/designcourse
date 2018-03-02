@@ -24,7 +24,7 @@ The purpose of this activity is to provide you with an understanding of regressi
 
 \section{Overview}
 
-This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week. The final quantitative problem set in LT relates to, roughly, the first half and second half of the material covered in this lab (this document containing the second half).
+This lab can be completed during class time and at-home. You should allocate time to complete the relevant portions of the lab in line with the scheduled topics for each week.
 
 \section{Your Task}
 
@@ -33,7 +33,7 @@ Using R as instructed, complete the following activities.
 \subsection{Bivariate Regression}
 
 \begin{enumerate}
-\item For this lab, we will use the UK portion of the European Social Survey (ESS) Round 6 data from 2012. You can download these data from here: \url{http://www.europeansocialsurvey.org/download.html?file=ESS6GB&c=GB&y=2012}. You may have to login with an email address and unzip the file. Save the file on your computer and unzip it.
+\item For this lab, we will use the UK portion of the European Social Survey (ESS) Round 6 data from 2012. You can get the data file from Moodle or download it directly from: \url{http://www.europeansocialsurvey.org/download.html?file=ESS6GB&c=GB&y=2012}.\footnote{You may have to login with an email address and unzip the file. Save the file on your computer and unzip it.}
 
 \item Use \texttt{setwd()} to set your working directory to wherever you saved the file.
 
@@ -52,10 +52,10 @@ d <- import("ESS6GB.dta", haven = FALSE)
 table(d$polintr)
 \end{verbatim}
 
-\noindent Then, replace the values of ``Refusal'', ``Don't know'', and ``No answer'' as missing values: 
+\noindent Then, replace the values of ``Refusal'', ``Don't know'', and ``No answer'' (if there are any) as missing values: 
 
 \begin{verbatim}
-levels(d$polintr)[5:7] <- NA
+d$polintr[d$polintr %in% 5:7] <- NA
 \end{verbatim}
 
 \noindent Repeat the tabulation to confirm that this work. Using what you have learned already, attempt to answer the following questions:

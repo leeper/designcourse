@@ -16,22 +16,6 @@
 
 \frame{\tableofcontents}
 
-\section{Exam Preparation}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-	
-	\begin{center}
-	\Large
-	\textbf{What do you think will be on the exam?}
-	\end{center}
-	
-}
-
-
-\frame{}
-
-
 \section{Correlation}
 \frame{\tableofcontents[currentsection]}
 
@@ -96,7 +80,7 @@
     	\item<2-> Line (or surface) of best fit
     	\item<2-> Ratio of $Cov(X,Y)$ and $Var(X)$
     	\item<2-> Minimizing residual sum of squares (SSR)
-    	\item<3-> Estimating Unit-level Causal Effect
+    	\item<3-> Estimating unit-level causal effect
 	\end{enumerate}
 }
 
@@ -106,8 +90,8 @@
 	\begin{itemize}\itemsep1em
 	\item $Y$ is continuous
 	\item $X$ is a randomized treatment indicator/dummy $(0,1)$
-	\item How do we know if the treatment $X$ had an effect on $Y$?
-	\item<2-> Look at mean-difference: $E[Y_i|X_i=1] - E[Y_i|X_i=0]$
+	\item How do we know if the $X$ had an effect on $Y$?
+	\item<2-> Look at outcome mean-difference: $E[Y|X=1] - E[Y|X=0]$
 	\end{itemize}
 }
 
@@ -115,11 +99,11 @@
 \frame<1-2>[label=dummy]{
 	\frametitle{Bivariate Regression I}
 	\begin{itemize}\itemsep1em
-    	\item Mean difference ($E[Y_i|X_i=1] - E[Y_i|X_i=0]$) is the regression line slope
+    	\item Mean difference ($E[Y|X=1] - E[Y|X=0]$)\\ is the regression line slope
     	\item Slope ($\beta$) defined as $\frac{\Delta Y}{\Delta X}$
     		\vspace{1em}
     		\begin{itemize}\itemsep1em
-        		\item<2-> $\Delta Y = E[Y_i|X=1] - E[Y_i|X=0]$
+        		\item<2-> $\Delta Y = E[Y|X=1] - E[Y|X=0]$
         		\item<2-> $\Delta X = 1 - 0 = 1$
     		\end{itemize}
 	\end{itemize}
@@ -136,28 +120,6 @@
 		y_i & = \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i\\
 		    & = \bar{y}_{0i} + (y_{1i} - y_{0i}) x_i + (y_{0i} - \bar{y}_{0i})
 		\end{align*}
-	\end{enumerate}
-}
-
-\frame<1-6>[label=math]{
-	\frametitle{Minimum Mathematical Requirements}
-	\begin{enumerate}\itemsep1em
-    	\item<1-> Do we need variation in $X$?
-    		\begin{itemize}
-        		\item<2-> Yes, otherwise dividing by zero
-    		\end{itemize}
-    	\item<3-> Do we need variation in $Y$?
-    		\begin{itemize}
-        		\item No, $\hat{\beta}_1$ can equal zero
-    		\end{itemize}
-    	\item<5-> How many observations do we need?
-    		\begin{itemize}
-    		\item<6-> $n \ge k$, where $k$ is number of parameters to be estimated
-    		\end{itemize}
-    	\item<7-> Can we have highly correlated regressors?
-    		\begin{itemize}
-    		\item<8-> Generally no (due to multicollinearity)
-    		\end{itemize}
 	\end{enumerate}
 }
 
@@ -189,7 +151,7 @@
         
         % slope
         \draw<3-4>[solid, line width=2pt] (2,2) -- (6,2);
-        \draw<3-5>[solid, line width=2pt] (6,2) -- (6,5);
+        \draw<3-4>[solid, line width=2pt] (6,2) -- (6,5);
         \node<3-4>(deltax) at (4,1) {$\Delta_x$};
         \node<3>[right](deltay) at (7,3.5) {$\Delta_y$};
         \node<4>[right](deltay) at (7,3.5) {$\Delta_y = \beta_1$};
@@ -208,14 +170,26 @@
 }
 
 
+\frame{\vspace{2em}\Large Questions?}
+
+
+\frame{
+
+\frametitle{Continuous $X$}
+
+\begin{itemize}\itemsep1em
+\item If $x$ is continuous, calculation is more complicated
+\item Rather than $\beta_1$ being the mean-difference in outcomes, it is the slope across \textit{all} values of $x$
+\item $\hat{\beta}_1 = Cov(x,y) / Var(x)$
+\end{itemize}
+
+}
+
+
 \frame[label=calculations]{
 	\frametitle{Calculations}
 	
 	\small
-	If $x$ is continuous, calculation is more complicated:\\
-	$\widehat{\beta_1} = Cov(x,y) / Var(x)$
-	
-	\vspace{1em}
 	\begin{tabular}{rrrrrr} \hline
 	$x_i$ & $y_i$ & $x_i - \bar{x}$ & $y_i - \bar{y}$ & $(x_i - \bar{x})(y_i - \bar{y})$ & $(x_i - \bar{x})^2$\\ \hline
 	1 & 1 & ? & ? & ? & ? \\
@@ -228,7 +202,7 @@
 	\end{tabular}
 }
 
-\frame<1-5>[label=scatter]{
+\frame<1-4>[label=scatter]{
 	\begin{center}
 	\begin{tikzpicture}[>=latex', scale=0.8]
         \draw[->] (0,0) node[below] (origin) {0}  -- (8,0) node[right] (xaxis) {x};
@@ -362,6 +336,151 @@
 	\end{itemize}
 }
 
+\frame<1-6>[label=math]{
+	\frametitle{Minimum Mathematical Requirements}
+	\begin{enumerate}\itemsep1em
+    	\item<1-> Do we need variation in $X$?
+    		\begin{itemize}
+        		\item<2-> Yes, otherwise dividing by zero
+    		\end{itemize}
+    	\item<3-> Do we need variation in $Y$?
+    		\begin{itemize}
+        		\item No, $\hat{\beta}_1$ can equal zero ($Cor(X,Y) = 0$)
+    		\end{itemize}
+    	\item<5-> How many observations do we need?
+    		\begin{itemize}
+    		\item<6-> $n \ge k$, where $k$ is number of parameters to be estimated
+    		\end{itemize}
+    	\item<7-> Can we have highly correlated regressors?
+    		\begin{itemize}
+    		\item<8-> Generally no (due to multicollinearity)
+    		\end{itemize}
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Correlation/Regression Equivalence}
+	\begin{itemize}\itemsep1em
+	\item Definition: $Corr(x,y) = \hat{r}_{x,y} = \frac{Cov(x,y)}{(n-1) s_x s_y}$
+	\item Slope $\hat{\beta}_1$ and correlation $\hat{r}_{x,y}$ are simply different scalings of $Cov(x,y)$
+	\vspace{1em}
+	\item<2-> $R^2 = \hat{r}_{x,y}^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$
+	\end{itemize}
+}
+
+
+\frame{\vspace{2em}\Large Questions about OLS?}
+
+
+\frame[label=anygood]{
+	\frametitle{Are Estimates Any Good?}
+	\begin{enumerate}\itemsep1em
+   		\item<2-> Works mathematically
+   		\item<2-> Linear relationship between $X$ and $Y$
+   		\item<2-> $X$ is measured without error
+   		\item<2-> No missing data (or MCAR)
+   		\item<2-> No confounding (next week)
+	\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Linear Relationship}
+	\begin{itemize}\itemsep1em
+    	\item If linear, no problems
+    	\item If non-linear, we need to transform
+    		\begin{itemize}
+        		\item Power terms (e.g., $x^2$, $x^3$)
+        		\item log (e.g., $log(x)$)
+        		\item Other transformations
+        		\item If categorical: convert to set of indicators
+        		\item Multivariate interactions (next week)
+    		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Coefficient Interpretation}
+	\begin{itemize}\itemsep1em
+	\item Four types of variables:
+		\begin{enumerate}
+		\item Indicator (0,1)
+		\item Categorical
+		\item Ordinal
+		\item Interval
+		\end{enumerate}
+	\item How do we interpret a coefficient on each of these types of variables?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Interpretation: Indicator}
+	\begin{itemize}\itemsep1em
+	\item $y = \hat{\beta_0} + \hat{\beta_1} x + e$
+	\item $\beta_0$ is the estimate of $\bar{y}$ when $x = 0$
+	\item $\beta_1$ is the difference:
+		$\bar{y}_{x = 1} - \bar{y}_{x = 0}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Interpretation: Categorical}
+	\begin{itemize}\itemsep1em
+	\item $y = \hat{\beta_0} + \hat{\beta_1} x_{x=1} + \hat{\beta_2} x_{x=2} + \dots + e$
+	\item $\beta_0$ is the estimate of $\bar{y}$ when $x = 0$
+	\item $\beta_1$ is the difference:
+		$\bar{y}_{x = 1} - \bar{y}_{x = 0}$
+	\item $\beta_2$ is the difference:
+		$\bar{y}_{x = 2} - \bar{y}_{x = 0}$
+	\item Need to select one category as the \textit{reference category}!
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Interpretation: Interval}
+	\begin{itemize}\itemsep1em
+	\item $y = \hat{\beta_0} + \hat{\beta_1} x + e$
+	\item $\beta_0$ is the estimate of $\bar{y}$ when $x = 0$
+	\item $\beta_1$ is the slope of the relationship between $x$ and $y$
+		\begin{itemize}
+		\item Slope is constant across full domain of $x$
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Interpretation: Ordinal}
+	\begin{itemize}\itemsep1em
+	\item Two options:
+		\begin{enumerate}
+		\item $y = \hat{\beta_0} + \hat{\beta_1} x + e$
+		\item $y = \hat{\beta_0} + \hat{\beta_1} x_{x=1} + \hat{\beta_2} x_{x=2} + \dots + e$
+		\end{enumerate}
+	\item Have to choose whether to treat an ordinal variable as \textit{categorical} or \textit{interval}
+	\end{itemize}
+}
+
+
+\frame{\large Questions?}
+
+
+\frame{
+	What type of $x$ variable is involved and how do we interpret the coefficient(s) on $x$ for each of the following scenarios?\\
+
+	\begin{enumerate}\small
+	\item Body Mass Index (BMI) regressed on height
+	\item Monthly income (\textsterling) regressed on gender
+	\item Years of schooling regressed on birth region
+	\item Feeling thermometer toward Theresa May regressed on party affiliation
+	\item Weekly hours worked regressed on civil service pay grade
+	\end{enumerate}
+}
+
+
+\frame{}
+
+
 \frame{
 	\frametitle{OLS Minimizes SSR}
 	\begin{itemize}\itemsep1em
@@ -392,67 +511,6 @@
 	\end{itemize}
 }
 
-
-\frame{
-	\frametitle{Correlation/Regression Equivalence}
-	\begin{itemize}\itemsep1em
-	\item Definition: $Corr(x,y) = \hat{r}_{x,y} = \frac{Cov(x,y)}{(n-1) s_x s_y}$
-	\item Slope $\hat{\beta}_1$ and correlation $\hat{r}_{x,y}$ are simply different scalings of $Cov(x,y)$
-	\vspace{1em}
-	\item<2-> $R^2 = \hat{r}_{x,y}^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$
-	\end{itemize}
-}
-
-
-\frame{\frametitle{Questions about OLS calculations?}}
-
-
-\frame[label=anygood]{
-	\frametitle{Are Our Estimates Any Good?}
-	\begin{enumerate}\itemsep1em
-   		\item<2-> Works mathematically
-   		\item<2-> Linear relationship between $X$ and $Y$
-   		\item<2-> $X$ is measured without error
-   		\item<2-> No missing data (or MCAR)
-   		\item<2-> No confounding (next week)
-	\end{enumerate}
-}
-
-
-\frame{
-	\frametitle{Linear Relationship}
-	\begin{itemize}\itemsep1em
-    	\item If linear, no problems
-    	\item If non-linear, we need to transform
-    		\begin{itemize}
-        		\item Power terms (e.g., $x^2$, $x^3$)
-        		\item log (e.g., $log(x)$)
-        		\item Other transformations
-        		\item If categorical: convert to set of indicators
-        		\item Multivariate interactions (next week)
-    		\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Coefficient Interpretation Activity}
-	\begin{itemize}\itemsep1em
-	\item Four types of variables:
-		\begin{enumerate}
-		\item Indicator (0,1)
-		\item Categorical
-		\item Ordinal
-		\item Interval
-		\end{enumerate}
-	\item How do we interpret a coefficient on each of these types of variables?
-	\end{itemize}
-}
-
-
-\frame{\large Questions?}
-
-
 \frame{}
-
 
 \end{document}
