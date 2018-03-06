@@ -84,7 +84,7 @@ The 3000-word research design paper should outline the basic elements of a novel
 
 The 2-hour written exam covers the full breadth of material from the course and will test students' knowledge of course content, including concept definition, the appraisal of political science theories, the generation of hypotheses, and — most importantly — the appropriateness of different research designs for answering specific research questions. This will count for 50% of the final mark.
 
-The exam will consist of three parts: Part A, Part B, and Part C. Part A contains 5 "short-answer" questions requiring answers of no longer than 1-page of written text, of which students must answer 3. Part B contains 1 question, of which students must answer 1. Part C contains 3 question, of which students must answer 1. Part A is worth 15% of the total (each question worth 5%); Part B is worth 35% of the total; and Part C is worth 50% of the total.
+The exam will consist of three parts: Part A, Part B, and Part C. Part A contains 6 "short-answer" questions requiring answers of no longer than 1-page of written text, of which students must answer 3. Part B contains 1 question, of which students must answer 1. Part C contains 3 question, of which students must answer 1. Part A is worth 15% of the total (each question worth 5%); Part B is worth 35% of the total; and Part C is worth 50% of the total.
 
 [A sample paper for the exam is available here](Syllabus/SamplePaper.pdf).
 
