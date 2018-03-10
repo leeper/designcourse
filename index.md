@@ -72,7 +72,7 @@ We will use LT reading week to prepare for the exam. As part of this, students w
 
 ### Research Design Proposal
 
-*Due: Tuesday, 20 March 2017 at 5:00pm*
+*Due: Tuesday, 20 March 2018 at 5:00pm*
 
 The 3000-word research design paper should outline the basic elements of a novel research project, namely a research question, theoretical contribution, testable hypotheses, and a description of the proposed data collection and analysis. Unlike the written exam, this paper should focus narrowly on a topic of the student's choice and display a greater depth of understanding of a smaller set of ideas raised in the course. This will count for 50% of the final mark.
 
@@ -80,7 +80,7 @@ The 3000-word research design paper should outline the basic elements of a novel
 
 ### Written Exam
 
-*Summer Term, 2017*
+*Summer Term, 2018*
 
 The 2-hour written exam covers the full breadth of material from the course and will test students' knowledge of course content, including concept definition, the appraisal of political science theories, the generation of hypotheses, and — most importantly — the appropriateness of different research designs for answering specific research questions. This will count for 50% of the final mark.
 
