@@ -173,9 +173,9 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 	\small
 	\begin{itemize}\itemsep0.5em
 		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
-		\item<2-> We can average: $ATE = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<2-> We can average: $ATE = E[Y_{1} - Y_{0}] = E[Y_{1}] - E[Y_{0}]$
 		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
-    		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    		$ATE_{naive} = E[Y_{1} | X = 1] - E[Y_{0} | X = 0]$
     	\item<4-> Is this what we want to know?
 	\end{itemize}
 }
@@ -187,13 +187,13 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 	\begin{itemize}\itemsep0.5em
 	\item What we want and what we have:
 		\begin{align}
-		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
-		ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]
+		ATE & = E[Y_{1}] - E[Y_{0}] \\[1em]
+		ATE_{naive} & = E[Y_{1} | X = 1] - E[Y_{0} | X = 0]
 		\end{align}		
 	\item<2-> Are the following statements true?\\
   		\begin{itemize}\itemsep0.5em
-      		\item<2-> $E[Y_{1i}] = E[Y_{1i} | X = 1]$
-      		\item<2-> $E[Y_{0i}] = E[Y_{0i} | X = 0]$
+      		\item<2-> $E[Y_{1}] = E[Y_{1} | X = 1]$
+      		\item<2-> $E[Y_{0}] = E[Y_{0} | X = 0]$
   		\end{itemize}
   	\item<3-> Not in general!
   	\end{itemize}
@@ -205,14 +205,14 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 	\begin{itemize}\itemsep0.5em
     	\item Only true when both of the following hold:
     	\begin{align}
-    	E[Y_{1i}] = E[Y_{1i} | X = 1] = E[Y_{1i} | X = 0]\\
-    	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
+    	E[Y_{1}] = E[Y_{1} | X = 1] = E[Y_{1} | X = 0]\\
+    	E[Y_{0}] = E[Y_{0} | X = 1] = E[Y_{0} | X = 0]
     	\end{align}
     	\item In that case, potential outcomes are \textit{independent} of treatment assignment
 		\item If true, then:
     	\begin{align*}
-    	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
-    	& = E[Y_{1i}] - E[Y_{0i}]\\
+    	ATE_{naive} & = E[Y_{1} | X = 1] - E[Y_{0} | X = 0] \tag{5}\\
+    	& = E[Y_{1}] - E[Y_{0}]\\
     	& = ATE
     	\end{align*}
 	\end{itemize}
@@ -229,8 +229,8 @@ If an instance in which the phenomenon under investigation occurs, and an instan
     		\end{itemize}
     	\item<2-> Matching/regression/etc. attempts to eliminate those confounds, such that:
     	\begin{align*}
-    	E[Y_{1i} | Z] = E[Y_{1i} | X = 1, Z] = E[Y_{1i} | X = 0, Z]\\
-    	E[Y_{0i} | Z] = E[Y_{0i} | X = 1, Z] = E[Y_{0i} | X = 0, Z]
+    	E[Y_{1} | Z] = E[Y_{1} | X = 1, Z] = E[Y_{1} | X = 0, Z]\\
+    	E[Y_{0} | Z] = E[Y_{0} | X = 1, Z] = E[Y_{0} | X = 0, Z]
     	\end{align*}
 	\end{itemize}
 }
@@ -500,12 +500,12 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 	\begin{itemize}\itemsep0.5em
 		\item Imagine two effects:
 		\begin{align}
-		ITT_y & = E[y_i | w_i = 1] - E[y_i | w_i = 0]\\
-		ITT_x & = E[x_i | w_i = 1] - E[x_i | w_i = 0]
+		ITT_Y & = E[Y | W = 1] - E[Y | W = 0]\\
+		ITT_X & = E[X | W = 1] - E[X | W = 0]
 		\end{align}
-		\item IV estimates the LATE: $\dfrac{ITT_y}{ITT_x}$
+		\item IV estimates the LATE: $\dfrac{ITT_X}{ITT_X}$
 		\item In a regression, this is:\\
-			$E[y_i|w_i] = \beta_0 + \text{LATE} \times E[x_i|w_i]$
+			$E[Y|W] = \beta_0 + \text{LATE} \times E[X|W]$
 	\end{itemize}
 }
 
