@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Home
 description: "'Research Design in Political Science' introduce students to the fundamentals of research design in political science, starting from the formulation of research topics and research questions, the development of theory and empirically testable hypotheses, the design of data collection activities, and basic qualitative and quantitative data analysis techniques."
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages

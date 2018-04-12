@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Exam Study Guide Assignment
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---

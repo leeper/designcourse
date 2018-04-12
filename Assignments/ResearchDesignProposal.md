@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Research Design Proposal
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Problem Set 5
 ghurl: https://github.com/leeper/designcourse/tree/gh-pages
 ---
