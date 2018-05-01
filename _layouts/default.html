@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	    <meta name="twitter:card" content='{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.cardtype }}{% endif %}' />
+    <meta charset="utf-8">
+    <meta name="twitter:card" content='{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.cardtype }}{% endif %}' />
     <meta name="twitter:site" content="@thosjleeper" />
     <meta name="twitter:creator" content="@thosjleeper" />
     <meta property="twitter:image" content='{% if page.twitterimage == nil or page.twitterimage == "" %}https://thomasleeper.com/images/thomas2016.jpg{% else %}{{ page.twitterimage }}{% endif %}' />
@@ -11,33 +11,18 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content='{% if page.description == nil or page.description == "" %}{{ page.title }}{% else %}{{ page.description }}{% endif %}' />
     <meta property="og:image" content="https://thomasleeper.com/images/thomas2016.jpg" />
-	<title>Thomas J. Leeper</title>
-	<link rel="stylesheet" type="text/css" href="https://thomasleeper.com/assets/css/style.css" />
+    <title>Thomas J. Leeper</title>
+    <link rel="stylesheet" type="text/css" href="https://thomasleeper.com/assets/css/style.css" />
 </head>
 <body>
-  <div style="margin-top: 0.08in; margin-bottom: 0.08in; color:#4c4c4c; ">
     <div class="wrapper">
       <div class="entry-content">
-      	<h3><a href="https://www.thomasleeper.com//">Thomas J. Leeper</a> > <a href="https://leeper.github.io/teaching.html">Teaching</a> > <a href='http://leeper.github.io/designcourse'>Research Design Course</a> > {{ page.title }}</h3>
+          <h3><a href="https://www.thomasleeper.com//">Thomas J. Leeper</a> > <a href="https://www.thomasleeper.com/teaching.html">Teaching</a> > <a href='http://www.thomasleeper.com/designcourse'>Research Design Course</a> > {{ page.title }}</h3>
         {{ content }}
       </div>
     </div>
-
-  </div>
-
-  <footer>
-    <hr />
-    <p class="small">Copyright <span id="years">2009-2018</span> Thomas J. Leeper
-    <br /><a href="mailto:thosjleeper@gmail.com">thosjleeper (a) gmail.com</a></p>
-  </footer>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-10964766-1', 'thomasleeper.com');
-  ga('send', 'pageview');
-  </script>
+    <div>
+    {% include nav.html %}
+    </div>
 </body>
 </html>
-
